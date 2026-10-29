@@ -1,0 +1,102 @@
+{
+ "sop_id": "fema_public_assistance_appeal",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [2], \"action\": \"Make a first appeal through the recipient\", \"role\": \"applicant\", \"handoff_to\": \"recipient\"}, {\"id\": \"s2\", \"lines\": [3], \"action\": \"Electronically forward the first appeal to the Regional Administrator\", \"role\": \"recipient\", \"handoff_to\": \"Regional Administrator\"}, {\"id\": \"s3\", \"lines\": [4], \"action\": \"Make a second appeal through the recipient\", \"role\": \"applicant\", \"handoff_to\": \"recipient\"}, {\"id\": \"s4\", \"lines\": [5], \"action\": \"Electronically forward the second appeal to the Assistant Administrator for the Recovery Directorate\", \"role\": \"recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\"}, {\"id\": \"s5\", \"lines\": [6], \"action\": \"Provide electronic notice of additional information need\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\"}, {\"id\": \"s6\", \"lines\": [7], \"action\": \"Provide electronic notice of appeal disposition\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 957,
+    "completion_tokens": 368,
+    "total_tokens": 1325,
+    "seconds": 27.05
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     2
+    ],
+    "action": "Make a first appeal through the recipient",
+    "role": "applicant",
+    "handoff_to": "recipient"
+   },
+   {
+    "id": "s2",
+    "lines": [
+     3
+    ],
+    "action": "Electronically forward the first appeal to the Regional Administrator",
+    "role": "recipient",
+    "handoff_to": "Regional Administrator"
+   },
+   {
+    "id": "s3",
+    "lines": [
+     4
+    ],
+    "action": "Make a second appeal through the recipient",
+    "role": "applicant",
+    "handoff_to": "recipient"
+   },
+   {
+    "id": "s4",
+    "lines": [
+     5
+    ],
+    "action": "Electronically forward the second appeal to the Assistant Administrator for the Recovery Directorate",
+    "role": "recipient",
+    "handoff_to": "Assistant Administrator for the Recovery Directorate"
+   },
+   {
+    "id": "s5",
+    "lines": [
+     6
+    ],
+    "action": "Provide electronic notice of additional information need",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient and applicant"
+   },
+   {
+    "id": "s6",
+    "lines": [
+     7
+    ],
+    "action": "Provide electronic notice of appeal disposition",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient and applicant"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ }
+}

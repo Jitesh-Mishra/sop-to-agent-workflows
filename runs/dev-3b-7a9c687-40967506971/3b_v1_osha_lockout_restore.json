@@ -1,0 +1,138 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"None\"}, {\"id\": \"2\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check the work area to ensure that all employees have been safely positioned or removed from the area.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"None\"}, {\"id\": \"3\", \"lines\": [3, 4, 5, 6, 7], \"action\": \"Verify that the controls are in neutral.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"None\"}, {\"id\": \"4\", \"lines\": [4, 5, 6, 7], \"action\": \"Remove the lockout devices and reenergize the machine or equipment.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"None\"}, {\"id\": \"5\", \"lines\": [5, 6, 7], \"action\": \"Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Affected employees\"}], \"edges\": []}",
+   "errors": [
+    "The workflow has several steps but no edges; connect the steps in execution order."
+   ],
+   "usage": {
+    "prompt_tokens": 290,
+    "completion_tokens": 319,
+    "total_tokens": 609,
+    "seconds": 23.65
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"None\"}, {\"id\": \"2\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check the work area to ensure that all employees have been safely positioned or removed from the area.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Maintenance personnel\"}, {\"id\": \"3\", \"lines\": [3, 4, 5, 6, 7], \"action\": \"Verify that the controls are in neutral.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Maintenance personnel\"}, {\"id\": \"4\", \"lines\": [4, 5, 6, 7], \"action\": \"Remove the lockout devices and reenergize the machine or equipment.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Maintenance personnel\"}, {\"id\": \"5\", \"lines\": [5, 6, 7], \"action\": \"Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Affected employees\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}]}",
+   "errors": [
+    "Step 2 hands off to its own role (Maintenance personnel); a handoff must go to a different party.",
+    "Step 3 hands off to its own role (Maintenance personnel); a handoff must go to a different party.",
+    "Step 4 hands off to its own role (Maintenance personnel); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 983,
+    "completion_tokens": 389,
+    "total_tokens": 1372,
+    "seconds": 31.3
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Maintenance personnel\"}, {\"id\": \"2\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check the work area to ensure that all employees have been safely positioned or removed from the area.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Maintenance personnel\"}, {\"id\": \"3\", \"lines\": [3, 4, 5, 6, 7], \"action\": \"Verify that the controls are in neutral.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Maintenance personnel\"}, {\"id\": \"4\", \"lines\": [4, 5, 6, 7], \"action\": \"Remove the lockout devices and reenergize the machine or equipment.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Maintenance personnel\"}, {\"id\": \"5\", \"lines\": [5, 6, 7], \"action\": \"Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.\", \"role\": \"Maintenance personnel\", \"handoff_to\": \"Affected employees\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}]}",
+   "errors": [
+    "Step 1 hands off to its own role (Maintenance personnel); a handoff must go to a different party.",
+    "Step 2 hands off to its own role (Maintenance personnel); a handoff must go to a different party.",
+    "Step 3 hands off to its own role (Maintenance personnel); a handoff must go to a different party.",
+    "Step 4 hands off to its own role (Maintenance personnel); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1178,
+    "completion_tokens": 390,
+    "total_tokens": 1568,
+    "seconds": 36.19
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.",
+    "role": "Maintenance personnel",
+    "handoff_to": "Maintenance personnel"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Check the work area to ensure that all employees have been safely positioned or removed from the area.",
+    "role": "Maintenance personnel",
+    "handoff_to": "Maintenance personnel"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Verify that the controls are in neutral.",
+    "role": "Maintenance personnel",
+    "handoff_to": "Maintenance personnel"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Remove the lockout devices and reenergize the machine or equipment.",
+    "role": "Maintenance personnel",
+    "handoff_to": "Maintenance personnel"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5,
+     6,
+     7
+    ],
+    "action": "Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.",
+    "role": "Maintenance personnel",
+    "handoff_to": "Affected employees"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   }
+  ]
+ }
+}

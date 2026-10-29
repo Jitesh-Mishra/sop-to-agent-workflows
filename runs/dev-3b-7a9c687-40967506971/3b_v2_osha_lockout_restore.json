@@ -1,0 +1,102 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Check the machine or equipment and the immediate area\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Check the work area\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Verify the controls are in neutral\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Remove the lockout devices\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Reenergize the machine or equipment\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Notify affected employees\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": \"affected employees\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 871,
+    "completion_tokens": 350,
+    "total_tokens": 1221,
+    "seconds": 33.28
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Check the machine or equipment and the immediate area",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Check the work area",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Verify the controls are in neutral",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Remove the lockout devices",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Reenergize the machine or equipment",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Notify affected employees",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": "affected employees"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ }
+}

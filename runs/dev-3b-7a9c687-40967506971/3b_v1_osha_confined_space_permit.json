@@ -1,0 +1,148 @@
+{
+ "sop_id": "osha_confined_space_permit",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Document completion of required pre-entry measures\", \"role\": \"Employer\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Authorize entry\", \"role\": \"Entry supervisor\", \"handoff_to\": \"Authorized entrants or their representatives\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Make permit available\", \"role\": \"Employer\", \"handoff_to\": \"Authorized entrants or their representatives\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Set permit duration\", \"role\": \"Employer\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Terminate entry and cancel permit\", \"role\": \"Entry supervisor\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Retain canceled permit\", \"role\": \"Employer\", \"handoff_to\": \"Employer\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Note problems\", \"role\": \"Employer\", \"handoff_to\": \"Employer\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [
+    "Step 5 hands off to its own role (Entry supervisor); a handoff must go to a different party.",
+    "Step 6 hands off to its own role (Employer); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (Employer); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 375,
+    "total_tokens": 714,
+    "seconds": 27.36
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Document completion of required pre-entry measures\", \"role\": \"Employer\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Authorize entry\", \"role\": \"Entry supervisor\", \"handoff_to\": \"Authorized entrants or their representatives\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Make permit available\", \"role\": \"Employer\", \"handoff_to\": \"Authorized entrants or their representatives\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Set permit duration\", \"role\": \"Employer\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Terminate entry and cancel permit\", \"role\": \"Entry supervisor\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Retain canceled permit\", \"role\": \"Employer\", \"handoff_to\": \"Employer\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Note problems\", \"role\": \"Employer\", \"handoff_to\": \"Employer\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [
+    "Step 5 hands off to its own role (Entry supervisor); a handoff must go to a different party.",
+    "Step 6 hands off to its own role (Employer); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (Employer); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1199,
+    "completion_tokens": 375,
+    "total_tokens": 1574,
+    "seconds": 30.76
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Document completion of required pre-entry measures\", \"role\": \"Employer\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Authorize entry\", \"role\": \"Entry supervisor\", \"handoff_to\": \"Authorized entrants or their representatives\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Make permit available\", \"role\": \"Employer\", \"handoff_to\": \"Authorized entrants or their representatives\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Set permit duration\", \"role\": \"Employer\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Terminate entry and cancel permit\", \"role\": \"Entry supervisor\", \"handoff_to\": \"Entry supervisor\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Retain canceled permit\", \"role\": \"Employer\", \"handoff_to\": \"Employer\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Note problems\", \"role\": \"Employer\", \"handoff_to\": \"Employer\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [
+    "Step 5 hands off to its own role (Entry supervisor); a handoff must go to a different party.",
+    "Step 6 hands off to its own role (Employer); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (Employer); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1199,
+    "completion_tokens": 375,
+    "total_tokens": 1574,
+    "seconds": 24.0
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Document completion of required pre-entry measures",
+    "role": "Employer",
+    "handoff_to": "Entry supervisor"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Authorize entry",
+    "role": "Entry supervisor",
+    "handoff_to": "Authorized entrants or their representatives"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Make permit available",
+    "role": "Employer",
+    "handoff_to": "Authorized entrants or their representatives"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Set permit duration",
+    "role": "Employer",
+    "handoff_to": "Entry supervisor"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Terminate entry and cancel permit",
+    "role": "Entry supervisor",
+    "handoff_to": "Entry supervisor"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Retain canceled permit",
+    "role": "Employer",
+    "handoff_to": "Employer"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Note problems",
+    "role": "Employer",
+    "handoff_to": "Employer"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   }
+  ]
+ }
+}

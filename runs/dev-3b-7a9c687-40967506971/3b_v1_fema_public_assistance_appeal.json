@@ -1,0 +1,116 @@
+{
+ "sop_id": "fema_public_assistance_appeal",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Define the appeal process\", \"role\": \"None\", \"handoff_to\": null}, {\"id\": \"2\", \"lines\": [2], \"action\": \"First appeal\", \"role\": \"Applicant\", \"handoff_to\": \"Recipient\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Recipient forwards first appeal\", \"role\": \"Recipient\", \"handoff_to\": \"Regional Administrator\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Regional Administrator's decision\", \"role\": \"Regional Administrator\", \"handoff_to\": \"Recipient\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Recipient forwards second appeal\", \"role\": \"Recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Notice of additional information\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"Recipient and Applicant\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Disposition of appeal\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"Recipient and Applicant\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 373,
+    "total_tokens": 749,
+    "seconds": 27.4
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Define the appeal process",
+    "role": "None",
+    "handoff_to": null
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "First appeal",
+    "role": "Applicant",
+    "handoff_to": "Recipient"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Recipient forwards first appeal",
+    "role": "Recipient",
+    "handoff_to": "Regional Administrator"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Regional Administrator's decision",
+    "role": "Regional Administrator",
+    "handoff_to": "Recipient"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Recipient forwards second appeal",
+    "role": "Recipient",
+    "handoff_to": "Assistant Administrator for the Recovery Directorate"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Notice of additional information",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "Recipient and Applicant"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Disposition of appeal",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "Recipient and Applicant"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   }
+  ]
+ }
+}

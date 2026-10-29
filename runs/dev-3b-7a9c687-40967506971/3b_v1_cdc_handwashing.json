@@ -1,0 +1,220 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Apply alcohol-based hand sanitizer\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Rub hands until dry\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Wet hands with warm water\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Apply liquid soap\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Rub all areas of hands\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Rub hands for 15 seconds\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"9\", \"lines\": [9], \"action\": \"Rinse hands under running water\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"10\", \"lines\": [10], \"action\": \"Dry hands\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"11\", \"lines\": [11], \"action\": \"Use paper towel to turn off faucet\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"12\", \"lines\": [12], \"action\": \"Use paper towel to open door\", \"role\": \"User\", \"handoff_to\": null}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"null\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}, {\"from\": \"8\", \"to\": \"9\", \"condition\": null}, {\"from\": \"9\", \"to\": \"10\", \"condition\": null}, {\"from\": \"10\", \"to\": \"11\", \"condition\": null}, {\"from\": \"11\", \"to\": \"12\", \"condition\": null}]}",
+   "errors": [
+    "Step 10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step 11 cites lines [11] that do not exist (the SOP has lines 1 to 9).",
+    "Step 12 cites lines [12] that do not exist (the SOP has lines 1 to 9).",
+    "Edge 3 -> null refers to unknown step null."
+   ],
+   "usage": {
+    "prompt_tokens": 301,
+    "completion_tokens": 628,
+    "total_tokens": 929,
+    "seconds": 42.23
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Apply alcohol-based hand sanitizer\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Rub hands until dry\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Wet hands with warm water\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Apply liquid soap\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Rub all areas of hands\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Rub hands for 15 seconds\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"9\", \"lines\": [9], \"action\": \"Rinse hands under running water\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"10\", \"lines\": [10], \"action\": \"Dry hands\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"11\", \"lines\": [10], \"action\": \"Use paper towel to turn off faucet\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"12\", \"lines\": [11], \"action\": \"Use paper towel to open door\", \"role\": \"User\", \"handoff_to\": null}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"null\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}, {\"from\": \"8\", \"to\": \"9\", \"condition\": null}, {\"from\": \"9\", \"to\": \"10\", \"condition\": null}, {\"from\": \"10\", \"to\": \"11\", \"condition\": null}, {\"from\": \"11\", \"to\": \"12\", \"condition\": null}]}",
+   "errors": [
+    "Step 10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step 11 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step 12 cites lines [11] that do not exist (the SOP has lines 1 to 9).",
+    "Edge 3 -> null refers to unknown step null."
+   ],
+   "usage": {
+    "prompt_tokens": 1685,
+    "completion_tokens": 628,
+    "total_tokens": 2313,
+    "seconds": 52.93
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Apply alcohol-based hand sanitizer\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Rub hands until dry\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Wet hands with warm water\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Apply liquid soap\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Rub all areas of hands\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Rub hands for 15 seconds\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"9\", \"lines\": [9], \"action\": \"Rinse hands under running water\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"10\", \"lines\": [10], \"action\": \"Dry hands\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"11\", \"lines\": [10], \"action\": \"Use paper towel to turn off faucet\", \"role\": \"User\", \"handoff_to\": null}, {\"id\": \"12\", \"lines\": [11], \"action\": \"Use paper towel to open door\", \"role\": \"User\", \"handoff_to\": null}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}, {\"from\": \"8\", \"to\": \"9\", \"condition\": null}, {\"from\": \"9\", \"to\": \"10\", \"condition\": null}, {\"from\": \"10\", \"to\": \"11\", \"condition\": null}, {\"from\": \"11\", \"to\": \"12\", \"condition\": null}]}",
+   "errors": [
+    "Step 10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step 11 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step 12 cites lines [11] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 1685,
+    "completion_tokens": 628,
+    "total_tokens": 2313,
+    "seconds": 59.92
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Use alcohol-based hand sanitizer",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Apply alcohol-based hand sanitizer",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Rub hands until dry",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Wet hands with warm water",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Apply liquid soap",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Rub hands to form lather",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Rub all areas of hands",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "8",
+    "lines": [
+     8
+    ],
+    "action": "Rub hands for 15 seconds",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "9",
+    "lines": [
+     9
+    ],
+    "action": "Rinse hands under running water",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "10",
+    "lines": [
+     10
+    ],
+    "action": "Dry hands",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "11",
+    "lines": [
+     10
+    ],
+    "action": "Use paper towel to turn off faucet",
+    "role": "User",
+    "handoff_to": null
+   },
+   {
+    "id": "12",
+    "lines": [
+     11
+    ],
+    "action": "Use paper towel to open door",
+    "role": "User",
+    "handoff_to": null
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   },
+   {
+    "from": "7",
+    "to": "8",
+    "condition": null
+   },
+   {
+    "from": "8",
+    "to": "9",
+    "condition": null
+   },
+   {
+    "from": "9",
+    "to": "10",
+    "condition": null
+   },
+   {
+    "from": "10",
+    "to": "11",
+    "condition": null
+   },
+   {
+    "from": "11",
+    "to": "12",
+    "condition": null
+   }
+  ]
+ }
+}

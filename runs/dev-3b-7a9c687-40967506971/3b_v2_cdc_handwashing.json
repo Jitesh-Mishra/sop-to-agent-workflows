@@ -1,0 +1,139 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply alcohol-based hand sanitizer\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Rub hands until dry\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Wet hands with warm water\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply liquid soap\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rub all areas of hands\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Rinse hands\", \"role\": \"patients and visitors\", \"handoff_to\": null}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Dry hands\", \"role\": \"patients and visitors\", \"handoff_to\": null}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 882,
+    "completion_tokens": 477,
+    "total_tokens": 1359,
+    "seconds": 32.59
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Use alcohol-based hand sanitizer",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Apply alcohol-based hand sanitizer",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Rub hands until dry",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Wet hands with warm water",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Apply liquid soap",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Rub hands to form lather",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Rub all areas of hands",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Rinse hands",
+    "role": "patients and visitors",
+    "handoff_to": null
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Dry hands",
+    "role": "patients and visitors",
+    "handoff_to": null
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "sop_id": "hipaa_access_request",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Act on request within 30 days\", \"role\": \"covered entity\", \"handoff_to\": null}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend time by up to 30 days\", \"role\": \"covered entity\", \"handoff_to\": null}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide written statement of delay\", \"role\": \"covered entity\", \"handoff_to\": \"individual\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Limit to one extension\", \"role\": \"covered entity\", \"handoff_to\": null}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Deny access if necessary\", \"role\": \"covered entity\", \"handoff_to\": null}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Refer denial to reviewing official\", \"role\": \"covered entity\", \"handoff_to\": \"designated reviewing official\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Determine denial\", \"role\": \"designated reviewing official\", \"handoff_to\": null}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Notify individual of determination\", \"role\": \"covered entity\", \"handoff_to\": \"individual\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 964,
+    "completion_tokens": 429,
+    "total_tokens": 1393,
+    "seconds": 30.63
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Act on request within 30 days",
+    "role": "covered entity",
+    "handoff_to": null
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend time by up to 30 days",
+    "role": "covered entity",
+    "handoff_to": null
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide written statement of delay",
+    "role": "covered entity",
+    "handoff_to": "individual"
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Limit to one extension",
+    "role": "covered entity",
+    "handoff_to": null
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Deny access if necessary",
+    "role": "covered entity",
+    "handoff_to": null
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Refer denial to reviewing official",
+    "role": "covered entity",
+    "handoff_to": "designated reviewing official"
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Determine denial",
+    "role": "designated reviewing official",
+    "handoff_to": null
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Notify individual of determination",
+    "role": "covered entity",
+    "handoff_to": "individual"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ }
+}

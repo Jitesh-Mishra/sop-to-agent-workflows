@@ -1,0 +1,158 @@
+{
+ "sop_id": "far_contract_claim_decision",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Contractor claims submitted\", \"role\": \"Contractor\", \"handoff_to\": \"Contracting Officer\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Contractor provides certification\", \"role\": \"Contractor\", \"handoff_to\": \"Contracting Officer\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Contracting officer reviews claim\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Legal advisors\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Secure legal assistance\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Legal advisors\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Coordinate with contract admin\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contract Admin Officer\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Prepare decision\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Decision notification\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Decision notification\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\"}, {\"id\": \"9\", \"lines\": [9], \"action\": \"Appeal notice\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\"}, {\"id\": \"10\", \"lines\": [10], \"action\": \"Direct action\", \"role\": \"Contractor\", \"handoff_to\": \"United States Court of Federal Claims\"}], \"edges\": [{\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}, {\"from\": \"8\", \"to\": \"9\", \"condition\": null}, {\"from\": \"9\", \"to\": \"10\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 461,
+    "completion_tokens": 539,
+    "total_tokens": 1000,
+    "seconds": 40.65
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Contractor claims submitted",
+    "role": "Contractor",
+    "handoff_to": "Contracting Officer"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Contractor provides certification",
+    "role": "Contractor",
+    "handoff_to": "Contracting Officer"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Contracting officer reviews claim",
+    "role": "Contracting Officer",
+    "handoff_to": "Legal advisors"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Secure legal assistance",
+    "role": "Contracting Officer",
+    "handoff_to": "Legal advisors"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Coordinate with contract admin",
+    "role": "Contracting Officer",
+    "handoff_to": "Contract Admin Officer"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Prepare decision",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Decision notification",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor"
+   },
+   {
+    "id": "8",
+    "lines": [
+     8
+    ],
+    "action": "Decision notification",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor"
+   },
+   {
+    "id": "9",
+    "lines": [
+     9
+    ],
+    "action": "Appeal notice",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor"
+   },
+   {
+    "id": "10",
+    "lines": [
+     10
+    ],
+    "action": "Direct action",
+    "role": "Contractor",
+    "handoff_to": "United States Court of Federal Claims"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   },
+   {
+    "from": "7",
+    "to": "8",
+    "condition": null
+   },
+   {
+    "from": "8",
+    "to": "9",
+    "condition": null
+   },
+   {
+    "from": "9",
+    "to": "10",
+    "condition": null
+   }
+  ]
+ }
+}
