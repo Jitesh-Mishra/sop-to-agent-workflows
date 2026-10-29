@@ -10,7 +10,8 @@
    ],
    "action": "Choose sanitizer if hands are not visibly dirty, otherwise soap and water",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s1",
@@ -19,7 +20,8 @@
    ],
    "action": "Put sanitizer on hands and rub together",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -28,7 +30,8 @@
    ],
    "action": "Cover all surfaces until dry (about 20 s)",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -37,7 +40,8 @@
    ],
    "action": "Wet hands with warm water and apply soap",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -46,7 +50,8 @@
    ],
    "action": "Rub to a lather over all hand surfaces",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -55,7 +60,8 @@
    ],
    "action": "Keep rubbing at least 15 s",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -64,7 +70,8 @@
    ],
    "action": "Rinse under running water",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -73,7 +80,8 @@
    ],
    "action": "Dry with a paper towel",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s8",
@@ -82,7 +90,8 @@
    ],
    "action": "Use the towel to turn off the faucet and open the door",
    "role": "person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [

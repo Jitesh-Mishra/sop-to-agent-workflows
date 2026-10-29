@@ -10,7 +10,8 @@
    ],
    "action": "Decide to request a major disaster declaration",
    "role": "Governor",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -21,7 +22,8 @@
    ],
    "action": "Prepare the complete request: findings, state actions, damage estimates, certification",
    "role": "Governor",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s3",
@@ -30,7 +32,8 @@
    ],
    "action": "Request an extension of the 30-day period in writing",
    "role": "Governor",
-   "handoff_to": "Assistant Administrator, Disaster Assistance"
+   "handoff_to": "Assistant Administrator, Disaster Assistance",
+   "executor": "agent"
   },
   {
    "id": "s4",
@@ -40,7 +43,8 @@
    ],
    "action": "Submit the request to the President through the Regional Administrator within 30 days",
    "role": "Governor",
-   "handoff_to": "Regional Administrator"
+   "handoff_to": "Regional Administrator",
+   "executor": "agent"
   },
   {
    "id": "s5",
@@ -49,7 +53,8 @@
    ],
    "action": "Send an abbreviated written request through the Regional Administrator",
    "role": "Governor",
-   "handoff_to": "Regional Administrator"
+   "handoff_to": "Regional Administrator",
+   "executor": "agent"
   },
   {
    "id": "s6",
@@ -58,7 +63,8 @@
    ],
    "action": "Address the request to the FEMA Administrator",
    "role": "Governor",
-   "handoff_to": "FEMA Administrator"
+   "handoff_to": "FEMA Administrator",
+   "executor": "agent"
   },
   {
    "id": "s7",
@@ -67,7 +73,8 @@
    ],
    "action": "Expedite reports and recommendations to the President",
    "role": "FEMA",
-   "handoff_to": "President"
+   "handoff_to": "President",
+   "executor": "human"
   },
   {
    "id": "s8",
@@ -76,7 +83,8 @@
    ],
    "action": "Assemble declaration documentation",
    "role": "Assistant Administrator, Disaster Assistance",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   }
  ],
  "edges": [

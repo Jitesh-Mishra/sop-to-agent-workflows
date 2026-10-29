@@ -10,7 +10,8 @@
    ],
    "action": "Test surviving drivers for alcohol and drugs after a fatal accident",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Alcohol-test a cited driver (injury or tow-away accident, citation within 8 h)",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Drug-test a cited driver (citation within 32 h)",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Record why the alcohol test was not done within 2 hours",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Stop alcohol test attempts at 8 hours and record reasons",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Stop drug test attempts at 32 hours and record reasons",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Submit records to FMCSA on request",
    "role": "employer",
-   "handoff_to": "FMCSA"
+   "handoff_to": "FMCSA",
+   "executor": "agent"
   }
  ],
  "edges": [

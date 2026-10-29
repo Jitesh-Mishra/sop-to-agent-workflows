@@ -1,0 +1,120 @@
+{
+ "id": "p2p_simplified_award",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1,
+    2
+   ],
+   "action": "Determine the price is fair and reasonable",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Add a price reasonableness statement to the file",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Send minimum-order facts to the requiring activity to confirm or alter the requirement",
+   "role": "contracting officer",
+   "handoff_to": "requiring activity",
+   "executor": "agent"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Document the final action in the file",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    7
+   ],
+   "action": "Notify unsuccessful suppliers",
+   "role": "contracting officer",
+   "handoff_to": "unsuccessful suppliers",
+   "executor": "agent"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    8
+   ],
+   "action": "Explain the basis of a non-price award to the supplier",
+   "role": "contracting officer",
+   "handoff_to": "supplier",
+   "executor": "agent"
+  },
+  {
+   "id": "s7",
+   "lines": [
+    9
+   ],
+   "action": "Annotate the award copy with TIN and send to the payment office",
+   "role": "contracting officer",
+   "handoff_to": "payment office",
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "only one response"
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": "minimum order exceeds requirement"
+  },
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": "requested or required"
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": "supplier requests information on a non-price award"
+  },
+  {
+   "from": "s4",
+   "to": "s7",
+   "condition": "oral solicitation"
+  }
+ ]
+}

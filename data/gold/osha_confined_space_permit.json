@@ -10,7 +10,8 @@
    ],
    "action": "Prepare the entry permit",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Sign the permit to authorize entry",
    "role": "entry supervisor",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Post the completed permit at the entry portal",
    "role": "employer",
-   "handoff_to": "authorized entrants"
+   "handoff_to": "authorized entrants",
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Terminate entry and cancel the permit",
    "role": "entry supervisor",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Retain the canceled permit for at least 1 year",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Note problems on the permit",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [

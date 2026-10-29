@@ -1,0 +1,100 @@
+{
+ "id": "pa_dmepos_prior_authorization",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1,
+    2
+   ],
+   "action": "Submit the request with order, records and supplier documentation before furnishing",
+   "role": "supplier",
+   "handoff_to": "CMS or contractor",
+   "executor": "agent"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Review the request against Medicare rules",
+   "role": "CMS contractor",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Issue a provisional affirmation",
+   "role": "CMS contractor",
+   "handoff_to": "requester",
+   "executor": "agent"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Issue a non-affirmation decision",
+   "role": "CMS contractor",
+   "handoff_to": "requester",
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Resubmit the request",
+   "role": "supplier",
+   "handoff_to": "CMS or contractor",
+   "executor": "agent"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Attach jeopardy documentation for expedited review",
+   "role": "supplier",
+   "handoff_to": null,
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s6",
+   "condition": "expedited review needed"
+  },
+  {
+   "from": "s6",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "rules met"
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": "rules not met"
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  }
+ ]
+}

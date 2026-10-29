@@ -10,7 +10,8 @@
    ],
    "action": "Submit the claim in writing to the contracting officer within 6 years",
    "role": "contractor",
-   "handoff_to": "contracting officer"
+   "handoff_to": "contracting officer",
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Certify the claim",
    "role": "contractor",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Review the facts of the claim",
    "role": "contracting officer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Get legal and advisor assistance",
    "role": "contracting officer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Coordinate with contract administration",
    "role": "contracting officer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Prepare the written decision",
    "role": "contracting officer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Tell the contractor when the decision will be issued",
    "role": "contracting officer",
-   "handoff_to": "contractor"
+   "handoff_to": "contractor",
+   "executor": "agent"
   },
   {
    "id": "s8",
@@ -73,7 +80,8 @@
    ],
    "action": "Furnish the decision by certified mail",
    "role": "contracting officer",
-   "handoff_to": "contractor"
+   "handoff_to": "contractor",
+   "executor": "agent"
   },
   {
    "id": "s9",
@@ -82,7 +90,8 @@
    ],
    "action": "Appeal to the board of contract appeals within 90 days",
    "role": "contractor",
-   "handoff_to": "board of contract appeals"
+   "handoff_to": "board of contract appeals",
+   "executor": "human"
   },
   {
    "id": "s10",
@@ -91,7 +100,8 @@
    ],
    "action": "File in the Court of Federal Claims within 12 months",
    "role": "contractor",
-   "handoff_to": "Court of Federal Claims"
+   "handoff_to": "Court of Federal Claims",
+   "executor": "human"
   }
  ],
  "edges": [

@@ -10,7 +10,8 @@
    ],
    "action": "Check the machine and area for nonessential items",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Check all employees are safely positioned or removed",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Verify controls are in neutral",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Remove lockout devices and reenergize",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Notify affected employees the machine is ready",
    "role": "authorized employee",
-   "handoff_to": "affected employees"
+   "handoff_to": "affected employees",
+   "executor": "agent"
   }
  ],
  "edges": [

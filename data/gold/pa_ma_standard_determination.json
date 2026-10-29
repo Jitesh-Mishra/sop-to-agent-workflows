@@ -1,0 +1,65 @@
+{
+ "id": "pa_ma_standard_determination",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    3
+   ],
+   "action": "Physician reviews an expected adverse medical necessity decision",
+   "role": "physician reviewer",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    1
+   ],
+   "action": "Notify the enrollee of the determination within 7 calendar days",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    2
+   ],
+   "action": "Extend the timeframe up to 14 days",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4,
+    5
+   ],
+   "action": "Send the written denial notice with reasons and reconsideration rights",
+   "role": "MA organization",
+   "handoff_to": "enrollee and provider",
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s3",
+   "to": "s1",
+   "condition": "extension justified"
+  },
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": "denied in whole or part"
+  },
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "approved"
+  }
+ ]
+}

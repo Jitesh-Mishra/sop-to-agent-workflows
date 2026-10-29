@@ -21,8 +21,9 @@ SCHEMA = {
         "steps": {"type": "array", "items": {"type": "object", "properties": {
             "id": {"type": "string"}, "lines": {"type": "array", "items": {"type": "integer"}},
             "action": {"type": "string"}, "role": {"type": "string"},
-            "handoff_to": {"type": ["string", "null"]}},
-            "required": ["id", "lines", "action", "role", "handoff_to"]}},
+            "handoff_to": {"type": ["string", "null"]},
+            "executor": {"type": "string", "enum": ["agent", "human"]}, "executor_reason": {"type": "string"}},
+            "required": ["id", "lines", "action", "role", "handoff_to", "executor", "executor_reason"]}},
         "edges": {"type": "array", "items": {"type": "object", "properties": {
             "from": {"type": "string"}, "to": {"type": "string"}, "condition": {"type": ["string", "null"]}},
             "required": ["from", "to", "condition"]}},

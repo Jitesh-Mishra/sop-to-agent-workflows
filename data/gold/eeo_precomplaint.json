@@ -11,7 +11,8 @@
    ],
    "action": "Contact an EEO Counselor within 45 days",
    "role": "aggrieved person",
-   "handoff_to": "EEO Counselor"
+   "handoff_to": "EEO Counselor",
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -20,7 +21,8 @@
    ],
    "action": "Advise the individual in writing of rights and responsibilities",
    "role": "EEO Counselor",
-   "handoff_to": "aggrieved person"
+   "handoff_to": "aggrieved person",
+   "executor": "agent"
   },
   {
    "id": "s3",
@@ -29,7 +31,8 @@
    ],
    "action": "Offer the choice between ADR and counseling",
    "role": "EEO Counselor",
-   "handoff_to": "aggrieved person"
+   "handoff_to": "aggrieved person",
+   "executor": "agent"
   },
   {
    "id": "s4",
@@ -38,7 +41,8 @@
    ],
    "action": "Run the ADR procedure (90-day period)",
    "role": "agency",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -47,7 +51,8 @@
    ],
    "action": "Conduct the final interview within 30 days",
    "role": "EEO Counselor",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -56,7 +61,8 @@
    ],
    "action": "Agree in writing to extend counseling up to 60 days",
    "role": "aggrieved person",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -65,7 +71,8 @@
    ],
    "action": "Issue written notice of the right to file a complaint within 15 days",
    "role": "EEO Counselor",
-   "handoff_to": "aggrieved person"
+   "handoff_to": "aggrieved person",
+   "executor": "agent"
   },
   {
    "id": "s8",
@@ -74,7 +81,8 @@
    ],
    "action": "Submit written counseling report within 15 days",
    "role": "EEO Counselor",
-   "handoff_to": "agency complaints office"
+   "handoff_to": "agency complaints office",
+   "executor": "agent"
   }
  ],
  "edges": [

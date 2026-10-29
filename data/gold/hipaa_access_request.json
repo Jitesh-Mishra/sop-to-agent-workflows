@@ -10,7 +10,8 @@
    ],
    "action": "Act on the access request within 30 days",
    "role": "covered entity",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -21,7 +22,8 @@
    ],
    "action": "Extend once by up to 30 days with a written statement of reasons",
    "role": "covered entity",
-   "handoff_to": "individual"
+   "handoff_to": "individual",
+   "executor": "agent"
   },
   {
    "id": "s3",
@@ -30,7 +32,8 @@
    ],
    "action": "Deny access on a licensed professional's safety determination",
    "role": "covered entity",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -39,7 +42,8 @@
    ],
    "action": "Refer the review request to the designated reviewing official",
    "role": "covered entity",
-   "handoff_to": "reviewing official"
+   "handoff_to": "reviewing official",
+   "executor": "agent"
   },
   {
    "id": "s5",
@@ -48,7 +52,8 @@
    ],
    "action": "Decide whether to deny access",
    "role": "reviewing official",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -57,7 +62,8 @@
    ],
    "action": "Send written notice of the reviewing official's determination",
    "role": "covered entity",
-   "handoff_to": "individual"
+   "handoff_to": "individual",
+   "executor": "agent"
   }
  ],
  "edges": [

@@ -10,7 +10,8 @@
    ],
    "action": "Peel off first glove",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Peel off second glove and discard",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Remove goggles or face shield from the back",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Reprocess reusable eyewear or discard",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Unfasten gown ties",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Pull off gown inside out, roll and discard",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Leave the patient room and close the door before removing a respirator",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s8",
@@ -73,7 +80,8 @@
    ],
    "action": "Remove mask or respirator by the ties and discard",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s9",
@@ -82,7 +90,8 @@
    ],
    "action": "Perform hand hygiene",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [

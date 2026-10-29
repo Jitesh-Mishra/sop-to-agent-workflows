@@ -1,0 +1,86 @@
+{
+ "id": "pa_opd_prior_authorization",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "action": "Submit the prior authorization request with documentation before service",
+   "role": "provider",
+   "handoff_to": "CMS or contractor",
+   "executor": "agent"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    4
+   ],
+   "action": "Review the request against coverage, coding and payment rules",
+   "role": "CMS contractor",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    5
+   ],
+   "action": "Issue provisional affirmation or non-affirmation within 7 days",
+   "role": "CMS contractor",
+   "handoff_to": "provider",
+   "executor": "agent"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    6
+   ],
+   "action": "Complete an expedited review within 2 business days",
+   "role": "CMS contractor",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    7
+   ],
+   "action": "Resubmit the request",
+   "role": "provider",
+   "handoff_to": "CMS or contractor",
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "standard review"
+  },
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": "expedited review requested"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "non-affirmation"
+  }
+ ]
+}

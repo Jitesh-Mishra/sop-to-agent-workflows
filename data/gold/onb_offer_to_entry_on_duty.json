@@ -1,0 +1,124 @@
+{
+ "id": "onb_offer_to_entry_on_duty",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Audit the certificate for legal compliance",
+   "role": "Human Resources Office",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Extend a tentative job offer",
+   "role": "Human Resources Office",
+   "handoff_to": "selectee",
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Collect and verify selectee documents (DD-214, transcripts, OF-306)",
+   "role": "Human Resources Office",
+   "handoff_to": "selectee",
+   "executor": "agent"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Notify remaining eligibles of the selection",
+   "role": "Human Resources Office",
+   "handoff_to": "remaining eligibles",
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Initiate the background investigation",
+   "role": "Security Office",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Accept or decline the official offer",
+   "role": "selectee",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Return entry-on-duty forms",
+   "role": "selectee",
+   "handoff_to": "Human Resources Office",
+   "executor": "human"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    9
+   ],
+   "action": "Start orientation",
+   "role": "Human Resources Office",
+   "handoff_to": null,
+   "executor": "human"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": "selectee accepts"
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

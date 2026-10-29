@@ -11,7 +11,8 @@
    ],
    "action": "Immediately notify the LEPC emergency coordinator and SERC orally with release details",
    "role": "facility",
-   "handoff_to": "LEPC and SERC"
+   "handoff_to": "LEPC and SERC",
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -20,7 +21,8 @@
    ],
    "action": "For transportation releases, notify the 911 operator",
    "role": "facility",
-   "handoff_to": "911 operator"
+   "handoff_to": "911 operator",
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -30,7 +32,8 @@
    ],
    "action": "Send written follow-up emergency notice as soon as practicable",
    "role": "facility",
-   "handoff_to": "LEPC and SERC"
+   "handoff_to": "LEPC and SERC",
+   "executor": "agent"
   }
  ],
  "edges": [

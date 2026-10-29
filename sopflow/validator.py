@@ -18,6 +18,8 @@ def validate(spec: WorkflowSpec, n_lines: int) -> list[str]:
             errs.append(f"Step {s.id} has an empty action.")
         if not s.role.strip():
             errs.append(f"Step {s.id} has no role. Every step needs an owner.")
+        if s.executor not in ("agent", "human"):
+            errs.append(f"Step {s.id} needs executor \"agent\" or \"human\".")
         if not s.lines:
             errs.append(f"Step {s.id} cites no SOP lines.")
         bad = [l for l in s.lines if not 1 <= l <= n_lines]

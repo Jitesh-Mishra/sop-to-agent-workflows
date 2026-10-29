@@ -1,0 +1,79 @@
+{
+ "id": "onb_form_i9_verification",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Complete and sign Form I-9 section 1 at hire",
+   "role": "employee",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Physically examine identity and work authorization documents within 3 business days",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Complete and sign Form I-9 section 2 within 3 business days",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Retain the Form I-9 for the required period",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Reverify work authorization before it expires",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": "work authorization expires"
+  }
+ ]
+}

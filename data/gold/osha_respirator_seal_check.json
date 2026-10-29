@@ -10,7 +10,8 @@
    ],
    "action": "Remove the exhalation valve cover",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Close the exhalation valve and exhale gently",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Judge fit by positive pressure without outward leakage",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Replace the exhalation valve cover",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Close off the cartridge inlets",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Inhale gently and hold for ten seconds",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Judge fit by facepiece staying collapsed with no inward leakage",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s8",
@@ -73,7 +80,8 @@
    ],
    "action": "Use the manufacturer's equally effective seal check instead",
    "role": "respirator user",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [

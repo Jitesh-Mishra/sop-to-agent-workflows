@@ -8,6 +8,11 @@ Rules for STEPS
 - "action" is a short imperative summary, at most 15 words.
 - "handoff_to" names the DIFFERENT party that receives information, a decision, a document or responsibility from this step (notify, report, submit, forward, refer, inform, furnish, appeal to). Use null when nothing is handed to another party.
 
+Rules for EXECUTOR (who should do the step in an AI-assisted workflow)
+- "human" if the step needs physical action or presence, a signature, attestation or certification, a professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate), a conversation such as an interview or counseling, or is done by an outside party (customer, enrollee, contractor, applicant, regulator).
+- "agent" if it is information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing.
+- "executor_reason" is one short sentence explaining the choice.
+
 Rules for EDGES
 - Connect steps in the order they happen. Use ids "s1", "s2", ... in reading order.
 - When the SOP says "if ...", "when ...", "unless ...", create separate edges for each branch and put the condition text in "condition". Unconditional edges have condition null.
@@ -22,10 +27,10 @@ L5: IT shall wipe the laptop.
 L6: Laptops must never be shipped without a ticket number.
 Example output:
 {"steps": [
- {"id": "s1", "lines": [2], "action": "Back up personal files", "role": "employee", "handoff_to": null},
- {"id": "s2", "lines": [3], "action": "Submit a return ticket", "role": "employee", "handoff_to": "IT"},
- {"id": "s3", "lines": [4], "action": "Notify the asset manager of damage", "role": "IT", "handoff_to": "asset manager"},
- {"id": "s4", "lines": [5], "action": "Wipe the laptop", "role": "IT", "handoff_to": null}],
+ {"id": "s1", "lines": [2], "action": "Back up personal files", "role": "employee", "handoff_to": null, "executor": "human", "executor_reason": "The employee must choose and copy personal files."},
+ {"id": "s2", "lines": [3], "action": "Submit a return ticket", "role": "employee", "handoff_to": "IT", "executor": "agent", "executor_reason": "Filing a ticket from known details is routine information work."},
+ {"id": "s3", "lines": [4], "action": "Notify the asset manager of damage", "role": "IT", "handoff_to": "asset manager", "executor": "agent", "executor_reason": "Drafting and sending a notice from the ticket facts."},
+ {"id": "s4", "lines": [5], "action": "Wipe the laptop", "role": "IT", "handoff_to": null, "executor": "human", "executor_reason": "Needs hands-on access to the device."}],
  "edges": [
  {"from": "s1", "to": "s2", "condition": null},
  {"from": "s2", "to": "s3", "condition": "laptop is damaged"},

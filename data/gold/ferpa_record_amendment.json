@@ -10,7 +10,8 @@
    ],
    "action": "Ask the institution to amend the record",
    "role": "parent or eligible student",
-   "handoff_to": "institution"
+   "handoff_to": "institution",
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Decide whether to amend",
    "role": "institution",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Inform of the decision and the right to a hearing",
    "role": "institution",
-   "handoff_to": "parent or eligible student"
+   "handoff_to": "parent or eligible student",
+   "executor": "agent"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Give notice of hearing date, time and place",
    "role": "institution",
-   "handoff_to": "parent or eligible student"
+   "handoff_to": "parent or eligible student",
+   "executor": "agent"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Hold the hearing with an impartial official",
    "role": "hearing officer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Issue the written decision",
    "role": "institution",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Amend the record and inform in writing",
    "role": "institution",
-   "handoff_to": "parent or eligible student"
+   "handoff_to": "parent or eligible student",
+   "executor": "agent"
   },
   {
    "id": "s8",
@@ -73,7 +80,8 @@
    ],
    "action": "Inform of the right to place a statement in the record",
    "role": "institution",
-   "handoff_to": "parent or eligible student"
+   "handoff_to": "parent or eligible student",
+   "executor": "agent"
   },
   {
    "id": "s9",
@@ -82,7 +90,8 @@
    ],
    "action": "Keep the statement with the contested record",
    "role": "institution",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   }
  ],
  "edges": [
