@@ -1,0 +1,130 @@
+{
+ "sop_id": "sup_high_priority_escalation",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [2], \"action\": \"Confirm priority and queue\", \"role\": \"Support agent\", \"handoff_to\": \"null\", \"executor\": \"human\", \"executor_reason\": \"Confirmation and queue assignment require human judgment and action\"}, {\"id\": \"2\", \"lines\": [3], \"action\": \"Notify on-call engineer\", \"role\": \"Support agent\", \"handoff_to\": \"On-call engineer\", \"executor\": \"human\", \"executor_reason\": \"Service outage requires immediate attention and action\"}, {\"id\": \"3\", \"lines\": [4], \"action\": \"Post status update\", \"role\": \"On-call engineer\", \"handoff_to\": \"Customer\", \"executor\": \"human\", \"executor_reason\": \"Incident resolution requires communication\"}, {\"id\": \"4\", \"lines\": [5], \"action\": \"Forward to billing team\", \"role\": \"Support agent\", \"handoff_to\": \"Billing team\", \"executor\": \"human\", \"executor_reason\": \"Billing error requires specialized team action\"}, {\"id\": \"5\", \"lines\": [6], \"action\": \"Send acknowledgement\", \"role\": \"Support agent\", \"handoff_to\": \"Customer\", \"executor\": \"human\", \"executor_reason\": \"Acknowledgement is a standard response\"}, {\"id\": \"6\", \"lines\": [7], \"action\": \"Document fix\", \"role\": \"Owning team\", \"handoff_to\": \"Knowledge base\", \"executor\": \"human\", \"executor_reason\": \"Documentation is a manual process\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Close ticket\", \"role\": \"Owning team\", \"handoff_to\": \"null\", \"executor\": \"human\", \"executor_reason\": \"Ticket closure is a manual process\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 271,
+    "completion_tokens": 492,
+    "total_tokens": 763,
+    "seconds": 42.39
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     2
+    ],
+    "action": "Confirm priority and queue",
+    "role": "Support agent",
+    "handoff_to": "null",
+    "executor": "human",
+    "executor_reason": "Confirmation and queue assignment require human judgment and action"
+   },
+   {
+    "id": "2",
+    "lines": [
+     3
+    ],
+    "action": "Notify on-call engineer",
+    "role": "Support agent",
+    "handoff_to": "On-call engineer",
+    "executor": "human",
+    "executor_reason": "Service outage requires immediate attention and action"
+   },
+   {
+    "id": "3",
+    "lines": [
+     4
+    ],
+    "action": "Post status update",
+    "role": "On-call engineer",
+    "handoff_to": "Customer",
+    "executor": "human",
+    "executor_reason": "Incident resolution requires communication"
+   },
+   {
+    "id": "4",
+    "lines": [
+     5
+    ],
+    "action": "Forward to billing team",
+    "role": "Support agent",
+    "handoff_to": "Billing team",
+    "executor": "human",
+    "executor_reason": "Billing error requires specialized team action"
+   },
+   {
+    "id": "5",
+    "lines": [
+     6
+    ],
+    "action": "Send acknowledgement",
+    "role": "Support agent",
+    "handoff_to": "Customer",
+    "executor": "human",
+    "executor_reason": "Acknowledgement is a standard response"
+   },
+   {
+    "id": "6",
+    "lines": [
+     7
+    ],
+    "action": "Document fix",
+    "role": "Owning team",
+    "handoff_to": "Knowledge base",
+    "executor": "human",
+    "executor_reason": "Documentation is a manual process"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Close ticket",
+    "role": "Owning team",
+    "handoff_to": "null",
+    "executor": "human",
+    "executor_reason": "Ticket closure is a manual process"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   }
+  ]
+ }
+}

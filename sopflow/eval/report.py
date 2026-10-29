@@ -54,13 +54,21 @@ def per_sop_rows(recs):
     rows = []
     for r in recs:
         gold = load_gold(r["sop_id"])
-        for stage, spec in (("final", spec_or_empty(r["final_spec"])), ("first_attempt", first_spec(r))):
+        stages = [("final", spec_or_empty(r["final_spec"])), ("first_attempt", first_spec(r))]
+        if r.get("inline_executor"):          # v3: same structure, executor from the single-pass prompt
+            fin = spec_or_empty(r["final_spec"])
+            stages.append(("inline_executor", fin.model_copy(update={"steps": [
+                s.model_copy(update={"executor": r["inline_executor"].get(s.id, s.executor)}) for s in fin.steps]})))
+        last = r["attempts"][-1]
+        for stage, spec in stages:
             c = counts(spec, gold)
             rows.append({"system": f"llm:{r['model']}:{r['prompt']}", "stage": stage, "sop_id": r["sop_id"],
                          "split": split_of(r["sop_id"]), "family": family_of(r["sop_id"]), "run_dir": r["run_dir"],
                          "attempts": len(r["attempts"]), "valid_first": not r["attempts"][0]["errors"],
-                         "valid_final": not r["attempts"][-1]["errors"],
-                         "seconds": sum(a["usage"].get("seconds", 0) for a in r["attempts"]), **c})
+                         "valid_final": not last.get("remaining", last["errors"]),
+                         "autofixes": sum(len(a.get("fixes", [])) for a in r["attempts"]),
+                         "seconds": sum(a["usage"].get("seconds", 0) for a in r["attempts"])
+                                    + sum(x["usage"].get("seconds", 0) for x in r.get("executor_calls", [])), **c})
     return rows
 
 

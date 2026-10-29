@@ -1,0 +1,280 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The patient must choose and apply the preferred method for cleaning hands.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply product to hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying the product to hands is a routine action.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Rub hands together\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rubbing hands together is a standard procedure.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Wet hands with water\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Wetting hands with water is a routine action.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply soap\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying soap to hands is a standard procedure.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Lather hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Lathering hands with soap is a standard procedure.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rinse hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rinsing hands with water is a standard procedure.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Dry hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Drying hands is a standard procedure.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Turn off faucet\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Turning off the faucet is a standard procedure.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Open door\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Opening the door is a standard procedure.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Use paper towel\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel is a standard procedure.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Turn off faucet\", \"role\": \"visitor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Turning off the faucet is a standard procedure.\"}, {\"id\": \"s13\", \"lines\": [13], \"action\": \"Open door\", \"role\": \"visitor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Opening the door is a standard procedure.\"}, {\"id\": \"s14\", \"lines\": [14], \"action\": \"Use paper towel\", \"role\": \"visitor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel is a standard procedure.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}, {\"from\": \"s12\", \"to\": \"s13\", \"condition\": null}, {\"from\": \"s13\", \"to\": \"s14\", \"condition\": null}]}",
+   "errors": [
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 9).",
+    "Step s12 cites lines [12] that do not exist (the SOP has lines 1 to 9).",
+    "Step s13 cites lines [13] that do not exist (the SOP has lines 1 to 9).",
+    "Step s14 cites lines [14] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 1120,
+    "completion_tokens": 1053,
+    "total_tokens": 2173,
+    "seconds": 65.51
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The patient must choose and apply the preferred method for cleaning hands.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply product to hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying the product to hands is a routine action.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Rub hands together\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rubbing hands together is a standard procedure.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Wet hands with water\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Wetting hands with water is a routine action.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply soap\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying soap to hands is a standard procedure.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Lather hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Lathering hands with soap is a standard procedure.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rinse hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rinsing hands with water is a standard procedure.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Dry hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Drying hands is a standard procedure.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Turn off faucet\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Turning off the faucet is a standard procedure.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Use paper towel\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel is a standard procedure.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Turn off faucet\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Turning off the faucet is a standard procedure.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Open door\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Opening the door is a standard procedure.\"}, {\"id\": \"s13\", \"lines\": [13], \"action\": \"Open door\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Opening the door is a standard procedure.\"}, {\"id\": \"s14\", \"lines\": [14], \"action\": \"Use paper towel\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel is a standard procedure.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}, {\"from\": \"s12\", \"to\": \"s13\", \"condition\": null}, {\"from\": \"s13\", \"to\": \"s14\", \"condition\": null}]}",
+   "errors": [
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 9).",
+    "Step s12 cites lines [12] that do not exist (the SOP has lines 1 to 9).",
+    "Step s13 cites lines [13] that do not exist (the SOP has lines 1 to 9).",
+    "Step s14 cites lines [14] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 3394,
+    "completion_tokens": 1053,
+    "total_tokens": 4447,
+    "seconds": 95.47
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The patient must choose and apply the preferred method for cleaning hands.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply product to hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying the product to hands is a routine action.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Rub hands together\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rubbing hands together is a standard procedure.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Wet hands with water\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Wetting hands with water is a routine action.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply soap\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying soap to hands is a standard procedure.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Lather hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Lathering hands with soap is a standard procedure.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rinse hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rinsing hands with water is a standard procedure.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Dry hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Drying hands is a standard procedure.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Turn off faucet\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Turning off the faucet is a standard procedure.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Use paper towel\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel is a standard procedure.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Turn off faucet\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Turning off the faucet is a standard procedure.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Open door\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Opening the door is a standard procedure.\"}, {\"id\": \"s13\", \"lines\": [13], \"action\": \"Open door\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Opening the door is a standard procedure.\"}, {\"id\": \"s14\", \"lines\": [14], \"action\": \"Use paper towel\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel is a standard procedure.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}, {\"from\": \"s12\", \"to\": \"s13\", \"condition\": null}, {\"from\": \"s13\", \"to\": \"s14\", \"condition\": null}]}",
+   "errors": [
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 9).",
+    "Step s12 cites lines [12] that do not exist (the SOP has lines 1 to 9).",
+    "Step s13 cites lines [13] that do not exist (the SOP has lines 1 to 9).",
+    "Step s14 cites lines [14] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 3394,
+    "completion_tokens": 1053,
+    "total_tokens": 4447,
+    "seconds": 105.18
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Use alcohol-based hand sanitizer",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The patient must choose and apply the preferred method for cleaning hands."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Apply product to hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Applying the product to hands is a routine action."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Rub hands together",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Rubbing hands together is a standard procedure."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Wet hands with water",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Wetting hands with water is a routine action."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Apply soap",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Applying soap to hands is a standard procedure."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Lather hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Lathering hands with soap is a standard procedure."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Rinse hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Rinsing hands with water is a standard procedure."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Dry hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Drying hands is a standard procedure."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Turn off faucet",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Turning off the faucet is a standard procedure."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Use paper towel",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Using a paper towel is a standard procedure."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Turn off faucet",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Turning off the faucet is a standard procedure."
+   },
+   {
+    "id": "s12",
+    "lines": [
+     12
+    ],
+    "action": "Open door",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Opening the door is a standard procedure."
+   },
+   {
+    "id": "s13",
+    "lines": [
+     13
+    ],
+    "action": "Open door",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Opening the door is a standard procedure."
+   },
+   {
+    "id": "s14",
+    "lines": [
+     14
+    ],
+    "action": "Use paper towel",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Using a paper towel is a standard procedure."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   },
+   {
+    "from": "s11",
+    "to": "s12",
+    "condition": null
+   },
+   {
+    "from": "s12",
+    "to": "s13",
+    "condition": null
+   },
+   {
+    "from": "s13",
+    "to": "s14",
+    "condition": null
+   }
+  ]
+ }
+}

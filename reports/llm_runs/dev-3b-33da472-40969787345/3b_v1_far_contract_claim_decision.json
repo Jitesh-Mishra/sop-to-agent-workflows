@@ -1,0 +1,173 @@
+{
+ "sop_id": "far_contract_claim_decision",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Contractor submits claim\", \"role\": \"Contractor\", \"handoff_to\": \"Contracting Officer\", \"executor\": \"human\", \"executor_reason\": \"must be done by a human\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Contractor provides certification\", \"role\": \"Contractor\", \"handoff_to\": \"Contracting Officer\", \"executor\": \"human\", \"executor_reason\": \"must be done by a human\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Contracting Officer reviews claim\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Legal advisors\", \"executor\": \"human\", \"executor_reason\": \"must be done by a human\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Secure legal assistance\", \"role\": \"Contractor\", \"handoff_to\": \"Legal advisors\", \"executor\": \"human\", \"executor_reason\": \"must be done by a human\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Coordinate with contract administration\", \"role\": \"Contractor\", \"handoff_to\": \"Contract Administration Officer\", \"executor\": \"human\", \"executor_reason\": \"must be done by a human\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Prepare decision\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\", \"executor\": \"agent\", \"executor_reason\": \"can be automated\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Notify contractor of decision time\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\", \"executor\": \"agent\", \"executor_reason\": \"can be automated\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Furnish decision copy\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\", \"executor\": \"agent\", \"executor_reason\": \"can be automated\"}, {\"id\": \"9\", \"lines\": [9], \"action\": \"Notify contractor of appeal deadline\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\", \"executor\": \"agent\", \"executor_reason\": \"can be automated\"}, {\"id\": \"10\", \"lines\": [10], \"action\": \"Notify contractor of court action deadline\", \"role\": \"Contracting Officer\", \"handoff_to\": \"Contractor\", \"executor\": \"agent\", \"executor_reason\": \"can be automated\"}], \"edges\": [{\"from\": \"1\", \"to\": \"3\", \"condition\": \"claim cannot be settled by mutual agreement\"}, {\"from\": \"3\", \"to\": \"4\", \"condition\": \"claim exceeds $100,000\"}, {\"from\": \"4\", \"to\": \"5\", \"condition\": \"claim exceeds $100,000\"}, {\"from\": \"5\", \"to\": \"6\", \"condition\": \"claim exceeds $100,000\"}, {\"from\": \"6\", \"to\": \"7\", \"condition\": \"decision will not be issued within 60 days\"}, {\"from\": \"7\", \"to\": \"8\", \"condition\": \"decision will not be issued within 60 days\"}, {\"from\": \"8\", \"to\": \"9\", \"condition\": \"decision will not be issued within 60 days\"}, {\"from\": \"9\", \"to\": \"10\", \"condition\": \"decision will not be issued within 60 days\"}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 480,
+    "completion_tokens": 771,
+    "total_tokens": 1251,
+    "seconds": 71.24
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Contractor submits claim",
+    "role": "Contractor",
+    "handoff_to": "Contracting Officer",
+    "executor": "human",
+    "executor_reason": "must be done by a human"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Contractor provides certification",
+    "role": "Contractor",
+    "handoff_to": "Contracting Officer",
+    "executor": "human",
+    "executor_reason": "must be done by a human"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Contracting Officer reviews claim",
+    "role": "Contracting Officer",
+    "handoff_to": "Legal advisors",
+    "executor": "human",
+    "executor_reason": "must be done by a human"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Secure legal assistance",
+    "role": "Contractor",
+    "handoff_to": "Legal advisors",
+    "executor": "human",
+    "executor_reason": "must be done by a human"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Coordinate with contract administration",
+    "role": "Contractor",
+    "handoff_to": "Contract Administration Officer",
+    "executor": "human",
+    "executor_reason": "must be done by a human"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Prepare decision",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor",
+    "executor": "agent",
+    "executor_reason": "can be automated"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Notify contractor of decision time",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor",
+    "executor": "agent",
+    "executor_reason": "can be automated"
+   },
+   {
+    "id": "8",
+    "lines": [
+     8
+    ],
+    "action": "Furnish decision copy",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor",
+    "executor": "agent",
+    "executor_reason": "can be automated"
+   },
+   {
+    "id": "9",
+    "lines": [
+     9
+    ],
+    "action": "Notify contractor of appeal deadline",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor",
+    "executor": "agent",
+    "executor_reason": "can be automated"
+   },
+   {
+    "id": "10",
+    "lines": [
+     10
+    ],
+    "action": "Notify contractor of court action deadline",
+    "role": "Contracting Officer",
+    "handoff_to": "Contractor",
+    "executor": "agent",
+    "executor_reason": "can be automated"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "3",
+    "condition": "claim cannot be settled by mutual agreement"
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": "claim exceeds $100,000"
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": "claim exceeds $100,000"
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": "claim exceeds $100,000"
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": "decision will not be issued within 60 days"
+   },
+   {
+    "from": "7",
+    "to": "8",
+    "condition": "decision will not be issued within 60 days"
+   },
+   {
+    "from": "8",
+    "to": "9",
+    "condition": "decision will not be issued within 60 days"
+   },
+   {
+    "from": "9",
+    "to": "10",
+    "condition": "decision will not be issued within 60 days"
+   }
+  ]
+ }
+}

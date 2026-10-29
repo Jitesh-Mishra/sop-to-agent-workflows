@@ -1,0 +1,77 @@
+{
+ "sop_id": "hipaa_access_request",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"bytes\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"execute\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To execute the steps of the SOP\" }, { \"id\": \"bytes\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"execute\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To execute the steps of the SOP\" } ], \"edges\": [ { \"from\": \"bytes\", \"to\": \"bytes\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: bytes. Every step id must be unique.",
+    "Edge bytes -> bytes is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 402,
+    "completion_tokens": 178,
+    "total_tokens": 580,
+    "seconds": 14.5
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"step1\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"execute\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To execute the steps of the SOP\" }, { \"id\": \"step2\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"execute\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To execute the steps of the SOP\" } ], \"edges\": [ { \"from\": \"step1\", \"to\": \"step2\", \"condition\": null } ] }",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 820,
+    "completion_tokens": 182,
+    "total_tokens": 1002,
+    "seconds": 17.31
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "step1",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "action": "execute",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To execute the steps of the SOP"
+   },
+   {
+    "id": "step2",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "action": "execute",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To execute the steps of the SOP"
+   }
+  ],
+  "edges": [
+   {
+    "from": "step1",
+    "to": "step2",
+    "condition": null
+   }
+  ]
+ }
+}

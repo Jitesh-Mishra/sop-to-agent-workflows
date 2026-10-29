@@ -1,0 +1,156 @@
+{
+ "sop_id": "fema_public_assistance_appeal",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [2], \"action\": \"Make a first appeal\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose to appeal within the specified timeframe.\"}, {\"id\": \"s2\", \"lines\": [3], \"action\": \"Forward the first appeal\", \"role\": \"recipient\", \"handoff_to\": \"Regional Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [4], \"action\": \"Deny the first appeal\", \"role\": \"Regional Administrator\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the decision.\"}, {\"id\": \"s4\", \"lines\": [5], \"action\": \"Make a second appeal\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose to appeal within the specified timeframe.\"}, {\"id\": \"s5\", \"lines\": [6], \"action\": \"Forward the second appeal\", \"role\": \"recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s6\", \"lines\": [7], \"action\": \"Provide notice of additional information\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Needs hands-on access to the decision.\"}, {\"id\": \"s7\", \"lines\": [8], \"action\": \"Provide notice of appeal disposition\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Needs hands-on access to the decision.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"denied in whole or in part\"}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [
+    "Step s7 cites lines [8] that do not exist (the SOP has lines 1 to 7)."
+   ],
+   "usage": {
+    "prompt_tokens": 1195,
+    "completion_tokens": 557,
+    "total_tokens": 1752,
+    "seconds": 54.51
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [2], \"action\": \"Make a first appeal\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose to appeal within the specified timeframe.\"}, {\"id\": \"s2\", \"lines\": [3], \"action\": \"Forward the first appeal\", \"role\": \"recipient\", \"handoff_to\": \"Regional Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [4], \"action\": \"Deny the first appeal\", \"role\": \"Regional Administrator\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the decision.\"}, {\"id\": \"s4\", \"lines\": [5], \"action\": \"Make a second appeal\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose to appeal within the specified timeframe.\"}, {\"id\": \"s5\", \"lines\": [6], \"action\": \"Forward the second appeal\", \"role\": \"recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s6\", \"lines\": [7], \"action\": \"Provide notice of additional information\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Needs hands-on access to the decision.\"}, {\"id\": \"s7\", \"lines\": [8], \"action\": \"Provide notice of appeal disposition\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Needs hands-on access to the decision.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"denied in whole or in part\"}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [
+    "Step s7 cites lines [8] that do not exist (the SOP has lines 1 to 7)."
+   ],
+   "usage": {
+    "prompt_tokens": 2371,
+    "completion_tokens": 557,
+    "total_tokens": 2928,
+    "seconds": 68.73
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [2], \"action\": \"Make a first appeal\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose to appeal within the specified timeframe.\"}, {\"id\": \"s2\", \"lines\": [3], \"action\": \"Forward the first appeal\", \"role\": \"recipient\", \"handoff_to\": \"Regional Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [4], \"action\": \"Deny the first appeal\", \"role\": \"Regional Administrator\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the decision.\"}, {\"id\": \"s4\", \"lines\": [5], \"action\": \"Make a second appeal\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose to appeal within the specified timeframe.\"}, {\"id\": \"s5\", \"lines\": [6], \"action\": \"Forward the second appeal\", \"role\": \"recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s6\", \"lines\": [7], \"action\": \"Provide notice of additional information\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Needs hands-on access to the decision.\"}, {\"id\": \"s7\", \"lines\": [8], \"action\": \"Provide notice of appeal disposition\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Needs hands-on access to the decision.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"denied in whole or in part\"}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [
+    "Step s7 cites lines [8] that do not exist (the SOP has lines 1 to 7)."
+   ],
+   "usage": {
+    "prompt_tokens": 2371,
+    "completion_tokens": 557,
+    "total_tokens": 2928,
+    "seconds": 50.16
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     2
+    ],
+    "action": "Make a first appeal",
+    "role": "applicant",
+    "handoff_to": "recipient",
+    "executor": "human",
+    "executor_reason": "The applicant must choose to appeal within the specified timeframe."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     3
+    ],
+    "action": "Forward the first appeal",
+    "role": "recipient",
+    "handoff_to": "Regional Administrator",
+    "executor": "agent",
+    "executor_reason": "Filing a ticket from known details is routine information work."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     4
+    ],
+    "action": "Deny the first appeal",
+    "role": "Regional Administrator",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs hands-on access to the decision."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     5
+    ],
+    "action": "Make a second appeal",
+    "role": "applicant",
+    "handoff_to": "recipient",
+    "executor": "human",
+    "executor_reason": "The applicant must choose to appeal within the specified timeframe."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     6
+    ],
+    "action": "Forward the second appeal",
+    "role": "recipient",
+    "handoff_to": "Assistant Administrator for the Recovery Directorate",
+    "executor": "agent",
+    "executor_reason": "Filing a ticket from known details is routine information work."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     7
+    ],
+    "action": "Provide notice of additional information",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient and applicant",
+    "executor": "agent",
+    "executor_reason": "Needs hands-on access to the decision."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     8
+    ],
+    "action": "Provide notice of appeal disposition",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient and applicant",
+    "executor": "agent",
+    "executor_reason": "Needs hands-on access to the decision."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": "denied in whole or in part"
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}

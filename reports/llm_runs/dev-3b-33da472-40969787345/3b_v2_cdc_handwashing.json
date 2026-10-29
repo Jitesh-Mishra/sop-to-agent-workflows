@@ -1,0 +1,213 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Applying the sanitizer is a routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply sanitizer to hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be covered with the sanitizer.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Rub hands until dry\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be thoroughly sanitized.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Use soap and water\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Wetting hands is a routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply soap to hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be covered with soap.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be thoroughly cleaned.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rub all areas of hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be cleaned thoroughly.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Rinse hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be rinsed to remove soap.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Dry hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drying hands is a routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Turn off faucet\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Turning off the faucet is a routine information work.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Open door\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Opening the door is a routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 1120,
+    "completion_tokens": 799,
+    "total_tokens": 1919,
+    "seconds": 72.67
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Applying the sanitizer is a routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply sanitizer to hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be covered with the sanitizer.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Rub hands until dry\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be thoroughly sanitized.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Use soap and water\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Wetting hands is a routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply soap to hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be covered with soap.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be thoroughly cleaned.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rub all areas of hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be cleaned thoroughly.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Rinse hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be rinsed to remove soap.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Dry hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drying hands is a routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Turn off faucet\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Turning off the faucet is a routine information work.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Open door\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Opening the door is a routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 2808,
+    "completion_tokens": 799,
+    "total_tokens": 3607,
+    "seconds": 101.67
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Applying the sanitizer is a routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply sanitizer to hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be covered with the sanitizer.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Rub hands until dry\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be thoroughly sanitized.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Use soap and water\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Wetting hands is a routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply soap to hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be covered with soap.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be thoroughly cleaned.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rub all areas of hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be cleaned thoroughly.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Rinse hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Hands need to be rinsed to remove soap.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Dry hands\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drying hands is a routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Turn off faucet\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Turning off the faucet is a routine information work.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Open door\", \"role\": \"patients and visitors\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Opening the door is a routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 9).",
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 2808,
+    "completion_tokens": 799,
+    "total_tokens": 3607,
+    "seconds": 75.46
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Use alcohol-based hand sanitizer",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Applying the sanitizer is a routine information work."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Apply sanitizer to hands",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Hands need to be covered with the sanitizer."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Rub hands until dry",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Hands need to be thoroughly sanitized."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Use soap and water",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Wetting hands is a routine information work."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Apply soap to hands",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Hands need to be covered with soap."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Rub hands to form lather",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Hands need to be thoroughly cleaned."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Rub all areas of hands",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Hands need to be cleaned thoroughly."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Rinse hands",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Hands need to be rinsed to remove soap."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Dry hands",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Drying hands is a routine information work."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Turn off faucet",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Turning off the faucet is a routine information work."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Open door",
+    "role": "patients and visitors",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Opening the door is a routine information work."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   }
+  ]
+ }
+}

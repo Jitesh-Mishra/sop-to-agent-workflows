@@ -1,0 +1,91 @@
+{
+ "sop_id": "sup_high_priority_escalation",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"escalate\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Escalation of high-priority ticket\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"escalate\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Escalation of high-priority ticket\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 271,
+    "completion_tokens": 178,
+    "total_tokens": 449,
+    "seconds": 12.12
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"escalate\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Escalation of high-priority ticket\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"escalate\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Escalation of high-priority ticket\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 689,
+    "completion_tokens": 178,
+    "total_tokens": 867,
+    "seconds": 16.68
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"escalate\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Escalation of high-priority ticket\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"escalate\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Escalation of high-priority ticket\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 689,
+    "completion_tokens": 178,
+    "total_tokens": 867,
+    "seconds": 9.67
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "default",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "escalate",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Escalation of high-priority ticket"
+   },
+   {
+    "id": "default",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "escalate",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Escalation of high-priority ticket"
+   }
+  ],
+  "edges": [
+   {
+    "from": "default",
+    "to": "default",
+    "condition": null
+   }
+  ]
+ }
+}

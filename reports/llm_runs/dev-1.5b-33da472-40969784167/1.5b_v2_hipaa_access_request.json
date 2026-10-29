@@ -1,0 +1,130 @@
+{
+ "sop_id": "hipaa_access_request",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Act on the request for access\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must act on a request for access no later than 30 days after receipt of the request.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend the time for action on the request\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the covered entity is unable to take an action within the time required, the covered entity may extend the time for such actions by no more than 30 days.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide a written statement of the reasons for the delay and the date by which the covered entity will complete its action on the request\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"To extend, the covered entity, within the time limit, provides the individual with a written statement of the reasons for the delay and the date by which the covered entity will complete its action on the request.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Deny an individual access\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity may deny an individual access, provided that the individual is given a right to have such denials reviewed, when a licensed health care professional has determined that the access requested is reasonably likely to endanger the life or physical safety of the individual or another person.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Provide a right to have the denial reviewed\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the individual requests a review of the denial, the covered entity must promptly refer a request for review to the designated reviewing official.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Provide a written notice to the individual of the determination of the designated reviewing official\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The designated reviewing official must determine, within a reasonable period of time, whether or not to deny the access requested.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide written notice to the individual of the determination of the designated reviewing official and take other action as required to carry out the designated reviewing official's determination\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must promptly provide written notice to the individual of the determination of the designated reviewing official and take other action as required to carry out the designated reviewing official's determination.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1202,
+    "completion_tokens": 760,
+    "total_tokens": 1962,
+    "seconds": 50.21
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Act on the request for access",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The covered entity must act on a request for access no later than 30 days after receipt of the request."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend the time for action on the request",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "If the covered entity is unable to take an action within the time required, the covered entity may extend the time for such actions by no more than 30 days."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide a written statement of the reasons for the delay and the date by which the covered entity will complete its action on the request",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "To extend, the covered entity, within the time limit, provides the individual with a written statement of the reasons for the delay and the date by which the covered entity will complete its action on the request."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Deny an individual access",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The covered entity may deny an individual access, provided that the individual is given a right to have such denials reviewed, when a licensed health care professional has determined that the access requested is reasonably likely to endanger the life or physical safety of the individual or another person."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Provide a right to have the denial reviewed",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "If the individual requests a review of the denial, the covered entity must promptly refer a request for review to the designated reviewing official."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Provide a written notice to the individual of the determination of the designated reviewing official",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The designated reviewing official must determine, within a reasonable period of time, whether or not to deny the access requested."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide written notice to the individual of the determination of the designated reviewing official and take other action as required to carry out the designated reviewing official's determination",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The covered entity must promptly provide written notice to the individual of the determination of the designated reviewing official and take other action as required to carry out the designated reviewing official's determination."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}

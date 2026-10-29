@@ -1,0 +1,72 @@
+{
+ "sop_id": "onb_form_i9_verification",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"verify_employment_eligibility\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer is responsible for verifying employment eligibility.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"verify_employment_eligibility\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer is responsible for verifying employment eligibility.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 184,
+    "total_tokens": 573,
+    "seconds": 14.55
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"verify_employment_eligibility\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"verify_employment_eligibility\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer is responsible for verifying employment eligibility.\" } ], \"edges\": [ { \"from\": \"verify_employment_eligibility\", \"to\": \"verify_employment_eligibility\", \"condition\": null } ] }",
+   "errors": [
+    "Edge verify_employment_eligibility -> verify_employment_eligibility is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 819,
+    "completion_tokens": 122,
+    "total_tokens": 941,
+    "seconds": 14.0
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"verify_employment_eligibility\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"verify_employment_eligibility\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer is responsible for verifying employment eligibility.\" } ], \"edges\": [ { \"from\": \"verify_employment_eligibility\", \"to\": \"verify_employment_eligibility\", \"condition\": null } ] }",
+   "errors": [
+    "Edge verify_employment_eligibility -> verify_employment_eligibility is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 691,
+    "completion_tokens": 122,
+    "total_tokens": 813,
+    "seconds": 11.64
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "verify_employment_eligibility",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "verify_employment_eligibility",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer is responsible for verifying employment eligibility."
+   }
+  ],
+  "edges": [
+   {
+    "from": "verify_employment_eligibility",
+    "to": "verify_employment_eligibility",
+    "condition": null
+   }
+  ]
+ }
+}

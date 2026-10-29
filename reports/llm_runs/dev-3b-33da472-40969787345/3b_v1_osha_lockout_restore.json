@@ -1,0 +1,179 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check and verify the machine or equipment and the immediate area\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to verify the machine or equipment and the immediate area\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Check the machine or equipment\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to check the machine or equipment\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Check the work area\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to check the work area\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Verify the controls are in neutral\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to verify the controls are in neutral\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Remove the lockout devices\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to remove the lockout devices\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Reenergize the machine or equipment\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to reenergize the machine or equipment\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Notify affected employees\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to notify affected employees\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"1\", \"to\": \"4\", \"condition\": null}, {\"from\": \"1\", \"to\": \"5\", \"condition\": null}, {\"from\": \"1\", \"to\": \"6\", \"condition\": null}, {\"from\": \"1\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [
+    "Step 1 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 2 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 3 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 4 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 5 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 6 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (Human); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 309,
+    "completion_tokens": 529,
+    "total_tokens": 838,
+    "seconds": 46.47
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check and verify the machine or equipment and the immediate area\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to verify the machine or equipment and the immediate area\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Check the machine or equipment\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to check the machine or equipment\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Check the work area\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to check the work area\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Verify the controls are in neutral\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to verify the controls are in neutral\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Remove the lockout devices\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to remove the lockout devices\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Reenergize the machine or equipment\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to reenergize the machine or equipment\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Notify affected employees\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to notify affected employees\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"1\", \"to\": \"4\", \"condition\": null}, {\"from\": \"1\", \"to\": \"5\", \"condition\": null}, {\"from\": \"1\", \"to\": \"6\", \"condition\": null}, {\"from\": \"1\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [
+    "Step 1 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 2 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 3 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 4 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 5 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 6 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (Human); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1566,
+    "completion_tokens": 529,
+    "total_tokens": 2095,
+    "seconds": 66.02
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [2, 3, 4, 5, 6, 7], \"action\": \"Check and verify the machine or equipment and the immediate area\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to verify the machine or equipment and the immediate area\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Check the machine or equipment\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to check the machine or equipment\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Check the work area\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to check the work area\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Verify the controls are in neutral\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to verify the controls are in neutral\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Remove the lockout devices\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to remove the lockout devices\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Reenergize the machine or equipment\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to reenergize the machine or equipment\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Notify affected employees\", \"role\": \"Human\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"Human needs to notify affected employees\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"1\", \"to\": \"4\", \"condition\": null}, {\"from\": \"1\", \"to\": \"5\", \"condition\": null}, {\"from\": \"1\", \"to\": \"6\", \"condition\": null}, {\"from\": \"1\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [
+    "Step 1 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 2 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 3 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 4 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 5 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 6 hands off to its own role (Human); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (Human); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1566,
+    "completion_tokens": 529,
+    "total_tokens": 2095,
+    "seconds": 47.16
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Check and verify the machine or equipment and the immediate area",
+    "role": "Human",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "Human needs to verify the machine or equipment and the immediate area"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Check the machine or equipment",
+    "role": "Human",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "Human needs to check the machine or equipment"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Check the work area",
+    "role": "Human",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "Human needs to check the work area"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Verify the controls are in neutral",
+    "role": "Human",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "Human needs to verify the controls are in neutral"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Remove the lockout devices",
+    "role": "Human",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "Human needs to remove the lockout devices"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Reenergize the machine or equipment",
+    "role": "Human",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "Human needs to reenergize the machine or equipment"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Notify affected employees",
+    "role": "Human",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "Human needs to notify affected employees"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "1",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "1",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "1",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "1",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "1",
+    "to": "7",
+    "condition": null
+   }
+  ]
+ }
+}

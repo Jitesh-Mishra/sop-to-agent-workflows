@@ -1,0 +1,130 @@
+{
+ "sop_id": "osha_confined_space_permit",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Document completion of required pre-entry measures\", \"role\": \"Employer\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"Required documentation\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Authorize entry\", \"role\": \"Entry supervisor\", \"handoff_to\": \"Authorized entrants or their authorized representatives\", \"executor\": \"human\", \"executor_reason\": \"Entry supervisor's responsibility\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Make permit available\", \"role\": \"Employer\", \"handoff_to\": \"Authorized entrants or their authorized representatives\", \"executor\": \"human\", \"executor_reason\": \"To ensure entrants confirm pre-entry preparations\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Set permit duration\", \"role\": \"Employer\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"To ensure tasks are completed within the permit's scope\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Terminate and cancel permit\", \"role\": \"Entry supervisor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"To ensure entry operations are completed or conditions arise that violate permit rules\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Retain canceled permits\", \"role\": \"Employer\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"For program review\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Note problems\", \"role\": \"Employer\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"For program improvement\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": \"Pre-entry measures are documented\"}, {\"from\": \"2\", \"to\": \"3\", \"condition\": \"Entry is authorized\"}, {\"from\": \"3\", \"to\": \"4\", \"condition\": \"Permit is available\"}, {\"from\": \"4\", \"to\": \"5\", \"condition\": \"Entry operations are completed or conditions arise\"}, {\"from\": \"5\", \"to\": \"6\", \"condition\": \"Permit is canceled\"}, {\"from\": \"6\", \"to\": \"7\", \"condition\": \"Permit is retained for review\"}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 358,
+    "completion_tokens": 527,
+    "total_tokens": 885,
+    "seconds": 47.33
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Document completion of required pre-entry measures",
+    "role": "Employer",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "Required documentation"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Authorize entry",
+    "role": "Entry supervisor",
+    "handoff_to": "Authorized entrants or their authorized representatives",
+    "executor": "human",
+    "executor_reason": "Entry supervisor's responsibility"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Make permit available",
+    "role": "Employer",
+    "handoff_to": "Authorized entrants or their authorized representatives",
+    "executor": "human",
+    "executor_reason": "To ensure entrants confirm pre-entry preparations"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Set permit duration",
+    "role": "Employer",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "To ensure tasks are completed within the permit's scope"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Terminate and cancel permit",
+    "role": "Entry supervisor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "To ensure entry operations are completed or conditions arise that violate permit rules"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Retain canceled permits",
+    "role": "Employer",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "For program review"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Note problems",
+    "role": "Employer",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "For program improvement"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": "Pre-entry measures are documented"
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": "Entry is authorized"
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": "Permit is available"
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": "Entry operations are completed or conditions arise"
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": "Permit is canceled"
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": "Permit is retained for review"
+   }
+  ]
+ }
+}

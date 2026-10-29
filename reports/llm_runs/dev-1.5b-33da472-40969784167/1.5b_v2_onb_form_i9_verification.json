@@ -1,0 +1,130 @@
+{
+ "sop_id": "onb_form_i9_verification",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Ensure proper completion of Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must ensure the individual completes section 1 and signs the attestation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Assist individual with Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"If the individual is unable to complete the Form I-9, someone may assist them.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Examine and verify documents\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must physically examine the documents and ensure they appear genuine and relate to the individual.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Complete Employer Review and Verification\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must complete section 2 and sign the attestation.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Retain Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must retain the Form I-9 for three years after the date of hire or one year after the date of termination, whichever is later.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Reverify employment authorization\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the individual's employment authorization expires, the employer must reverify on the Form I-9 not later than the date of expiration.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide notice of inspection\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must provide at least three business days notice prior to an inspection of Forms I-9 by authorized agency.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1189,
+    "completion_tokens": 607,
+    "total_tokens": 1796,
+    "seconds": 40.26
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Ensure proper completion of Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must ensure the individual completes section 1 and signs the attestation."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Assist individual with Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "If the individual is unable to complete the Form I-9, someone may assist them."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Examine and verify documents",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must physically examine the documents and ensure they appear genuine and relate to the individual."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Complete Employer Review and Verification",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The employer must complete section 2 and sign the attestation."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Retain Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must retain the Form I-9 for three years after the date of hire or one year after the date of termination, whichever is later."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Reverify employment authorization",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "If the individual's employment authorization expires, the employer must reverify on the Form I-9 not later than the date of expiration."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide notice of inspection",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must provide at least three business days notice prior to an inspection of Forms I-9 by authorized agency."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}

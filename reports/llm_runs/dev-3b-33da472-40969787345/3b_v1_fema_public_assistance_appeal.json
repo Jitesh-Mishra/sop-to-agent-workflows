@@ -1,0 +1,130 @@
+{
+ "sop_id": "fema_public_assistance_appeal",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Define the scope of appeal\", \"role\": \"Public Assistance applicant or recipient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The action requires human judgment and communication\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"First appeal submission\", \"role\": \"Public Assistance applicant or recipient\", \"handoff_to\": \"Recipient\", \"executor\": \"human\", \"executor_reason\": \"The recipient is required to forward the appeal to the Regional Administrator\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Recipient's recommendation to Regional Administrator\", \"role\": \"Recipient\", \"handoff_to\": \"Regional Administrator\", \"executor\": \"agent\", \"executor_reason\": \"The recipient must electronically forward the appeal with a recommendation\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Second appeal submission\", \"role\": \"Public Assistance applicant or recipient\", \"handoff_to\": \"Recipient\", \"executor\": \"human\", \"executor_reason\": \"The recipient is required to forward the appeal to the Assistant Administrator for the Recovery Directorate\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Recipient's recommendation to Assistant Administrator\", \"role\": \"Recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\", \"executor\": \"agent\", \"executor_reason\": \"The recipient must electronically forward the appeal with a recommendation\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Notice of additional information needed\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"Recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"The Assistant Administrator will provide electronic notice\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Disposition notice\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"Recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"The Assistant Administrator will provide electronic notice of the disposition of the appeal\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 547,
+    "total_tokens": 942,
+    "seconds": 49.87
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Define the scope of appeal",
+    "role": "Public Assistance applicant or recipient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The action requires human judgment and communication"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "First appeal submission",
+    "role": "Public Assistance applicant or recipient",
+    "handoff_to": "Recipient",
+    "executor": "human",
+    "executor_reason": "The recipient is required to forward the appeal to the Regional Administrator"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Recipient's recommendation to Regional Administrator",
+    "role": "Recipient",
+    "handoff_to": "Regional Administrator",
+    "executor": "agent",
+    "executor_reason": "The recipient must electronically forward the appeal with a recommendation"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Second appeal submission",
+    "role": "Public Assistance applicant or recipient",
+    "handoff_to": "Recipient",
+    "executor": "human",
+    "executor_reason": "The recipient is required to forward the appeal to the Assistant Administrator for the Recovery Directorate"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Recipient's recommendation to Assistant Administrator",
+    "role": "Recipient",
+    "handoff_to": "Assistant Administrator for the Recovery Directorate",
+    "executor": "agent",
+    "executor_reason": "The recipient must electronically forward the appeal with a recommendation"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Notice of additional information needed",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "Recipient and applicant",
+    "executor": "agent",
+    "executor_reason": "The Assistant Administrator will provide electronic notice"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Disposition notice",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "Recipient and applicant",
+    "executor": "agent",
+    "executor_reason": "The Assistant Administrator will provide electronic notice of the disposition of the appeal"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   }
+  ]
+ }
+}

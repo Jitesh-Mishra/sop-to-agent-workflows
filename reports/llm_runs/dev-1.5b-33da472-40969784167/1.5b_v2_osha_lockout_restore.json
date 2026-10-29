@@ -1,0 +1,130 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the machine or equipment is ready for normal operation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Check the work area to ensure that all employees have been safely positioned or removed from the area.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the work area is safe.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Verify that the controls are in neutral.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the controls are in neutral.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Remove the lockout devices and reenergize the machine or equipment.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must remove the lockout devices and reenergize the machine or equipment.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.\", \"role\": \"employee\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"The employee must inform affected employees.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}]}",
+   "errors": [
+    "Step s2 hands off to its own role (employee); a handoff must go to a different party.",
+    "Step s3 hands off to its own role (employee); a handoff must go to a different party.",
+    "Step s4 hands off to its own role (employee); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1109,
+    "completion_tokens": 457,
+    "total_tokens": 1566,
+    "seconds": 29.84
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the machine or equipment is ready for normal operation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Check the work area to ensure that all employees have been safely positioned or removed from the area.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the work area is safe.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Verify that the controls are in neutral.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the controls are in neutral.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Remove the lockout devices and reenergize the machine or equipment.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must remove the lockout devices and reenergize the machine or equipment.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.\", \"role\": \"employee\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"The employee must inform affected employees.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}]}",
+   "errors": [
+    "Step s2 hands off to its own role (employee); a handoff must go to a different party.",
+    "Step s3 hands off to its own role (employee); a handoff must go to a different party.",
+    "Step s4 hands off to its own role (employee); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 2130,
+    "completion_tokens": 457,
+    "total_tokens": 2587,
+    "seconds": 38.9
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the machine or equipment is ready for normal operation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Check the work area to ensure that all employees have been safely positioned or removed from the area.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the work area is safe.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Verify that the controls are in neutral.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must ensure that the controls are in neutral.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Remove the lockout devices and reenergize the machine or equipment.\", \"role\": \"employee\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employee must remove the lockout devices and reenergize the machine or equipment.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.\", \"role\": \"employee\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"The employee must inform affected employees.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}]}",
+   "errors": [
+    "Step s2 hands off to its own role (employee); a handoff must go to a different party.",
+    "Step s3 hands off to its own role (employee); a handoff must go to a different party.",
+    "Step s4 hands off to its own role (employee); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 2130,
+    "completion_tokens": 457,
+    "total_tokens": 2587,
+    "seconds": 27.94
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.",
+    "role": "employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employee must ensure that the machine or equipment is ready for normal operation."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Check the work area to ensure that all employees have been safely positioned or removed from the area.",
+    "role": "employee",
+    "handoff_to": "employee",
+    "executor": "human",
+    "executor_reason": "The employee must ensure that the work area is safe."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Verify that the controls are in neutral.",
+    "role": "employee",
+    "handoff_to": "employee",
+    "executor": "human",
+    "executor_reason": "The employee must ensure that the controls are in neutral."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Remove the lockout devices and reenergize the machine or equipment.",
+    "role": "employee",
+    "handoff_to": "employee",
+    "executor": "human",
+    "executor_reason": "The employee must remove the lockout devices and reenergize the machine or equipment."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.",
+    "role": "employee",
+    "handoff_to": "affected employees",
+    "executor": "human",
+    "executor_reason": "The employee must inform affected employees."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   }
+  ]
+ }
+}

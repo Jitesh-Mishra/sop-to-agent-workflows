@@ -1,0 +1,114 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Check the machine or equipment and the immediate area\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Physical inspection and clearance are necessary steps.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Check the work area\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Ensure safety of employees before proceeding.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Verify controls are in neutral\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Safety check of controls is essential.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Remove lockout devices\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Unlocking the equipment is a physical action.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Reenergize the machine or equipment\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Restoring power is a physical action.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Notify affected employees\", \"role\": \"servicing or maintenance personnel\", \"handoff_to\": \"affected employees\", \"executor\": \"agent\", \"executor_reason\": \"Informing employees is an information task.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1109,
+    "completion_tokens": 466,
+    "total_tokens": 1575,
+    "seconds": 43.12
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Check the machine or equipment and the immediate area",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical inspection and clearance are necessary steps."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Check the work area",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Ensure safety of employees before proceeding."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Verify controls are in neutral",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Safety check of controls is essential."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Remove lockout devices",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Unlocking the equipment is a physical action."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Reenergize the machine or equipment",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Restoring power is a physical action."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Notify affected employees",
+    "role": "servicing or maintenance personnel",
+    "handoff_to": "affected employees",
+    "executor": "agent",
+    "executor_reason": "Informing employees is an information task."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ }
+}
