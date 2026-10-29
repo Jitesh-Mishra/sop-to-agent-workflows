@@ -4,7 +4,8 @@ before LangGraph writes the checkpoint. A fresh process then resumes from the SQ
 
 Pass = final state equals an uncrashed reference run (same completed steps, outputs, branches taken and
 handoff packets) AND every completed step has exactly one committed side effect.
-Ablation: the same after-commit crashes with a non-idempotent ledger, to show why the idempotency key matters.
+Ablations: (1) after-commit crashes with a non-idempotent ledger, to show why the idempotency key matters;
+(2) LangGraph's default async checkpoint durability instead of durability="sync".
 
 python -m sopflow.eval.crash_resume  ->  reports/crash_resume.csv, reports/crash_resume_summary.json
 """
@@ -27,11 +28,11 @@ def _init(spec, sop_id, run_id, seed):
             "branch_choices": random_branches(spec, seed), "packets": []}
 
 
-def _worker(sop_id, workdir, run_id, seed, crash, idempotent):
+def _worker(sop_id, workdir, run_id, seed, crash, idempotent, durability="sync"):
     spec, sop = load_gold(sop_id), load_sop(sop_id)
     g = build_graph(spec, sop, Ledger(f"{workdir}/ledger.db", idempotent), sqlite_checkpointer(f"{workdir}/ckpt.db"),
                     crash=crash)
-    drive(g, run_id, _init(spec, sop_id, run_id, seed), scripted_human)
+    drive(g, run_id, _init(spec, sop_id, run_id, seed), scripted_human, durability=durability)
 
 
 def _final(sop_id, workdir, run_id):
@@ -42,14 +43,14 @@ def _final(sop_id, workdir, run_id):
     return snap.values, led.effects(run_id), led.attempts(run_id)
 
 
-def run_case(sop_id, seed, crash, idempotent=True):
+def run_case(sop_id, seed, crash, idempotent=True, durability="sync"):
     ctx = mp.get_context("fork")
     with tempfile.TemporaryDirectory() as wd:
         run_id = f"{sop_id}-{seed}"
-        p = ctx.Process(target=_worker, args=(sop_id, wd, run_id, seed, crash, idempotent))
+        p = ctx.Process(target=_worker, args=(sop_id, wd, run_id, seed, crash, idempotent, durability))
         p.start(); p.join()
         crashed = p.exitcode == 137
-        p = ctx.Process(target=_worker, args=(sop_id, wd, run_id, seed, None, idempotent))   # restart = new process
+        p = ctx.Process(target=_worker, args=(sop_id, wd, run_id, seed, None, idempotent, durability))  # restart = new process
         p.start(); p.join()
         return crashed, p.exitcode, *_final(sop_id, wd, run_id)
 
@@ -62,10 +63,12 @@ def main(seed: int = 7):
         _, _, ref, ref_eff, _ = run_case(sop_id, seed, None)
         key = lambda v: (v["done"], v["outputs"], v["taken"], v["packets"])
         for step in ref["done"]:
-            for phase, idem in (("before_commit", True), ("after_commit", True), ("after_commit", False)):
-                crashed, code, fin, eff, att = run_case(sop_id, seed, (step, phase), idem)
+            for phase, idem, dur in (("before_commit", True, "sync"), ("after_commit", True, "sync"),
+                                     ("after_commit", False, "sync"), ("before_commit", True, "async"),
+                                     ("after_commit", True, "async")):
+                crashed, code, fin, eff, att = run_case(sop_id, seed, (step, phase), idem, dur)
                 dup = sum(1 for v in eff.values() if v > 1)
-                rows.append({"sop_id": sop_id, "crash_step": step, "phase": phase, "idempotent_ledger": idem,
+                rows.append({"sop_id": sop_id, "crash_step": step, "phase": phase, "idempotent_ledger": idem, "durability": dur,
                              "crashed": crashed, "resume_exit": code, "state_matches_reference": key(fin) == key(ref),
                              "steps_committed": len(eff), "duplicate_effects": dup,
                              "reexecuted_steps": sum(1 for v in att.values() if v > 1),
@@ -77,9 +80,11 @@ def main(seed: int = 7):
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader(); w.writerows(rows)
     summ = {}
-    for name, sel in (("before_commit", lambda r: r["phase"] == "before_commit"),
-                      ("after_commit", lambda r: r["phase"] == "after_commit" and r["idempotent_ledger"]),
-                      ("after_commit_no_idempotency_key", lambda r: r["phase"] == "after_commit" and not r["idempotent_ledger"])):
+    sync = lambda r: r["durability"] == "sync"
+    for name, sel in (("before_commit", lambda r: sync(r) and r["phase"] == "before_commit"),
+                      ("after_commit", lambda r: sync(r) and r["phase"] == "after_commit" and r["idempotent_ledger"]),
+                      ("ablation_after_commit_no_idempotency_key", lambda r: sync(r) and r["phase"] == "after_commit" and not r["idempotent_ledger"]),
+                      ("ablation_async_checkpoint_durability", lambda r: not sync(r))):
         rs = [r for r in rows if sel(r)]
         summ[name] = {"crashes": sum(r["crashed"] for r in rs), "recovered": sum(r["recovered"] for r in rs),
                       "state_matches": sum(r["state_matches_reference"] for r in rs),
