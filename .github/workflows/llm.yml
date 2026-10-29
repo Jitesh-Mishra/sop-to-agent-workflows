@@ -1,0 +1,38 @@
+name: LLM eval
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "script to run (smoke | dev | test)"
+        default: smoke
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install llama.cpp (prebuilt CPU wheel)
+        run: |
+          pip install huggingface_hub
+          pip install llama-cpp-python==0.3.16 --only-binary=:all: --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu || pip install llama-cpp-python==0.3.16
+      - name: Run
+        run: |
+          mkdir -p ci_out
+          if [ "${{ inputs.task }}" = "smoke" ]; then python scripts/llm_smoke.py | tee ci_out/smoke.json; else pip install -r requirements.txt && python -m sopflow.eval.run_llm --split ${{ inputs.task }} --out ci_out; fi
+      - name: Commit results to the llm-runs branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin llm-runs || true
+          SHA=$(git rev-parse --short HEAD)
+          mkdir -p /tmp/out && cp -r ci_out/* /tmp/out/
+          git checkout -B llm-runs origin/llm-runs 2>/dev/null || git checkout --orphan llm-runs
+          git rm -rq --cached . 2>/dev/null || true
+          mkdir -p runs/${{ inputs.task }}-$SHA-${{ github.run_id }}
+          cp -r /tmp/out/* runs/${{ inputs.task }}-$SHA-${{ github.run_id }}/
+          git add runs && git commit -m "LLM run ${{ inputs.task }} at $SHA (run ${{ github.run_id }})" && git push origin llm-runs
