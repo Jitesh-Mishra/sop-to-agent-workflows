@@ -1,0 +1,111 @@
+{
+ "id": "osha_respirator_seal_check",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    3
+   ],
+   "action": "Remove the exhalation valve cover",
+   "role": "respirator user",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    4
+   ],
+   "action": "Close the exhalation valve and exhale gently",
+   "role": "respirator user",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    5
+   ],
+   "action": "Judge fit by positive pressure without outward leakage",
+   "role": "respirator user",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    6
+   ],
+   "action": "Replace the exhalation valve cover",
+   "role": "respirator user",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    7
+   ],
+   "action": "Close off the cartridge inlets",
+   "role": "respirator user",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    8
+   ],
+   "action": "Inhale gently and hold for ten seconds",
+   "role": "respirator user",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    9
+   ],
+   "action": "Judge fit by facepiece staying collapsed with no inward leakage",
+   "role": "respirator user",
+   "handoff_to": null
+  },
+  {
+   "id": "s8",
+   "lines": [
+    10
+   ],
+   "action": "Use the manufacturer's equally effective seal check instead",
+   "role": "respirator user",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

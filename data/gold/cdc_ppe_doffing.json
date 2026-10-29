@@ -1,0 +1,130 @@
+{
+ "id": "cdc_ppe_doffing",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Peel off first glove",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Peel off second glove and discard",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Remove goggles or face shield from the back",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Reprocess reusable eyewear or discard",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Unfasten gown ties",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Pull off gown inside out, roll and discard",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Leave the patient room and close the door before removing a respirator",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s8",
+   "lines": [
+    9
+   ],
+   "action": "Remove mask or respirator by the ties and discard",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s9",
+   "lines": [
+    11
+   ],
+   "action": "Perform hand hygiene",
+   "role": "healthcare worker",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  }
+ ]
+}

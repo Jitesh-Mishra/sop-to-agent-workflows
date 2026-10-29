@@ -1,38 +1,49 @@
 name: LLM eval
+# Runs the open-weights LLM (Qwen2.5 GGUF from Hugging Face, llama.cpp on the CPU runner) over one split
+# and commits every raw attempt to the llm-runs branch. Scoring happens offline: python -m sopflow.eval.report
 on:
   workflow_dispatch:
     inputs:
       task:
-        description: "script to run (smoke | dev | test)"
+        description: "smoke | dev | test"
         default: smoke
+      model:
+        description: "1.5b | 3b"
+        default: "1.5b"
+      prompts:
+        description: "comma-separated prompt versions"
+        default: "v1,v2"
 permissions:
   contents: write
+concurrency:
+  group: llm-${{ inputs.task }}-${{ inputs.model }}
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install llama.cpp (prebuilt CPU wheel)
+      - name: Install
         run: |
-          pip install huggingface_hub
+          pip install -r requirements.txt huggingface_hub
           pip install llama-cpp-python==0.3.16 --only-binary=:all: --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu || pip install llama-cpp-python==0.3.16
       - name: Run
         run: |
           mkdir -p ci_out
-          if [ "${{ inputs.task }}" = "smoke" ]; then python scripts/llm_smoke.py | tee ci_out/smoke.json; else pip install -r requirements.txt && python -m sopflow.eval.run_llm --split ${{ inputs.task }} --out ci_out; fi
-      - name: Commit results to the llm-runs branch
+          if [ "${{ inputs.task }}" = "smoke" ]; then python scripts/llm_smoke.py | tee ci_out/smoke.json
+          else python -m sopflow.eval.run_llm --split ${{ inputs.task }} --model ${{ inputs.model }} --prompts ${{ inputs.prompts }} --out ci_out; fi
+      - name: Commit results to llm-runs
+        if: always()
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin llm-runs || true
           SHA=$(git rev-parse --short HEAD)
-          mkdir -p /tmp/out && cp -r ci_out/* /tmp/out/
-          git checkout -B llm-runs origin/llm-runs 2>/dev/null || git checkout --orphan llm-runs
-          git rm -rq --cached . 2>/dev/null || true
-          mkdir -p runs/${{ inputs.task }}-$SHA-${{ github.run_id }}
-          cp -r /tmp/out/* runs/${{ inputs.task }}-$SHA-${{ github.run_id }}/
-          git add runs && git commit -m "LLM run ${{ inputs.task }} at $SHA (run ${{ github.run_id }})" && git push origin llm-runs
+          DEST=runs/${{ inputs.task }}-${{ inputs.model }}-$SHA-${{ github.run_id }}
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          URL=https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
+          if git clone -q --depth 1 -b llm-runs $URL /tmp/lr; then :; else mkdir /tmp/lr && cd /tmp/lr && git init -q -b llm-runs && git remote add origin $URL && cd -; fi
+          mkdir -p /tmp/lr/$DEST && cp -r ci_out/. /tmp/lr/$DEST/
+          cd /tmp/lr && git add runs && git commit -qm "LLM ${{ inputs.task }} ${{ inputs.model }} at $SHA (run ${{ github.run_id }})"
+          for i in 1 2 3 4 5; do git push -q origin llm-runs && break; git pull -q --rebase origin llm-runs; sleep 3; done

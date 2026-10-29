@@ -1,0 +1,93 @@
+{
+ "id": "fema_public_assistance_appeal",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "File a first appeal through the recipient within 60 days",
+   "role": "applicant",
+   "handoff_to": "recipient"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Forward the first appeal with a recommendation to the Regional Administrator",
+   "role": "recipient",
+   "handoff_to": "Regional Administrator"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "File a second appeal through the recipient within 60 days",
+   "role": "applicant",
+   "handoff_to": "recipient"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Forward the second appeal to the Assistant Administrator, Recovery",
+   "role": "recipient",
+   "handoff_to": "Assistant Administrator, Recovery"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Request additional information",
+   "role": "Assistant Administrator, Recovery",
+   "handoff_to": "recipient and applicant"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Send notice of the appeal disposition within 90 days",
+   "role": "Assistant Administrator, Recovery",
+   "handoff_to": "recipient and applicant"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "Regional Administrator denies in whole or part"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": "more information needed"
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

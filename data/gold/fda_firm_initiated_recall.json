@@ -1,0 +1,88 @@
+{
+ "id": "fda_firm_initiated_recall",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Decide to remove or correct a distributed product",
+   "role": "firm",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Notify the FDA district office immediately",
+   "role": "firm",
+   "handoff_to": "FDA district office"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Start the removal or correction without waiting for FDA review",
+   "role": "firm",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Decide to recall after FDA says the product violates the law",
+   "role": "firm",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Consult the FDA district office about the deficiency",
+   "role": "firm",
+   "handoff_to": "FDA district office"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "FDA helps determine the nature of the problem",
+   "role": "FDA",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "product believed violative"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s5",
+   "condition": "market withdrawal with unclear reason"
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

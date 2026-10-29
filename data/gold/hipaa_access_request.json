@@ -1,0 +1,90 @@
+{
+ "id": "hipaa_access_request",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Act on the access request within 30 days",
+   "role": "covered entity",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2,
+    3,
+    4
+   ],
+   "action": "Extend once by up to 30 days with a written statement of reasons",
+   "role": "covered entity",
+   "handoff_to": "individual"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    5
+   ],
+   "action": "Deny access on a licensed professional's safety determination",
+   "role": "covered entity",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    6
+   ],
+   "action": "Refer the review request to the designated reviewing official",
+   "role": "covered entity",
+   "handoff_to": "reviewing official"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    7
+   ],
+   "action": "Decide whether to deny access",
+   "role": "reviewing official",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    8
+   ],
+   "action": "Send written notice of the reviewing official's determination",
+   "role": "covered entity",
+   "handoff_to": "individual"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s2",
+   "to": "s1",
+   "condition": "unable to act within 30 days"
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": "access would endanger life or safety"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "individual requests review"
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

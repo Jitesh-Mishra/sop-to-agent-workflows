@@ -1,0 +1,102 @@
+{
+ "id": "cdc_ppe_donning",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Put on gown covering torso, arms and back",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Fasten gown at neck and waist",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Secure mask or respirator ties",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Fit nose band and fit snug below chin",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Fit-check respirator",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Put on goggles or face shield",
+   "role": "healthcare worker",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Put on gloves over gown cuffs",
+   "role": "healthcare worker",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

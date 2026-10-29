@@ -1,0 +1,134 @@
+{
+ "id": "fema_disaster_declaration_request",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Decide to request a major disaster declaration",
+   "role": "Governor",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2,
+    3,
+    4
+   ],
+   "action": "Prepare the complete request: findings, state actions, damage estimates, certification",
+   "role": "Governor",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    6
+   ],
+   "action": "Request an extension of the 30-day period in writing",
+   "role": "Governor",
+   "handoff_to": "Assistant Administrator, Disaster Assistance"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5,
+    7
+   ],
+   "action": "Submit the request to the President through the Regional Administrator within 30 days",
+   "role": "Governor",
+   "handoff_to": "Regional Administrator"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    8
+   ],
+   "action": "Send an abbreviated written request through the Regional Administrator",
+   "role": "Governor",
+   "handoff_to": "Regional Administrator"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    9
+   ],
+   "action": "Address the request to the FEMA Administrator",
+   "role": "Governor",
+   "handoff_to": "FEMA Administrator"
+  },
+  {
+   "id": "s7",
+   "lines": [
+    10
+   ],
+   "action": "Expedite reports and recommendations to the President",
+   "role": "FEMA",
+   "handoff_to": "President"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    11
+   ],
+   "action": "Assemble declaration documentation",
+   "role": "Assistant Administrator, Disaster Assistance",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "cannot submit within 30 days"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s5",
+   "condition": "unusual severity, no field assessment needed"
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": "Regional Office severely impacted"
+  },
+  {
+   "from": "s5",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

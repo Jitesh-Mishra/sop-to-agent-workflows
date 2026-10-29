@@ -1,0 +1,13 @@
+# Notification in the case of breach of unsecured protected health information
+source: 45 CFR 164.404, 164.406, 164.408, 164.412 (HHS), https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D
+---
+A breach shall be treated as discovered by a covered entity as of the first day on which such breach is known to the covered entity, or, by exercising reasonable diligence would have been known to the covered entity.
+If a law enforcement official states to a covered entity that a notification, notice, or posting required under this subpart would impede a criminal investigation or cause damage to national security, the covered entity shall delay such notification, notice, or posting for the time period specified by the official.
+A covered entity shall, following the discovery of a breach of unsecured protected health information, notify each individual whose unsecured protected health information has been, or is reasonably believed by the covered entity to have been, accessed, acquired, used, or disclosed as a result of such breach.
+A covered entity shall provide the notification without unreasonable delay and in no case later than 60 calendar days after discovery of a breach.
+The notification shall be provided by written notification by first-class mail to the individual at the last known address of the individual or, if the individual agrees to electronic notice, by electronic mail.
+In the case in which there is insufficient or out-of-date contact information for 10 or more individuals, the substitute notice shall be in the form of either a conspicuous posting for a period of 90 days on the home page of the Web site of the covered entity, or conspicuous notice in major print or broadcast media in geographic areas where the individuals affected by the breach likely reside.
+For a breach of unsecured protected health information involving more than 500 residents of a State or jurisdiction, a covered entity shall notify prominent media outlets serving the State or jurisdiction.
+For breaches of unsecured protected health information involving 500 or more individuals, a covered entity shall provide the notification to the Secretary contemporaneously with the notice to individuals and in the manner specified on the HHS Web site.
+For breaches of unsecured protected health information involving less than 500 individuals, a covered entity shall maintain a log or other documentation of such breaches.
+Not later than 60 days after the end of each calendar year, the covered entity shall provide the notification to the Secretary for breaches discovered during the preceding calendar year.

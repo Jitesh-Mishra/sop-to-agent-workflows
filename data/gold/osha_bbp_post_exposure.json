@@ -1,0 +1,149 @@
+{
+ "id": "osha_bbp_post_exposure",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Make a confidential medical evaluation available immediately",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Document route and circumstances of exposure",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Identify and document the source individual",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Test the source individual's blood after consent",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Give source test results to the exposed employee",
+   "role": "employer",
+   "handoff_to": "exposed employee"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Collect and test the employee's blood after consent",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Preserve the baseline sample for 90 days",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s8",
+   "lines": [
+    9
+   ],
+   "action": "Give the evaluating healthcare professional the required information",
+   "role": "employer",
+   "handoff_to": "healthcare professional"
+  },
+  {
+   "id": "s9",
+   "lines": [
+    10
+   ],
+   "action": "Provide prophylaxis, counseling and evaluation of illnesses",
+   "role": "healthcare professional",
+   "handoff_to": null
+  },
+  {
+   "id": "s10",
+   "lines": [
+    11
+   ],
+   "action": "Obtain and give the employee the written opinion within 15 days",
+   "role": "employer",
+   "handoff_to": "exposed employee"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "source status not already known"
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "source already known infected"
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": "no consent yet for HIV testing"
+  },
+  {
+   "from": "s2",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  }
+ ]
+}
