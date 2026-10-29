@@ -1,0 +1,130 @@
+{
+ "id": "cdc_handwashing",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s0",
+   "lines": [
+    1
+   ],
+   "action": "Choose sanitizer if hands are not visibly dirty, otherwise soap and water",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Put sanitizer on hands and rub together",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Cover all surfaces until dry (about 20 s)",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Wet hands with warm water and apply soap",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Rub to a lather over all hand surfaces",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Keep rubbing at least 15 s",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Rinse under running water",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Dry with a paper towel",
+   "role": "person",
+   "handoff_to": null
+  },
+  {
+   "id": "s8",
+   "lines": [
+    9
+   ],
+   "action": "Use the towel to turn off the faucet and open the door",
+   "role": "person",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s0",
+   "to": "s1",
+   "condition": "hands not visibly dirty"
+  },
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s0",
+   "to": "s3",
+   "condition": "hands visibly dirty"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

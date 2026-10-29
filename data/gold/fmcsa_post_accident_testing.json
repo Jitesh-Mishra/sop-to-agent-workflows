@@ -1,0 +1,112 @@
+{
+ "id": "fmcsa_post_accident_testing",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Test surviving drivers for alcohol and drugs after a fatal accident",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Alcohol-test a cited driver (injury or tow-away accident, citation within 8 h)",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Drug-test a cited driver (citation within 32 h)",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Record why the alcohol test was not done within 2 hours",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Stop alcohol test attempts at 8 hours and record reasons",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Stop drug test attempts at 32 hours and record reasons",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Submit records to FMCSA on request",
+   "role": "employer",
+   "handoff_to": "FMCSA"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": "alcohol test not done within 2 hours"
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": "alcohol test not done within 2 hours"
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": "not done within 8 hours"
+  },
+  {
+   "from": "s1",
+   "to": "s6",
+   "condition": "drug test not done within 32 hours"
+  },
+  {
+   "from": "s3",
+   "to": "s6",
+   "condition": "drug test not done within 32 hours"
+  },
+  {
+   "from": "s4",
+   "to": "s7",
+   "condition": "FMCSA requests"
+  },
+  {
+   "from": "s5",
+   "to": "s7",
+   "condition": "FMCSA requests"
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": "FMCSA requests"
+  }
+ ]
+}

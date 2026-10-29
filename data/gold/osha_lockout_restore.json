@@ -1,0 +1,74 @@
+{
+ "id": "osha_lockout_restore",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Check the machine and area for nonessential items",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Check all employees are safely positioned or removed",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Verify controls are in neutral",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Remove lockout devices and reenergize",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    7
+   ],
+   "action": "Notify affected employees the machine is ready",
+   "role": "authorized employee",
+   "handoff_to": "affected employees"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  }
+ ]
+}

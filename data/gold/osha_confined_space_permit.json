@@ -1,0 +1,93 @@
+{
+ "id": "osha_confined_space_permit",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Prepare the entry permit",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Sign the permit to authorize entry",
+   "role": "entry supervisor",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Post the completed permit at the entry portal",
+   "role": "employer",
+   "handoff_to": "authorized entrants"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Terminate entry and cancel the permit",
+   "role": "entry supervisor",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Retain the canceled permit for at least 1 year",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Note problems on the permit",
+   "role": "employer",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "work complete or prohibited condition arises"
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": "problems encountered"
+  },
+  {
+   "from": "s6",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  }
+ ]
+}

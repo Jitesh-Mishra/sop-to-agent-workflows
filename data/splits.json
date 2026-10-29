@@ -1,0 +1,9 @@
+{
+ "_note": "Fixed before any LLM run. dev: prompt iteration and model choice. test: run once for the reported numbers.",
+ "dev": ["osha_lockout_restore", "cdc_handwashing", "hipaa_access_request", "fema_public_assistance_appeal",
+         "far_contract_claim_decision", "osha_confined_space_permit"],
+ "test": ["cdc_ppe_doffing", "cdc_ppe_donning", "dot_hazmat_incident_reporting", "eeo_precomplaint",
+          "epcra_release_notification", "fda_firm_initiated_recall", "fema_disaster_declaration_request",
+          "ferpa_record_amendment", "fmcsa_post_accident_testing", "hipaa_breach_notification",
+          "osha_bbp_post_exposure", "osha_lockout", "osha_respirator_seal_check", "osha_severe_injury_reporting"]
+}

@@ -1,0 +1,154 @@
+{
+ "id": "far_contract_claim_decision",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Submit the claim in writing to the contracting officer within 6 years",
+   "role": "contractor",
+   "handoff_to": "contracting officer"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Certify the claim",
+   "role": "contractor",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Review the facts of the claim",
+   "role": "contracting officer",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Get legal and advisor assistance",
+   "role": "contracting officer",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Coordinate with contract administration",
+   "role": "contracting officer",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Prepare the written decision",
+   "role": "contracting officer",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Tell the contractor when the decision will be issued",
+   "role": "contracting officer",
+   "handoff_to": "contractor"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Furnish the decision by certified mail",
+   "role": "contracting officer",
+   "handoff_to": "contractor"
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Appeal to the board of contract appeals within 90 days",
+   "role": "contractor",
+   "handoff_to": "board of contract appeals"
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "File in the Court of Federal Claims within 12 months",
+   "role": "contractor",
+   "handoff_to": "Court of Federal Claims"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "claim exceeds $100,000"
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": "claim $100,000 or less"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s7",
+   "condition": "over $100,000 and no decision within 60 days"
+  },
+  {
+   "from": "s7",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": "contractor appeals to board"
+  },
+  {
+   "from": "s8",
+   "to": "s10",
+   "condition": "contractor goes to court instead"
+  }
+ ]
+}

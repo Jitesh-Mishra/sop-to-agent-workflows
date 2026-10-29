@@ -1,0 +1,127 @@
+{
+ "id": "eeo_precomplaint",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1,
+    2
+   ],
+   "action": "Contact an EEO Counselor within 45 days",
+   "role": "aggrieved person",
+   "handoff_to": "EEO Counselor"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Advise the individual in writing of rights and responsibilities",
+   "role": "EEO Counselor",
+   "handoff_to": "aggrieved person"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Offer the choice between ADR and counseling",
+   "role": "EEO Counselor",
+   "handoff_to": "aggrieved person"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Run the ADR procedure (90-day period)",
+   "role": "agency",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Conduct the final interview within 30 days",
+   "role": "EEO Counselor",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Agree in writing to extend counseling up to 60 days",
+   "role": "aggrieved person",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Issue written notice of the right to file a complaint within 15 days",
+   "role": "EEO Counselor",
+   "handoff_to": "aggrieved person"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    9
+   ],
+   "action": "Submit written counseling report within 15 days",
+   "role": "EEO Counselor",
+   "handoff_to": "agency complaints office"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "chooses ADR"
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "chooses counseling"
+  },
+  {
+   "from": "s3",
+   "to": "s6",
+   "condition": "agrees to extend"
+  },
+  {
+   "from": "s6",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s7",
+   "condition": "not resolved"
+  },
+  {
+   "from": "s4",
+   "to": "s7",
+   "condition": "not resolved by day 90"
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": "complaint filed"
+  }
+ ]
+}

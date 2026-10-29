@@ -1,0 +1,121 @@
+{
+ "id": "osha_lockout",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    3
+   ],
+   "action": "Notify affected employees of the shutdown and lockout",
+   "role": "authorized employee",
+   "handoff_to": "affected employees"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    4
+   ],
+   "action": "Identify energy type, magnitude, hazards and controls",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    5
+   ],
+   "action": "Shut the machine down by the normal stopping procedure",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    6
+   ],
+   "action": "De-activate the energy isolating devices",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s5",
+   "lines": [
+    7
+   ],
+   "action": "Lock out the isolating devices with assigned locks",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    8
+   ],
+   "action": "Dissipate or restrain stored energy",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    9
+   ],
+   "action": "Verify isolation after checking no personnel are exposed",
+   "role": "authorized employee",
+   "handoff_to": null
+  },
+  {
+   "id": "s8",
+   "lines": [
+    10
+   ],
+   "action": "Return operating controls to neutral or off",
+   "role": "authorized employee",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "machine is operating"
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": "machine not operating"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

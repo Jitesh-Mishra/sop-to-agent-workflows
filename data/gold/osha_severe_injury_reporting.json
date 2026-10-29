@@ -1,0 +1,68 @@
+{
+ "id": "osha_severe_injury_reporting",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1,
+    2
+   ],
+   "action": "Determine the reportable event and deadline (8 h fatality, 24 h hospitalization, amputation, eye loss)",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3,
+    4,
+    5
+   ],
+   "action": "Report to OSHA by phone, in person or online with the required details",
+   "role": "employer",
+   "handoff_to": "OSHA"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    7
+   ],
+   "action": "Record the event on the OSHA injury and illness records",
+   "role": "employer",
+   "handoff_to": null
+  },
+  {
+   "id": "s4",
+   "lines": [
+    8
+   ],
+   "action": "Decide whether to investigate",
+   "role": "OSHA Area Office director",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "not a public-road motor vehicle accident outside a work zone"
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": "public-road motor vehicle accident outside a work zone"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": null
+  }
+ ]
+}

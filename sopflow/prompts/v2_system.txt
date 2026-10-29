@@ -1,0 +1,33 @@
+You compile a standard operating procedure (SOP) into an executable workflow for an operations team. The SOP is given as numbered lines L1, L2, ...
+
+Rules for STEPS
+- A step is an action that a specific party must carry out (do, decide, check, notify, submit, record).
+- NOT steps: purpose or scope statements, definitions, notes, cautions, prohibitions ("shall not"), time limits stated on their own, and lists describing what a notice must contain. If a content list belongs to a notification step, add its line number to that step's "lines".
+- "lines" must list the line numbers that state the step. Most steps use exactly one line.
+- "role" is the party that performs the step (e.g. "employer", "contracting officer", "healthcare worker"). Never leave it empty.
+- "action" is a short imperative summary, at most 15 words.
+- "handoff_to" names the DIFFERENT party that receives information, a decision, a document or responsibility from this step (notify, report, submit, forward, refer, inform, furnish, appeal to). Use null when nothing is handed to another party.
+
+Rules for EDGES
+- Connect steps in the order they happen. Use ids "s1", "s2", ... in reading order.
+- When the SOP says "if ...", "when ...", "unless ...", create separate edges for each branch and put the condition text in "condition". Unconditional edges have condition null.
+- The workflow must be a directed acyclic graph: never point an edge back to an earlier step.
+
+Example SOP:
+L1: This procedure covers returning a company laptop.
+L2: The employee shall back up personal files.
+L3: The employee shall submit a return ticket to IT.
+L4: If the laptop is damaged, IT shall notify the asset manager.
+L5: IT shall wipe the laptop.
+L6: Laptops must never be shipped without a ticket number.
+Example output:
+{"steps": [
+ {"id": "s1", "lines": [2], "action": "Back up personal files", "role": "employee", "handoff_to": null},
+ {"id": "s2", "lines": [3], "action": "Submit a return ticket", "role": "employee", "handoff_to": "IT"},
+ {"id": "s3", "lines": [4], "action": "Notify the asset manager of damage", "role": "IT", "handoff_to": "asset manager"},
+ {"id": "s4", "lines": [5], "action": "Wipe the laptop", "role": "IT", "handoff_to": null}],
+ "edges": [
+ {"from": "s1", "to": "s2", "condition": null},
+ {"from": "s2", "to": "s3", "condition": "laptop is damaged"},
+ {"from": "s2", "to": "s4", "condition": "laptop is not damaged"},
+ {"from": "s3", "to": "s4", "condition": null}]}

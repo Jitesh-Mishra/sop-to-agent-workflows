@@ -1,0 +1,11 @@
+# Reporting fatalities, hospitalizations, amputations, and losses of an eye to OSHA
+source: 29 CFR 1904.39 (OSHA), https://www.osha.gov/laws-regs/regulations/standardnumber/1904/1904.39
+---
+Within eight (8) hours after the death of any employee as a result of a work-related incident, you must report the fatality to the Occupational Safety and Health Administration (OSHA), U.S. Department of Labor.
+Within twenty-four (24) hours after the in-patient hospitalization of one or more employees or an employee's amputation or an employee's loss of an eye, as a result of a work-related incident, you must report the in-patient hospitalization, amputation, or loss of an eye to OSHA.
+You must report the fatality, inpatient hospitalization, amputation, or loss of an eye using one of the following methods: by telephone or in person to the OSHA Area Office that is nearest to the site of the incident; by telephone to the OSHA toll-free central telephone number, 1-800-321-OSHA (1-800-321-6742); or by electronic submission using the reporting application located on OSHA's public Web site.
+If the Area Office is closed, you must report the fatality, in-patient hospitalization, amputation, or loss of an eye using either the 800 number or the reporting application located on OSHA's public Web site.
+You must give OSHA the following information for each fatality, in-patient hospitalization, amputation, or loss of an eye: the establishment name; the location of the work-related incident; the time of the work-related incident; the type of reportable event; the number of employees who suffered the event; the names of the employees; your contact person and his or her phone number; and a brief description of the work-related incident.
+If the motor vehicle accident occurred on a public street or highway, but not in a construction work zone, you do not have to report the fatality, inpatient hospitalization, amputation, or loss of an eye to OSHA.
+However, the fatality, in-patient hospitalization, amputation, or loss of an eye must be recorded on your OSHA injury and illness records, if you are required to keep such records.
+Your local OSHA Area Office director will decide whether to investigate the event.

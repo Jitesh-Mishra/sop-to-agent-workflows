@@ -1,0 +1,104 @@
+{
+ "id": "hipaa_breach_notification",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Delay notification for the period law enforcement specifies",
+   "role": "covered entity",
+   "handoff_to": null
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3,
+    4,
+    5
+   ],
+   "action": "Notify each affected individual by first-class mail within 60 days",
+   "role": "covered entity",
+   "handoff_to": "affected individuals"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    6
+   ],
+   "action": "Post substitute notice on the website or in major media",
+   "role": "covered entity",
+   "handoff_to": "public"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    7
+   ],
+   "action": "Notify prominent media outlets in the State",
+   "role": "covered entity",
+   "handoff_to": "media"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    8
+   ],
+   "action": "Notify the HHS Secretary at the same time as individuals",
+   "role": "covered entity",
+   "handoff_to": "HHS Secretary"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    9
+   ],
+   "action": "Log the breach",
+   "role": "covered entity",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    10
+   ],
+   "action": "Report logged breaches to the Secretary within 60 days of year end",
+   "role": "covered entity",
+   "handoff_to": "HHS Secretary"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "law enforcement delay ends"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "contact info out of date for 10 or more"
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": "more than 500 residents of a State"
+  },
+  {
+   "from": "s2",
+   "to": "s5",
+   "condition": "500 or more individuals"
+  },
+  {
+   "from": "s2",
+   "to": "s6",
+   "condition": "fewer than 500 individuals"
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "epcra_release_notification",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    3,
+    5
+   ],
+   "action": "Immediately notify the LEPC emergency coordinator and SERC orally with release details",
+   "role": "facility",
+   "handoff_to": "LEPC and SERC"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    4
+   ],
+   "action": "For transportation releases, notify the 911 operator",
+   "role": "facility",
+   "handoff_to": "911 operator"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    7,
+    8
+   ],
+   "action": "Send written follow-up emergency notice as soon as practicable",
+   "role": "facility",
+   "handoff_to": "LEPC and SERC"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": "release not during transportation"
+  }
+ ]
+}

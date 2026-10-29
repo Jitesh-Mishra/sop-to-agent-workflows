@@ -1,0 +1,130 @@
+{
+ "id": "ferpa_record_amendment",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Ask the institution to amend the record",
+   "role": "parent or eligible student",
+   "handoff_to": "institution"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Decide whether to amend",
+   "role": "institution",
+   "handoff_to": null
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Inform of the decision and the right to a hearing",
+   "role": "institution",
+   "handoff_to": "parent or eligible student"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Give notice of hearing date, time and place",
+   "role": "institution",
+   "handoff_to": "parent or eligible student"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Hold the hearing with an impartial official",
+   "role": "hearing officer",
+   "handoff_to": null
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Issue the written decision",
+   "role": "institution",
+   "handoff_to": null
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Amend the record and inform in writing",
+   "role": "institution",
+   "handoff_to": "parent or eligible student"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Inform of the right to place a statement in the record",
+   "role": "institution",
+   "handoff_to": "parent or eligible student"
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Keep the statement with the contested record",
+   "role": "institution",
+   "handoff_to": null
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "decides not to amend"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "hearing requested"
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": "information inaccurate"
+  },
+  {
+   "from": "s6",
+   "to": "s8",
+   "condition": "information not inaccurate"
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": "statement placed"
+  }
+ ]
+}
