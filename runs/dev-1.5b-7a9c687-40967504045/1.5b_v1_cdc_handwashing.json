@@ -1,0 +1,100 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null }, { \"from\": \"default\", \"to\": \"default\", \"condition\": null }, { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop.",
+    "Edge default -> default is a self-loop.",
+    "Edge default -> default is a self-loop.",
+    "Some edges are duplicated."
+   ],
+   "usage": {
+    "prompt_tokens": 301,
+    "completion_tokens": 240,
+    "total_tokens": 541,
+    "seconds": 13.13
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"step1\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null }, { \"id\": \"step2\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null }, { \"id\": \"step3\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null } ], \"edges\": [ { \"from\": \"step1\", \"to\": \"step2\", \"condition\": null }, { \"from\": \"step2\", \"to\": \"step3\", \"condition\": null } ] }",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 869,
+    "completion_tokens": 229,
+    "total_tokens": 1098,
+    "seconds": 17.34
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "step1",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "action": "clean hands",
+    "role": "all",
+    "handoff_to": null
+   },
+   {
+    "id": "step2",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "action": "clean hands",
+    "role": "all",
+    "handoff_to": null
+   },
+   {
+    "id": "step3",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "action": "clean hands",
+    "role": "all",
+    "handoff_to": null
+   }
+  ],
+  "edges": [
+   {
+    "from": "step1",
+    "to": "step2",
+    "condition": null
+   },
+   {
+    "from": "step2",
+    "to": "step3",
+    "condition": null
+   }
+  ]
+ }
+}

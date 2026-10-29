@@ -1,0 +1,102 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"id1\", \"lines\": [1], \"action\": \"Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.\", \"role\": \"Operator\", \"handoff_to\": null }, { \"id\": \"id2\", \"lines\": [2], \"action\": \"Check the work area to ensure that all employees have been safely positioned or removed from the area.\", \"role\": \"Operator\", \"handoff_to\": null }, { \"id\": \"id3\", \"lines\": [3], \"action\": \"Verify that the controls are in neutral.\", \"role\": \"Operator\", \"handoff_to\": null }, { \"id\": \"id4\", \"lines\": [4], \"action\": \"Remove the lockout devices and reenergize the machine or equipment.\", \"role\": \"Operator\", \"handoff_to\": null }, { \"id\": \"id5\", \"lines\": [5], \"action\": \"Note: The removal of some forms of blocking may require reenergization of the machine before safe removal.\", \"role\": \"Operator\", \"handoff_to\": null }, { \"id\": \"id6\", \"lines\": [6], \"action\": \"Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.\", \"role\": \"Operator\", \"handoff_to\": null } ], \"edges\": [ { \"from\": \"id1\", \"to\": \"id2\", \"condition\": null }, { \"from\": \"id2\", \"to\": \"id3\", \"condition\": null }, { \"from\": \"id3\", \"to\": \"id4\", \"condition\": null }, { \"from\": \"id4\", \"to\": \"id5\", \"condition\": null }, { \"from\": \"id5\", \"to\": \"id6\", \"condition\": null } ] }",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 290,
+    "completion_tokens": 417,
+    "total_tokens": 707,
+    "seconds": 22.42
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "id1",
+    "lines": [
+     1
+    ],
+    "action": "Check the machine or equipment and the immediate area around the machine or equipment to ensure that nonessential items have been removed and that the machine or equipment components are operationally intact.",
+    "role": "Operator",
+    "handoff_to": null
+   },
+   {
+    "id": "id2",
+    "lines": [
+     2
+    ],
+    "action": "Check the work area to ensure that all employees have been safely positioned or removed from the area.",
+    "role": "Operator",
+    "handoff_to": null
+   },
+   {
+    "id": "id3",
+    "lines": [
+     3
+    ],
+    "action": "Verify that the controls are in neutral.",
+    "role": "Operator",
+    "handoff_to": null
+   },
+   {
+    "id": "id4",
+    "lines": [
+     4
+    ],
+    "action": "Remove the lockout devices and reenergize the machine or equipment.",
+    "role": "Operator",
+    "handoff_to": null
+   },
+   {
+    "id": "id5",
+    "lines": [
+     5
+    ],
+    "action": "Note: The removal of some forms of blocking may require reenergization of the machine before safe removal.",
+    "role": "Operator",
+    "handoff_to": null
+   },
+   {
+    "id": "id6",
+    "lines": [
+     6
+    ],
+    "action": "Notify affected employees that the servicing or maintenance is completed and the machine or equipment is ready for use.",
+    "role": "Operator",
+    "handoff_to": null
+   }
+  ],
+  "edges": [
+   {
+    "from": "id1",
+    "to": "id2",
+    "condition": null
+   },
+   {
+    "from": "id2",
+    "to": "id3",
+    "condition": null
+   },
+   {
+    "from": "id3",
+    "to": "id4",
+    "condition": null
+   },
+   {
+    "from": "id4",
+    "to": "id5",
+    "condition": null
+   },
+   {
+    "from": "id5",
+    "to": "id6",
+    "condition": null
+   }
+  ]
+ }
+}
