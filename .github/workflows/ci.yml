@@ -16,7 +16,8 @@ jobs:
         run: python -m sopflow.eval.crash_resume
       - name: Docker image builds and serves
         run: |
-          docker build -t sopflow .
-          docker run -d -p 8000:8000 --name s sopflow
-          for i in $(seq 1 30); do curl -sf localhost:8000/workflows > /dev/null && break; sleep 1; done
+          docker build -t sopflow:ci . 2> build_err.txt || { echo "::error::build: $(tail -c 600 build_err.txt | tr '\n' ' ')"; exit 1; }
+          docker run -d -p 8000:8000 --name sopflow-ci sopflow:ci 2> run_err.txt || { echo "::error::run: $(tr '\n' ' ' < run_err.txt)"; exit 1; }
+          for i in $(seq 1 40); do curl -sf localhost:8000/workflows > /dev/null && break; sleep 1; done
+          curl -sf localhost:8000/workflows > /dev/null || { echo "::error::serve: $(docker logs sopflow-ci 2>&1 | tail -c 600 | tr '\n' ' ')"; exit 1; }
           curl -sf -X POST localhost:8000/runs -H 'content-type: application/json' -d '{"sop_id":"onb_form_i9_verification"}' | python -c "import sys,json; d=json.load(sys.stdin); assert d['status']=='waiting_for_human', d; print(d['run_id'], d['pending_handoff']['step_id'])"

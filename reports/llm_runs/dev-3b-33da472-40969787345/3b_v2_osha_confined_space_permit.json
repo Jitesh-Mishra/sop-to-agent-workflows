@@ -1,0 +1,142 @@
+{
+ "sop_id": "osha_confined_space_permit",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Document completion of pre-entry measures\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must document the completion of required measures.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Sign the entry permit\", \"role\": \"entry supervisor\", \"handoff_to\": \"entry supervisor\", \"executor\": \"human\", \"executor_reason\": \"The supervisor must sign to authorize entry.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Make the permit available\", \"role\": \"employer\", \"handoff_to\": \"authorized entrants\", \"executor\": \"agent\", \"executor_reason\": \"Posting or providing the permit ensures entrants can confirm completion.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Limit permit duration\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must ensure the permit does not exceed the task duration.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Terminate and cancel the permit\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The supervisor must terminate entry when operations are completed or conditions arise.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Retain canceled permits\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must retain canceled permits for review.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Note problems on the permit\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must document any issues encountered during entry.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [
+    "Step s2 hands off to its own role (entry supervisor); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1158,
+    "completion_tokens": 535,
+    "total_tokens": 1693,
+    "seconds": 49.79
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Document completion of pre-entry measures\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must document the completion of required measures.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Sign the entry permit\", \"role\": \"entry supervisor\", \"handoff_to\": \"authorized entrants\", \"executor\": \"human\", \"executor_reason\": \"The supervisor must sign to authorize entry and hand off to authorized entrants.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Make the permit available\", \"role\": \"employer\", \"handoff_to\": \"authorized entrants\", \"executor\": \"agent\", \"executor_reason\": \"Posting or providing the permit ensures entrants can confirm completion.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Limit permit duration\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must ensure the permit does not exceed the task duration.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Terminate and cancel the permit\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The supervisor must terminate entry when operations are completed or conditions arise.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Retain canceled permits\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must retain canceled permits for review.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Note problems on the permit\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must document any issues encountered during entry.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 2290,
+    "completion_tokens": 543,
+    "total_tokens": 2833,
+    "seconds": 66.25
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Document completion of pre-entry measures",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must document the completion of required measures."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Sign the entry permit",
+    "role": "entry supervisor",
+    "handoff_to": "authorized entrants",
+    "executor": "human",
+    "executor_reason": "The supervisor must sign to authorize entry and hand off to authorized entrants."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Make the permit available",
+    "role": "employer",
+    "handoff_to": "authorized entrants",
+    "executor": "agent",
+    "executor_reason": "Posting or providing the permit ensures entrants can confirm completion."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Limit permit duration",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must ensure the permit does not exceed the task duration."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Terminate and cancel the permit",
+    "role": "entry supervisor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The supervisor must terminate entry when operations are completed or conditions arise."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Retain canceled permits",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must retain canceled permits for review."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Note problems on the permit",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The employer must document any issues encountered during entry."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "sop_id": "pa_dmepos_prior_authorization",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 359,
+    "completion_tokens": 258,
+    "total_tokens": 617,
+    "seconds": 18.06
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 937,
+    "completion_tokens": 258,
+    "total_tokens": 1195,
+    "seconds": 24.38
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"Prior authorization request\", \"role\": \"agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent is responsible for submitting the prior authorization request.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 937,
+    "completion_tokens": 258,
+    "total_tokens": 1195,
+    "seconds": 14.43
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "default",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Prior authorization request",
+    "role": "agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The agent is responsible for submitting the prior authorization request."
+   },
+   {
+    "id": "default",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Prior authorization request",
+    "role": "agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The agent is responsible for submitting the prior authorization request."
+   },
+   {
+    "id": "default",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "Prior authorization request",
+    "role": "agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The agent is responsible for submitting the prior authorization request."
+   }
+  ],
+  "edges": [
+   {
+    "from": "default",
+    "to": "default",
+    "condition": null
+   }
+  ]
+ }
+}

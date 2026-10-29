@@ -1,0 +1,135 @@
+{
+ "sop_id": "pa_dmepos_prior_authorization",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Prepare prior authorization request\", \"role\": \"requester\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The requester must gather all necessary documentation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Submit prior authorization request\", \"role\": \"requester\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"agent\", \"executor_reason\": \"Filing the request with CMS or its contractor is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review prior authorization request\", \"role\": \"CMS or its contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Reviewing the request for compliance is a judgment task.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Issue provisional affirmation\", \"role\": \"CMS or its contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the request meets rules, CMS or its contractor must affirm.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Issue non-affirmation decision\", \"role\": \"CMS or its contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the request does not meet rules, CMS or its contractor must deny.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Resubmit prior authorization request\", \"role\": \"requester\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"agent\", \"executor_reason\": \"If the non-affirmation decision is received, the requester must resubmit the request.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Review expedited review request\", \"role\": \"CMS or its contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Reviewing the expedited review request for urgency is a judgment task.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1159,
+    "completion_tokens": 590,
+    "total_tokens": 1749,
+    "seconds": 38.46
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Prepare prior authorization request",
+    "role": "requester",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The requester must gather all necessary documentation."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Submit prior authorization request",
+    "role": "requester",
+    "handoff_to": "CMS or its contractor",
+    "executor": "agent",
+    "executor_reason": "Filing the request with CMS or its contractor is routine information work."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review prior authorization request",
+    "role": "CMS or its contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Reviewing the request for compliance is a judgment task."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Issue provisional affirmation",
+    "role": "CMS or its contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "If the request meets rules, CMS or its contractor must affirm."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Issue non-affirmation decision",
+    "role": "CMS or its contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "If the request does not meet rules, CMS or its contractor must deny."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Resubmit prior authorization request",
+    "role": "requester",
+    "handoff_to": "CMS or its contractor",
+    "executor": "agent",
+    "executor_reason": "If the non-affirmation decision is received, the requester must resubmit the request."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Review expedited review request",
+    "role": "CMS or its contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Reviewing the expedited review request for urgency is a judgment task."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}

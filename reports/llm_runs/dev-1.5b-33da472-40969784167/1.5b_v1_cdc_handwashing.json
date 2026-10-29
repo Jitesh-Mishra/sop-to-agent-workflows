@@ -1,0 +1,79 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"All staff members are responsible for cleaning their hands.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"All staff members are responsible for cleaning their hands.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 320,
+    "completion_tokens": 190,
+    "total_tokens": 510,
+    "seconds": 13.72
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"step1\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"All staff members are responsible for cleaning their hands.\" }, { \"id\": \"step2\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], \"action\": \"clean hands\", \"role\": \"all\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"All staff members are responsible for cleaning their hands.\" } ], \"edges\": [ { \"from\": \"step1\", \"to\": \"step2\", \"condition\": null } ] }",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 762,
+    "completion_tokens": 194,
+    "total_tokens": 956,
+    "seconds": 18.18
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "step1",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "action": "clean hands",
+    "role": "all",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "All staff members are responsible for cleaning their hands."
+   },
+   {
+    "id": "step2",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "action": "clean hands",
+    "role": "all",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "All staff members are responsible for cleaning their hands."
+   }
+  ],
+  "edges": [
+   {
+    "from": "step1",
+    "to": "step2",
+    "condition": null
+   }
+  ]
+ }
+}

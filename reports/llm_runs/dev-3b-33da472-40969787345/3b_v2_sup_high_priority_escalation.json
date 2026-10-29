@@ -1,0 +1,130 @@
+{
+ "sop_id": "sup_high_priority_escalation",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Never send automatically\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Routine information work\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Confirm priority and queue\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Routine information work\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify on-call engineer\", \"role\": \"support agent\", \"handoff_to\": \"on-call engineer\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Acknowledge incident and post status\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Routine information work\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Forward to billing team\", \"role\": \"support agent\", \"handoff_to\": \"billing team\", \"executor\": \"agent\", \"executor_reason\": \"Routine information work\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Send customer acknowledgement\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"agent\", \"executor_reason\": \"Routine information work\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Document fix and close ticket\", \"role\": \"owning team\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Routine information work\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": \"ticket reports a service outage\"}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s7\", \"condition\": \"ticket reports a billing or payment error\"}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1071,
+    "completion_tokens": 507,
+    "total_tokens": 1578,
+    "seconds": 45.57
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Never send automatically",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information work"
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Confirm priority and queue",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information work"
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify on-call engineer",
+    "role": "support agent",
+    "handoff_to": "on-call engineer",
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a notice from the ticket facts"
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Acknowledge incident and post status",
+    "role": "on-call engineer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information work"
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Forward to billing team",
+    "role": "support agent",
+    "handoff_to": "billing team",
+    "executor": "agent",
+    "executor_reason": "Routine information work"
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Send customer acknowledgement",
+    "role": "support agent",
+    "handoff_to": "customer",
+    "executor": "agent",
+    "executor_reason": "Routine information work"
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Document fix and close ticket",
+    "role": "owning team",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information work"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": "ticket reports a service outage"
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s7",
+    "condition": "ticket reports a billing or payment error"
+   }
+  ]
+ }
+}

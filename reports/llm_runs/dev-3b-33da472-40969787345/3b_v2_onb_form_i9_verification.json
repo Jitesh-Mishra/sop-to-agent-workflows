@@ -1,0 +1,130 @@
+{
+ "sop_id": "onb_form_i9_verification",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Ensure the individual properly completes section 1 of Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must physically verify the individual's information and sign the attestation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Assist the individual if needed\", \"role\": \"someone\", \"handoff_to\": \"employer\", \"executor\": \"agent\", \"executor_reason\": \"Assisting with the Form I-9 is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Physically examine the documentation\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the documents.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Complete section 2 of Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filling out the employer's section is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Retain the Form I-9 for three years\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Retaining the Form I-9 is a legal requirement.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Reverify if employment authorization expires\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Reverification is required when employment authorization expires.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide notice for inspection\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Notifying in advance is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s5\", \"condition\": \"employment authorization expires\"}, {\"from\": \"s7\", \"to\": \"s5\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1189,
+    "completion_tokens": 557,
+    "total_tokens": 1746,
+    "seconds": 53.8
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Ensure the individual properly completes section 1 of Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must physically verify the individual's information and sign the attestation."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Assist the individual if needed",
+    "role": "someone",
+    "handoff_to": "employer",
+    "executor": "agent",
+    "executor_reason": "Assisting with the Form I-9 is routine information work."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Physically examine the documentation",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs hands-on access to the documents."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Complete section 2 of Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Filling out the employer's section is routine information work."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Retain the Form I-9 for three years",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Retaining the Form I-9 is a legal requirement."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Reverify if employment authorization expires",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Reverification is required when employment authorization expires."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide notice for inspection",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Notifying in advance is routine information work."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s5",
+    "condition": "employment authorization expires"
+   },
+   {
+    "from": "s7",
+    "to": "s5",
+    "condition": null
+   }
+  ]
+ }
+}

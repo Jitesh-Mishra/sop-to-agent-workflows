@@ -1,0 +1,130 @@
+{
+ "sop_id": "fema_public_assistance_appeal",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Make a first appeal\", \"role\": \"applicant or recipient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The applicant or recipient must choose and file a first appeal.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Submit first appeal\", \"role\": \"applicant or recipient\", \"handoff_to\": \"recipient\", \"executor\": \"agent\", \"executor_reason\": \"Filing a first appeal from known facts is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Forward first appeal\", \"role\": \"recipient\", \"handoff_to\": \"Regional Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Electronic forwarding of the appeal and recommendation is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Receive first appeal decision\", \"role\": \"Regional Administrator\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"Needs to review and make a decision on the appeal.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Forward second appeal\", \"role\": \"recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\", \"executor\": \"agent\", \"executor_reason\": \"Electronic forwarding of the second appeal and recommendation is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Receive second appeal decision\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"Needs to review and make a decision on the appeal.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide notice of disposition\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Electronic notice of the disposition of the appeal is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1195,
+    "completion_tokens": 561,
+    "total_tokens": 1756,
+    "seconds": 37.52
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Make a first appeal",
+    "role": "applicant or recipient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The applicant or recipient must choose and file a first appeal."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Submit first appeal",
+    "role": "applicant or recipient",
+    "handoff_to": "recipient",
+    "executor": "agent",
+    "executor_reason": "Filing a first appeal from known facts is routine information work."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Forward first appeal",
+    "role": "recipient",
+    "handoff_to": "Regional Administrator",
+    "executor": "agent",
+    "executor_reason": "Electronic forwarding of the appeal and recommendation is routine information work."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Receive first appeal decision",
+    "role": "Regional Administrator",
+    "handoff_to": "recipient",
+    "executor": "human",
+    "executor_reason": "Needs to review and make a decision on the appeal."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Forward second appeal",
+    "role": "recipient",
+    "handoff_to": "Assistant Administrator for the Recovery Directorate",
+    "executor": "agent",
+    "executor_reason": "Electronic forwarding of the second appeal and recommendation is routine information work."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Receive second appeal decision",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient",
+    "executor": "human",
+    "executor_reason": "Needs to review and make a decision on the appeal."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide notice of disposition",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient and applicant",
+    "executor": "agent",
+    "executor_reason": "Electronic notice of the disposition of the appeal is routine information work."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "sop_id": "hipaa_access_request",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Act on request within 30 days\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must choose and act on the request within the required timeframe.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend time by up to 30 days\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The covered entity must draft and send a written statement explaining the delay and the new action date.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide written statement of reasons for delay\", \"role\": \"covered entity\", \"handoff_to\": \"individual\", \"executor\": \"agent\", \"executor_reason\": \"The covered entity must provide a written explanation for the delay.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"No more than one extension allowed\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must ensure only one extension is granted.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Deny access if reasonably likely to endanger life or safety\", \"role\": \"covered entity\", \"handoff_to\": \"individual\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must determine if access should be denied based on the risk to life or safety.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Refer request for review to designated official\", \"role\": \"covered entity\", \"handoff_to\": \"designated reviewing official\", \"executor\": \"agent\", \"executor_reason\": \"The covered entity must promptly refer the request for review to the designated official.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Determine access request\", \"role\": \"designated reviewing official\", \"handoff_to\": \"covered entity\", \"executor\": \"agent\", \"executor_reason\": \"The designated official must make a determination regarding the access request.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide written notice of determination\", \"role\": \"covered entity\", \"handoff_to\": \"individual\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must provide written notice of the designated official's determination.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1202,
+    "completion_tokens": 677,
+    "total_tokens": 1879,
+    "seconds": 64.54
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Act on request within 30 days",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The covered entity must choose and act on the request within the required timeframe."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend time by up to 30 days",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The covered entity must draft and send a written statement explaining the delay and the new action date."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide written statement of reasons for delay",
+    "role": "covered entity",
+    "handoff_to": "individual",
+    "executor": "agent",
+    "executor_reason": "The covered entity must provide a written explanation for the delay."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "No more than one extension allowed",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The covered entity must ensure only one extension is granted."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Deny access if reasonably likely to endanger life or safety",
+    "role": "covered entity",
+    "handoff_to": "individual",
+    "executor": "human",
+    "executor_reason": "The covered entity must determine if access should be denied based on the risk to life or safety."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Refer request for review to designated official",
+    "role": "covered entity",
+    "handoff_to": "designated reviewing official",
+    "executor": "agent",
+    "executor_reason": "The covered entity must promptly refer the request for review to the designated official."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Determine access request",
+    "role": "designated reviewing official",
+    "handoff_to": "covered entity",
+    "executor": "agent",
+    "executor_reason": "The designated official must make a determination regarding the access request."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide written notice of determination",
+    "role": "covered entity",
+    "handoff_to": "individual",
+    "executor": "human",
+    "executor_reason": "The covered entity must provide written notice of the designated official's determination."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ }
+}

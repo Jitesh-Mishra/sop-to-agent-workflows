@@ -35,10 +35,12 @@ def main():
             "load_seconds": round(time.time() - t0, 1)}
     for version in meta["prompts"]:
         for sop_id in split(a.split):
-            r = compile_sop(load_sop(sop_id), backend, version, a.max_repairs)
+            r = compile_sop(load_sop(sop_id), backend, version, a.max_repairs, autofix=version != "v1")
             rec = {"sop_id": sop_id, "prompt": version, "model": a.model,
-                   "attempts": [{"raw": x.raw, "errors": x.errors, "usage": x.usage} for x in r.attempts],
-                   "final_spec": r.spec.dump() if r.spec else None}
+                   "attempts": [{"raw": x.raw, "errors": x.errors, "usage": x.usage, "fixes": x.fixes,
+                                 "remaining": x.remaining} for x in r.attempts],
+                   "final_spec": r.spec.dump() if r.spec else None,
+                   "inline_executor": r.inline_executor, "executor_calls": r.executor_calls}
             (out / f"{a.model}_{version}_{sop_id}.json").write_text(json.dumps(rec, indent=1))
             print(f"[{time.time() - t0:.0f}s] {version} {sop_id} attempts={len(r.attempts)} "
                   f"valid_first={r.valid_first} valid_final={r.valid_final}", flush=True)

@@ -1,0 +1,119 @@
+{
+ "sop_id": "osha_confined_space_permit",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"document the completion of required pre-entry measures\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer is responsible for documenting the completion of required pre-entry measures.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"authorize entry\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The entry supervisor is responsible for signing the entry permit to authorize entry.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"post the completed permit\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The entry supervisor is responsible for posting the completed permit at the entry portal or by any other equally effective means.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"terminate entry\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The entry supervisor is responsible for terminating entry and canceling the entry permit when the entry operations covered by the entry permit have been completed.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 358,
+    "completion_tokens": 374,
+    "total_tokens": 732,
+    "seconds": 24.55
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"document the completion of required pre-entry measures\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"document the completion of required pre-entry measures\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer is responsible for documenting the completion of required pre-entry measures.\" }, { \"id\": \"authorize entry\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"authorize entry\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The entry supervisor is responsible for signing the entry permit to authorize entry.\" }, { \"id\": \"post the completed permit\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"post the completed permit\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The entry supervisor is responsible for posting the completed permit at the entry portal or by any other equally effective means.\" }, { \"id\": \"terminate entry\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"terminate entry\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The entry supervisor is responsible for terminating entry and canceling the entry permit when the entry operations covered by the entry permit have been completed.\" } ], \"edges\": [ { \"from\": \"document the completion of required pre-entry measures\", \"to\": \"authorize entry\", \"condition\": null }, { \"from\": \"authorize entry\", \"to\": \"post the completed permit\", \"condition\": null }, { \"from\": \"post the completed permit\", \"to\": \"terminate entry\", \"condition\": null } ] }",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1168,
+    "completion_tokens": 438,
+    "total_tokens": 1606,
+    "seconds": 39.25
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "document the completion of required pre-entry measures",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "document the completion of required pre-entry measures",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer is responsible for documenting the completion of required pre-entry measures."
+   },
+   {
+    "id": "authorize entry",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "authorize entry",
+    "role": "entry supervisor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The entry supervisor is responsible for signing the entry permit to authorize entry."
+   },
+   {
+    "id": "post the completed permit",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "post the completed permit",
+    "role": "entry supervisor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The entry supervisor is responsible for posting the completed permit at the entry portal or by any other equally effective means."
+   },
+   {
+    "id": "terminate entry",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "terminate entry",
+    "role": "entry supervisor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The entry supervisor is responsible for terminating entry and canceling the entry permit when the entry operations covered by the entry permit have been completed."
+   }
+  ],
+  "edges": [
+   {
+    "from": "document the completion of required pre-entry measures",
+    "to": "authorize entry",
+    "condition": null
+   },
+   {
+    "from": "authorize entry",
+    "to": "post the completed permit",
+    "condition": null
+   },
+   {
+    "from": "post the completed permit",
+    "to": "terminate entry",
+    "condition": null
+   }
+  ]
+ }
+}

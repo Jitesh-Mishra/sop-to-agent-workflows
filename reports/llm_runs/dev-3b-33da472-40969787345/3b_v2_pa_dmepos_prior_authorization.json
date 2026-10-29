@@ -1,0 +1,125 @@
+{
+ "sop_id": "pa_dmepos_prior_authorization",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Include all relevant documentation\", \"role\": \"requester\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a request with necessary details is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Submit before item is furnished\", \"role\": \"requester\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Physical submission is required.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review by CMS or contractor\", \"role\": \"CMS or contractor\", \"handoff_to\": \"requester\", \"executor\": \"agent\", \"executor_reason\": \"Checking compliance is information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Provisional affirmation if rules met\", \"role\": \"CMS or contractor\", \"handoff_to\": \"requester\", \"executor\": \"agent\", \"executor_reason\": \"Issuing a provisional affirmation is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Non-affirmation decision if rules not met\", \"role\": \"CMS or contractor\", \"handoff_to\": \"requester\", \"executor\": \"agent\", \"executor_reason\": \"Issuing a non-affirmation decision is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Resubmit if non-affirmation\", \"role\": \"requester\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Resubmission is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Include expedited review documentation\", \"role\": \"requester\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Providing additional details for expedited review is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"rules met\"}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": \"rules not met\"}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1159,
+    "completion_tokens": 534,
+    "total_tokens": 1693,
+    "seconds": 51.27
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Include all relevant documentation",
+    "role": "requester",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Filing a request with necessary details is routine information work."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Submit before item is furnished",
+    "role": "requester",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical submission is required."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review by CMS or contractor",
+    "role": "CMS or contractor",
+    "handoff_to": "requester",
+    "executor": "agent",
+    "executor_reason": "Checking compliance is information work."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Provisional affirmation if rules met",
+    "role": "CMS or contractor",
+    "handoff_to": "requester",
+    "executor": "agent",
+    "executor_reason": "Issuing a provisional affirmation is routine information work."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Non-affirmation decision if rules not met",
+    "role": "CMS or contractor",
+    "handoff_to": "requester",
+    "executor": "agent",
+    "executor_reason": "Issuing a non-affirmation decision is routine information work."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Resubmit if non-affirmation",
+    "role": "requester",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Resubmission is routine information work."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Include expedited review documentation",
+    "role": "requester",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Providing additional details for expedited review is routine information work."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": "rules met"
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": "rules not met"
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}
