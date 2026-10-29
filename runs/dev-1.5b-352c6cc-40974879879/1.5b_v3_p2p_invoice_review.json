@@ -1,0 +1,240 @@
+{
+ "sop_id": "p2p_invoice_review",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Receive proper invoice and satisfactory contract performance\", \"role\": \"vendor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The vendor must provide a proper invoice and satisfactory contract performance.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Annotate invoice and receiving report\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must annotate the invoice and receiving report with the actual date it receives the invoice.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review invoice\", \"role\": \"payment office\", \"handoff_to\": \"agency office\", \"executor\": \"agent\", \"executor_reason\": \"The payment office must review the invoice as soon as practicable after receipt to determine whether the invoice is a proper invoice.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Determine if invoice is proper\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must determine if the invoice is a proper invoice and if so, proceed to the next step.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Return invoice\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"If the invoice is determined to be improper, the vendor must return the invoice to the payment office as soon as practicable after receipt, but no later than 7 days after receipt.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Identify defects and reasons for return\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must identify all defects that prevent payment and specify all reasons why the invoice is not proper and why it is being returned.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Support invoice payments\", \"role\": \"payment office\", \"handoff_to\": \"agency office\", \"executor\": \"agent\", \"executor_reason\": \"The payment office must support all invoice payments with a receiving report or other Government documentation authorizing payment.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Pay invoice\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must pay the invoice and support it with a receiving report or other Government documentation.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1157,
+    "completion_tokens": 714,
+    "total_tokens": 1871,
+    "seconds": 51.73
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Receive proper invoice and satisfactory contract performance",
+    "role": "vendor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to receive the invoice and contract documents."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Annotate invoice and receiving report",
+    "role": "vendor",
+    "handoff_to": "payment office",
+    "executor": "agent",
+    "executor_reason": "An AI agent can process and annotate the invoice and receiving report based on the actual date received."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review invoice",
+    "role": "payment office",
+    "handoff_to": "agency office",
+    "executor": "agent",
+    "executor_reason": "Reviewing invoices is an information work task that an AI agent with system access could do."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Determine if invoice is proper",
+    "role": "agency office",
+    "handoff_to": "vendor",
+    "executor": "agent",
+    "executor_reason": "AI can analyze the invoice for compliance with the required fields and ensure the Taxpayer Identification Number is present."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Return invoice",
+    "role": "vendor",
+    "handoff_to": "payment office",
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to return the invoice to the vendor."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Identify defects and reasons for return",
+    "role": "vendor",
+    "handoff_to": "agency office",
+    "executor": "agent",
+    "executor_reason": "AI can analyze the data and identify defects and reasons for return based on the provided source information."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Support invoice payments",
+    "role": "payment office",
+    "handoff_to": "agency office",
+    "executor": "agent",
+    "executor_reason": "Supporting payments with required documentation."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Pay invoice",
+    "role": "agency office",
+    "handoff_to": "vendor",
+    "executor": "human",
+    "executor_reason": "The payment of an invoice is a financial action that requires human involvement."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "human",
+  "s7": "agent",
+  "s8": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to receive the invoice and contract documents.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 23,
+    "total_tokens": 392,
+    "seconds": 5.21
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"An AI agent can process and annotate the invoice and receiving report based on the actual date received.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 31,
+    "total_tokens": 405,
+    "seconds": 2.04
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Reviewing invoices is an information work task that an AI agent with system access could do.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 30,
+    "total_tokens": 407,
+    "seconds": 2.0
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI can analyze the invoice for compliance with the required fields and ensure the Taxpayer Identification Number is present.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 33,
+    "total_tokens": 431,
+    "seconds": 2.43
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to return the invoice to the vendor.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 27,
+    "total_tokens": 412,
+    "seconds": 1.93
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI can analyze the data and identify defects and reasons for return based on the provided source information.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 31,
+    "total_tokens": 410,
+    "seconds": 2.07
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Supporting payments with required documentation.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 19,
+    "total_tokens": 388,
+    "seconds": 1.33
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The payment of an invoice is a financial action that requires human involvement.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 26,
+    "total_tokens": 400,
+    "seconds": 1.77
+   }
+  }
+ ]
+}
