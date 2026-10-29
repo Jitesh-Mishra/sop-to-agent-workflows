@@ -1,0 +1,180 @@
+{
+ "sop_id": "p2p_invoice_review",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Payment will be based on receipt of a proper invoice and satisfactory contract performance.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"The designated payment office will annotate each invoice and receiving report with the actual date it receives the invoice.\", \"role\": \"Payment Office\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Each invoice will be reviewed by the designated agency office as soon as practicable after receipt to determine whether the invoice is a proper invoice.\", \"role\": \"Agency Office\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"A proper invoice must include the contract number, a description, quantity, unit price and extended price of supplies delivered or services performed, the person to notify in the event of a defective invoice, and the Taxpayer Identification Number.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"When an invoice is determined to be improper, the agency shall return the invoice to the vendor as soon as practicable after receipt, but no later than 7 days after receipt.\", \"role\": \"Agency Office\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"The agency will identify all defects that prevent payment and specify all reasons why the invoice is not proper and why it is being returned.\", \"role\": \"Agency Office\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"All invoice payments must be supported by a receiving report or other Government documentation authorizing payment.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"When payments are made after the due date, interest will be paid automatically in accordance with the procedures provided in this part.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}]}",
+   "errors": [
+    "Step 1 hands off to its own role (None); a handoff must go to a different party.",
+    "Step 4 hands off to its own role (None); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (None); a handoff must go to a different party.",
+    "Step 8 hands off to its own role (None); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 357,
+    "completion_tokens": 773,
+    "total_tokens": 1130,
+    "seconds": 71.11
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Payment will be based on receipt of a proper invoice and satisfactory contract performance.\", \"role\": \"None\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"The designated payment office will annotate each invoice and receiving report with the actual date it receives the invoice.\", \"role\": \"Payment Office\", \"handoff_to\": \"Agency Office\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Each invoice will be reviewed by the designated agency office as soon as practicable after receipt to determine whether the invoice is a proper invoice.\", \"role\": \"Agency Office\", \"handoff_to\": \"Agency Office\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"A proper invoice must include the contract number, a description, quantity, unit price and extended price of supplies delivered or services performed, the person to notify in the event of a defective invoice, and the Taxpayer Identification Number.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"When an invoice is determined to be improper, the agency shall return the invoice to the vendor as soon as practicable after receipt, but no later than 7 days after receipt.\", \"role\": \"Agency Office\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"The agency will identify all defects that prevent payment and specify all reasons why the invoice is not proper and why it is being returned.\", \"role\": \"Agency Office\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"All invoice payments must be supported by a receiving report or other Government documentation authorizing payment.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"When payments are made after the due date, interest will be paid automatically in accordance with the procedures provided in this part.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}]}",
+   "errors": [
+    "Step 3 hands off to its own role (Agency Office); a handoff must go to a different party.",
+    "Step 4 hands off to its own role (None); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (None); a handoff must go to a different party.",
+    "Step 8 hands off to its own role (None); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 2033,
+    "completion_tokens": 775,
+    "total_tokens": 2808,
+    "seconds": 97.96
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Payment will be based on receipt of a proper invoice and satisfactory contract performance.\", \"role\": \"None\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"The designated payment office will annotate each invoice and receiving report with the actual date it receives the invoice.\", \"role\": \"Payment Office\", \"handoff_to\": \"Agency Office\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Each invoice will be reviewed by the designated agency office as soon as practicable after receipt to determine whether the invoice is a proper invoice.\", \"role\": \"Agency Office\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"A proper invoice must include the contract number, a description, quantity, unit price and extended price of supplies delivered or services performed, the person to notify in the event of a defective invoice, and the Taxpayer Identification Number.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"When an invoice is determined to be improper, the agency shall return the invoice to the vendor as soon as practicable after receipt, but no later than 7 days after receipt.\", \"role\": \"Agency Office\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"The agency will identify all defects that prevent payment and specify all reasons why the invoice is not proper and why it is being returned.\", \"role\": \"Agency Office\", \"handoff_to\": \"Vendor\", \"executor\": \"human\", \"executor_reason\": \"The action involves a specific office and a human executor.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"All invoice payments must be supported by a receiving report or other Government documentation authorizing payment.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"When payments are made after the due date, interest will be paid automatically in accordance with the procedures provided in this part.\", \"role\": \"None\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The action is a statement and does not involve a specific executor.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}]}",
+   "errors": [
+    "Step 4 hands off to its own role (None); a handoff must go to a different party.",
+    "Step 7 hands off to its own role (None); a handoff must go to a different party.",
+    "Step 8 hands off to its own role (None); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 2038,
+    "completion_tokens": 774,
+    "total_tokens": 2812,
+    "seconds": 114.85
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Payment will be based on receipt of a proper invoice and satisfactory contract performance.",
+    "role": "None",
+    "handoff_to": "Vendor",
+    "executor": "human",
+    "executor_reason": "The action is a statement and does not involve a specific executor."
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "The designated payment office will annotate each invoice and receiving report with the actual date it receives the invoice.",
+    "role": "Payment Office",
+    "handoff_to": "Agency Office",
+    "executor": "human",
+    "executor_reason": "The action involves a specific office and a human executor."
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Each invoice will be reviewed by the designated agency office as soon as practicable after receipt to determine whether the invoice is a proper invoice.",
+    "role": "Agency Office",
+    "handoff_to": "Vendor",
+    "executor": "human",
+    "executor_reason": "The action involves a specific office and a human executor."
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "A proper invoice must include the contract number, a description, quantity, unit price and extended price of supplies delivered or services performed, the person to notify in the event of a defective invoice, and the Taxpayer Identification Number.",
+    "role": "None",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The action is a statement and does not involve a specific executor."
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "When an invoice is determined to be improper, the agency shall return the invoice to the vendor as soon as practicable after receipt, but no later than 7 days after receipt.",
+    "role": "Agency Office",
+    "handoff_to": "Vendor",
+    "executor": "human",
+    "executor_reason": "The action involves a specific office and a human executor."
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "The agency will identify all defects that prevent payment and specify all reasons why the invoice is not proper and why it is being returned.",
+    "role": "Agency Office",
+    "handoff_to": "Vendor",
+    "executor": "human",
+    "executor_reason": "The action involves a specific office and a human executor."
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "All invoice payments must be supported by a receiving report or other Government documentation authorizing payment.",
+    "role": "None",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The action is a statement and does not involve a specific executor."
+   },
+   {
+    "id": "8",
+    "lines": [
+     8
+    ],
+    "action": "When payments are made after the due date, interest will be paid automatically in accordance with the procedures provided in this part.",
+    "role": "None",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The action is a statement and does not involve a specific executor."
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   },
+   {
+    "from": "7",
+    "to": "8",
+    "condition": null
+   }
+  ]
+ }
+}

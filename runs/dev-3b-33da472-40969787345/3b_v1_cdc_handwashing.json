@@ -1,0 +1,207 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1, 2], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like applying hand sanitizer.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Apply hand sanitizer\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like applying hand sanitizer.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Dry hands\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like drying hands.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Wet hands with warm water\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like wetting hands.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Apply soap\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like applying soap.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like rubbing hands.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Rub hands for 15 seconds\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like rubbing hands.\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Rinse hands\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like rinsing hands.\"}, {\"id\": \"9\", \"lines\": [9], \"action\": \"Dry hands\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like drying hands.\"}, {\"id\": \"10\", \"lines\": [9], \"action\": \"Use paper towel to turn off faucet\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like turning off the faucet.\"}, {\"id\": \"11\", \"lines\": [9], \"action\": \"Use paper towel to open door\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like opening the door.\"}], \"edges\": []}",
+   "errors": [
+    "The workflow has several steps but no edges; connect the steps in execution order."
+   ],
+   "usage": {
+    "prompt_tokens": 320,
+    "completion_tokens": 675,
+    "total_tokens": 995,
+    "seconds": 59.34
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1, 2], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like applying hand sanitizer.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Apply hand sanitizer\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like applying hand sanitizer.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Dry hands\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like drying hands.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Wet hands with warm water\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like wetting hands.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Apply soap\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like applying soap.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Rub hands to form lather\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like rubbing hands.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Rub hands for 15 seconds\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like rubbing hands.\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Rinse hands\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like rinsing hands.\"}, {\"id\": \"9\", \"lines\": [9], \"action\": \"Dry hands\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like drying hands.\"}, {\"id\": \"10\", \"lines\": [9], \"action\": \"Use paper towel to turn off faucet\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like turning off the faucet.\"}, {\"id\": \"11\", \"lines\": [9], \"action\": \"Use paper towel to open door\", \"role\": \"Patient or Visitor\", \"handoff_to\": \"None\", \"executor\": \"human\", \"executor_reason\": \"The AI cannot perform physical actions like opening the door.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"2\", \"condition\": \"None\"}, {\"from\": \"2\", \"to\": \"3\", \"condition\": \"None\"}, {\"from\": \"3\", \"to\": \"4\", \"condition\": \"None\"}, {\"from\": \"4\", \"to\": \"5\", \"condition\": \"None\"}, {\"from\": \"5\", \"to\": \"6\", \"condition\": \"None\"}, {\"from\": \"6\", \"to\": \"7\", \"condition\": \"None\"}, {\"from\": \"7\", \"to\": \"8\", \"condition\": \"None\"}, {\"from\": \"8\", \"to\": \"9\", \"condition\": \"None\"}, {\"from\": \"9\", \"to\": \"10\", \"condition\": \"None\"}, {\"from\": \"10\", \"to\": \"11\", \"condition\": \"None\"}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1725,
+    "completion_tokens": 857,
+    "total_tokens": 2582,
+    "seconds": 95.75
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1,
+     2
+    ],
+    "action": "Use alcohol-based hand sanitizer",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like applying hand sanitizer."
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Apply hand sanitizer",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like applying hand sanitizer."
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Dry hands",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like drying hands."
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Wet hands with warm water",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like wetting hands."
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Apply soap",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like applying soap."
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Rub hands to form lather",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like rubbing hands."
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Rub hands for 15 seconds",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like rubbing hands."
+   },
+   {
+    "id": "8",
+    "lines": [
+     8
+    ],
+    "action": "Rinse hands",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like rinsing hands."
+   },
+   {
+    "id": "9",
+    "lines": [
+     9
+    ],
+    "action": "Dry hands",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like drying hands."
+   },
+   {
+    "id": "10",
+    "lines": [
+     9
+    ],
+    "action": "Use paper towel to turn off faucet",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like turning off the faucet."
+   },
+   {
+    "id": "11",
+    "lines": [
+     9
+    ],
+    "action": "Use paper towel to open door",
+    "role": "Patient or Visitor",
+    "handoff_to": "None",
+    "executor": "human",
+    "executor_reason": "The AI cannot perform physical actions like opening the door."
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "2",
+    "condition": "None"
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": "None"
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": "None"
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": "None"
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": "None"
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": "None"
+   },
+   {
+    "from": "7",
+    "to": "8",
+    "condition": "None"
+   },
+   {
+    "from": "8",
+    "to": "9",
+    "condition": "None"
+   },
+   {
+    "from": "9",
+    "to": "10",
+    "condition": "None"
+   },
+   {
+    "from": "10",
+    "to": "11",
+    "condition": "None"
+   }
+  ]
+ }
+}

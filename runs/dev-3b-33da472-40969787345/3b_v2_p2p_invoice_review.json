@@ -1,0 +1,159 @@
+{
+ "sop_id": "p2p_invoice_review",
+ "prompt": "v2",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Payment based on proper invoice and contract performance\", \"role\": \"designated payment office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Annotating the date of invoice receipt is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Annotate invoice date\", \"role\": \"designated payment office\", \"handoff_to\": \"designated payment office\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review invoice\", \"role\": \"designated agency office\", \"handoff_to\": \"designated agency office\", \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Invoice includes required elements\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Checking for completeness is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Return improper invoice\", \"role\": \"designated agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Specify defects and reasons for return\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Support invoice payment with receiving report\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Interest on late payments\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [
+    "Step s2 hands off to its own role (designated payment office); a handoff must go to a different party.",
+    "Step s3 hands off to its own role (designated agency office); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1157,
+    "completion_tokens": 657,
+    "total_tokens": 1814,
+    "seconds": 82.27
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Payment based on proper invoice and contract performance\", \"role\": \"designated payment office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Annotating the date of invoice receipt is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Annotate invoice date\", \"role\": \"designated payment office\", \"handoff_to\": \"agent\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review invoice\", \"role\": \"designated agency office\", \"handoff_to\": \"agent\", \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Invoice includes required elements\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Checking for completeness is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Return improper invoice\", \"role\": \"designated agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Specify defects and reasons for return\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Support invoice payment with receiving report\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Interest on late payments\", \"role\": \"designated agency office\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 2561,
+    "completion_tokens": 632,
+    "total_tokens": 3193,
+    "seconds": 79.41
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Payment based on proper invoice and contract performance",
+    "role": "designated payment office",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Annotating the date of invoice receipt is routine information work."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Annotate invoice date",
+    "role": "designated payment office",
+    "handoff_to": "agent",
+    "executor": "agent",
+    "executor_reason": "Filing a ticket from known details is routine information work."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review invoice",
+    "role": "designated agency office",
+    "handoff_to": "agent",
+    "executor": "agent",
+    "executor_reason": "Compiling and checking information is routine information work."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Invoice includes required elements",
+    "role": "designated agency office",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Checking for completeness is routine information work."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Return improper invoice",
+    "role": "designated agency office",
+    "handoff_to": "vendor",
+    "executor": "agent",
+    "executor_reason": "Compiling and checking information is routine information work."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Specify defects and reasons for return",
+    "role": "designated agency office",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and checking information is routine information work."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Support invoice payment with receiving report",
+    "role": "designated agency office",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and checking information is routine information work."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Interest on late payments",
+    "role": "designated agency office",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and checking information is routine information work."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ }
+}

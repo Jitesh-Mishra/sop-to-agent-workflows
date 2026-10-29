@@ -1,0 +1,142 @@
+{
+ "sop_id": "onb_form_i9_verification",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Ensure the individual properly completes section 1 of Form I-9 and signs the attestation.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human judgment and physical verification of the form.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Assist the individual if needed.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human assistance in completing the form if needed.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Physically examine the documentation presented by the individual.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human physical examination of the documents.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Complete section 2 of Form I-9 and sign the attestation.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human judgment and physical verification of the form.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Retain the Form I-9 for three years.\", \"role\": \"Employer\", \"handoff_to\": \"Employer\", \"executor\": \"human\", \"executor_reason\": \"The action requires human retention of the form.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Reverify the individual if employment authorization expires.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human reverification of the individual's employment authorization.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Provide notice prior to inspection of Forms I-9.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human notification of the inspection.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"6\", \"to\": \"5\", \"condition\": null}, {\"from\": \"7\", \"to\": \"5\", \"condition\": null}]}",
+   "errors": [
+    "Step 5 hands off to its own role (Employer); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 570,
+    "total_tokens": 959,
+    "seconds": 53.34
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Ensure the individual properly completes section 1 of Form I-9 and signs the attestation.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human judgment and physical verification of the form.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Assist the individual if needed.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human assistance in completing the form if needed.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Physically examine the documentation presented by the individual.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human physical examination of the documents.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Complete section 2 of Form I-9 and sign the attestation.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human judgment and physical verification of the form.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Retain the Form I-9 for three years.\", \"role\": \"Employer\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"The action requires human retention of the form.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Reverify the individual if employment authorization expires.\", \"role\": \"Employer\", \"handoff_to\": \"Individual\", \"executor\": \"human\", \"executor_reason\": \"The action requires human reverification of the individual's employment authorization.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Provide notice prior to inspection of Forms I-9.\", \"role\": \"Employer\", \"handoff_to\": \"Human\", \"executor\": \"human\", \"executor_reason\": \"The action requires human notification of the inspection.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"4\", \"to\": \"5\", \"condition\": null}, {\"from\": \"6\", \"to\": \"5\", \"condition\": null}, {\"from\": \"7\", \"to\": \"5\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1591,
+    "completion_tokens": 569,
+    "total_tokens": 2160,
+    "seconds": 70.26
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Ensure the individual properly completes section 1 of Form I-9 and signs the attestation.",
+    "role": "Employer",
+    "handoff_to": "Individual",
+    "executor": "human",
+    "executor_reason": "The action requires human judgment and physical verification of the form."
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Assist the individual if needed.",
+    "role": "Employer",
+    "handoff_to": "Individual",
+    "executor": "human",
+    "executor_reason": "The action requires human assistance in completing the form if needed."
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Physically examine the documentation presented by the individual.",
+    "role": "Employer",
+    "handoff_to": "Individual",
+    "executor": "human",
+    "executor_reason": "The action requires human physical examination of the documents."
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Complete section 2 of Form I-9 and sign the attestation.",
+    "role": "Employer",
+    "handoff_to": "Individual",
+    "executor": "human",
+    "executor_reason": "The action requires human judgment and physical verification of the form."
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Retain the Form I-9 for three years.",
+    "role": "Employer",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "The action requires human retention of the form."
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Reverify the individual if employment authorization expires.",
+    "role": "Employer",
+    "handoff_to": "Individual",
+    "executor": "human",
+    "executor_reason": "The action requires human reverification of the individual's employment authorization."
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Provide notice prior to inspection of Forms I-9.",
+    "role": "Employer",
+    "handoff_to": "Human",
+    "executor": "human",
+    "executor_reason": "The action requires human notification of the inspection."
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "4",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "7",
+    "to": "5",
+    "condition": null
+   }
+  ]
+ }
+}

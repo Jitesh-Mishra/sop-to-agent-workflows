@@ -1,0 +1,167 @@
+{
+ "sop_id": "pa_dmepos_prior_authorization",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Request prior authorization\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot provide medical documentation or a written order/prescription.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Submit prior authorization request\", \"role\": \"Human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot submit a claim.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Review prior authorization request\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can review documentation and rules compliance.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Affirm prior authorization\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can issue a provisional affirmation.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Non-affirm prior authorization\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can issue a non-affirmation decision.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Resubmit prior authorization request\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot resubmit a request.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Request expedited prior authorization\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot provide medical documentation or a written order/prescription.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": \"Compliance with applicable Medicare coverage, coding, and payment rules\"}, {\"from\": \"3\", \"to\": \"5\", \"condition\": \"Non-compliance with applicable Medicare coverage, coding, and payment rules\"}, {\"from\": \"5\", \"to\": \"6\", \"condition\": \"Non-affirmation decision\"}, {\"from\": \"6\", \"to\": \"3\", \"condition\": null}]}",
+   "errors": [
+    "The workflow has a cycle: 5 -> 6 -> 3 -> 5. It must be a directed acyclic graph."
+   ],
+   "usage": {
+    "prompt_tokens": 359,
+    "completion_tokens": 567,
+    "total_tokens": 926,
+    "seconds": 49.76
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Request prior authorization\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot provide medical documentation or a written order/prescription.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Submit prior authorization request\", \"role\": \"Human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot submit a claim.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Review prior authorization request\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can review documentation and rules compliance.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Affirm prior authorization\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can issue a provisional affirmation.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Non-affirm prior authorization\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can issue a non-affirmation decision.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Resubmit prior authorization request\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot resubmit a request.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Request expedited prior authorization\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot provide medical documentation or a written order/prescription.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": \"Compliance with applicable Medicare coverage, coding, and payment rules\"}, {\"from\": \"3\", \"to\": \"5\", \"condition\": \"Non-compliance with applicable Medicare coverage, coding, and payment rules\"}, {\"from\": \"5\", \"to\": \"6\", \"condition\": \"Non-affirmation decision\"}, {\"from\": \"6\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"6\", \"condition\": null}]}",
+   "errors": [
+    "The workflow has a cycle: 5 -> 6 -> 3 -> 5. It must be a directed acyclic graph."
+   ],
+   "usage": {
+    "prompt_tokens": 1559,
+    "completion_tokens": 584,
+    "total_tokens": 2143,
+    "seconds": 65.85
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Request prior authorization\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot provide medical documentation or a written order/prescription.\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Submit prior authorization request\", \"role\": \"Human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot submit a claim.\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Review prior authorization request\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can review documentation and rules compliance.\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Affirm prior authorization\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can issue a provisional affirmation.\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Non-affirm prior authorization\", \"role\": \"CMS or its contractor\", \"handoff_to\": \"Human\", \"executor\": \"agent\", \"executor_reason\": \"An AI agent can issue a non-affirmation decision.\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Resubmit prior authorization request\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot resubmit a request.\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Request expedited prior authorization\", \"role\": \"Human\", \"handoff_to\": \"CMS or its contractor\", \"executor\": \"human\", \"executor_reason\": \"An AI agent cannot provide medical documentation or a written order/prescription.\"}], \"edges\": [{\"from\": \"1\", \"to\": \"3\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": \"Compliance with applicable Medicare coverage, coding, and payment rules\"}, {\"from\": \"3\", \"to\": \"5\", \"condition\": \"Non-compliance with applicable Medicare coverage, coding, and payment rules\"}, {\"from\": \"5\", \"to\": \"6\", \"condition\": \"Non-affirmation decision\"}, {\"from\": \"6\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"3\", \"condition\": \"Resubmission required after non-affirmation decision\"}]}",
+   "errors": [
+    "Some edges are duplicated.",
+    "The workflow has a cycle: 5 -> 6 -> 3 -> 5. It must be a directed acyclic graph."
+   ],
+   "usage": {
+    "prompt_tokens": 1593,
+    "completion_tokens": 611,
+    "total_tokens": 2204,
+    "seconds": 69.34
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Request prior authorization",
+    "role": "Human",
+    "handoff_to": "CMS or its contractor",
+    "executor": "human",
+    "executor_reason": "An AI agent cannot provide medical documentation or a written order/prescription."
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Submit prior authorization request",
+    "role": "Human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An AI agent cannot submit a claim."
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Review prior authorization request",
+    "role": "CMS or its contractor",
+    "handoff_to": "Human",
+    "executor": "agent",
+    "executor_reason": "An AI agent can review documentation and rules compliance."
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Affirm prior authorization",
+    "role": "CMS or its contractor",
+    "handoff_to": "Human",
+    "executor": "agent",
+    "executor_reason": "An AI agent can issue a provisional affirmation."
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Non-affirm prior authorization",
+    "role": "CMS or its contractor",
+    "handoff_to": "Human",
+    "executor": "agent",
+    "executor_reason": "An AI agent can issue a non-affirmation decision."
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Resubmit prior authorization request",
+    "role": "Human",
+    "handoff_to": "CMS or its contractor",
+    "executor": "human",
+    "executor_reason": "An AI agent cannot resubmit a request."
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Request expedited prior authorization",
+    "role": "Human",
+    "handoff_to": "CMS or its contractor",
+    "executor": "human",
+    "executor_reason": "An AI agent cannot provide medical documentation or a written order/prescription."
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": "Compliance with applicable Medicare coverage, coding, and payment rules"
+   },
+   {
+    "from": "3",
+    "to": "5",
+    "condition": "Non-compliance with applicable Medicare coverage, coding, and payment rules"
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": "Non-affirmation decision"
+   },
+   {
+    "from": "6",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "3",
+    "condition": "Resubmission required after non-affirmation decision"
+   }
+  ]
+ }
+}

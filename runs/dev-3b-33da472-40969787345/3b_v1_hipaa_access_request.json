@@ -1,0 +1,162 @@
+{
+ "sop_id": "hipaa_access_request",
+ "prompt": "v1",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"1\", \"lines\": [1], \"action\": \"Act on request for access\", \"role\": \"Agent\", \"handoff_to\": \"Individual\", \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the request\"}, {\"id\": \"2\", \"lines\": [2], \"action\": \"Extend time for action\", \"role\": \"Agent\", \"handoff_to\": \"Individual\", \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the request for extension\"}, {\"id\": \"3\", \"lines\": [3], \"action\": \"Provide written statement\", \"role\": \"Agent\", \"handoff_to\": \"Individual\", \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the request for extension\"}, {\"id\": \"4\", \"lines\": [4], \"action\": \"Deny access\", \"role\": \"Agent\", \"handoff_to\": \"Individual\", \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the denial\"}, {\"id\": \"5\", \"lines\": [5], \"action\": \"Review denial\", \"role\": \"Agent\", \"handoff_to\": \"Individual\", \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the review request\"}, {\"id\": \"6\", \"lines\": [6], \"action\": \"Refer to reviewing official\", \"role\": \"Agent\", \"handoff_to\": \"Reviewing Official\", \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the review request\"}, {\"id\": \"7\", \"lines\": [7], \"action\": \"Determine denial\", \"role\": \"Reviewing Official\", \"handoff_to\": \"Agent\", \"executor\": \"human\", \"executor_reason\": \"Manual review required\"}, {\"id\": \"8\", \"lines\": [8], \"action\": \"Notify individual\", \"role\": \"Agent\", \"handoff_to\": \"Individual\", \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the notification\"}, {\"id\": \"9\", \"lines\": [8], \"action\": \"Take other action\", \"role\": \"Agent\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Automatically processes the notification\"}], \"edges\": [{\"from\": \"1\", \"to\": \"5\", \"condition\": null}, {\"from\": \"1\", \"to\": \"4\", \"condition\": null}, {\"from\": \"2\", \"to\": \"3\", \"condition\": null}, {\"from\": \"3\", \"to\": \"4\", \"condition\": null}, {\"from\": \"5\", \"to\": \"6\", \"condition\": null}, {\"from\": \"6\", \"to\": \"7\", \"condition\": null}, {\"from\": \"7\", \"to\": \"8\", \"condition\": null}, {\"from\": \"8\", \"to\": \"9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 402,
+    "completion_tokens": 612,
+    "total_tokens": 1014,
+    "seconds": 54.77
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "1",
+    "lines": [
+     1
+    ],
+    "action": "Act on request for access",
+    "role": "Agent",
+    "handoff_to": "Individual",
+    "executor": "agent",
+    "executor_reason": "Automatically processes the request"
+   },
+   {
+    "id": "2",
+    "lines": [
+     2
+    ],
+    "action": "Extend time for action",
+    "role": "Agent",
+    "handoff_to": "Individual",
+    "executor": "agent",
+    "executor_reason": "Automatically processes the request for extension"
+   },
+   {
+    "id": "3",
+    "lines": [
+     3
+    ],
+    "action": "Provide written statement",
+    "role": "Agent",
+    "handoff_to": "Individual",
+    "executor": "agent",
+    "executor_reason": "Automatically processes the request for extension"
+   },
+   {
+    "id": "4",
+    "lines": [
+     4
+    ],
+    "action": "Deny access",
+    "role": "Agent",
+    "handoff_to": "Individual",
+    "executor": "agent",
+    "executor_reason": "Automatically processes the denial"
+   },
+   {
+    "id": "5",
+    "lines": [
+     5
+    ],
+    "action": "Review denial",
+    "role": "Agent",
+    "handoff_to": "Individual",
+    "executor": "agent",
+    "executor_reason": "Automatically processes the review request"
+   },
+   {
+    "id": "6",
+    "lines": [
+     6
+    ],
+    "action": "Refer to reviewing official",
+    "role": "Agent",
+    "handoff_to": "Reviewing Official",
+    "executor": "agent",
+    "executor_reason": "Automatically processes the review request"
+   },
+   {
+    "id": "7",
+    "lines": [
+     7
+    ],
+    "action": "Determine denial",
+    "role": "Reviewing Official",
+    "handoff_to": "Agent",
+    "executor": "human",
+    "executor_reason": "Manual review required"
+   },
+   {
+    "id": "8",
+    "lines": [
+     8
+    ],
+    "action": "Notify individual",
+    "role": "Agent",
+    "handoff_to": "Individual",
+    "executor": "agent",
+    "executor_reason": "Automatically processes the notification"
+   },
+   {
+    "id": "9",
+    "lines": [
+     8
+    ],
+    "action": "Take other action",
+    "role": "Agent",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Automatically processes the notification"
+   }
+  ],
+  "edges": [
+   {
+    "from": "1",
+    "to": "5",
+    "condition": null
+   },
+   {
+    "from": "1",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "2",
+    "to": "3",
+    "condition": null
+   },
+   {
+    "from": "3",
+    "to": "4",
+    "condition": null
+   },
+   {
+    "from": "5",
+    "to": "6",
+    "condition": null
+   },
+   {
+    "from": "6",
+    "to": "7",
+    "condition": null
+   },
+   {
+    "from": "7",
+    "to": "8",
+    "condition": null
+   },
+   {
+    "from": "8",
+    "to": "9",
+    "condition": null
+   }
+  ]
+ }
+}
