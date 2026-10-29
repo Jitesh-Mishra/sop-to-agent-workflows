@@ -1,0 +1,106 @@
+{
+ "sop_id": "far_contract_claim_decision",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], \"action\": \"human\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], \"action\": \"human\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], \"action\": \"human\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 480,
+    "completion_tokens": 324,
+    "total_tokens": 804,
+    "seconds": 23.98
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"submit_claim\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], \"action\": \"human\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision.\" }, { \"id\": \"coordinate_with_contract_admin\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], \"action\": \"human\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision.\" }, { \"id\": \"prepare_decision\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], \"action\": \"human\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision.\" } ], \"edges\": [ { \"from\": \"submit_claim\", \"to\": \"coordinate_with_contract_admin\", \"condition\": null }, { \"from\": \"coordinate_with_contract_admin\", \"to\": \"prepare_decision\", \"condition\": null } ] }",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1190,
+    "completion_tokens": 355,
+    "total_tokens": 1545,
+    "seconds": 32.76
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "submit_claim",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "action": "human",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision."
+   },
+   {
+    "id": "coordinate_with_contract_admin",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "action": "human",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision."
+   },
+   {
+    "id": "prepare_decision",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "action": "human",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The contractor is responsible for submitting claims and providing certifications, coordinating with the contract administration officer, and preparing a written decision."
+   }
+  ],
+  "edges": [
+   {
+    "from": "submit_claim",
+    "to": "coordinate_with_contract_admin",
+    "condition": null
+   },
+   {
+    "from": "coordinate_with_contract_admin",
+    "to": "prepare_decision",
+    "condition": null
+   }
+  ]
+ }
+}

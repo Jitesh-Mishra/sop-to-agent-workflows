@@ -1,0 +1,123 @@
+{
+ "sop_id": "p2p_invoice_review",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"review\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Reviewing invoices is a human task.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"annotate\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Annotating invoices is a human task.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"return\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Returning invoices is a human task.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"identify\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Identifying defects is a human task.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 357,
+    "completion_tokens": 326,
+    "total_tokens": 683,
+    "seconds": 23.39
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"review\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"review\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Reviewing invoices is a human task.\" }, { \"id\": \"annotate\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"annotate\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Annotating invoices is a human task.\" }, { \"id\": \"return\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"return\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Returning invoices is a human task.\" }, { \"id\": \"identify\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7, 8 ], \"action\": \"identify\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Identifying defects is a human task.\" } ], \"edges\": [ { \"from\": \"review\", \"to\": \"annotate\", \"condition\": null }, { \"from\": \"annotate\", \"to\": \"return\", \"condition\": null }, { \"from\": \"return\", \"to\": \"identify\", \"condition\": null } ] }",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1071,
+    "completion_tokens": 362,
+    "total_tokens": 1433,
+    "seconds": 32.62
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "review",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "action": "review",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Reviewing invoices is a human task."
+   },
+   {
+    "id": "annotate",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "action": "annotate",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Annotating invoices is a human task."
+   },
+   {
+    "id": "return",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "action": "return",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Returning invoices is a human task."
+   },
+   {
+    "id": "identify",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "action": "identify",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Identifying defects is a human task."
+   }
+  ],
+  "edges": [
+   {
+    "from": "review",
+    "to": "annotate",
+    "condition": null
+   },
+   {
+    "from": "annotate",
+    "to": "return",
+    "condition": null
+   },
+   {
+    "from": "return",
+    "to": "identify",
+    "condition": null
+   }
+  ]
+ }
+}

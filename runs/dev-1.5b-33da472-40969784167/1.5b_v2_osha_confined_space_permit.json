@@ -1,0 +1,130 @@
+{
+ "sop_id": "osha_confined_space_permit",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Document pre-entry measures\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must document the completion of required pre-entry measures.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Sign the entry permit\", \"role\": \"entry supervisor\", \"handoff_to\": \"employer\", \"executor\": \"agent\", \"executor_reason\": \"The entry supervisor must sign the entry permit to authorize entry.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Post the permit\", \"role\": \"employer\", \"handoff_to\": \"entry supervisor\", \"executor\": \"agent\", \"executor_reason\": \"The employer must post the permit at the entry portal or by any other equally effective means.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Limit permit duration\", \"role\": \"employer\", \"handoff_to\": \"entry supervisor\", \"executor\": \"human\", \"executor_reason\": \"The duration of the permit may not exceed the time required to complete the assigned task or job.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Terminate entry\", \"role\": \"entry supervisor\", \"handoff_to\": \"employer\", \"executor\": \"human\", \"executor_reason\": \"The entry supervisor must terminate entry and cancel the entry permit when the entry operations covered by the entry permit have been completed.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Retain canceled permits\", \"role\": \"employer\", \"handoff_to\": \"entry supervisor\", \"executor\": \"human\", \"executor_reason\": \"The employer must retain each canceled entry permit for at least 1 year.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Note problems\", \"role\": \"employer\", \"handoff_to\": \"entry supervisor\", \"executor\": \"human\", \"executor_reason\": \"Any problems encountered during an entry operation shall be noted on the pertinent permit.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1158,
+    "completion_tokens": 571,
+    "total_tokens": 1729,
+    "seconds": 37.28
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Document pre-entry measures",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employer must document the completion of required pre-entry measures."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Sign the entry permit",
+    "role": "entry supervisor",
+    "handoff_to": "employer",
+    "executor": "agent",
+    "executor_reason": "The entry supervisor must sign the entry permit to authorize entry."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Post the permit",
+    "role": "employer",
+    "handoff_to": "entry supervisor",
+    "executor": "agent",
+    "executor_reason": "The employer must post the permit at the entry portal or by any other equally effective means."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Limit permit duration",
+    "role": "employer",
+    "handoff_to": "entry supervisor",
+    "executor": "human",
+    "executor_reason": "The duration of the permit may not exceed the time required to complete the assigned task or job."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Terminate entry",
+    "role": "entry supervisor",
+    "handoff_to": "employer",
+    "executor": "human",
+    "executor_reason": "The entry supervisor must terminate entry and cancel the entry permit when the entry operations covered by the entry permit have been completed."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Retain canceled permits",
+    "role": "employer",
+    "handoff_to": "entry supervisor",
+    "executor": "human",
+    "executor_reason": "The employer must retain each canceled entry permit for at least 1 year."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Note problems",
+    "role": "employer",
+    "handoff_to": "entry supervisor",
+    "executor": "human",
+    "executor_reason": "Any problems encountered during an entry operation shall be noted on the pertinent permit."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ }
+}

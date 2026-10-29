@@ -1,0 +1,172 @@
+{
+ "sop_id": "sup_high_priority_escalation",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Confirm the priority and queue\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent must confirm the priority and queue manually.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify the on-call engineer\", \"role\": \"support agent\", \"handoff_to\": \"on-call engineer\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Open an incident\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Post a status update\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Forward the ticket to the billing team\", \"role\": \"support agent\", \"handoff_to\": \"billing team\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Send the customer an acknowledgement\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"human\", \"executor_reason\": \"The agent must send the acknowledgment manually.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Document the fix in the knowledge base\", \"role\": \"owning team\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The team must document the fix manually.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Close the ticket\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"human\", \"executor_reason\": \"The agent must close the ticket manually.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [
+    "Step s8 cites lines [8] that do not exist (the SOP has lines 1 to 7)."
+   ],
+   "usage": {
+    "prompt_tokens": 1071,
+    "completion_tokens": 619,
+    "total_tokens": 1690,
+    "seconds": 38.35
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Confirm the priority and queue\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent must confirm the priority and queue manually.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify the on-call engineer\", \"role\": \"support agent\", \"handoff_to\": \"on-call engineer\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Open an incident\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Post a status update\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Forward the ticket to the billing team\", \"role\": \"support agent\", \"handoff_to\": \"billing team\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Send the customer an acknowledgement\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"human\", \"executor_reason\": \"The agent must send the acknowledgment manually.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Document the fix in the knowledge base\", \"role\": \"owning team\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The team must document the fix manually.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Close the ticket\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"human\", \"executor_reason\": \"The agent must close the ticket manually.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [
+    "Step s8 cites lines [8] that do not exist (the SOP has lines 1 to 7)."
+   ],
+   "usage": {
+    "prompt_tokens": 2371,
+    "completion_tokens": 619,
+    "total_tokens": 2990,
+    "seconds": 51.66
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Confirm the priority and queue\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent must confirm the priority and queue manually.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify the on-call engineer\", \"role\": \"support agent\", \"handoff_to\": \"on-call engineer\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Open an incident\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Post a status update\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Forward the ticket to the billing team\", \"role\": \"support agent\", \"handoff_to\": \"billing team\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Send the customer an acknowledgement\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"human\", \"executor_reason\": \"The agent must send the acknowledgment manually.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Document the fix in the knowledge base\", \"role\": \"owning team\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The team must document the fix manually.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Close the ticket\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"human\", \"executor_reason\": \"The agent must close the ticket manually.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [
+    "Step s8 cites lines [8] that do not exist (the SOP has lines 1 to 7)."
+   ],
+   "usage": {
+    "prompt_tokens": 2371,
+    "completion_tokens": 619,
+    "total_tokens": 2990,
+    "seconds": 38.46
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Confirm the priority and queue",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The agent must confirm the priority and queue manually."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Notify the on-call engineer",
+    "role": "support agent",
+    "handoff_to": "on-call engineer",
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a notice from the ticket facts."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Open an incident",
+    "role": "on-call engineer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a notice from the ticket facts."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Post a status update",
+    "role": "on-call engineer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a notice from the ticket facts."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Forward the ticket to the billing team",
+    "role": "support agent",
+    "handoff_to": "billing team",
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a notice from the ticket facts."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Send the customer an acknowledgement",
+    "role": "support agent",
+    "handoff_to": "customer",
+    "executor": "human",
+    "executor_reason": "The agent must send the acknowledgment manually."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Document the fix in the knowledge base",
+    "role": "owning team",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The team must document the fix manually."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Close the ticket",
+    "role": "support agent",
+    "handoff_to": "customer",
+    "executor": "human",
+    "executor_reason": "The agent must close the ticket manually."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ }
+}

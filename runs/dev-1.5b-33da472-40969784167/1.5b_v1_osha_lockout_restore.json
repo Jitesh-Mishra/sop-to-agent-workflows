@@ -1,0 +1,176 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v1",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"default\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" } ], \"edges\": [ { \"from\": \"default\", \"to\": \"default\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: default. Every step id must be unique.",
+    "Edge default -> default is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 309,
+    "completion_tokens": 604,
+    "total_tokens": 913,
+    "seconds": 36.65
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" } ], \"edges\": [ { \"from\": \"check\", \"to\": \"check\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: check. Every step id must be unique.",
+    "Edge check -> check is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 1579,
+    "completion_tokens": 604,
+    "total_tokens": 2183,
+    "seconds": 58.42
+   }
+  },
+  {
+   "raw": "{ \"steps\": [ { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" }, { \"id\": \"check\", \"lines\": [ 1, 2, 3, 4, 5, 6, 7 ], \"action\": \"check\", \"role\": \"human\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure that all necessary checks are performed before the machine or equipment can be returned to service.\" } ], \"edges\": [ { \"from\": \"check\", \"to\": \"check\", \"condition\": null } ] }",
+   "errors": [
+    "Duplicate step ids: check. Every step id must be unique.",
+    "Edge check -> check is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 1579,
+    "completion_tokens": 604,
+    "total_tokens": 2183,
+    "seconds": 58.35
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "check",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "check",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To ensure that all necessary checks are performed before the machine or equipment can be returned to service."
+   },
+   {
+    "id": "check",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "check",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To ensure that all necessary checks are performed before the machine or equipment can be returned to service."
+   },
+   {
+    "id": "check",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "check",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To ensure that all necessary checks are performed before the machine or equipment can be returned to service."
+   },
+   {
+    "id": "check",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "check",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To ensure that all necessary checks are performed before the machine or equipment can be returned to service."
+   },
+   {
+    "id": "check",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "check",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To ensure that all necessary checks are performed before the machine or equipment can be returned to service."
+   },
+   {
+    "id": "check",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "check",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To ensure that all necessary checks are performed before the machine or equipment can be returned to service."
+   },
+   {
+    "id": "check",
+    "lines": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "action": "check",
+    "role": "human",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "To ensure that all necessary checks are performed before the machine or equipment can be returned to service."
+   }
+  ],
+  "edges": [
+   {
+    "from": "check",
+    "to": "check",
+    "condition": null
+   }
+  ]
+ }
+}

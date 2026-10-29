@@ -1,0 +1,207 @@
+{
+ "sop_id": "p2p_invoice_review",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Receive proper invoice and satisfactory contract performance\", \"role\": \"vendor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The vendor must provide a proper invoice and evidence of satisfactory contract performance.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Annotate invoice and receiving report\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must provide annotations on the invoice and receiving report.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review invoice\", \"role\": \"payment office\", \"handoff_to\": \"agency office\", \"executor\": \"agent\", \"executor_reason\": \"The payment office must review the invoice to determine its validity.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Determine if invoice is proper\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must determine if the invoice is a proper one.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Return invoice\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"If the invoice is determined to be improper, the vendor must return it to the payment office.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Identify defects\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must identify defects in the invoice.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Specify reasons for return\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must specify the reasons for returning the invoice.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Support payment\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must support the payment with a receiving report or other Government documentation.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Pay invoice\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must pay the invoice.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Calculate interest\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must calculate interest on the overdue payment.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [
+    "Step s9 cites lines [9] that do not exist (the SOP has lines 1 to 8).",
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 8)."
+   ],
+   "usage": {
+    "prompt_tokens": 1157,
+    "completion_tokens": 790,
+    "total_tokens": 1947,
+    "seconds": 66.08
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Receive proper invoice and satisfactory contract performance\", \"role\": \"vendor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The vendor must provide a proper invoice and evidence of satisfactory contract performance.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Annotate invoice and receiving report\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must provide annotations on the invoice and receiving report.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review invoice\", \"role\": \"payment office\", \"handoff_to\": \"agency office\", \"executor\": \"agent\", \"executor_reason\": \"The payment office must review the invoice to determine its validity.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Determine if invoice is proper\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must determine if the invoice is a proper one.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Return invoice\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"If the invoice is determined to be improper, the vendor must return it to the payment office.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Identify defects\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must identify defects in the invoice.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Specify reasons for return\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must specify the reasons for returning the invoice.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Support payment\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must support the payment with a receiving report or other Government documentation.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Pay invoice\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must pay the invoice.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Calculate interest\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must calculate interest on the overdue payment.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [
+    "Step s9 cites lines [9] that do not exist (the SOP has lines 1 to 8).",
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 8)."
+   ],
+   "usage": {
+    "prompt_tokens": 2825,
+    "completion_tokens": 790,
+    "total_tokens": 3615,
+    "seconds": 68.33
+   }
+  },
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Receive proper invoice and satisfactory contract performance\", \"role\": \"vendor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The vendor must provide a proper invoice and evidence of satisfactory contract performance.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Annotate invoice and receiving report\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must provide annotations on the invoice and receiving report.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review invoice\", \"role\": \"payment office\", \"handoff_to\": \"agency office\", \"executor\": \"agent\", \"executor_reason\": \"The payment office must review the invoice to determine its validity.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Determine if invoice is proper\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must determine if the invoice is a proper one.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Return invoice\", \"role\": \"vendor\", \"handoff_to\": \"payment office\", \"executor\": \"human\", \"executor_reason\": \"If the invoice is determined to be improper, the vendor must return it to the payment office.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Identify defects\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must identify defects in the invoice.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Specify reasons for return\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must specify the reasons for returning the invoice.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Support payment\", \"role\": \"agency office\", \"handoff_to\": \"vendor\", \"executor\": \"agent\", \"executor_reason\": \"The agency office must support the payment with a receiving report or other Government documentation.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Pay invoice\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must pay the invoice.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Calculate interest\", \"role\": \"vendor\", \"handoff_to\": \"agency office\", \"executor\": \"human\", \"executor_reason\": \"The vendor must calculate interest on the overdue payment.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [
+    "Step s9 cites lines [9] that do not exist (the SOP has lines 1 to 8).",
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 8)."
+   ],
+   "usage": {
+    "prompt_tokens": 2825,
+    "completion_tokens": 790,
+    "total_tokens": 3615,
+    "seconds": 50.99
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Receive proper invoice and satisfactory contract performance",
+    "role": "vendor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The vendor must provide a proper invoice and evidence of satisfactory contract performance."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Annotate invoice and receiving report",
+    "role": "vendor",
+    "handoff_to": "payment office",
+    "executor": "human",
+    "executor_reason": "The vendor must provide annotations on the invoice and receiving report."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review invoice",
+    "role": "payment office",
+    "handoff_to": "agency office",
+    "executor": "agent",
+    "executor_reason": "The payment office must review the invoice to determine its validity."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Determine if invoice is proper",
+    "role": "agency office",
+    "handoff_to": "vendor",
+    "executor": "agent",
+    "executor_reason": "The agency office must determine if the invoice is a proper one."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Return invoice",
+    "role": "vendor",
+    "handoff_to": "payment office",
+    "executor": "human",
+    "executor_reason": "If the invoice is determined to be improper, the vendor must return it to the payment office."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Identify defects",
+    "role": "vendor",
+    "handoff_to": "agency office",
+    "executor": "human",
+    "executor_reason": "The vendor must identify defects in the invoice."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Specify reasons for return",
+    "role": "vendor",
+    "handoff_to": "agency office",
+    "executor": "human",
+    "executor_reason": "The vendor must specify the reasons for returning the invoice."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Support payment",
+    "role": "agency office",
+    "handoff_to": "vendor",
+    "executor": "agent",
+    "executor_reason": "The agency office must support the payment with a receiving report or other Government documentation."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Pay invoice",
+    "role": "vendor",
+    "handoff_to": "agency office",
+    "executor": "human",
+    "executor_reason": "The vendor must pay the invoice."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Calculate interest",
+    "role": "vendor",
+    "handoff_to": "agency office",
+    "executor": "human",
+    "executor_reason": "The vendor must calculate interest on the overdue payment."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ }
+}

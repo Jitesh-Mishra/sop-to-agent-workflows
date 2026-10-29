@@ -1,0 +1,178 @@
+{
+ "sop_id": "far_contract_claim_decision",
+ "prompt": "v2",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Submit a claim in writing\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor must submit a written claim to the contracting officer.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Provide certification for claims exceeding $100,000\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor must provide a certification when the claim exceeds $100,000.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review facts pertinent to the claim\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must review the facts pertinent to the claim.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Secure assistance from legal and other advisors\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must coordinate with legal and other advisors.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Coordinate with the contract administration officer or contracting office\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must coordinate with the contract administration officer or contracting office.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Prepare a written decision\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must prepare a written decision.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Notify contractor of decision\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must notify the contractor of the decision.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide copy of decision to contractor\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must provide a copy of the decision to the contractor.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"If appeal, provide notice and copy to agency board of contract appeals\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must provide a notice and copy to the agency board of contract appeals.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"If appeal, bring action in US Court of Federal Claims\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must bring an action in the US Court of Federal Claims.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1280,
+    "completion_tokens": 849,
+    "total_tokens": 2129,
+    "seconds": 56.72
+   }
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Submit a claim in writing",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The contractor must submit a written claim to the contracting officer."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Provide certification for claims exceeding $100,000",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The contractor must provide a certification when the claim exceeds $100,000."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review facts pertinent to the claim",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The contracting officer must review the facts pertinent to the claim."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Secure assistance from legal and other advisors",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The contracting officer must coordinate with legal and other advisors."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Coordinate with the contract administration officer or contracting office",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The contracting officer must coordinate with the contract administration officer or contracting office."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Prepare a written decision",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The contracting officer must prepare a written decision."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Notify contractor of decision",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "agent",
+    "executor_reason": "The contracting officer must notify the contractor of the decision."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide copy of decision to contractor",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "agent",
+    "executor_reason": "The contracting officer must provide a copy of the decision to the contractor."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "If appeal, provide notice and copy to agency board of contract appeals",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "agent",
+    "executor_reason": "The contracting officer must provide a notice and copy to the agency board of contract appeals."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "If appeal, bring action in US Court of Federal Claims",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "agent",
+    "executor_reason": "The contracting officer must bring an action in the US Court of Federal Claims."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ }
+}
