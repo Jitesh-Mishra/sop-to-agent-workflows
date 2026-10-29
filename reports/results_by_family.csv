@@ -1,0 +1,13 @@
+split,family,system,n_sops,step_f1,edge_f1,handoff_f1,executor_acc,agent_f1,step_p,step_r,handoff_p,handoff_r,valid_first_rate,valid_final_rate,mean_attempts,mean_seconds
+dev,procure_to_pay,rule_baseline,1,0.75,0.333,0.0,0.667,0.8,1.0,0.6,0.0,0.0,1.0,1.0,1.0,0.0
+dev,onboarding,rule_baseline,1,0.909,0.889,0.0,1.0,1.0,0.833,1.0,0.0,0.0,1.0,1.0,1.0,0.0
+dev,incident_handling,rule_baseline,1,0.4,0.0,0.667,1.0,1.0,1.0,0.25,1.0,0.5,1.0,1.0,1.0,0.0
+dev,prior_authorization,rule_baseline,1,0.444,0.0,0.4,0.5,0.667,0.667,0.333,1.0,0.25,1.0,1.0,1.0,0.0
+dev,support_escalation,rule_baseline,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+dev,ood_government_misc,rule_baseline,6,0.883,0.638,0.667,0.853,0.667,0.971,0.81,1.0,0.5,1.0,1.0,1.0,0.0
+test,procure_to_pay,rule_baseline,3,0.774,0.37,0.706,0.583,0.706,0.8,0.75,0.667,0.75,1.0,1.0,1.0,0.0
+test,onboarding,rule_baseline,2,0.308,0.0,0.286,0.5,0.667,1.0,0.182,1.0,0.167,0.5,0.5,1.0,0.0
+test,incident_handling,rule_baseline,2,0.167,0.0,0.182,1.0,1.0,1.0,0.091,1.0,0.1,1.0,1.0,1.0,0.0
+test,prior_authorization,rule_baseline,5,0.741,0.314,0.706,0.45,0.522,0.769,0.714,0.857,0.6,1.0,1.0,1.0,0.0
+test,support_escalation,rule_baseline,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+test_ood,ood_government_misc,rule_baseline,14,0.736,0.395,0.543,0.701,0.583,0.779,0.698,0.514,0.576,1.0,1.0,1.0,0.0

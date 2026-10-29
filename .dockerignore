@@ -1,0 +1,5 @@
+runs_local/
+__pycache__/
+.pytest_cache/
+.git/
+reports/

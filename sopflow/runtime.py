@@ -1,8 +1,9 @@
 """State-aware workflow runtime on LangGraph.
 
 The graph is a two-node loop, plan -> execute -> plan, so every SOP step is its own super-step and gets its own
-SQLite checkpoint. Handoff steps pause with interrupt() and carry a context packet; a human (or an MCP client)
-resumes them. Side effects go through an idempotent ledger keyed by (run_id, step_id), so a step re-executed
+SQLite checkpoint. Steps whose executor is "human" (or that someone escalated) pause with interrupt() and carry a
+context packet; a person (or an MCP client) resumes them. Agent steps run automatically and, when they hand work
+to another party, emit the same packet without pausing. Side effects go through an idempotent ledger keyed by (run_id, step_id), so a step re-executed
 after a crash never commits twice."""
 from __future__ import annotations
 
@@ -67,11 +68,11 @@ def default_executor(step, state) -> str:
     return f"{step.role} completed: {step.action}"
 
 
-def handoff_packet(spec: WorkflowSpec, sop: SOP | None, state: RunState, step, to_role: str) -> dict:
+def handoff_packet(spec: WorkflowSpec, sop: SOP | None, state: RunState, step, to_role: str, kind: str = "handoff") -> dict:
     src = " ".join(sop.lines[i - 1] for i in step.lines if sop and 1 <= i <= len(sop.lines))
     outs = [e for e in spec.edges if e.from_ == step.id]
     return {
-        "packet_version": 1,
+        "packet_version": 1, "kind": kind,
         "run_id": state["run_id"], "sop_id": state["sop_id"], "step_id": step.id,
         "action": step.action, "from_role": step.role, "to_role": to_role,
         "instructions": src or step.action,
@@ -109,17 +110,20 @@ def build_graph(spec: WorkflowSpec, sop: SOP | None, ledger: Ledger, checkpointe
     def execute(state: RunState):
         sid = state["current"]
         step = steps[sid]
-        to_role = state.get("force_handoff", {}).get(sid) or step.handoff_to
+        forced = state.get("force_handoff", {}).get(sid)
         branch = state.get("branch_choices", {}).get(sid)
-        if to_role:
-            packet = handoff_packet(spec, sop, state, step, to_role)
-            reply = interrupt(packet)            # pauses here; resumed with Command(resume=...)
+        packets = list(state.get("packets", []))
+        if forced or step.executor == "human":
+            # a person does this step: pause with the full context packet until someone completes it
+            packet = handoff_packet(spec, sop, state, step, forced or step.role, kind="escalation" if forced else "human_step")
+            reply = interrupt(packet)
             output = reply.get("output", "")
             branch = reply.get("branch") or branch
-            packets = state.get("packets", []) + [packet]
+            packets.append(packet)
         else:
             output = executor(step, state)
-            packets = state.get("packets", [])
+            if step.handoff_to:                 # the agent hands the result to the next party, no pause
+                packets.append(handoff_packet(spec, sop, state, step, step.handoff_to, kind="handoff"))
         ledger.attempt(state["run_id"], sid)
         if crash == (sid, "before_commit"):
             os._exit(137)
@@ -162,7 +166,8 @@ def random_branches(spec: WorkflowSpec, seed: int) -> dict[str, str]:
     return out
 
 
-def drive(graph, run_id: str, init: dict, human: Callable[[dict], dict], max_iters: int = 500) -> dict:
+def drive(graph, run_id: str, init: dict, human: Callable[[dict], dict], max_iters: int = 500,
+          durability: str = "sync") -> dict:
     """Run (or resume) to completion: start if no checkpoint, continue after a crash, answer interrupts.
     durability="sync" makes LangGraph persist each checkpoint before the next super-step starts; with the
     default async mode a hard kill can leave a half-written latest checkpoint (found by the crash harness)."""
@@ -170,13 +175,13 @@ def drive(graph, run_id: str, init: dict, human: Callable[[dict], dict], max_ite
     for _ in range(max_iters):
         snap = graph.get_state(cfg)
         if not snap.values:
-            graph.invoke(init, cfg, durability="sync")
+            graph.invoke(init, cfg, durability=durability)
         elif not snap.next:
             return snap.values
         elif snap.interrupts:
-            graph.invoke(Command(resume=human(snap.interrupts[0].value)), cfg, durability="sync")
+            graph.invoke(Command(resume=human(snap.interrupts[0].value)), cfg, durability=durability)
         else:
-            graph.invoke(None, cfg, durability="sync")
+            graph.invoke(None, cfg, durability=durability)
     raise RuntimeError("workflow did not finish")
 
 
