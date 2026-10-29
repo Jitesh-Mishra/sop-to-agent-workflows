@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
+from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
@@ -18,6 +18,8 @@ class Step(BaseModel):
     action: str
     role: str = Field(description="who performs the step")
     handoff_to: Optional[str] = Field(None, description="party that receives work, information or a decision; null if none")
+    executor: Optional[Literal["agent", "human"]] = Field(None, description="who should carry the step out in an AI-assisted workflow")
+    executor_reason: Optional[str] = None
 
 
 class Edge(BaseModel):
@@ -61,6 +63,14 @@ def load_gold(sop_id: str, root: Path = DATA) -> WorkflowSpec:
 
 def split(name: str, root: Path = DATA) -> list[str]:
     return json.loads((root / "splits.json").read_text())[name]
+
+
+def families(root: Path = DATA) -> dict[str, dict]:
+    return {k: v for k, v in json.loads((root / "families.json").read_text()).items() if not k.startswith("_")}
+
+
+def family_of(sop_id: str, root: Path = DATA) -> str:
+    return next(k for k, v in families(root).items() if sop_id in v["sops"])
 
 
 def all_ids(root: Path = DATA) -> list[str]:

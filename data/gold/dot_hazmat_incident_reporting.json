@@ -10,7 +10,8 @@
    ],
    "action": "Telephone the National Response Center within 12 hours",
    "role": "person in possession of the hazmat",
-   "handoff_to": "National Response Center"
+   "handoff_to": "National Response Center",
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Submit DOT Form F 5800.1 incident report within 30 days",
    "role": "person in possession of the hazmat",
-   "handoff_to": "PHMSA"
+   "handoff_to": "PHMSA",
+   "executor": "agent"
   }
  ],
  "edges": [

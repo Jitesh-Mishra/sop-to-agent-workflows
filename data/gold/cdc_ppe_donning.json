@@ -10,7 +10,8 @@
    ],
    "action": "Put on gown covering torso, arms and back",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Fasten gown at neck and waist",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Secure mask or respirator ties",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Fit nose band and fit snug below chin",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Fit-check respirator",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Put on goggles or face shield",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Put on gloves over gown cuffs",
    "role": "healthcare worker",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [

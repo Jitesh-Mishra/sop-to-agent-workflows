@@ -10,7 +10,8 @@
    ],
    "action": "Decide to remove or correct a distributed product",
    "role": "firm",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Notify the FDA district office immediately",
    "role": "firm",
-   "handoff_to": "FDA district office"
+   "handoff_to": "FDA district office",
+   "executor": "agent"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Start the removal or correction without waiting for FDA review",
    "role": "firm",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Decide to recall after FDA says the product violates the law",
    "role": "firm",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Consult the FDA district office about the deficiency",
    "role": "firm",
-   "handoff_to": "FDA district office"
+   "handoff_to": "FDA district office",
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "FDA helps determine the nature of the problem",
    "role": "FDA",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [

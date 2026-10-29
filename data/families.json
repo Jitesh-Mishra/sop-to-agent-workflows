@@ -1,0 +1,72 @@
+{
+ "_note": "Process families mapped to Oracle product areas. These are public US government templates (and two authored support SOPs), not Oracle internal SOPs.",
+ "procure_to_pay": {
+  "oracle_area": "Oracle Fusion Cloud ERP (Procurement, Payables)",
+  "sops": [
+   "p2p_invoice_review",
+   "p2p_acceptance_receiving_report",
+   "p2p_simplified_award",
+   "p2p_demand_for_payment"
+  ]
+ },
+ "onboarding": {
+  "oracle_area": "Oracle Fusion Cloud HCM (Onboarding, Benefits)",
+  "sops": [
+   "onb_offer_to_entry_on_duty",
+   "onb_form_i9_verification",
+   "onb_fehb_enrollment"
+  ]
+ },
+ "incident_handling": {
+  "oracle_area": "OCI security operations",
+  "sops": [
+   "inc_nist_incident_handling",
+   "inc_cisa_incident_coordination",
+   "inc_cisa_vulnerability_response"
+  ]
+ },
+ "prior_authorization": {
+  "oracle_area": "Oracle Health (payer and provider prior authorization)",
+  "sops": [
+   "pa_ma_standard_determination",
+   "pa_ma_expedited_determination",
+   "pa_opd_prior_authorization",
+   "pa_dmepos_prior_authorization",
+   "pa_partd_coverage_determination",
+   "pa_ma_reconsideration"
+  ]
+ },
+ "support_escalation": {
+  "oracle_area": "Oracle Support / Fusion Service",
+  "authored": true,
+  "sops": [
+   "sup_ticket_triage_auto_reply",
+   "sup_high_priority_escalation"
+  ]
+ },
+ "ood_government_misc": {
+  "oracle_area": "none (out-of-domain check)",
+  "sops": [
+   "cdc_handwashing",
+   "cdc_ppe_doffing",
+   "cdc_ppe_donning",
+   "dot_hazmat_incident_reporting",
+   "eeo_precomplaint",
+   "epcra_release_notification",
+   "far_contract_claim_decision",
+   "fda_firm_initiated_recall",
+   "fema_disaster_declaration_request",
+   "fema_public_assistance_appeal",
+   "ferpa_record_amendment",
+   "fmcsa_post_accident_testing",
+   "hipaa_access_request",
+   "hipaa_breach_notification",
+   "osha_bbp_post_exposure",
+   "osha_confined_space_permit",
+   "osha_lockout",
+   "osha_lockout_restore",
+   "osha_respirator_seal_check",
+   "osha_severe_injury_reporting"
+  ]
+ }
+}

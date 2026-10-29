@@ -1,0 +1,189 @@
+{
+ "id": "inc_nist_incident_handling",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Determine whether an incident occurred (indicators, correlation, research)",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Start documenting the investigation and gathering evidence",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Prioritize the incident by impact and recoverability",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Report the incident to internal personnel and external organizations",
+   "role": "incident handler",
+   "handoff_to": "internal personnel and external organizations",
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Acquire, preserve and document evidence",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Contain the incident",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Eradicate: mitigate exploited vulnerabilities and remove malware",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Repeat detection, containment and eradication for newly found hosts",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Return affected systems to operation",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Confirm systems are functioning normally",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s11",
+   "lines": [
+    11
+   ],
+   "action": "Write the follow-up report",
+   "role": "incident handler",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s12",
+   "lines": [
+    12
+   ],
+   "action": "Hold a lessons learned meeting",
+   "role": "incident response team",
+   "handoff_to": null,
+   "executor": "human"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "incident occurred"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": "more affected hosts discovered"
+  },
+  {
+   "from": "s7",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  },
+  {
+   "from": "s10",
+   "to": "s11",
+   "condition": null
+  },
+  {
+   "from": "s11",
+   "to": "s12",
+   "condition": "major incident"
+  }
+ ]
+}

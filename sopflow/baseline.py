@@ -15,6 +15,8 @@ SKIP = re.compile(r"^(note|caution)\b|is considered|not substitutes|need not|do 
                   r"the type of|this procedure establishes|is preferred|is now locked out", re.I)
 HANDOFF = re.compile(r"\b(notify|notif\w*|report|submit|forward|inform\w*|refer|furnish|advise|consult|appeal|"
                      r"provide (?:the )?(?:\w+ )?(?:notice|notification|copy)|made available to|give)\b", re.I)
+AGENT_VERBS = re.compile(r"\b(notify|notif\w*|report|submit|forward|send|record|retain|document|annotate|track|"
+                         r"monitor|provide (?:the )?(?:\w+ )?(?:notice|notification|copy)|issue|inform|log|maintain)\b", re.I)
 ROLE = re.compile(r"^(?:\(\d+\)\s*)?(?:the |each |an? )?([A-Za-z ,'-]{3,60}?)\s+(?:shall|must|should|may|will)\b", re.I)
 TO = re.compile(r"\bto (?:the |each )?([A-Z][\w .'-]{2,60}?|all affected employees|affected employees|the contractor)"
                 r"(?=[,.;]| within| by| of| that|$)")
@@ -45,6 +47,8 @@ def extract(sop: SOP) -> WorkflowSpec:
             handoff = t.group(1).strip() if t else "another party"
             if handoff.lower() == role.lower():
                 handoff = "another party"
-        steps.append(Step(id=f"s{len(steps) + 1}", lines=[i], action=line[:120], role=role, handoff_to=handoff))
+        executor = "agent" if AGENT_VERBS.search(line) else "human"
+        steps.append(Step(id=f"s{len(steps) + 1}", lines=[i], action=line[:120], role=role, handoff_to=handoff,
+                          executor=executor, executor_reason="keyword rule"))
     edges = [Edge(**{"from": a.id, "to": b.id}) for a, b in zip(steps, steps[1:])]
     return WorkflowSpec(steps=steps, edges=edges)

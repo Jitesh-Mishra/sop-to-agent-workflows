@@ -10,7 +10,8 @@
    ],
    "action": "File a first appeal through the recipient within 60 days",
    "role": "applicant",
-   "handoff_to": "recipient"
+   "handoff_to": "recipient",
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Forward the first appeal with a recommendation to the Regional Administrator",
    "role": "recipient",
-   "handoff_to": "Regional Administrator"
+   "handoff_to": "Regional Administrator",
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "File a second appeal through the recipient within 60 days",
    "role": "applicant",
-   "handoff_to": "recipient"
+   "handoff_to": "recipient",
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Forward the second appeal to the Assistant Administrator, Recovery",
    "role": "recipient",
-   "handoff_to": "Assistant Administrator, Recovery"
+   "handoff_to": "Assistant Administrator, Recovery",
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Request additional information",
    "role": "Assistant Administrator, Recovery",
-   "handoff_to": "recipient and applicant"
+   "handoff_to": "recipient and applicant",
+   "executor": "agent"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Send notice of the appeal disposition within 90 days",
    "role": "Assistant Administrator, Recovery",
-   "handoff_to": "recipient and applicant"
+   "handoff_to": "recipient and applicant",
+   "executor": "agent"
   }
  ],
  "edges": [

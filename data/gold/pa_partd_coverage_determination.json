@@ -1,0 +1,109 @@
+{
+ "id": "pa_partd_coverage_determination",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Make the coverage determination and notify within 72 hours",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee and prescriber",
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Decide whether to expedite",
+   "role": "Part D plan sponsor",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Make the expedited determination and notify within 24 hours",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee and prescriber",
+   "executor": "human"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Send written notice of a favorable decision",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee",
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Send the denial notice with reasons and redetermination rights",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee",
+   "executor": "agent"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Forward the request to the IRE within 24 hours of a missed deadline",
+   "role": "Part D plan sponsor",
+   "handoff_to": "IRE",
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "standard timeframe may jeopardize health"
+  },
+  {
+   "from": "s2",
+   "to": "s1",
+   "condition": "standard"
+  },
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": "favorable"
+  },
+  {
+   "from": "s1",
+   "to": "s5",
+   "condition": "denied"
+  },
+  {
+   "from": "s1",
+   "to": "s6",
+   "condition": "timeframe missed"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "favorable"
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "denied"
+  },
+  {
+   "from": "s3",
+   "to": "s6",
+   "condition": "timeframe missed"
+  }
+ ]
+}

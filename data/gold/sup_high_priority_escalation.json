@@ -1,0 +1,104 @@
+{
+ "id": "sup_high_priority_escalation",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Confirm priority and queue within 1 hour",
+   "role": "support agent",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Notify the on-call engineer and open an incident",
+   "role": "support agent",
+   "handoff_to": "on-call engineer",
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Acknowledge the incident and post a status update",
+   "role": "on-call engineer",
+   "handoff_to": "customer",
+   "executor": "human"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Forward the ticket with account details to billing",
+   "role": "support agent",
+   "handoff_to": "billing team",
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Send the customer an acknowledgement with the next update time",
+   "role": "support agent",
+   "handoff_to": "customer",
+   "executor": "agent"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Document the fix in the knowledge base and close the ticket",
+   "role": "owning team",
+   "handoff_to": null,
+   "executor": "human"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "service outage"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": "billing or payment error"
+  },
+  {
+   "from": "s1",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

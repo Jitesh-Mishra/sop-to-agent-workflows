@@ -1,0 +1,49 @@
+{
+ "id": "onb_fehb_enrollment",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Elect to enroll or not within 60 days",
+   "role": "employee",
+   "handoff_to": "employing office",
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Set the enrollment effective date",
+   "role": "employing office",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Determine belated-enrollment eligibility and advise the employee",
+   "role": "employing office",
+   "handoff_to": "employee",
+   "executor": "human"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "employee enrolls"
+  },
+  {
+   "from": "s3",
+   "to": "s2",
+   "condition": "employee enrolls within 60 days of the determination"
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "id": "sup_ticket_triage_auto_reply",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Classify the ticket queue and priority",
+   "role": "support agent system",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Retrieve similar resolved tickets and KB articles",
+   "role": "support agent system",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Draft a grounded reply",
+   "role": "support agent system",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Escalate to a support engineer with the run trace",
+   "role": "support agent system",
+   "handoff_to": "support engineer",
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Send the draft to a support agent for approval",
+   "role": "support agent system",
+   "handoff_to": "support agent",
+   "executor": "agent"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Approve, edit or rewrite the draft and send it",
+   "role": "support agent",
+   "handoff_to": "customer",
+   "executor": "human"
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Send the reply to the customer automatically",
+   "role": "support agent system",
+   "handoff_to": "customer",
+   "executor": "agent"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Record the gate decision and reasons in the trace",
+   "role": "support agent system",
+   "handoff_to": null,
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "a validation check fails"
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "low confidence, high priority or weak grounding"
+  },
+  {
+   "from": "s3",
+   "to": "s7",
+   "condition": "all checks pass"
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

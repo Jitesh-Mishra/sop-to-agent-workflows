@@ -1,0 +1,159 @@
+{
+ "id": "inc_cisa_incident_coordination",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Notify CISA within 1 hour of incident determination",
+   "role": "agency",
+   "handoff_to": "CISA",
+   "executor": "agent"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Notify Congressional Committees, OIG and OMB OFCIO",
+   "role": "agency",
+   "handoff_to": "Congress, OIG and OMB",
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Issue a tracking number and NCISS risk rating",
+   "role": "CISA",
+   "handoff_to": "agency",
+   "executor": "agent"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Share logs, indicators and defensive measures",
+   "role": "agency",
+   "handoff_to": "CISA and sharing partners",
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Share coordinated cyber intelligence",
+   "role": "CISA",
+   "handoff_to": "involved organizations",
+   "executor": "human"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Report to federal law enforcement",
+   "role": "agency",
+   "handoff_to": "federal law enforcement",
+   "executor": "human"
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Decide whether to escalate to a Cyber UCG",
+   "role": "CISA or FBI",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Send post-incident updates and the final incident report",
+   "role": "agency",
+   "handoff_to": "CISA",
+   "executor": "agent"
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Submit completed checklists and incident report to close the ticket",
+   "role": "agency",
+   "handoff_to": "CISA",
+   "executor": "agent"
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Evaluate and close the ticket or request more actions",
+   "role": "CISA",
+   "handoff_to": "agency",
+   "executor": "human"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "where applicable"
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": "law enforcement reporting appropriate"
+  },
+  {
+   "from": "s5",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  }
+ ]
+}

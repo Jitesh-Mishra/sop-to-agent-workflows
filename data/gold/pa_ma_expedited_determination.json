@@ -1,0 +1,134 @@
+{
+ "id": "pa_ma_expedited_determination",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Request an expedited determination",
+   "role": "enrollee or physician",
+   "handoff_to": "MA organization",
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Document the oral request in the case file",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Decide whether to expedite",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Transfer the request to a standard determination",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "agent"
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Give oral notice and a written letter within 3 days explaining the denial of expedite",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "agent"
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Request medical information from noncontract providers within 24 hours",
+   "role": "MA organization",
+   "handoff_to": "noncontract providers",
+   "executor": "agent"
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Make the determination and notify within 72 hours",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "human"
+  },
+  {
+   "id": "s8",
+   "lines": [
+    9
+   ],
+   "action": "Mail written confirmation of an oral adverse decision within 3 days",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": "oral request"
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "expedite denied"
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s6",
+   "condition": "information needed from noncontract providers"
+  },
+  {
+   "from": "s3",
+   "to": "s7",
+   "condition": "expedite approved"
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": "adverse decision given orally"
+  }
+ ]
+}

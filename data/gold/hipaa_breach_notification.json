@@ -10,7 +10,8 @@
    ],
    "action": "Delay notification for the period law enforcement specifies",
    "role": "covered entity",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -21,7 +22,8 @@
    ],
    "action": "Notify each affected individual by first-class mail within 60 days",
    "role": "covered entity",
-   "handoff_to": "affected individuals"
+   "handoff_to": "affected individuals",
+   "executor": "agent"
   },
   {
    "id": "s3",
@@ -30,7 +32,8 @@
    ],
    "action": "Post substitute notice on the website or in major media",
    "role": "covered entity",
-   "handoff_to": "public"
+   "handoff_to": "public",
+   "executor": "agent"
   },
   {
    "id": "s4",
@@ -39,7 +42,8 @@
    ],
    "action": "Notify prominent media outlets in the State",
    "role": "covered entity",
-   "handoff_to": "media"
+   "handoff_to": "media",
+   "executor": "agent"
   },
   {
    "id": "s5",
@@ -48,7 +52,8 @@
    ],
    "action": "Notify the HHS Secretary at the same time as individuals",
    "role": "covered entity",
-   "handoff_to": "HHS Secretary"
+   "handoff_to": "HHS Secretary",
+   "executor": "agent"
   },
   {
    "id": "s6",
@@ -57,7 +62,8 @@
    ],
    "action": "Log the breach",
    "role": "covered entity",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s7",
@@ -66,7 +72,8 @@
    ],
    "action": "Report logged breaches to the Secretary within 60 days of year end",
    "role": "covered entity",
-   "handoff_to": "HHS Secretary"
+   "handoff_to": "HHS Secretary",
+   "executor": "agent"
   }
  ],
  "edges": [

@@ -44,6 +44,11 @@ def counts(pred: WorkflowSpec, gold: WorkflowSpec) -> dict[str, int]:
     g_h = {s.id for s in gs.values() if s.handoff_to}
     h_tp = sum(1 for p, g in mp.items() if p in p_h and g in g_h)
     out |= {"handoff_tp": h_tp, "handoff_fp": len(p_h) - h_tp, "handoff_fn": len(g_h) - h_tp}
+    # executor (agent vs human) agreement on matched steps; agent is the positive class
+    ex = [(ps[p].executor, gs[g].executor) for p, g in mp.items()]
+    out |= {"exec_n": len(ex), "exec_correct": sum(a == b for a, b in ex),
+            "agent_tp": sum(a == b == "agent" for a, b in ex), "agent_fp": sum(a == "agent" != b for a, b in ex),
+            "agent_fn": sum(b == "agent" != a for a, b in ex)}
     return out
 
 
@@ -58,4 +63,8 @@ def aggregate(rows: list[dict]) -> dict[str, float]:
     for k in ("step", "edge", "handoff"):
         tp, fp, fn = (sum(r[f"{k}_{x}"] for r in rows) for x in ("tp", "fp", "fn"))
         out[f"{k}_p"], out[f"{k}_r"], out[f"{k}_f1"] = prf(tp, fp, fn)
+    n = sum(r.get("exec_n", 0) for r in rows)
+    out["executor_acc"] = sum(r.get("exec_correct", 0) for r in rows) / n if n else 0.0
+    tp, fp, fn = (sum(r.get(f"agent_{x}", 0) for r in rows) for x in ("tp", "fp", "fn"))
+    out["agent_p"], out["agent_r"], out["agent_f1"] = prf(tp, fp, fn)
     return out

@@ -1,9 +1,47 @@
 {
- "_note": "Fixed before any LLM run. dev: prompt iteration and model choice. test: run once for the reported numbers.",
- "dev": ["osha_lockout_restore", "cdc_handwashing", "hipaa_access_request", "fema_public_assistance_appeal",
-         "far_contract_claim_decision", "osha_confined_space_permit"],
- "test": ["cdc_ppe_doffing", "cdc_ppe_donning", "dot_hazmat_incident_reporting", "eeo_precomplaint",
-          "epcra_release_notification", "fda_firm_initiated_recall", "fema_disaster_declaration_request",
-          "ferpa_record_amendment", "fmcsa_post_accident_testing", "hipaa_breach_notification",
-          "osha_bbp_post_exposure", "osha_lockout", "osha_respirator_seal_check", "osha_severe_injury_reporting"]
+ "_note": "Fixed 2026-10-29 before any LLM run on this schema. dev: prompt iteration and model choice (one SOP per Oracle family + 6 out-of-domain). test: the 13 remaining family SOPs, run once (headline). test_ood: 14 out-of-domain government SOPs, run once.",
+ "dev": [
+  "p2p_invoice_review",
+  "onb_form_i9_verification",
+  "inc_cisa_vulnerability_response",
+  "pa_dmepos_prior_authorization",
+  "sup_high_priority_escalation",
+  "osha_lockout_restore",
+  "cdc_handwashing",
+  "hipaa_access_request",
+  "fema_public_assistance_appeal",
+  "far_contract_claim_decision",
+  "osha_confined_space_permit"
+ ],
+ "test": [
+  "p2p_acceptance_receiving_report",
+  "p2p_simplified_award",
+  "p2p_demand_for_payment",
+  "onb_offer_to_entry_on_duty",
+  "onb_fehb_enrollment",
+  "inc_nist_incident_handling",
+  "inc_cisa_incident_coordination",
+  "pa_ma_standard_determination",
+  "pa_ma_expedited_determination",
+  "pa_opd_prior_authorization",
+  "pa_partd_coverage_determination",
+  "pa_ma_reconsideration",
+  "sup_ticket_triage_auto_reply"
+ ],
+ "test_ood": [
+  "cdc_ppe_doffing",
+  "cdc_ppe_donning",
+  "dot_hazmat_incident_reporting",
+  "eeo_precomplaint",
+  "epcra_release_notification",
+  "fda_firm_initiated_recall",
+  "fema_disaster_declaration_request",
+  "ferpa_record_amendment",
+  "fmcsa_post_accident_testing",
+  "hipaa_breach_notification",
+  "osha_bbp_post_exposure",
+  "osha_lockout",
+  "osha_respirator_seal_check",
+  "osha_severe_injury_reporting"
+ ]
 }

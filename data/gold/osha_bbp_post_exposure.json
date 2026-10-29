@@ -10,7 +10,8 @@
    ],
    "action": "Make a confidential medical evaluation available immediately",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Document route and circumstances of exposure",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Identify and document the source individual",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "Test the source individual's blood after consent",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Give source test results to the exposed employee",
    "role": "employer",
-   "handoff_to": "exposed employee"
+   "handoff_to": "exposed employee",
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Collect and test the employee's blood after consent",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Preserve the baseline sample for 90 days",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s8",
@@ -73,7 +80,8 @@
    ],
    "action": "Give the evaluating healthcare professional the required information",
    "role": "employer",
-   "handoff_to": "healthcare professional"
+   "handoff_to": "healthcare professional",
+   "executor": "agent"
   },
   {
    "id": "s9",
@@ -82,7 +90,8 @@
    ],
    "action": "Provide prophylaxis, counseling and evaluation of illnesses",
    "role": "healthcare professional",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s10",
@@ -91,7 +100,8 @@
    ],
    "action": "Obtain and give the employee the written opinion within 15 days",
    "role": "employer",
-   "handoff_to": "exposed employee"
+   "handoff_to": "exposed employee",
+   "executor": "agent"
   }
  ],
  "edges": [

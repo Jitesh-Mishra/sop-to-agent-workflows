@@ -10,7 +10,8 @@
    ],
    "action": "Notify affected employees of the shutdown and lockout",
    "role": "authorized employee",
-   "handoff_to": "affected employees"
+   "handoff_to": "affected employees",
+   "executor": "agent"
   },
   {
    "id": "s2",
@@ -19,7 +20,8 @@
    ],
    "action": "Identify energy type, magnitude, hazards and controls",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s3",
@@ -28,7 +30,8 @@
    ],
    "action": "Shut the machine down by the normal stopping procedure",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s4",
@@ -37,7 +40,8 @@
    ],
    "action": "De-activate the energy isolating devices",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    ],
    "action": "Lock out the isolating devices with assigned locks",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s6",
@@ -55,7 +60,8 @@
    ],
    "action": "Dissipate or restrain stored energy",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s7",
@@ -64,7 +70,8 @@
    ],
    "action": "Verify isolation after checking no personnel are exposed",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s8",
@@ -73,7 +80,8 @@
    ],
    "action": "Return operating controls to neutral or off",
    "role": "authorized employee",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [

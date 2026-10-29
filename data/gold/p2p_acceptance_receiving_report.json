@@ -1,0 +1,50 @@
+{
+ "id": "p2p_acceptance_receiving_report",
+ "labeled_by": "Claude (draft)",
+ "reviewed_by": null,
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    3
+   ],
+   "action": "Accept the supplies or services",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s2",
+   "lines": [
+    5,
+    6
+   ],
+   "action": "Sign the acceptance certificate on the receiving report",
+   "role": "designated Government official",
+   "handoff_to": null,
+   "executor": "human"
+  },
+  {
+   "id": "s3",
+   "lines": [
+    7
+   ],
+   "action": "Forward the receiving report to the payment office by the 5th working day",
+   "role": "agency receiving official",
+   "handoff_to": "payment office",
+   "executor": "agent"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  }
+ ]
+}

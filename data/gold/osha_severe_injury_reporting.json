@@ -11,7 +11,8 @@
    ],
    "action": "Determine the reportable event and deadline (8 h fatality, 24 h hospitalization, amputation, eye loss)",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   },
   {
    "id": "s2",
@@ -22,7 +23,8 @@
    ],
    "action": "Report to OSHA by phone, in person or online with the required details",
    "role": "employer",
-   "handoff_to": "OSHA"
+   "handoff_to": "OSHA",
+   "executor": "agent"
   },
   {
    "id": "s3",
@@ -31,7 +33,8 @@
    ],
    "action": "Record the event on the OSHA injury and illness records",
    "role": "employer",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "agent"
   },
   {
    "id": "s4",
@@ -40,7 +43,8 @@
    ],
    "action": "Decide whether to investigate",
    "role": "OSHA Area Office director",
-   "handoff_to": null
+   "handoff_to": null,
+   "executor": "human"
   }
  ],
  "edges": [
