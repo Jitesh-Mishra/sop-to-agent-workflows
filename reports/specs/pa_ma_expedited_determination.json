@@ -1,0 +1,155 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Submit a request",
+   "role": "enrollee or physician",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Drafting and sending a request from known facts."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Document oral requests",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Recording and maintaining documentation is an information work that an AI agent can do."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Promptly decide",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine decision making."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Provide expedited determination",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding a determination based on physician's input."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Deny request and transfer",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "agent",
+   "executor_reason": "Automatically transferring a request to a standard organization determination is an information work an AI agent can do."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Give oral notice",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "human",
+   "executor_reason": "Needs physical action (oral notice) and subsequent written documentation."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Request medical information",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Make expedited determination",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "agent",
+   "executor_reason": "Routine record keeping."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Notify of adverse determination",
+   "role": "MA organization",
+   "handoff_to": "enrollee",
+   "executor": "human",
+   "executor_reason": "Needs hands-on communication and attestation."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "request made or supported by a physician and physician indicates serious jeopardization"
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "request made or supported by a physician and physician does not indicate serious jeopardization"
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": "request made or supported by a physician and physician indicates serious jeopardization"
+  },
+  {
+   "from": "s7",
+   "to": "s9",
+   "condition": "request made or supported by a physician and physician does not indicate serious jeopardization"
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  }
+ ]
+}

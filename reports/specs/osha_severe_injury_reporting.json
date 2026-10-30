@@ -1,0 +1,119 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Report fatality",
+   "role": "employer",
+   "handoff_to": "OSHA",
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and communication with external authorities."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Report in-patient hospitalization, amputation, or loss of an eye",
+   "role": "employer",
+   "handoff_to": "OSHA",
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and communication with OSHA."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Report using one of the following methods",
+   "role": "employer",
+   "handoff_to": "OSHA",
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and physical action to choose and execute the reporting method."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Report using 800 number or reporting application",
+   "role": "employer",
+   "handoff_to": "OSHA",
+   "executor": "human",
+   "executor_reason": "Needs a human to call the 800 number or use the reporting application."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Give OSHA information",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and sending the required information to OSHA."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Do not report if motor vehicle accident on public street",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Information work such as checking conditions and making a determination."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Record on OSHA injury and illness records",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Decide to investigate",
+   "role": "OSHA",
+   "handoff_to": "local Area Office director",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and decision."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s8",
+   "condition": "motor vehicle accident on public street"
+  }
+ ]
+}

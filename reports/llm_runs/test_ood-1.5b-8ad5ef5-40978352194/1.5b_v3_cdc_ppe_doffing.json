@@ -1,0 +1,321 @@
+{
+ "sop_id": "cdc_ppe_doffing",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Remove all PPE before exiting the patient room except a respirator, if worn.\", \"role\": \"patient room visitor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The patient room visitor must follow the procedure to ensure safety.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Gloves: using a gloved hand, grasp the palm area of the other gloved hand and peel off first glove.\", \"role\": \"patient room visitor\", \"handoff_to\": \"gloved hand\", \"executor\": \"agent\", \"executor_reason\": \"Gloved hand is used to peel off the first glove.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Slide fingers of ungloved hand under remaining glove at wrist and peel off second glove over first glove, then discard gloves in a waste container.\", \"role\": \"patient room visitor\", \"handoff_to\": \"ungloved hand\", \"executor\": \"agent\", \"executor_reason\": \"The ungloved hand slides under the remaining glove and peels it off.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Goggles or face shield: remove goggles or face shield from the back by lifting head band or ear pieces.\", \"role\": \"patient room visitor\", \"handoff_to\": \"goggles or face shield\", \"executor\": \"agent\", \"executor_reason\": \"The goggles or face shield is removed from the back.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"If the item is reusable, place in designated receptacle for reprocessing; otherwise, discard in a waste container.\", \"role\": \"patient room visitor\", \"handoff_to\": \"reusable item\", \"executor\": \"agent\", \"executor_reason\": \"The reusable item is placed in a designated receptacle for reprocessing.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Gown: unfasten gown ties, taking care that sleeves don't contact your body when reaching for ties.\", \"role\": \"patient room visitor\", \"handoff_to\": \"gown ties\", \"executor\": \"human\", \"executor_reason\": \"The gown ties are unfastened.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Pull gown away from neck and shoulders, touching inside of gown only, turn gown inside out, and fold or roll into a bundle and discard in a waste container.\", \"role\": \"patient room visitor\", \"handoff_to\": \"gown\", \"executor\": \"agent\", \"executor_reason\": \"The gown is pulled away from the neck and shoulders, and turned inside out.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Remove the respirator after leaving the patient room and closing the door.\", \"role\": \"patient room visitor\", \"handoff_to\": \"respirator\", \"executor\": \"human\", \"executor_reason\": \"The respirator is removed after leaving the patient room.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Mask or respirator: grasp bottom ties or elastics of the mask/respirator, then the ones at the top, and remove without touching the front, then discard in a waste container.\", \"role\": \"patient room visitor\", \"handoff_to\": \"mask or respirator\", \"executor\": \"agent\", \"executor_reason\": \"The mask or respirator is removed without touching the front.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"If your hands get contaminated during removal of any item, immediately wash your hands or use an alcohol-based hand sanitizer.\", \"role\": \"patient room visitor\", \"handoff_to\": \"contaminated hands\", \"executor\": \"human\", \"executor_reason\": \"The contaminated hands are washed or sanitized.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Wash hands or use an alcohol-based hand sanitizer immediately after removing all PPE.\", \"role\": \"patient room visitor\", \"handoff_to\": \"all PPE\", \"executor\": \"human\", \"executor_reason\": \"The hands are washed or sanitized after removing all PPE.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1228,
+    "completion_tokens": 1122,
+    "total_tokens": 2350,
+    "seconds": 121.53
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Remove all PPE before exiting the patient room except a respirator, if worn.",
+    "role": "patient room visitor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to remove personal protective equipment (PPE) and a respirator, if worn."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Gloves: using a gloved hand, grasp the palm area of the other gloved hand and peel off first glove.",
+    "role": "patient room visitor",
+    "handoff_to": "gloved hand",
+    "executor": "human",
+    "executor_reason": "Physical action required to remove gloves."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Slide fingers of ungloved hand under remaining glove at wrist and peel off second glove over first glove, then discard gloves in a waste container.",
+    "role": "patient room visitor",
+    "handoff_to": "ungloved hand",
+    "executor": "human",
+    "executor_reason": "Physical action required to remove and discard gloves."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Goggles or face shield: remove goggles or face shield from the back by lifting head band or ear pieces.",
+    "role": "patient room visitor",
+    "handoff_to": "goggles or face shield",
+    "executor": "human",
+    "executor_reason": "Physical action required to remove the goggles or face shield."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "If the item is reusable, place in designated receptacle for reprocessing; otherwise, discard in a waste container.",
+    "role": "patient room visitor",
+    "handoff_to": "reusable item",
+    "executor": "human",
+    "executor_reason": "Physical action required to place items in designated receptacles."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Gown: unfasten gown ties, taking care that sleeves don't contact your body when reaching for ties.",
+    "role": "patient room visitor",
+    "handoff_to": "gown ties",
+    "executor": "human",
+    "executor_reason": "Physical action required to unfasten gown ties and ensure sleeves do not contact the body."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Pull gown away from neck and shoulders, touching inside of gown only, turn gown inside out, and fold or roll into a bundle and discard in a waste container.",
+    "role": "patient room visitor",
+    "handoff_to": "gown",
+    "executor": "human",
+    "executor_reason": "Physical action required to remove and handle the gown."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Remove the respirator after leaving the patient room and closing the door.",
+    "role": "patient room visitor",
+    "handoff_to": "respirator",
+    "executor": "human",
+    "executor_reason": "Physical action required to remove the respirator and close the door."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Mask or respirator: grasp bottom ties or elastics of the mask/respirator, then the ones at the top, and remove without touching the front, then discard in a waste container.",
+    "role": "patient room visitor",
+    "handoff_to": "mask or respirator",
+    "executor": "human",
+    "executor_reason": "Physical action required to remove the mask/respirator."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "If your hands get contaminated during removal of any item, immediately wash your hands or use an alcohol-based hand sanitizer.",
+    "role": "patient room visitor",
+    "handoff_to": "contaminated hands",
+    "executor": "human",
+    "executor_reason": "Physical action required to wash hands or use hand sanitizer."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Wash hands or use an alcohol-based hand sanitizer immediately after removing all PPE.",
+    "role": "patient room visitor",
+    "handoff_to": "all PPE",
+    "executor": "human",
+    "executor_reason": "Physical action required to wash hands or use an alcohol-based hand sanitizer."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human",
+  "s7": "agent",
+  "s8": "human",
+  "s9": "agent",
+  "s10": "human",
+  "s11": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove personal protective equipment (PPE) and a respirator, if worn.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 32,
+    "total_tokens": 415,
+    "seconds": 8.18
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove gloves.\"}",
+   "usage": {
+    "prompt_tokens": 397,
+    "completion_tokens": 19,
+    "total_tokens": 416,
+    "seconds": 2.52
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove and discard gloves.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 21,
+    "total_tokens": 428,
+    "seconds": 2.87
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove the goggles or face shield.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 23,
+    "total_tokens": 416,
+    "seconds": 2.99
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to place items in designated receptacles.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 23,
+    "total_tokens": 418,
+    "seconds": 2.97
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to unfasten gown ties and ensure sleeves do not contact the body.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 30,
+    "total_tokens": 425,
+    "seconds": 3.54
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove and handle the gown.\"}",
+   "usage": {
+    "prompt_tokens": 415,
+    "completion_tokens": 22,
+    "total_tokens": 437,
+    "seconds": 3.02
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove the respirator and close the door.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 25,
+    "total_tokens": 402,
+    "seconds": 2.81
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove the mask/respirator.\"}",
+   "usage": {
+    "prompt_tokens": 427,
+    "completion_tokens": 23,
+    "total_tokens": 450,
+    "seconds": 3.31
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to wash hands or use hand sanitizer.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 23,
+    "total_tokens": 418,
+    "seconds": 2.83
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to wash hands or use an alcohol-based hand sanitizer.\"}",
+   "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 26,
+    "total_tokens": 407,
+    "seconds": 2.94
+   }
+  }
+ ]
+}

@@ -1,0 +1,348 @@
+{
+ "sop_id": "inc_nist_incident_handling",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Analyze precursors and indicators\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must analyze the precursors and indicators to determine if an incident has occurred.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Begin documenting investigation and gathering evidence\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The handler must start documenting the investigation and gathering evidence.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Prioritize handling the incident\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must prioritize handling the incident based on relevant factors.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Report incident to internal personnel and external organizations\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The handler must report the incident to internal personnel and external organizations.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Acquire, preserve, secure, and document evidence\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The handler must acquire, preserve, secure, and document evidence.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Contain the incident\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must contain the incident.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Eradicate the incident\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must eradicate the incident.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"If more affected hosts are discovered, repeat detection and analysis steps\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must repeat the detection and analysis steps if more affected hosts are discovered.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Recover from the incident\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must recover from the incident.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Confirm affected systems are functioning normally\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must confirm that affected systems are functioning normally.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Create a follow-up report\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The handler must create a follow-up report.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Hold a lessons learned meeting\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The handler must hold a lessons learned meeting.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1168,
+    "completion_tokens": 952,
+    "total_tokens": 2120,
+    "seconds": 78.84
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Analyze precursors and indicators",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "AI agent can analyze precursors and indicators, look for correlating information, and perform research."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Begin documenting investigation and gathering evidence",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action and presence are required to document the investigation and gather evidence."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Prioritize handling the incident",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, and accountable judgment or decision is needed to prioritize the incident based on the relevant factors."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Report incident to internal personnel and external organizations",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to report the incident to both internal and external organizations."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Acquire, preserve, secure, and document evidence",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to acquire, preserve, secure, and document evidence."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Contain the incident",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action and presence are required to contain the incident."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Eradicate the incident",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action and presence are required to eradicate the incident."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "If more affected hosts are discovered, repeat detection and analysis steps",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Recover from the incident",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action and presence are required to recover systems."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Confirm affected systems are functioning normally",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to check the systems."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Create a follow-up report",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine report creation."
+   },
+   {
+    "id": "s12",
+    "lines": [
+     12
+    ],
+    "action": "Hold a lessons learned meeting",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A human executor is required for holding a lessons learned meeting."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   },
+   {
+    "from": "s11",
+    "to": "s12",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human",
+  "s10": "human",
+  "s11": "agent",
+  "s12": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI agent can analyze precursors and indicators, look for correlating information, and perform research.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 31,
+    "total_tokens": 417,
+    "seconds": 8.21
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action and presence are required to document the investigation and gather evidence.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 26,
+    "total_tokens": 398,
+    "seconds": 2.12
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, and accountable judgment or decision is needed to prioritize the incident based on the relevant factors.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 34,
+    "total_tokens": 409,
+    "seconds": 2.63
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to report the incident to both internal and external organizations.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 30,
+    "total_tokens": 397,
+    "seconds": 2.22
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to acquire, preserve, secure, and document evidence.\"}",
+   "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 26,
+    "total_tokens": 394,
+    "seconds": 2.01
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action and presence are required to contain the incident.\"}",
+   "usage": {
+    "prompt_tokens": 356,
+    "completion_tokens": 23,
+    "total_tokens": 379,
+    "seconds": 1.65
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action and presence are required to eradicate the incident.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 23,
+    "total_tokens": 401,
+    "seconds": 2.06
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 56,
+    "total_tokens": 451,
+    "seconds": 4.29
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action and presence are required to recover systems.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 22,
+    "total_tokens": 388,
+    "seconds": 1.82
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to check the systems.\"}",
+   "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 20,
+    "total_tokens": 382,
+    "seconds": 1.61
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine report creation.\"}",
+   "usage": {
+    "prompt_tokens": 358,
+    "completion_tokens": 16,
+    "total_tokens": 374,
+    "seconds": 1.3
+   }
+  },
+  {
+   "step_id": "s12",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A human executor is required for holding a lessons learned meeting.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 24,
+    "total_tokens": 390,
+    "seconds": 1.93
+   }
+  }
+ ]
+}

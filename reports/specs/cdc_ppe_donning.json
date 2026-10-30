@@ -1,0 +1,129 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Choose appropriate PPE based on precautions",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and selecting appropriate PPE based on precautions."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Put on gown",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to put on the gown."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Fasten gown in back",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to fasten the gown."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Secure mask or respirator",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to secure the mask or respirator."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Fit respirator",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to fit the respirator."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Fit-check respirator",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to fit-check the respirator."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Put on goggles or face shield",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to put on the goggles or face shield."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Extend gloves to wrist",
+   "role": "user",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to extend the gloves."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

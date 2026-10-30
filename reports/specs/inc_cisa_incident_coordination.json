@@ -1,0 +1,166 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Notify CISA",
+   "role": "agency",
+   "handoff_to": "CISA",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice based on known facts and directives."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Notify Congressional Committees, OIG, and OFCIO",
+   "role": "agency",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs hands-on communication and potentially legal/official attestation."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Provide tracking number and risk rating",
+   "role": "CISA",
+   "handoff_to": "agency",
+   "executor": "agent",
+   "executor_reason": "Compiling and providing a tracking number and risk rating based on known facts."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Share log data, cyber threat indicators, and defensive measures",
+   "role": "agency",
+   "handoff_to": "CISA and sharing partners",
+   "executor": "agent",
+   "executor_reason": "Compiling and sharing information."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Share cyber intelligence",
+   "role": "CISA",
+   "handoff_to": "intelligence community and law enforcement",
+   "executor": "agent",
+   "executor_reason": "Compiling and sharing information from known sources."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Report incidents to federal law enforcement",
+   "role": "agency",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and communication with external parties."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Determine C-UCG escalation",
+   "role": "CISA or FBI",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and decision."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Provide post-incident updates and final report",
+   "role": "agency",
+   "handoff_to": "CISA",
+   "executor": "agent",
+   "executor_reason": "Routine documentation and reporting."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Provide incident response checklists and report",
+   "role": "agency",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Generating and providing checklists and reports is an information work that an AI agent can do with system access."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Evaluate materials and close ticket",
+   "role": "CISA",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Classifying or routing based on evaluation of materials."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  }
+ ]
+}

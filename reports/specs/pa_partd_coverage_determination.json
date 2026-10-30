@@ -1,0 +1,107 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Notify the enrollee and prescriber",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Provide an expedited determination",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee",
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and decision."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Make a completely favorable decision",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee",
+   "executor": "human",
+   "executor_reason": "A professional judgment and decision is required."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Give written notice",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee",
+   "executor": "human",
+   "executor_reason": "Needs a physical action (signature, attestation) and a conversation (interview or counseling)."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Inform of right to redetermination",
+   "role": "Part D plan sponsor",
+   "handoff_to": "enrollee",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and communication to the enrollee."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Forward the request to IRE",
+   "role": "Part D plan sponsor",
+   "handoff_to": "IRE",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding the request based on known facts."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": "request is expedited"
+  },
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": "request is not expedited"
+  },
+  {
+   "from": "s2",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

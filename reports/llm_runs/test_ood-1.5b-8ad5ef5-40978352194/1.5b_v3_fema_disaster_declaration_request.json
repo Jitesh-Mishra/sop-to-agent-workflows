@@ -1,0 +1,321 @@
+{
+ "sop_id": "fema_disaster_declaration_request",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Governor or Acting Governor requests a major disaster declaration\", \"role\": \"Governor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must make the request.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Governor or Acting Governor provides a finding of severity and magnitude\", \"role\": \"Governor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must provide the basis for the request.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Governor or Acting Governor confirms appropriate action taken under State law\", \"role\": \"Governor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must confirm the Governor has taken appropriate action.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Governor or Acting Governor provides an estimate of damages and losses\", \"role\": \"Governor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must provide an estimate of damages and losses.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Governor or Acting Governor submits the request within 30 days\", \"role\": \"Governor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must submit the request within 30 days.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Assistant Administrator for the Disaster Assistance Directorate approves the request\", \"role\": \"Assistant Administrator\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Assistant Administrator must approve the request.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Governor or Acting Governor submits the request to the President\", \"role\": \"Governor\", \"handoff_to\": \"Assistant Administrator\", \"executor\": \"human\", \"executor_reason\": \"The Governor must submit the request to the President.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Governor or Acting Governor sends an abbreviated written request through the Regional Administrator\", \"role\": \"Governor\", \"handoff_to\": \"Assistant Administrator\", \"executor\": \"human\", \"executor_reason\": \"The Governor must send an abbreviated written request through the Regional Administrator.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"FEMA Regional Office addresses the request to the Administrator of FEMA\", \"role\": \"Governor\", \"handoff_to\": \"Assistant Administrator\", \"executor\": \"human\", \"executor_reason\": \"The Governor must address the request to the Administrator of FEMA.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"FEMA Regional Office expedites the processing of reports and recommendations\", \"role\": \"FEMA Regional Office\", \"handoff_to\": \"Assistant Administrator\", \"executor\": \"human\", \"executor_reason\": \"The FEMA Regional Office must expedite the processing.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Documentation of the declaration is assembled\", \"role\": \"Assistant Administrator\", \"handoff_to\": \"FEMA Regional Office\", \"executor\": \"human\", \"executor_reason\": \"The documentation must be assembled.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1281,
+    "completion_tokens": 936,
+    "total_tokens": 2217,
+    "seconds": 106.15
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Governor or Acting Governor requests a major disaster declaration",
+    "role": "Governor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Governor or Acting Governor requires physical action and presence to make the request."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Governor or Acting Governor provides a finding of severity and magnitude",
+    "role": "Governor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Governor or Acting Governor provides a judgment or decision regarding the severity and magnitude of the situation."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Governor or Acting Governor confirms appropriate action taken under State law",
+    "role": "Governor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Governor's approval or decision is required to confirm appropriate action taken under State law."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Governor or Acting Governor provides an estimate of damages and losses",
+    "role": "Governor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Governor's certification requires professional judgment and decision-making."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Governor or Acting Governor submits the request within 30 days",
+    "role": "Governor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Governor must physically sign and submit the request."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Assistant Administrator for the Disaster Assistance Directorate approves the request",
+    "role": "Assistant Administrator",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An accountable decision regarding the extension of the 30-day period."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Governor or Acting Governor submits the request to the President",
+    "role": "Governor",
+    "handoff_to": "Assistant Administrator",
+    "executor": "human",
+    "executor_reason": "Governor needs to physically submit the request to the President through the Regional Administrator."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Governor or Acting Governor sends an abbreviated written request through the Regional Administrator",
+    "role": "Governor",
+    "handoff_to": "Assistant Administrator",
+    "executor": "human",
+    "executor_reason": "Governor's role requires physical action and presence."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "FEMA Regional Office addresses the request to the Administrator of FEMA",
+    "role": "Governor",
+    "handoff_to": "Assistant Administrator",
+    "executor": "human",
+    "executor_reason": "The request requires a conversation with the Governor and an attestation of the severity of the impact."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "FEMA Regional Office expedites the processing of reports and recommendations",
+    "role": "FEMA Regional Office",
+    "handoff_to": "Assistant Administrator",
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to expedite the process."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Documentation of the declaration is assembled",
+    "role": "Assistant Administrator",
+    "handoff_to": "FEMA Regional Office",
+    "executor": "human",
+    "executor_reason": "The assembly of documentation requires physical action and presence."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human",
+  "s10": "human",
+  "s11": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Governor or Acting Governor requires physical action and presence to make the request.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 27,
+    "total_tokens": 413,
+    "seconds": 7.66
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Governor or Acting Governor provides a judgment or decision regarding the severity and magnitude of the situation.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 31,
+    "total_tokens": 429,
+    "seconds": 3.6
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Governor's approval or decision is required to confirm appropriate action taken under State law.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 29,
+    "total_tokens": 413,
+    "seconds": 3.13
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Governor's certification requires professional judgment and decision-making.\"}",
+   "usage": {
+    "prompt_tokens": 404,
+    "completion_tokens": 23,
+    "total_tokens": 427,
+    "seconds": 2.84
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Governor must physically sign and submit the request.\"}",
+   "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 22,
+    "total_tokens": 403,
+    "seconds": 2.48
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"An accountable decision regarding the extension of the 30-day period.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 26,
+    "total_tokens": 424,
+    "seconds": 3.15
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Governor needs to physically submit the request to the President through the Regional Administrator.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 28,
+    "total_tokens": 406,
+    "seconds": 3.02
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Governor's role requires physical action and presence.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 22,
+    "total_tokens": 412,
+    "seconds": 2.6
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The request requires a conversation with the Governor and an attestation of the severity of the impact.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 31,
+    "total_tokens": 414,
+    "seconds": 3.27
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to expedite the process.\"}",
+   "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 23,
+    "total_tokens": 404,
+    "seconds": 2.62
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The assembly of documentation requires physical action and presence.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 22,
+    "total_tokens": 401,
+    "seconds": 2.52
+   }
+  }
+ ]
+}

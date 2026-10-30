@@ -1,0 +1,267 @@
+{
+ "sop_id": "pa_ma_expedited_determination",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Submit an oral or written request\", \"role\": \"enrollee or physician\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The enrollee or physician must submit a request to expedite the organization determination.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Document all oral requests\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Maintaining documentation is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Decide whether to expedite\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Making a decision is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Provide expedited determination\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Providing an expedited determination is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Transfer request to standard determination\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Automatically transferring requests is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Notify enrollee of denial\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Giving oral notice is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Deliver written letter\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Delivering a written letter is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Request noncontract provider information\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Requesting information is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Notify enrollee of adverse determination\", \"role\": \"MA organization\", \"handoff_to\": \"none\", \"executor\": \"agent\", \"executor_reason\": \"Notifying enrollee of an adverse determination is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1217,
+    "completion_tokens": 702,
+    "total_tokens": 1919,
+    "seconds": 63.29
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Submit an oral or written request",
+    "role": "enrollee or physician",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The request requires a conversation, which is typically done by a human."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Document all oral requests",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "Needs to be done by a human to document and maintain the documentation."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Decide whether to expedite",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "A decision that requires professional judgment and accountability."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Provide expedited determination",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "A professional judgment or decision is required to expedite the determination."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Transfer request to standard determination",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "A professional judgment or decision is needed to determine the appropriate course of action."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Notify enrollee of denial",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "Needs to be done by a human to provide prompt oral notice and subsequently deliver a written letter."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Deliver written letter",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "Needs physical action to deliver the letter."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Request noncontract provider information",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "The decision requires a professional judgment or decision."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Notify enrollee of adverse determination",
+    "role": "MA organization",
+    "handoff_to": "none",
+    "executor": "human",
+    "executor_reason": "Needs physical action to mail a written confirmation."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The request requires a conversation, which is typically done by a human.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 26,
+    "total_tokens": 412,
+    "seconds": 8.0
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to be done by a human to document and maintain the documentation.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 26,
+    "total_tokens": 397,
+    "seconds": 2.06
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A decision that requires professional judgment and accountability.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 21,
+    "total_tokens": 387,
+    "seconds": 1.76
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment or decision is required to expedite the determination.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 25,
+    "total_tokens": 418,
+    "seconds": 2.4
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment or decision is needed to determine the appropriate course of action.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 27,
+    "total_tokens": 404,
+    "seconds": 2.25
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to be done by a human to provide prompt oral notice and subsequently deliver a written letter.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 31,
+    "total_tokens": 425,
+    "seconds": 2.81
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to deliver the letter.\"}",
+   "usage": {
+    "prompt_tokens": 380,
+    "completion_tokens": 20,
+    "total_tokens": 400,
+    "seconds": 1.94
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The decision requires a professional judgment or decision.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 21,
+    "total_tokens": 409,
+    "seconds": 2.14
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to mail a written confirmation.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 21,
+    "total_tokens": 411,
+    "seconds": 2.13
+   }
+  }
+ ]
+}

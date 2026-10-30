@@ -1,0 +1,299 @@
+{
+ "sop_id": "osha_respirator_seal_check",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Perform a user seal check\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual must perform the seal check to ensure an adequate seal each time the respirator is put on.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Do not substitute for qualitative or quantitative fit tests\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should not use the seal check as a substitute for other fit tests.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Positive pressure check\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should perform the positive pressure check to ensure an adequate seal.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Close off the exhalation valve and exhale gently into the facepiece\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should close off the exhalation valve and exhale gently into the facepiece.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"The face fit is considered satisfactory if a slight positive pressure can be built up inside the facepiece without any evidence of outward leakage of air at the seal\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should check if a slight positive pressure can be built up inside the facepiece without any evidence of outward leakage of air at the seal.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Carefully replace the exhalation valve cover after the test\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should carefully replace the exhalation valve cover after the test.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Negative pressure check\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should perform the negative pressure check to ensure an adequate seal.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Close off the inlet opening of the canister or cartridge(s) by covering with the palm of the hand(s) or by replacing the filter seal(s)\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should close off the inlet opening of the canister or cartridge(s) by covering with the palm of the hand(s) or by replacing the filter seal(s).\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Inhale gently so that the facepiece collapses slightly, and hold the breath for ten seconds\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should inhale gently so that the facepiece collapses slightly, and hold the breath for ten seconds.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"If the facepiece remains in its slightly collapsed condition and no inward leakage of air is detected, the tightness of the respirator is considered satisfactory\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should check if the facepiece remains in its slightly collapsed condition and no inward leakage of air is detected.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"The respirator manufacturer's recommended procedures for performing a user seal check may be used instead, provided that the employer demonstrates that the manufacturer's procedures are equally effective\", \"role\": \"individual\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The individual should use the manufacturer's recommended procedures if they are equally effective.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 10)."
+   ],
+   "usage": {
+    "prompt_tokens": 1203,
+    "completion_tokens": 1085,
+    "total_tokens": 2288,
+    "seconds": 119.32
+   },
+   "fixes": [
+    "s11: dropped out-of-range lines",
+    "dropped edge s10->s11"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Perform a user seal check",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to perform the seal check."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Do not substitute for qualitative or quantitative fit tests",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Qualitative and quantitative fit tests require professional judgment and expertise."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Positive pressure check",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to remove the exhalation valve cover."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Close off the exhalation valve and exhale gently into the facepiece",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to close the exhalation valve and perform the exhalation into the facepiece."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "The face fit is considered satisfactory if a slight positive pressure can be built up inside the facepiece without any evidence of outward leakage of air at the seal",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to build positive pressure and check for outward leakage."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Carefully replace the exhalation valve cover after the test",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to replace the exhalation valve cover."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Negative pressure check",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to close the inlet opening."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Close off the inlet opening of the canister or cartridge(s) by covering with the palm of the hand(s) or by replacing the filter seal(s)",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to cover the inlet opening."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Inhale gently so that the facepiece collapses slightly, and hold the breath for ten seconds",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to hold the breath and observe the facepiece's condition."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "If the facepiece remains in its slightly collapsed condition and no inward leakage of air is detected, the tightness of the respirator is considered satisfactory",
+    "role": "individual",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to inspect the respirator's seal."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human",
+  "s10": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to perform the seal check.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 21,
+    "total_tokens": 407,
+    "seconds": 7.1
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Qualitative and quantitative fit tests require professional judgment and expertise.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 24,
+    "total_tokens": 393,
+    "seconds": 2.53
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to remove the exhalation valve cover.\"}",
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 24,
+    "total_tokens": 400,
+    "seconds": 2.66
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to close the exhalation valve and perform the exhalation into the facepiece.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 33,
+    "total_tokens": 411,
+    "seconds": 3.52
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to build positive pressure and check for outward leakage.\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 25,
+    "total_tokens": 433,
+    "seconds": 3.18
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to replace the exhalation valve cover.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 24,
+    "total_tokens": 396,
+    "seconds": 2.61
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to close the inlet opening.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 21,
+    "total_tokens": 406,
+    "seconds": 2.56
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to cover the inlet opening.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 21,
+    "total_tokens": 419,
+    "seconds": 2.76
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to hold the breath and observe the facepiece's condition.\"}",
+   "usage": {
+    "prompt_tokens": 396,
+    "completion_tokens": 27,
+    "total_tokens": 423,
+    "seconds": 3.24
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to inspect the respirator's seal.\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 23,
+    "total_tokens": 431,
+    "seconds": 3.03
+   }
+  }
+ ]
+}

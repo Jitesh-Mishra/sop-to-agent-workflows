@@ -1,0 +1,348 @@
+{
+ "sop_id": "osha_bbp_post_exposure",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Make available a confidential medical evaluation and follow-up\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must ensure the employee is provided with a medical evaluation and follow-up.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Document the route(s) of exposure\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must document the route(s) of exposure.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Identify and document the source individual\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must identify and document the source individual.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Test the source individual's blood\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must test the source individual's blood.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Do not repeat testing for known HBV or HIV\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must not repeat testing for known HBV or HIV.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Make results available to the exposed employee\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must make the results available to the exposed employee.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Inform the employee of applicable laws and regulations\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must inform the employee of applicable laws and regulations.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Collect the exposed employee's blood\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must collect the exposed employee's blood.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Test the exposed employee's blood\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must test the exposed employee's blood.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Provide a copy of the evaluating healthcare professional's opinion\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must provide a copy of the evaluating healthcare professional's opinion.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Provide a copy of the evaluating healthcare professional's opinion\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must provide a copy of the evaluating healthcare professional's opinion.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Provide a copy of the evaluating healthcare professional's opinion\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must provide a copy of the evaluating healthcare professional's opinion.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1328,
+    "completion_tokens": 985,
+    "total_tokens": 2313,
+    "seconds": 112.17
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Make available a confidential medical evaluation and follow-up",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to provide a confidential medical evaluation and follow-up."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Document the route(s) of exposure",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to document the routes of exposure and gather relevant circumstances."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Identify and document the source individual",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Identifying and documenting the source individual may require physical action or presence, and it may involve a conversation or interview to gather the necessary information."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Test the source individual's blood",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to obtain and test the blood sample."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Do not repeat testing for known HBV or HIV",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do: drafting and sending a notice from known facts."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Make results available to the exposed employee",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step involves providing information to an individual, which requires human judgment and communication."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Inform the employee of applicable laws and regulations",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to inform the employee of applicable laws and regulations."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Collect the exposed employee's blood",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to collect blood."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Test the exposed employee's blood",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to provide the required documentation."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Provide a copy of the evaluating healthcare professional's opinion",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, and accountable judgment or decision is needed to provide a copy of the evaluating healthcare professional's opinion."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Provide a copy of the evaluating healthcare professional's opinion",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires a physical action and presence to obtain and provide a copy of the healthcare professional's opinion."
+   },
+   {
+    "id": "s12",
+    "lines": [
+     12
+    ],
+    "action": "Provide a copy of the evaluating healthcare professional's opinion",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The opinion of the evaluating healthcare professional is a sensitive and confidential piece of information that should not be disclosed without the consent of the healthcare professional."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   },
+   {
+    "from": "s11",
+    "to": "s12",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "agent",
+  "s10": "human",
+  "s11": "human",
+  "s12": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to provide a confidential medical evaluation and follow-up.\"}",
+   "usage": {
+    "prompt_tokens": 382,
+    "completion_tokens": 25,
+    "total_tokens": 407,
+    "seconds": 7.59
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to document the routes of exposure and gather relevant circumstances.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 26,
+    "total_tokens": 398,
+    "seconds": 2.74
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Identifying and documenting the source individual may require physical action or presence, and it may involve a conversation or interview to gather the necessary information.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 40,
+    "total_tokens": 419,
+    "seconds": 4.08
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to obtain and test the blood sample.\"}",
+   "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 23,
+    "total_tokens": 404,
+    "seconds": 2.68
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do: drafting and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 32,
+    "total_tokens": 422,
+    "seconds": 3.57
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step involves providing information to an individual, which requires human judgment and communication.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 28,
+    "total_tokens": 422,
+    "seconds": 3.29
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to inform the employee of applicable laws and regulations.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 29,
+    "total_tokens": 403,
+    "seconds": 3.1
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to collect blood.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 19,
+    "total_tokens": 409,
+    "seconds": 2.44
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to provide the required documentation.\"}",
+   "usage": {
+    "prompt_tokens": 409,
+    "completion_tokens": 21,
+    "total_tokens": 430,
+    "seconds": 2.89
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, and accountable judgment or decision is needed to provide a copy of the evaluating healthcare professional's opinion.\"}",
+   "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 36,
+    "total_tokens": 423,
+    "seconds": 3.84
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a physical action and presence to obtain and provide a copy of the healthcare professional's opinion.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 33,
+    "total_tokens": 421,
+    "seconds": 3.37
+   }
+  },
+  {
+   "step_id": "s12",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The opinion of the evaluating healthcare professional is a sensitive and confidential piece of information that should not be disclosed without the consent of the healthcare professional.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 40,
+    "total_tokens": 415,
+    "seconds": 3.82
+   }
+  }
+ ]
+}

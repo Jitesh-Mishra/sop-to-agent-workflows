@@ -55,3 +55,12 @@ Claude drafted all gold labels from the written guidelines in `data/LABELING.md`
   - an exponential wait (mean 240 min) is added each time work changes hands between people
 - Common random numbers keep the comparison paired.
 - These are not measurements. Hands-on minutes saved depend least on the queue assumption and are the number used.
+
+**D10 Test result for the executor pass, and the configuration choice**
+- 3B v3 was chosen on dev for the best handoff F1 (0.692 vs 0.444 for 1.5B) and declared before the test run.
+- On test, the per-step executor pass lowered agent-vs-human accuracy from 0.688 (single-pass) to 0.600, the opposite of dev (0.551 to 0.652).
+- The declared configuration is reported as is. The lesson is to choose components by cross-validation over more SOPs, not one 11-SOP dev split.
+
+**D11 Opportunity numbers use gold executors**
+- The LLM flags 103 of 137 steps as agent work, and the draft gold confirms 54.
+- The headline opportunity table uses the gold executor labels (67 of 115) as the reviewed decision. The LLM-only version is published alongside (`reports/opportunity_llm.csv`) to show the over-automation.

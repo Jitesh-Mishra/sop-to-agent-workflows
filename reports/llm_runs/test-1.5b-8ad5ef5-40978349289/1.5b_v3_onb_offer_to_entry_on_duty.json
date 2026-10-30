@@ -1,0 +1,240 @@
+{
+ "sop_id": "onb_offer_to_entry_on_duty",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Audit certificate for compliance with laws and regulations\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"human\", \"executor_reason\": \"The HR Office must ensure compliance with laws and regulations.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend a tentative job offer to selectee\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Solicit, review and verify information from selectee\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"agent\", \"executor_reason\": \"Filing and reviewing information from the selectee is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Notify remaining eligibles that a selection was made\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"human\", \"executor_reason\": \"Sending a notice to the remaining eligibles is a human action.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Initiate an investigation\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"human\", \"executor_reason\": \"The HR Office must initiate the investigation to ensure compliance.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Allow selectee to accept or decline job offer\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"human\", \"executor_reason\": \"The HR Office must allow the selectee to make arrangements with the current employer.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Enter on duty\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"human\", \"executor_reason\": \"The HR Office must allow the selectee to return necessary forms for entry on duty.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Orientation Roadmap begins\", \"role\": \"HR Office\", \"handoff_to\": \"Security Office\", \"executor\": \"human\", \"executor_reason\": \"The HR Office must initiate the orientation roadmap.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1141,
+    "completion_tokens": 664,
+    "total_tokens": 1805,
+    "seconds": 59.86
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Audit certificate for compliance with laws and regulations",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision is needed to determine compliance with laws and regulations."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend a tentative job offer to selectee",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate) is needed."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Solicit, review and verify information from selectee",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "Needs human judgment and verification of the information provided by the selectee."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Notify remaining eligibles that a selection was made",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "Needs physical action to review and verify the provided information."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Initiate an investigation",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "Needs physical action to notify remaining eligibles."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Allow selectee to accept or decline job offer",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)"
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Enter on duty",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)"
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Orientation Roadmap begins",
+    "role": "HR Office",
+    "handoff_to": "Security Office",
+    "executor": "human",
+    "executor_reason": "Physical action required to return forms and ensure the selectee is ready for duty."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision is needed to determine compliance with laws and regulations.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 33,
+    "total_tokens": 416,
+    "seconds": 8.24
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate) is needed.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 38,
+    "total_tokens": 403,
+    "seconds": 2.7
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs human judgment and verification of the information provided by the selectee.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 26,
+    "total_tokens": 393,
+    "seconds": 2.0
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to review and verify the provided information.\"}",
+   "usage": {
+    "prompt_tokens": 400,
+    "completion_tokens": 23,
+    "total_tokens": 423,
+    "seconds": 2.41
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to notify remaining eligibles.\"}",
+   "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 21,
+    "total_tokens": 383,
+    "seconds": 1.68
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 35,
+    "total_tokens": 430,
+    "seconds": 3.04
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 35,
+    "total_tokens": 408,
+    "seconds": 2.67
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to return forms and ensure the selectee is ready for duty.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 28,
+    "total_tokens": 406,
+    "seconds": 2.36
+   }
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+{
+ "sop_id": "fda_firm_initiated_recall",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Decide to recall a product\", \"role\": \"firm\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The firm must make a decision to recall a product.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify the FDA district office\", \"role\": \"firm\", \"handoff_to\": \"FDA\", \"executor\": \"agent\", \"executor_reason\": \"Informing the FDA of the decision to recall.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Not delay initiation\", \"role\": \"firm\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The firm should not delay the recall process.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Consult with FDA\", \"role\": \"firm\", \"handoff_to\": \"FDA\", \"executor\": \"agent\", \"executor_reason\": \"Seeking guidance from the FDA on the nature of the problem.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Notify FDA\", \"role\": \"firm\", \"handoff_to\": \"FDA\", \"executor\": \"agent\", \"executor_reason\": \"Informing the FDA of the decision to recall.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Assist in determining the nature of the problem\", \"role\": \"FDA\", \"handoff_to\": \"firm\", \"executor\": \"agent\", \"executor_reason\": \"The FDA will assist the firm in understanding the problem.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1125,
+    "completion_tokens": 456,
+    "total_tokens": 1581,
+    "seconds": 57.33
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Decide to recall a product",
+    "role": "firm",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision is needed to decide to recall a product."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Notify the FDA district office",
+    "role": "firm",
+    "handoff_to": "FDA",
+    "executor": "human",
+    "executor_reason": "The FDA district office requires a signature or attestation from a professional, in this case the firm, to fulfill the requirement."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Not delay initiation",
+    "role": "firm",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires a decision or judgment to proceed without delay."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Consult with FDA",
+    "role": "firm",
+    "handoff_to": "FDA",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)"
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Notify FDA",
+    "role": "firm",
+    "handoff_to": "FDA",
+    "executor": "human",
+    "executor_reason": "Consulting with FDA requires professional judgment and a conversation."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Assist in determining the nature of the problem",
+    "role": "FDA",
+    "handoff_to": "firm",
+    "executor": "agent",
+    "executor_reason": "The FDA can provide expert analysis and guidance on the nature of the problem."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision is needed to decide to recall a product.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 32,
+    "total_tokens": 405,
+    "seconds": 7.83
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The FDA district office requires a signature or attestation from a professional, in this case the firm, to fulfill the requirement.\"}",
+   "usage": {
+    "prompt_tokens": 380,
+    "completion_tokens": 37,
+    "total_tokens": 417,
+    "seconds": 3.83
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a decision or judgment to proceed without delay.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 24,
+    "total_tokens": 391,
+    "seconds": 2.51
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 35,
+    "total_tokens": 425,
+    "seconds": 3.79
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Consulting with FDA requires professional judgment and a conversation.\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 23,
+    "total_tokens": 431,
+    "seconds": 3.0
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"The FDA can provide expert analysis and guidance on the nature of the problem.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 27,
+    "total_tokens": 404,
+    "seconds": 2.93
+   }
+  }
+ ]
+}

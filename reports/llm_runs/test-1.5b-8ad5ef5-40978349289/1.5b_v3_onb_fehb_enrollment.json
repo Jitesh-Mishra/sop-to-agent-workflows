@@ -1,0 +1,110 @@
+{
+ "sop_id": "onb_fehb_enrollment",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Employee becomes eligible\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employee must be eligible for the FEHB program.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Enrollment takes effect\", \"role\": \"employee\", \"handoff_to\": \"employing office\", \"executor\": \"human\", \"executor_reason\": \"The employee's eligibility is determined and the enrollment period begins.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Enrollment within 60 days\", \"role\": \"employee\", \"handoff_to\": \"employing office\", \"executor\": \"human\", \"executor_reason\": \"The employee must enroll within the 60-day period.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Enrollment within 60 days\", \"role\": \"employing office\", \"handoff_to\": \"employee\", \"executor\": \"human\", \"executor_reason\": \"The employing office must advise the employee of its determination.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}]}",
+   "errors": [
+    "Step s4 cites lines [4] that do not exist (the SOP has lines 1 to 3)."
+   ],
+   "usage": {
+    "prompt_tokens": 1046,
+    "completion_tokens": 312,
+    "total_tokens": 1358,
+    "seconds": 36.45
+   },
+   "fixes": [
+    "s4: dropped out-of-range lines",
+    "dropped edge s3->s4"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Employee becomes eligible",
+    "role": "employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The employee must make a decision regarding enrollment within the specified timeframe."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Enrollment takes effect",
+    "role": "employee",
+    "handoff_to": "employing office",
+    "executor": "human",
+    "executor_reason": "The step requires an employee to take action, which typically involves physical presence and interaction with the system or office."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Enrollment within 60 days",
+    "role": "employee",
+    "handoff_to": "employing office",
+    "executor": "human",
+    "executor_reason": "The employee needs to physically attend the enrollment process."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The employee must make a decision regarding enrollment within the specified timeframe.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 25,
+    "total_tokens": 397,
+    "seconds": 7.61
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires an employee to take action, which typically involves physical presence and interaction with the system or office.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 34,
+    "total_tokens": 429,
+    "seconds": 3.02
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The employee needs to physically attend the enrollment process.\"}",
+   "usage": {
+    "prompt_tokens": 399,
+    "completion_tokens": 22,
+    "total_tokens": 421,
+    "seconds": 2.37
+   }
+  }
+ ]
+}

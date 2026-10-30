@@ -1,0 +1,267 @@
+{
+ "sop_id": "ferpa_record_amendment",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"The parent or eligible student believes the education records relating to the student contain information that is inaccurate, misleading, or in violation of the student's rights of privacy.\", \"role\": \"student\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The student must express their belief about the accuracy and privacy of the records.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"The educational agency or institution shall decide whether to amend the record as requested within a reasonable time after the agency or institution receives the request.\", \"role\": \"agency or institution\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The agency or institution must decide based on the student's request.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"If the educational agency or institution decides not to amend the record as requested, it shall inform the parent or eligible student of its decision and of his or her right to a hearing.\", \"role\": \"agency or institution\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The agency or institution must inform the student of the decision and their right to a hearing.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"The educational agency or institution shall give the parent or eligible student notice of the date, time, and place, reasonably in advance of the hearing.\", \"role\": \"agency or institution\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The agency or institution must inform the student of the date, time, and place of the hearing.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"The hearing may be conducted by any individual, including an official of the educational agency or institution, who does not have a direct interest in the outcome of the hearing.\", \"role\": \"individual\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The individual must be neutral and not involved in the outcome of the hearing.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"The educational agency or institution shall make its decision in writing within a reasonable period of time after the hearing.\", \"role\": \"agency or institution\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The agency or institution must provide the decision in writing.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"If, as a result of the hearing, the educational agency or institution decides that the information is inaccurate, misleading, or otherwise in violation of the privacy rights of the student, it shall amend the record accordingly and inform the parent or eligible student of the amendment in writing.\", \"role\": \"agency or institution\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The agency or institution must amend the record and inform the student of the amendment.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"If the agency or institution decides that the information is not inaccurate, it shall inform the parent or eligible student of the right to place a statement in the record commenting on the contested information.\", \"role\": \"agency or institution\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The agency or institution must inform the student of their right to place a statement.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"If a statement is placed in the record, the agency or institution shall maintain the statement with the contested part of the record for as long as the record is maintained.\", \"role\": \"agency or institution\", \"handoff_to\": \"student\", \"executor\": \"agent\", \"executor_reason\": \"The agency or institution must maintain the statement.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1267,
+    "completion_tokens": 995,
+    "total_tokens": 2262,
+    "seconds": 110.94
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "The parent or eligible student believes the education records relating to the student contain information that is inaccurate, misleading, or in violation of the student's rights of privacy.",
+    "role": "student",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The student is the one who believes the records contain inaccurate, misleading, or privacy-infringing information."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "The educational agency or institution shall decide whether to amend the record as requested within a reasonable time after the agency or institution receives the request.",
+    "role": "agency or institution",
+    "handoff_to": "student",
+    "executor": "human",
+    "executor_reason": "The decision on whether to amend the record is a judgment or decision that requires a professional, clinical, legal, or accountable judgment or decision."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "If the educational agency or institution decides not to amend the record as requested, it shall inform the parent or eligible student of its decision and of his or her right to a hearing.",
+    "role": "agency or institution",
+    "handoff_to": "student",
+    "executor": "human",
+    "executor_reason": "Needs to inform the parent or eligible student of the decision and their right to a hearing."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "The educational agency or institution shall give the parent or eligible student notice of the date, time, and place, reasonably in advance of the hearing.",
+    "role": "agency or institution",
+    "handoff_to": "student",
+    "executor": "human",
+    "executor_reason": "Needs physical action to provide notice to the parent or eligible student."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "The hearing may be conducted by any individual, including an official of the educational agency or institution, who does not have a direct interest in the outcome of the hearing.",
+    "role": "individual",
+    "handoff_to": "student",
+    "executor": "agent",
+    "executor_reason": "The source is a general statement about the conduct of a hearing, not a specific action that requires physical action or presence."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "The educational agency or institution shall make its decision in writing within a reasonable period of time after the hearing.",
+    "role": "agency or institution",
+    "handoff_to": "student",
+    "executor": "human",
+    "executor_reason": "Needs to make a written decision based on the hearing."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "If, as a result of the hearing, the educational agency or institution decides that the information is inaccurate, misleading, or otherwise in violation of the privacy rights of the student, it shall amend the record accordingly and inform the parent or eligible student of the amendment in writing.",
+    "role": "agency or institution",
+    "handoff_to": "student",
+    "executor": "human",
+    "executor_reason": "The decision involves a professional judgment and a written communication to the parent or eligible student."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "If the agency or institution decides that the information is not inaccurate, it shall inform the parent or eligible student of the right to place a statement in the record commenting on the contested information.",
+    "role": "agency or institution",
+    "handoff_to": "student",
+    "executor": "human",
+    "executor_reason": "The step requires a conversation with the parent or eligible student to inform them of their right to place a statement in the record."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "If a statement is placed in the record, the agency or institution shall maintain the statement with the contested part of the record for as long as the record is maintained.",
+    "role": "agency or institution",
+    "handoff_to": "student",
+    "executor": "agent",
+    "executor_reason": "Maintaining the statement with the contested part of the record for as long as the record is maintained is a routine record-keeping task."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The student is the one who believes the records contain inaccurate, misleading, or privacy-infringing information.\"}",
+   "usage": {
+    "prompt_tokens": 427,
+    "completion_tokens": 33,
+    "total_tokens": 460,
+    "seconds": 8.67
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The decision on whether to amend the record is a judgment or decision that requires a professional, clinical, legal, or accountable judgment or decision.\"}",
+   "usage": {
+    "prompt_tokens": 403,
+    "completion_tokens": 40,
+    "total_tokens": 443,
+    "seconds": 4.35
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to inform the parent or eligible student of the decision and their right to a hearing.\"}",
+   "usage": {
+    "prompt_tokens": 421,
+    "completion_tokens": 30,
+    "total_tokens": 451,
+    "seconds": 3.78
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to provide notice to the parent or eligible student.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 25,
+    "total_tokens": 432,
+    "seconds": 3.12
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"The source is a general statement about the conduct of a hearing, not a specific action that requires physical action or presence.\"}",
+   "usage": {
+    "prompt_tokens": 413,
+    "completion_tokens": 36,
+    "total_tokens": 449,
+    "seconds": 4.17
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to make a written decision based on the hearing.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 23,
+    "total_tokens": 414,
+    "seconds": 2.77
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The decision involves a professional judgment and a written communication to the parent or eligible student.\"}",
+   "usage": {
+    "prompt_tokens": 457,
+    "completion_tokens": 29,
+    "total_tokens": 486,
+    "seconds": 4.22
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a conversation with the parent or eligible student to inform them of their right to place a statement in the record.\"}",
+   "usage": {
+    "prompt_tokens": 423,
+    "completion_tokens": 37,
+    "total_tokens": 460,
+    "seconds": 4.41
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Maintaining the statement with the contested part of the record for as long as the record is maintained is a routine record-keeping task.\"}",
+   "usage": {
+    "prompt_tokens": 415,
+    "completion_tokens": 39,
+    "total_tokens": 454,
+    "seconds": 4.48
+   }
+  }
+ ]
+}

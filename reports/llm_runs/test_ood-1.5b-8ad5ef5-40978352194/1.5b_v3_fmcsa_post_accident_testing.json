@@ -1,0 +1,213 @@
+{
+ "sop_id": "fmcsa_post_accident_testing",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Test for alcohol and controlled substances\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must ensure all drivers are tested for alcohol and controlled substances.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Test for alcohol\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"human\", \"executor_reason\": \"The employer must test for alcohol within 2 hours following the accident.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Test for controlled substances\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"human\", \"executor_reason\": \"The employer must test for controlled substances within 32 hours following the accident.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Prepare and maintain record\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"human\", \"executor_reason\": \"The employer must prepare and maintain a record of the reasons for not administering the test.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Cease attempts to administer test\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"human\", \"executor_reason\": \"The employer must cease attempts to administer the test if it is not administered within 8 hours following the accident.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Prepare and maintain record\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"human\", \"executor_reason\": \"The employer must prepare and maintain a record of the reasons for not administering the test.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Submit records\", \"role\": \"employer\", \"handoff_to\": \"FMCSA\", \"executor\": \"human\", \"executor_reason\": \"The employer must submit the records to the FMCSA upon request.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1228,
+    "completion_tokens": 573,
+    "total_tokens": 1801,
+    "seconds": 69.66
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Test for alcohol and controlled substances",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to perform the test."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Test for alcohol",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "Physical action required to perform the test."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Test for controlled substances",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "Physical action required to test for controlled substances."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Prepare and maintain record",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to prepare and maintain a record."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Cease attempts to administer test",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "Physical action required to cease attempts to administer the test."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Prepare and maintain record",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to prepare and maintain the record."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Submit records",
+    "role": "employer",
+    "handoff_to": "FMCSA",
+    "executor": "human",
+    "executor_reason": "Needs physical action to submit records."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to perform the test.\"}",
+   "usage": {
+    "prompt_tokens": 411,
+    "completion_tokens": 20,
+    "total_tokens": 431,
+    "seconds": 7.3
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to perform the test.\"}",
+   "usage": {
+    "prompt_tokens": 402,
+    "completion_tokens": 20,
+    "total_tokens": 422,
+    "seconds": 2.56
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to test for controlled substances.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 21,
+    "total_tokens": 407,
+    "seconds": 2.46
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to prepare and maintain a record.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 26,
+    "total_tokens": 415,
+    "seconds": 3.01
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to cease attempts to administer the test.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 23,
+    "total_tokens": 413,
+    "seconds": 2.79
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to prepare and maintain the record.\"}",
+   "usage": {
+    "prompt_tokens": 400,
+    "completion_tokens": 26,
+    "total_tokens": 426,
+    "seconds": 3.1
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to submit records.\"}",
+   "usage": {
+    "prompt_tokens": 361,
+    "completion_tokens": 19,
+    "total_tokens": 380,
+    "seconds": 2.02
+   }
+  }
+ ]
+}

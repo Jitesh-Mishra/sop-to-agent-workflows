@@ -1,0 +1,177 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Remove all PPE except a respirator",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to remove PPE."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Peel off first glove",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence of the hands."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Peel off second glove",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to peel off the glove."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Remove goggles or face shield",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to remove the goggles or face shield."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Discard goggles or face shield",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to discard the item."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Unfasten gown ties",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to unfasten gown ties."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Pull gown away from neck and shoulders",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to pull the gown."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Discard gown",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to discard the gown."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Remove mask or respirator",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to grasp and remove the mask/respirator."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Discard mask or respirator",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to discard the mask or respirator."
+  },
+  {
+   "id": "s11",
+   "lines": [
+    11
+   ],
+   "action": "Wash hands or use sanitizer",
+   "role": "healthcare worker",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to wash hands or use sanitizer."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  },
+  {
+   "from": "s10",
+   "to": "s11",
+   "condition": null
+  }
+ ]
+}

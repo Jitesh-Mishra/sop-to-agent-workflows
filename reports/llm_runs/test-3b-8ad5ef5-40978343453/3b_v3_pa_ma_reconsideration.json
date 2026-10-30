@@ -1,0 +1,164 @@
+{
+ "sop_id": "pa_ma_reconsideration",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Make a written request\", \"role\": \"party to the organization determination\", \"handoff_to\": \"MA organization\", \"executor\": \"agent\", \"executor_reason\": \"Filing a request from known facts is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"File within 60 days\", \"role\": \"party to the organization determination\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The deadline is a fixed time limit.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"File a late request if necessary\", \"role\": \"party to the organization determination\", \"handoff_to\": \"MA organization\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a late request from known facts is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Receive a favorable reconsidered determination\", \"role\": \"MA organization\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The determination is a physical action.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Receive a reaffirming determination\", \"role\": \"MA organization\", \"handoff_to\": \"CMS contracted entity\", \"executor\": \"agent\", \"executor_reason\": \"Sending a case file is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s4\", \"condition\": \"60 days have not passed\"}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": \"60 days have passed\"}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1141,
+    "completion_tokens": 428,
+    "total_tokens": 1569,
+    "seconds": 79.21
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Make a written request",
+    "role": "party to the organization determination",
+    "handoff_to": "MA organization",
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a written request."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "File within 60 days",
+    "role": "party to the organization determination",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping and tracking of the filing within the specified time frame."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "File a late request if necessary",
+    "role": "party to the organization determination",
+    "handoff_to": "MA organization",
+    "executor": "agent",
+    "executor_reason": "Compiling and drafting a written request for reconsideration."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Receive a favorable reconsidered determination",
+    "role": "MA organization",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and forwarding the determination to the appropriate parties."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Receive a reaffirming determination",
+    "role": "MA organization",
+    "handoff_to": "CMS contracted entity",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a written explanation and case file."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s4",
+    "condition": "60 days have not passed"
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": "60 days have passed"
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a written request.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 20,
+    "total_tokens": 405,
+    "seconds": 15.16
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping and tracking of the filing within the specified time frame.\"}",
+   "usage": {
+    "prompt_tokens": 380,
+    "completion_tokens": 26,
+    "total_tokens": 406,
+    "seconds": 3.89
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and drafting a written request for reconsideration.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 23,
+    "total_tokens": 414,
+    "seconds": 3.92
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and forwarding the determination to the appropriate parties.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 23,
+    "total_tokens": 416,
+    "seconds": 4.04
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a written explanation and case file.\"}",
+   "usage": {
+    "prompt_tokens": 406,
+    "completion_tokens": 23,
+    "total_tokens": 429,
+    "seconds": 4.41
+   }
+  }
+ ]
+}

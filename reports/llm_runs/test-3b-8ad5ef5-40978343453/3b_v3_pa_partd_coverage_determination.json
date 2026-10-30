@@ -1,0 +1,196 @@
+{
+ "sop_id": "pa_partd_coverage_determination",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Notify the enrollee and prescriber\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Provide an expedited determination\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Make a completely favorable decision\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known facts is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Give written notice\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known facts is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Inform of right to redetermination\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known facts is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Forward the request to IRE\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"IRE\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known facts is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s1\", \"to\": \"s3\", \"condition\": \"request is expedited\"}, {\"from\": \"s1\", \"to\": \"s4\", \"condition\": \"request is not expedited\"}, {\"from\": \"s2\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1181,
+    "completion_tokens": 550,
+    "total_tokens": 1731,
+    "seconds": 92.16
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Notify the enrollee and prescriber",
+    "role": "Part D plan sponsor",
+    "handoff_to": "enrollee",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Provide an expedited determination",
+    "role": "Part D plan sponsor",
+    "handoff_to": "enrollee",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and decision."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Make a completely favorable decision",
+    "role": "Part D plan sponsor",
+    "handoff_to": "enrollee",
+    "executor": "human",
+    "executor_reason": "A professional judgment and decision is required."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Give written notice",
+    "role": "Part D plan sponsor",
+    "handoff_to": "enrollee",
+    "executor": "human",
+    "executor_reason": "Needs a physical action (signature, attestation) and a conversation (interview or counseling)."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Inform of right to redetermination",
+    "role": "Part D plan sponsor",
+    "handoff_to": "enrollee",
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and communication to the enrollee."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Forward the request to IRE",
+    "role": "Part D plan sponsor",
+    "handoff_to": "IRE",
+    "executor": "agent",
+    "executor_reason": "Compiling and forwarding the request based on known facts."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s1",
+    "to": "s3",
+    "condition": "request is expedited"
+   },
+   {
+    "from": "s1",
+    "to": "s4",
+    "condition": "request is not expedited"
+   },
+   {
+    "from": "s2",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 414,
+    "completion_tokens": 22,
+    "total_tokens": 436,
+    "seconds": 16.3
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 19,
+    "total_tokens": 407,
+    "seconds": 3.49
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and decision is required.\"}",
+   "usage": {
+    "prompt_tokens": 397,
+    "completion_tokens": 20,
+    "total_tokens": 417,
+    "seconds": 3.97
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a physical action (signature, attestation) and a conversation (interview or counseling).\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 31,
+    "total_tokens": 408,
+    "seconds": 4.18
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and communication to the enrollee.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 23,
+    "total_tokens": 409,
+    "seconds": 3.77
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and forwarding the request based on known facts.\"}",
+   "usage": {
+    "prompt_tokens": 413,
+    "completion_tokens": 23,
+    "total_tokens": 436,
+    "seconds": 4.78
+   }
+  }
+ ]
+}

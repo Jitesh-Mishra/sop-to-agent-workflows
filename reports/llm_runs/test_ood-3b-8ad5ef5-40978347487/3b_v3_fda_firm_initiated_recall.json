@@ -1,0 +1,191 @@
+{
+ "sop_id": "fda_firm_initiated_recall",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Decide to recall\", \"role\": \"firm\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The firm must make a decision to recall the product.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify FDA\", \"role\": \"firm\", \"handoff_to\": \"FDA\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice to the FDA is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Initiate removal\", \"role\": \"firm\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The firm must take action to remove the product.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Recall product\", \"role\": \"firm\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The firm must physically remove or correct the product.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Consult FDA\", \"role\": \"firm\", \"handoff_to\": \"FDA\", \"executor\": \"agent\", \"executor_reason\": \"The firm must seek FDA guidance when the reason for removal is not clear.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Assist in determination\", \"role\": \"FDA\", \"handoff_to\": \"firm\", \"executor\": \"agent\", \"executor_reason\": \"The FDA must assist the firm in determining the exact nature of the problem.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s1\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s1\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s1\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1125,
+    "completion_tokens": 475,
+    "total_tokens": 1600,
+    "seconds": 83.66
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Decide to recall",
+    "role": "firm",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine decision-making process."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Notify FDA",
+    "role": "firm",
+    "handoff_to": "FDA",
+    "executor": "human",
+    "executor_reason": "A professional judgment and communication with an external party (FDA)."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Initiate removal",
+    "role": "firm",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine initiation of action based on known facts."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Recall product",
+    "role": "firm",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Determining whether a recall is necessary based on FDA determination."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Consult FDA",
+    "role": "firm",
+    "handoff_to": "FDA",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and consultation with an external party (FDA)."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Assist in determination",
+    "role": "FDA",
+    "handoff_to": "firm",
+    "executor": "agent",
+    "executor_reason": "Classifying or routing the request for assistance."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s1",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s1",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s1",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "human",
+  "s5": "agent",
+  "s6": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine decision-making process.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 17,
+    "total_tokens": 388,
+    "seconds": 14.34
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and communication with an external party (FDA).\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 24,
+    "total_tokens": 401,
+    "seconds": 3.62
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine initiation of action based on known facts.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 21,
+    "total_tokens": 388,
+    "seconds": 2.9
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Determining whether a recall is necessary based on FDA determination.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 24,
+    "total_tokens": 413,
+    "seconds": 4.0
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and consultation with an external party (FDA).\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 25,
+    "total_tokens": 433,
+    "seconds": 4.83
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Classifying or routing the request for assistance.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 21,
+    "total_tokens": 393,
+    "seconds": 3.14
+   }
+  }
+ ]
+}

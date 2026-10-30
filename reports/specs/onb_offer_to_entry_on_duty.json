@@ -1,0 +1,129 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Audit certificate for compliance",
+   "role": "Human Resources Office and Security Office",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires hands-on review and attestation by multiple parties."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Extend a tentative job offer",
+   "role": "Human Resources Office",
+   "handoff_to": "selectee",
+   "executor": "human",
+   "executor_reason": "Needs hands-on communication and decision-making."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Solicit and verify information",
+   "role": "Human Resources Office",
+   "handoff_to": "selectee",
+   "executor": "agent",
+   "executor_reason": "Soliciting and verifying information is an information work that an AI agent can do with system access."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Notify remaining eligibles",
+   "role": "Human Resources Office",
+   "handoff_to": "remaining eligibles",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Initiate investigation",
+   "role": "Agency",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to initiate the investigation."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Allow selectee to accept or decline",
+   "role": "Human Resources Office",
+   "handoff_to": "selectee",
+   "executor": "human",
+   "executor_reason": "A professional judgment and decision (approve, deny, determine, accept, adjudicate) is needed."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    8
+   ],
+   "action": "Enter on duty",
+   "role": "Human Resources Office",
+   "handoff_to": "selectee",
+   "executor": "human",
+   "executor_reason": "Needs physical presence and hands-on action to enter on duty."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    9
+   ],
+   "action": "Orientation Roadmap begins",
+   "role": "Human Resources Office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Creating and sending a roadmap from known facts."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

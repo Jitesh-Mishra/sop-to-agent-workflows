@@ -1,0 +1,199 @@
+{
+ "sop_id": "pa_partd_coverage_determination",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Notify the enrollee and the prescriber of the determination\", \"role\": \"Part D plan sponsor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The plan sponsor must notify the enrollee and the prescriber of its determination as expeditiously as the enrollee's health condition requires.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Determine the expedited timeframe\", \"role\": \"Part D plan sponsor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The plan sponsor must determine the expedited timeframe based on the enrollee's health condition.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide an expedited determination\", \"role\": \"Part D plan sponsor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The plan sponsor must provide an expedited determination if applying the standard timeframe may seriously jeopardize the life or health of the enrollee.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Notify the enrollee and the prescriber of the decision\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"Part D plan sponsor\", \"executor\": \"agent\", \"executor_reason\": \"The plan sponsor must notify the enrollee and the prescriber of its decision no later than 24 hours after receiving the request.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"If the decision is favorable, provide written notice\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"Part D plan sponsor\", \"executor\": \"agent\", \"executor_reason\": \"If the Part D plan sponsor makes a completely favorable decision, it must give the enrollee written notice of the determination.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"If the decision is denied, inform the enrollee of the reasons and the right to a redetermination\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"Part D plan sponsor\", \"executor\": \"agent\", \"executor_reason\": \"If the plan sponsor denies the request, the notice of denial must state the specific reasons and inform the enrollee of the right to a redetermination.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"If the plan sponsor fails to notify in the appropriate timeframe, forward the request to the IRE\", \"role\": \"Part D plan sponsor\", \"handoff_to\": \"Part D plan sponsor\", \"executor\": \"human\", \"executor_reason\": \"If the Part D plan sponsor fails to notify the enrollee of its determination in the appropriate timeframe, the failure constitutes an adverse coverage determination, and the plan sponsor must forward the enrollee's request to the IRE within 24 hours of the expiration of the adjudication timeframe.\"}],\"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [
+    "Step s4 hands off to its own role (Part D plan sponsor); a handoff must go to a different party.",
+    "Step s5 hands off to its own role (Part D plan sponsor); a handoff must go to a different party.",
+    "Step s6 hands off to its own role (Part D plan sponsor); a handoff must go to a different party.",
+    "Step s7 cites lines [7] that do not exist (the SOP has lines 1 to 6).",
+    "Step s7 hands off to its own role (Part D plan sponsor); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1181,
+    "completion_tokens": 755,
+    "total_tokens": 1936,
+    "seconds": 67.64
+   },
+   "fixes": [
+    "s4: self-handoff removed",
+    "s5: self-handoff removed",
+    "s6: self-handoff removed",
+    "s7: dropped out-of-range lines",
+    "s7: self-handoff removed",
+    "dropped edge s6->s7"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Notify the enrollee and the prescriber of the determination",
+    "role": "Part D plan sponsor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to communicate with enrollee and prescriber."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Determine the expedited timeframe",
+    "role": "Part D plan sponsor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment or decision is required to determine the expedited timeframe."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide an expedited determination",
+    "role": "Part D plan sponsor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision is required to approve the expedited determination."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Notify the enrollee and the prescriber of the decision",
+    "role": "Part D plan sponsor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to communicate with the enrollee and the prescriber directly."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "If the decision is favorable, provide written notice",
+    "role": "Part D plan sponsor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to provide a written notice with specific reasons and inform the enrollee of the right to a redetermination."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "If the decision is denied, inform the enrollee of the reasons and the right to a redetermination",
+    "role": "Part D plan sponsor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to communicate with the enrollee and provide reasons for the denial."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to communicate with enrollee and prescriber.\"}",
+   "usage": {
+    "prompt_tokens": 418,
+    "completion_tokens": 23,
+    "total_tokens": 441,
+    "seconds": 8.35
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment or decision is required to determine the expedited timeframe.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 26,
+    "total_tokens": 414,
+    "seconds": 2.41
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision is required to approve the expedited determination.\"}",
+   "usage": {
+    "prompt_tokens": 397,
+    "completion_tokens": 32,
+    "total_tokens": 429,
+    "seconds": 2.95
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to communicate with the enrollee and the prescriber directly.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 26,
+    "total_tokens": 412,
+    "seconds": 2.34
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to provide a written notice with specific reasons and inform the enrollee of the right to a redetermination.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 34,
+    "total_tokens": 423,
+    "seconds": 2.89
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to communicate with the enrollee and provide reasons for the denial.\"}",
+   "usage": {
+    "prompt_tokens": 427,
+    "completion_tokens": 26,
+    "total_tokens": 453,
+    "seconds": 2.98
+   }
+  }
+ ]
+}

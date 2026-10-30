@@ -1,0 +1,177 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Establish the minimum requirements",
+   "role": "system",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Classifying or routing information."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Comply with restrictions",
+   "role": "employee",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and adherence to specific restrictions."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Notify affected employees",
+   "role": "authorized employee",
+   "handoff_to": "affected employees",
+   "executor": "human",
+   "executor_reason": "A conversation such as an interview or counseling is needed to notify affected employees."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Identify energy type and magnitude",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to identify the type and magnitude of energy."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Shut down the machine",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to shut down the machine."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "De-activate energy isolating device",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to de-activate the device."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Lock out energy isolating device",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to lock out the device."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Dissipate or restrain residual energy",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires physical action and judgment to ensure safety."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Verify isolation of equipment",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Verifying isolation of equipment requires checking and testing, which an AI agent with system access can do."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Caution: Return operating control",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to return operating control."
+  },
+  {
+   "id": "s11",
+   "lines": [
+    11
+   ],
+   "action": "Machine or equipment is now locked out",
+   "role": "authorized employee",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to lock out the machine or equipment."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  },
+  {
+   "from": "s10",
+   "to": "s11",
+   "condition": null
+  }
+ ]
+}

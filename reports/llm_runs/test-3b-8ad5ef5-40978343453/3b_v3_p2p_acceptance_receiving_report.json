@@ -1,0 +1,213 @@
+{
+ "sop_id": "p2p_acceptance_receiving_report",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Acknowledge conformity\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must confirm the supplies/services meet requirements.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Wait for QA\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"QA actions must be completed before acceptance.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Accept responsibility\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer is responsible for acceptance.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Assign to office\", \"role\": \"contracting officer\", \"handoff_to\": \"cognizant contract administration office\", \"executor\": \"agent\", \"executor_reason\": \"Acceptance can be delegated to another office.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Evidence acceptance\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"An acceptance certificate is required.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Include contract info\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Contract number and details must be included.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Forward report\", \"role\": \"agency receiving official\", \"handoff_to\": \"designated payment office\", \"executor\": \"agent\", \"executor_reason\": \"Report must be forwarded within 5 working days.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1133,
+    "completion_tokens": 525,
+    "total_tokens": 1658,
+    "seconds": 88.05
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Acknowledge conformity",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment and attestation is required."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Wait for QA",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs presence to wait for QA results and make a decision."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Accept responsibility",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment and attestation."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Assign to office",
+    "role": "contracting officer",
+    "handoff_to": "cognizant contract administration office",
+    "executor": "human",
+    "executor_reason": "A professional judgment and acceptance is required."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Evidence acceptance",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action such as signing or attesting to the certificate."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Include contract info",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a signature, attestation or certification from a designated Government official."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Forward report",
+    "role": "agency receiving official",
+    "handoff_to": "designated payment office",
+    "executor": "agent",
+    "executor_reason": "Compiling and forwarding documents."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and attestation is required.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 21,
+    "total_tokens": 390,
+    "seconds": 14.7
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs presence to wait for QA results and make a decision.\"}",
+   "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 24,
+    "total_tokens": 392,
+    "seconds": 3.21
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and attestation.\"}",
+   "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 19,
+    "total_tokens": 383,
+    "seconds": 2.72
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and acceptance is required.\"}",
+   "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 20,
+    "total_tokens": 401,
+    "seconds": 3.42
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action such as signing or attesting to the certificate.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 25,
+    "total_tokens": 402,
+    "seconds": 3.7
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a signature, attestation or certification from a designated Government official.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 26,
+    "total_tokens": 419,
+    "seconds": 4.32
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and forwarding documents.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 18,
+    "total_tokens": 407,
+    "seconds": 3.47
+   }
+  }
+ ]
+}

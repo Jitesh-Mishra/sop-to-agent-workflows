@@ -1,0 +1,321 @@
+{
+ "sop_id": "osha_lockout",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Establish the minimum requirements for the lockout of energy isolating devices\", \"role\": \"none\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"This step sets the context and outlines the requirements.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify all affected employees\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"This step informs employees about the need for lockout.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify employees about the need for lockout\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"This step is a reminder to employees about the lockout requirement.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Identify the type and magnitude of the energy\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"agent\", \"executor_reason\": \"This step requires the employee to understand the energy involved.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Shut down the machine or equipment\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"This step involves physically shutting down the machine or equipment.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"De-activate the energy isolating device(s)\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"agent\", \"executor_reason\": \"This step involves physically de-activating the energy isolating device(s).\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Lock out the energy isolating device(s)\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"This step involves physically locking out the energy isolating device(s).\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Dissipate or restrain stored or residual energy\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"agent\", \"executor_reason\": \"This step involves physically dissipating or restraining stored or residual energy.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Verify the isolation of the equipment\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"This step involves physically verifying the isolation of the equipment.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Return operating control(s) to neutral or \" ,\"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"This step involves physically returning operating control(s) to neutral or \" },{\"id\": \"s11\", \"lines\": [11], \"action\": \"Lock out the machine or equipment\", \"role\": \"none\", \"handoff_to\": \"affected employees\", \"executor\": \"human\", \"executor_reason\": \"This step involves physically locking out the machine or equipment.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 918,
+    "total_tokens": 2244,
+    "seconds": 105.01
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Establish the minimum requirements for the lockout of energy isolating devices",
+    "role": "none",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine system access and documentation."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Notify all affected employees",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "human",
+    "executor_reason": "A conversation such as an interview or counseling is needed to inform all affected employees."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify employees about the need for lockout",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "human",
+    "executor_reason": "The step requires communication with employees, which typically involves a human executor."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Identify the type and magnitude of the energy",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "human",
+    "executor_reason": "Identifying the type and magnitude of energy requires understanding and knowledge, which is best handled by a human."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Shut down the machine or equipment",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "agent",
+    "executor_reason": "Routine shutdown procedure."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "De-activate the energy isolating device(s)",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "agent",
+    "executor_reason": "Routine system access and operation."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Lock out the energy isolating device(s)",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "human",
+    "executor_reason": "Physical action required to lock out the energy isolating device(s)."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Dissipate or restrain stored or residual energy",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "agent",
+    "executor_reason": "Routine energy management and safety measures."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Verify the isolation of the equipment",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "agent",
+    "executor_reason": "Routine verification and confirmation through system access and operational checks."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Return operating control(s) to neutral or ",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "human",
+    "executor_reason": "Physical action required to return operating control(s) to neutral or 'off' position."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Lock out the machine or equipment",
+    "role": "none",
+    "handoff_to": "affected employees",
+    "executor": "agent",
+    "executor_reason": "Routine system access control."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "agent",
+  "s7": "human",
+  "s8": "agent",
+  "s9": "human",
+  "s10": "human",
+  "s11": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine system access and documentation.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 18,
+    "total_tokens": 404,
+    "seconds": 6.92
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A conversation such as an interview or counseling is needed to inform all affected employees.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 28,
+    "total_tokens": 400,
+    "seconds": 2.99
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires communication with employees, which typically involves a human executor.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 26,
+    "total_tokens": 419,
+    "seconds": 3.14
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Identifying the type and magnitude of energy requires understanding and knowledge, which is best handled by a human.\"}",
+   "usage": {
+    "prompt_tokens": 401,
+    "completion_tokens": 33,
+    "total_tokens": 434,
+    "seconds": 3.76
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine shutdown procedure.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 16,
+    "total_tokens": 402,
+    "seconds": 2.11
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine system access and operation.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 18,
+    "total_tokens": 402,
+    "seconds": 2.2
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to lock out the energy isolating device(s).\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 25,
+    "total_tokens": 399,
+    "seconds": 2.71
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine energy management and safety measures.\"}",
+   "usage": {
+    "prompt_tokens": 421,
+    "completion_tokens": 19,
+    "total_tokens": 440,
+    "seconds": 2.85
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine verification and confirmation through system access and operational checks.\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 23,
+    "total_tokens": 431,
+    "seconds": 3.01
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to return operating control(s) to neutral or 'off' position.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 29,
+    "total_tokens": 408,
+    "seconds": 3.14
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine system access control.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 17,
+    "total_tokens": 382,
+    "seconds": 1.9
+   }
+  }
+ ]
+}

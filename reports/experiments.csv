@@ -1,0 +1,20 @@
+date,commit,approach,config,split,metrics,notes
+2026-10-29,213d9c3,CI smoke,Qwen2.5-1.5B GGUF via llama.cpp on GitHub runner,-,"11 tok/s, schema-valid JSON",pipeline works
+2026-10-29,7a9c687,"crash harness, async durability",LangGraph default durability,-,196/246 recovered,found half-written checkpoints; switched to sync
+2026-10-29,7a9c687,"crash harness, sync durability",durability=sync,-,"246/246 recovered, 0 duplicate effects",kept
+2026-10-29,33da472,rule baseline,frozen keyword rules,dev,step 0.760 edge 0.500 handoff 0.500 exec 0.848 valid 0.91->0.91,baseline
+2026-10-29,33da472,1.5B prompt v1,naive prompt,dev,step 0.000 edge 0.000 handoff 0.000 exec 0.000 valid 0.00->0.55,collapsed to one step
+2026-10-29,33da472,1.5B prompt v2,rules + example,dev,step 0.847 edge 0.547 handoff 0.500 exec 0.536 valid 0.64->0.64,
+2026-10-29,33da472,3B prompt v1,naive prompt,dev,step 0.882 edge 0.544 handoff 0.436 exec 0.634 valid 0.55->0.73,
+2026-10-29,33da472,3B prompt v2,rules + example,dev,step 0.881 edge 0.568 handoff 0.712 exec 0.643 valid 0.64->0.82,
+2026-10-29,offline,3B v2 + citation grounding,re-cite by TF-IDF similarity,dev,step 0.792 edge 0.378 handoff 0.678,hurt; dropped
+2026-10-29,offline,3B v2 + autofix,deterministic fixes,dev,step 0.897 edge 0.579 handoff 0.724; valid 9/11 -> 11/11,kept
+2026-10-30,352c6cc,1.5B v3,v2 + autofix + repair + executor pass,dev,step 0.890 edge 0.577 handoff 0.444 exec 0.739 valid 0.73->1.00,
+2026-10-30,352c6cc,3B v3,v2 + autofix + repair + executor pass,dev,step 0.885 edge 0.573 handoff 0.692 exec 0.652 valid 0.73->1.00,chosen (best handoff F1)
+2026-10-30,8ad5ef5,rule baseline,frozen,test,step 0.554 edge 0.218 handoff 0.548 exec 0.528 valid 0.85->0.85,headline baseline
+2026-10-30,8ad5ef5,3B v3 (primary),declared before run,test,step 0.874 edge 0.529 handoff 0.701 exec 0.600 valid 1.00->1.00,headline
+2026-10-30,8ad5ef5,3B v3 inline executor,single-pass executor,test,step 0.874 edge 0.529 handoff 0.701 exec 0.688 valid 1.00->1.00,executor pass hurt on test (0.688 -> 0.600)
+2026-10-30,8ad5ef5,1.5B v3 (secondary),not selected,test,step 0.886 edge 0.483 handoff 0.456 exec 0.524 valid 0.77->1.00,
+2026-10-30,8ad5ef5,rule baseline,frozen,test_ood,step 0.736 edge 0.395 handoff 0.543 exec 0.701 valid 1.00->1.00,
+2026-10-30,8ad5ef5,3B v3 (primary),,test_ood,step 0.826 edge 0.533 handoff 0.605 exec 0.689 valid 0.86->1.00,
+2026-10-30,8ad5ef5,1.5B v3 (secondary),,test_ood,step 0.836 edge 0.482 handoff 0.350 exec 0.641 valid 0.86->1.00,

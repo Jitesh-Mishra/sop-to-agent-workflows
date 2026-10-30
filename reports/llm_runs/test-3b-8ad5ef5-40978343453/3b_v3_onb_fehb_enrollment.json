@@ -1,0 +1,105 @@
+{
+ "sop_id": "onb_fehb_enrollment",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Elect to enroll or not\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employee must choose to enroll or not.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Enrollment takes effect\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The system automatically processes the enrollment details.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Enroll within 60 days\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employee must enroll within the given time frame.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s1\", \"to\": \"s3\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1046,
+    "completion_tokens": 217,
+    "total_tokens": 1263,
+    "seconds": 56.5
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Elect to enroll or not",
+    "role": "employee",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Classifying or routing based on eligibility criteria."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Enrollment takes effect",
+    "role": "employee",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Enroll within 60 days",
+    "role": "employee",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping and notification."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s1",
+    "to": "s3",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Classifying or routing based on eligibility criteria.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 21,
+    "total_tokens": 395,
+    "seconds": 14.7
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 16,
+    "total_tokens": 411,
+    "seconds": 3.51
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping and notification.\"}",
+   "usage": {
+    "prompt_tokens": 400,
+    "completion_tokens": 18,
+    "total_tokens": 418,
+    "seconds": 3.8
+   }
+  }
+ ]
+}

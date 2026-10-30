@@ -1,0 +1,161 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Consult a Counselor",
+   "role": "aggrieved person",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a conversation with a professional for counseling."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Contact Counselor within 45 days",
+   "role": "aggrieved person",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a conversation with a counselor."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Receive written rights and responsibilities",
+   "role": "aggrieved person",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts (individuals' rights and responsibilities)."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Choose ADR or counseling",
+   "role": "aggrieved person",
+   "handoff_to": "Counselor",
+   "executor": "agent",
+   "executor_reason": "Compiling and presenting information to the aggrieved person about their choices."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Pre-complaint period 90 days",
+   "role": "Counselor",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Determining and setting a pre-complaint period based on known facts."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Final interview within 30 days",
+   "role": "Counselor",
+   "handoff_to": "aggrieved person",
+   "executor": "agent",
+   "executor_reason": "Routine scheduling and notification."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Agree to extend counseling period",
+   "role": "aggrieved person",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a written agreement from the aggrieved person."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Inform of complaint right",
+   "role": "Counselor",
+   "handoff_to": "aggrieved person",
+   "executor": "human",
+   "executor_reason": "Needs a conversation and a written notice."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Submit report to agency",
+   "role": "Counselor",
+   "handoff_to": "agency office",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and physical action to submit the report."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Inform of complaint",
+   "role": "Counselor",
+   "handoff_to": "aggrieved person",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": "chooses ADR"
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": "does not choose ADR"
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": "agrees to extend"
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  }
+ ]
+}

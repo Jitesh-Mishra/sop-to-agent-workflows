@@ -1,0 +1,267 @@
+{
+ "sop_id": "ferpa_record_amendment",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Request amendment of record\", \"role\": \"parent or eligible student\", \"handoff_to\": \"educational agency or institution\", \"executor\": \"agent\", \"executor_reason\": \"Filing a request from known facts is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Educational agency or institution decides\", \"role\": \"educational agency or institution\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs professional judgment to decide on the request.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Inform of decision and right to hearing\", \"role\": \"educational agency or institution\", \"handoff_to\": \"parent or eligible student\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the decision facts.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Notice of hearing date, time, and place\", \"role\": \"educational agency or institution\", \"handoff_to\": \"parent or eligible student\", \"executor\": \"agent\", \"executor_reason\": \"Notifying the date, time, and place of the hearing is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Hearing conducted by impartial individual\", \"role\": \"any individual\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Conducting a hearing is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Educational agency or institution makes decision\", \"role\": \"educational agency or institution\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs professional judgment to make a decision.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Amend record if requested\", \"role\": \"educational agency or institution\", \"handoff_to\": \"parent or eligible student\", \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the record.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Inform of right to place statement\", \"role\": \"educational agency or institution\", \"handoff_to\": \"parent or eligible student\", \"executor\": \"agent\", \"executor_reason\": \"Notifying the right to place a statement is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Maintain statement with contested part\", \"role\": \"educational agency or institution\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the record.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1267,
+    "completion_tokens": 751,
+    "total_tokens": 2018,
+    "seconds": 115.48
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Request amendment of record",
+    "role": "parent or eligible student",
+    "handoff_to": "educational agency or institution",
+    "executor": "human",
+    "executor_reason": "A professional judgment and request for amendment."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Educational agency or institution decides",
+    "role": "educational agency or institution",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine decision-making process."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Inform of decision and right to hearing",
+    "role": "educational agency or institution",
+    "handoff_to": "parent or eligible student",
+    "executor": "agent",
+    "executor_reason": "Informing the parent or eligible student of the decision and their right to a hearing is information work an AI agent can do."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Notice of hearing date, time, and place",
+    "role": "educational agency or institution",
+    "handoff_to": "parent or eligible student",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Hearing conducted by impartial individual",
+    "role": "any individual",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information to determine an impartial individual to conduct the hearing."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Educational agency or institution makes decision",
+    "role": "educational agency or institution",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and decision."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Amend record if requested",
+    "role": "educational agency or institution",
+    "handoff_to": "parent or eligible student",
+    "executor": "agent",
+    "executor_reason": "Amending a record involves checking and updating information, which an AI agent with system access can do."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Inform of right to place statement",
+    "role": "educational agency or institution",
+    "handoff_to": "parent or eligible student",
+    "executor": "agent",
+    "executor_reason": "Informing the parent or eligible student of their right to place a statement is information work an AI agent can do."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Maintain statement with contested part",
+    "role": "educational agency or institution",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Classifying or routing the contested part of the record."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human",
+  "s7": "human",
+  "s8": "agent",
+  "s9": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and request for amendment.\"}",
+   "usage": {
+    "prompt_tokens": 402,
+    "completion_tokens": 20,
+    "total_tokens": 422,
+    "seconds": 15.83
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine decision-making process.\"}",
+   "usage": {
+    "prompt_tokens": 382,
+    "completion_tokens": 17,
+    "total_tokens": 399,
+    "seconds": 3.21
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Informing the parent or eligible student of the decision and their right to a hearing is information work an AI agent can do.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 37,
+    "total_tokens": 430,
+    "seconds": 5.3
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 22,
+    "total_tokens": 410,
+    "seconds": 3.79
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information to determine an impartial individual to conduct the hearing.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 27,
+    "total_tokens": 413,
+    "seconds": 4.12
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 19,
+    "total_tokens": 396,
+    "seconds": 3.15
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Amending a record involves checking and updating information, which an AI agent with system access can do.\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 32,
+    "total_tokens": 440,
+    "seconds": 5.37
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Informing the parent or eligible student of their right to place a statement is information work an AI agent can do.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 35,
+    "total_tokens": 428,
+    "seconds": 5.11
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Classifying or routing the contested part of the record.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 23,
+    "total_tokens": 411,
+    "seconds": 3.85
+   }
+  }
+ ]
+}

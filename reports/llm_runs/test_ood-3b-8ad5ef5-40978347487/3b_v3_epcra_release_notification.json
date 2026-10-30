@@ -1,0 +1,267 @@
+{
+ "sop_id": "epcra_release_notification",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Trigger emergency release notification\", \"role\": \"facility\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Determining if the conditions for emergency release notification are met.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Do not notify if exposure is limited to facility\", \"role\": \"facility\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The notification is not required if the release affects only the facility.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify community emergency coordinator\", \"role\": \"facility\", \"handoff_to\": \"community emergency coordinator\", \"executor\": \"agent\", \"executor_reason\": \"Informing the community coordinator is a requirement for any release affecting the community.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Notify 911 operator for transportation releases\", \"role\": \"facility\", \"handoff_to\": \"911 operator\", \"executor\": \"agent\", \"executor_reason\": \"Providing immediate notification for transportation releases.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Provide immediate notification information\", \"role\": \"facility\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The immediate notification must be oral and include specific details.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Do not delay retrieval\", \"role\": \"facility\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Retrieving information should not delay the immediate notification.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide written follow-up notice\", \"role\": \"facility\", \"handoff_to\": \"SERC and LEPC\", \"executor\": \"agent\", \"executor_reason\": \"A written notice is required after the immediate notification.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Update written follow-up notice\", \"role\": \"facility\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The written notice must include additional information about the response and risks.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Request specific format\", \"role\": \"facility\", \"handoff_to\": \"SERC and LEPC\", \"executor\": \"agent\", \"executor_reason\": \"Facility must provide the information in a specific format requested by SERC and LEPC.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": \"exposure is limited to facility\"}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"release occurs during transportation\"}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1246,
+    "completion_tokens": 730,
+    "total_tokens": 1976,
+    "seconds": 112.41
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Trigger emergency release notification",
+    "role": "facility",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Triggering a notification based on predefined conditions."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Do not notify if exposure is limited to facility",
+    "role": "facility",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information check and decision."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify community emergency coordinator",
+    "role": "facility",
+    "handoff_to": "community emergency coordinator",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Notify 911 operator for transportation releases",
+    "role": "facility",
+    "handoff_to": "911 operator",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Provide immediate notification information",
+    "role": "facility",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a verbal communication and presence to provide the notification."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Do not delay retrieval",
+    "role": "facility",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and forwarding the notification urgency information."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide written follow-up notice",
+    "role": "facility",
+    "handoff_to": "SERC and LEPC",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Update written follow-up notice",
+    "role": "facility",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and drafting a notice from known facts."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Request specific format",
+    "role": "facility",
+    "handoff_to": "SERC and LEPC",
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information to request a specific format."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": "exposure is limited to facility"
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": "release occurs during transportation"
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Triggering a notification based on predefined conditions.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 21,
+    "total_tokens": 407,
+    "seconds": 15.32
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine information check and decision.\"}",
+   "usage": {
+    "prompt_tokens": 382,
+    "completion_tokens": 18,
+    "total_tokens": 400,
+    "seconds": 3.3
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 22,
+    "total_tokens": 416,
+    "seconds": 4.04
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 22,
+    "total_tokens": 415,
+    "seconds": 3.99
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a verbal communication and presence to provide the notification.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 23,
+    "total_tokens": 430,
+    "seconds": 4.56
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and forwarding the notification urgency information.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 21,
+    "total_tokens": 390,
+    "seconds": 3.01
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 22,
+    "total_tokens": 406,
+    "seconds": 3.63
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and drafting a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 22,
+    "total_tokens": 412,
+    "seconds": 3.89
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information to request a specific format.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 23,
+    "total_tokens": 388,
+    "seconds": 3.14
+   }
+  }
+ ]
+}

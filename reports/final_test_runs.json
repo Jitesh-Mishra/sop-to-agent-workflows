@@ -12,11 +12,18 @@
  "runs": [
   {
    "declared_at": "2026-10-30T00:13:37Z",
-   "commit": "see llm-runs branch",
+   "commit": "8ad5ef5",
    "splits": [
     "test",
     "test_ood"
-   ]
+   ],
+   "github_run_ids": {
+    "test-3b": 40978343453,
+    "test_ood-3b": 40978347487,
+    "test-1.5b": 40978349289,
+    "test_ood-1.5b": 40978352194
+   }
   }
- ]
+ ],
+ "final_test_runs": 1
 }

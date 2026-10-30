@@ -1,0 +1,193 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Make a confidential medical evaluation and follow-up available",
+   "role": "employer",
+   "handoff_to": "exposed employee",
+   "executor": "agent",
+   "executor_reason": "Compiling and making available a confidential medical evaluation and follow-up from a report."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Document exposure details",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and recording the details of exposure."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Identify source individual",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to identify the source individual."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Test source individual's blood",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action (blood draw) and consent."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Test source individual's blood for HBV and HIV",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a physical action (testing) and professional judgment (determining if testing is necessary)."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Make source individual's test results available",
+   "role": "employer",
+   "handoff_to": "exposed employee",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents (test results) to the exposed employee."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Collect exposed employee's blood",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and consent from the employee."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Preserve exposed employee's blood sample",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to preserve the blood sample."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Provide evaluation materials to healthcare professional",
+   "role": "employer",
+   "handoff_to": "evaluating healthcare professional",
+   "executor": "agent",
+   "executor_reason": "Compiling and providing evaluation materials from known facts."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Administer post-exposure prophylaxis",
+   "role": "employer",
+   "handoff_to": "exposed employee",
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and physical action (administering medication)."
+  },
+  {
+   "id": "s11",
+   "lines": [
+    11
+   ],
+   "action": "Provide evaluating healthcare professional's opinion",
+   "role": "employer",
+   "handoff_to": "exposed employee",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents."
+  },
+  {
+   "id": "s12",
+   "lines": [
+    12
+   ],
+   "action": "Keep other findings confidential",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and decision to determine confidentiality."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  },
+  {
+   "from": "s10",
+   "to": "s11",
+   "condition": null
+  },
+  {
+   "from": "s11",
+   "to": "s12",
+   "condition": null
+  }
+ ]
+}

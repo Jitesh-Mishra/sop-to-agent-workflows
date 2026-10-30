@@ -1,0 +1,177 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Request a major disaster declaration",
+   "role": "Governor of a State",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "A professional judgment and decision to request a major disaster declaration."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Provide a finding of severity",
+   "role": "Governor of a State",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and decision."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Confirm State action",
+   "role": "Governor of a State",
+   "handoff_to": "State",
+   "executor": "human",
+   "executor_reason": "A professional judgment and attestation is required."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Include damage and resources",
+   "role": "Governor of a State",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and certification."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Submit request within 30 days",
+   "role": "Governor of a State",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine information work such as logging the deadline."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Request extension if needed",
+   "role": "Governor of a State",
+   "handoff_to": "Assistant Administrator",
+   "executor": "agent",
+   "executor_reason": "AI agent can draft and send a written request for an extension."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Submit request to President",
+   "role": "Governor of a State",
+   "handoff_to": "President",
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to submit the request."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Send abbreviated request if necessary",
+   "role": "Governor of a State",
+   "handoff_to": "Regional Administrator",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Address request to FEMA Administrator",
+   "role": "Governor of a State",
+   "handoff_to": "FEMA Administrator",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice to the Administrator from known facts."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "FEMA expedite processing",
+   "role": "FEMA",
+   "handoff_to": "President",
+   "executor": "agent",
+   "executor_reason": "Routine information processing and communication."
+  },
+  {
+   "id": "s11",
+   "lines": [
+    11
+   ],
+   "action": "Ensure documentation",
+   "role": "Assistant Administrator for Disaster Assistance Directorate",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and attestation."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": "request not submitted within 30 days"
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": "abbreviated request not sent"
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": "FEMA not addressed"
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  },
+  {
+   "from": "s10",
+   "to": "s11",
+   "condition": null
+  }
+ ]
+}
