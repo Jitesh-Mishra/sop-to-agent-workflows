@@ -1,0 +1,140 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Use alcohol-based hand sanitizer",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence of the individuals."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Apply sanitizer to hands",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action on the hands."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Rub hands until dry",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to rub hands until dry."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Use soap and water",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to use soap and water."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Apply soap to hands",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action on the hands."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Rub hands to form lather",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to form lather."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Rub all areas of hands",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action on hands."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Rinse hands",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to rinse hands."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Dry hands",
+   "role": "patients and visitors",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to turn off the faucet and open the door."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  }
+ ]
+}

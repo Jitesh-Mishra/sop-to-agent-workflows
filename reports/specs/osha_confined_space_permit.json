@@ -1,0 +1,97 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Document completion of pre-entry measures",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Recording the completion of measures through documentation."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Authorize entry",
+   "role": "entry supervisor",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "A professional judgment and signature are required."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Make permit available",
+   "role": "employer",
+   "handoff_to": "authorized entrants",
+   "executor": "agent",
+   "executor_reason": "Compiling and posting the permit or using any other effective means to make it available."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Limit permit duration",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Classifying or routing based on predefined rules."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Cancel entry and permit",
+   "role": "entry supervisor",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Retain canceled permits",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical retention of documents."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

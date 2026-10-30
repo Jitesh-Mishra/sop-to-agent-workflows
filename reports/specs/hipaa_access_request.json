@@ -1,0 +1,129 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Act on request within 30 days",
+   "role": "covered entity",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and action on a request."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Extend time by no more than 30 days",
+   "role": "covered entity",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment to determine and approve the extension."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Provide written statement of reasons for delay",
+   "role": "covered entity",
+   "handoff_to": "individual",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and written communication."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Limit to one extension",
+   "role": "covered entity",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to determine the limit on extensions."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Deny access if reasonably likely to endanger life or safety",
+   "role": "covered entity",
+   "handoff_to": "individual",
+   "executor": "agent",
+   "executor_reason": "AI agent can check facts and make a determination based on the source."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Refer request for review to designated official",
+   "role": "covered entity",
+   "handoff_to": "designated reviewing official",
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to identify the designated reviewing official."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Determine access request",
+   "role": "designated reviewing official",
+   "handoff_to": "covered entity",
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and decision."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Provide written notice of determination",
+   "role": "covered entity",
+   "handoff_to": "individual",
+   "executor": "human",
+   "executor_reason": "A professional judgment and communication."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}
