@@ -1,0 +1,97 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Check the machine or equipment and the immediate area",
+   "role": "servicing personnel",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical inspection and presence."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Check the work area",
+   "role": "servicing personnel",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine information work an AI agent can do."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Verify controls are in neutral",
+   "role": "servicing personnel",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical presence and hands-on action to verify controls are in neutral."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Remove lockout devices",
+   "role": "servicing personnel",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to remove lockout devices."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Reenergize the machine or equipment",
+   "role": "servicing personnel",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to remove lockout devices and reenergize the machine or equipment."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Notify affected employees",
+   "role": "servicing personnel",
+   "handoff_to": "affected employees",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice to affected employees from known facts."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

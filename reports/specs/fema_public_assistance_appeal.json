@@ -1,0 +1,97 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    2
+   ],
+   "action": "Make a first appeal through the recipient",
+   "role": "applicant",
+   "handoff_to": "recipient",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding the appeal request."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    3
+   ],
+   "action": "Electronically forward the first appeal recommendation",
+   "role": "recipient",
+   "handoff_to": "Regional Administrator",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    4
+   ],
+   "action": "Make a second appeal through the recipient",
+   "role": "applicant",
+   "handoff_to": "recipient",
+   "executor": "human",
+   "executor_reason": "Needs a conversation or communication with the recipient."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    5
+   ],
+   "action": "Electronically forward the second appeal recommendation",
+   "role": "recipient",
+   "handoff_to": "Assistant Administrator for the Recovery Directorate",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    6
+   ],
+   "action": "Provide notice of additional information need",
+   "role": "Assistant Administrator for the Recovery Directorate",
+   "handoff_to": "recipient and applicant",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice based on known facts."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    7
+   ],
+   "action": "Provide notice of appeal disposition",
+   "role": "Assistant Administrator for the Recovery Directorate",
+   "handoff_to": "recipient and applicant",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": "there is a need for additional information"
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  }
+ ]
+}

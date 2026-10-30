@@ -1,0 +1,103 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Ensure the individual properly completes section 1 of Form I-9",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Assist the individual if needed",
+   "role": "someone",
+   "handoff_to": "employer",
+   "executor": "human",
+   "executor_reason": "Needs physical interaction and understanding of the situation."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Physically examine the documentation",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical access to the documentation."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Complete section 2 of Form I-9",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and signature."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Retain the Form I-9 for three years",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping and retention."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Reverify if employment authorization expires",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking information to determine if employment authorization has expired and re-verifying accordingly."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Provide notice prior to inspection",
+   "role": "employer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

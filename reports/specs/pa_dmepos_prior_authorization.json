@@ -1,0 +1,113 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Include all relevant documentation",
+   "role": "requester",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking documents is an information work an AI agent can do with system access."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Submit before item is furnished",
+   "role": "requester",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Submitting a request is information work that an AI agent can do."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Review by CMS or contractor",
+   "role": "CMS or contractor",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to review a prior authorization request."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Provisional affirmation if rules met",
+   "role": "CMS or contractor",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Checking and verifying rules to determine if a provisional affirmation is issued."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Non-affirmation decision if rules not met",
+   "role": "CMS or contractor",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and decision."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Resubmit if non-affirmation",
+   "role": "requester",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Resubmitting a request is an information work that an AI agent can do."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Include expedited review documentation",
+   "role": "requester",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking documents."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "rules met"
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "rules not met"
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

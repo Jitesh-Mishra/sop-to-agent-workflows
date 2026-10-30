@@ -1,0 +1,161 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Submit a claim",
+   "role": "contractor",
+   "handoff_to": "contracting officer",
+   "executor": "agent",
+   "executor_reason": "Drafting and sending a notice from known facts."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Provide certification",
+   "role": "contractor",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "A professional certification is required and cannot be automated."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Review facts",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling, checking or forwarding documents."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Secure legal assistance",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and action from a legal advisor."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Coordinate with contract administration",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to determine the appropriate party to coordinate with."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Prepare decision",
+   "role": "contracting officer",
+   "handoff_to": "contractor",
+   "executor": "agent",
+   "executor_reason": "Drafting and sending a decision based on known facts."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Notify contractor of decision time",
+   "role": "contracting officer",
+   "handoff_to": "contractor",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice based on known facts and time constraints."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Furnish decision copy",
+   "role": "contracting officer",
+   "handoff_to": "contractor",
+   "executor": "human",
+   "executor_reason": "Needs physical action to send a certified mail or other evidence of receipt."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Notify contractor of appeal",
+   "role": "contracting officer",
+   "handoff_to": "contractor",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and communication with an outside party (contractor)."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Furnish notice to court",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and potential court action."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s10",
+   "condition": null
+  }
+ ]
+}

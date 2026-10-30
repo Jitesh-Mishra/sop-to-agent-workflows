@@ -1,0 +1,134 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Payment based on proper invoice and contract performance",
+   "role": "designated payment office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "AI can check and forward invoices and correlate contract performance."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Annotate invoice date",
+   "role": "designated payment office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and annotating dates from known invoice and receiving report details."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Review invoice",
+   "role": "designated agency office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine invoice review."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Invoice includes required elements",
+   "role": "designated agency office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking if the invoice includes required elements."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Return improper invoice",
+   "role": "designated agency office",
+   "handoff_to": "vendor",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Identify defects and specify reasons",
+   "role": "designated agency office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to identify defects and specify reasons."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Support invoice payment with receiving report",
+   "role": "designated agency office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking documents."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Pay interest for late payments",
+   "role": "designated agency office",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine payment processing."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": "invoice is improper"
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": "invoice is proper"
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

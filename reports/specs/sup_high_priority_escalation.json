@@ -1,0 +1,134 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Confirm priority and queue",
+   "role": "support agent",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to confirm priority and queue."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Notify on-call engineer",
+   "role": "support agent",
+   "handoff_to": "on-call engineer",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding the priority and queue information to the on-call engineer."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Open incident",
+   "role": "on-call engineer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking information to open an incident."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Post status update",
+   "role": "on-call engineer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Posting a status update is information work an AI agent can do."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Forward ticket to billing team",
+   "role": "support agent",
+   "handoff_to": "billing team",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Send acknowledgement",
+   "role": "support agent",
+   "handoff_to": "customer",
+   "executor": "agent",
+   "executor_reason": "Sending a notice from known facts."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Document fix in knowledge base",
+   "role": "owning team",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    7
+   ],
+   "action": "Close ticket",
+   "role": "owning team",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping and ticket closure."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "ticket reports a service outage"
+  },
+  {
+   "from": "s2",
+   "to": "s6",
+   "condition": "ticket reports a service outage"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": "ticket reports a billing or payment error"
+  },
+  {
+   "from": "s5",
+   "to": "s8",
+   "condition": "ticket reports a billing or payment error"
+  },
+  {
+   "from": "s6",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

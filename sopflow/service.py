@@ -34,6 +34,7 @@ class WorkflowService:
     def _spec(self, sop_id: str, source: str) -> WorkflowSpec:
         if source == "gold":
             return load_gold(sop_id)
+        # "llm": the compiled spec exported by sopflow.eval.export_specs
         path = SPECS / f"{sop_id}.json"
         if not path.exists():
             raise WorkflowError(f"no compiled spec for {sop_id}; run the compiler first")
