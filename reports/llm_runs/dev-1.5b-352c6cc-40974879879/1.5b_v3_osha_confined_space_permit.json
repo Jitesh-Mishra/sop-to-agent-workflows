@@ -1,0 +1,213 @@
+{
+ "sop_id": "osha_confined_space_permit",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Document pre-entry measures\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must document the completion of required pre-entry measures.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Sign entry permit\", \"role\": \"entry supervisor\", \"handoff_to\": \"employer\", \"executor\": \"agent\", \"executor_reason\": \"The entry supervisor must sign the entry permit to authorize entry.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Post permit\", \"role\": \"employer\", \"handoff_to\": \"entry supervisor\", \"executor\": \"human\", \"executor_reason\": \"The employer must post the permit at the entry portal or by any other equally effective means.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Duration of permit\", \"role\": \"employer\", \"handoff_to\": \"entry supervisor\", \"executor\": \"human\", \"executor_reason\": \"The duration of the permit may not exceed the time required to complete the assigned task or job.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Terminate entry\", \"role\": \"entry supervisor\", \"handoff_to\": \"employer\", \"executor\": \"human\", \"executor_reason\": \"The entry supervisor must terminate entry and cancel the entry permit when the entry operations covered by the entry permit have been completed.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Retain canceled permit\", \"role\": \"employer\", \"handoff_to\": \"entry supervisor\", \"executor\": \"human\", \"executor_reason\": \"The employer must retain each canceled entry permit for at least 1 year.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Note problems\", \"role\": \"entry supervisor\", \"handoff_to\": \"employer\", \"executor\": \"human\", \"executor_reason\": \"Any problems encountered during an entry operation shall be noted on the pertinent permit.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1158,
+    "completion_tokens": 569,
+    "total_tokens": 1727,
+    "seconds": 42.94
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Document pre-entry measures",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to document the measures."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Sign entry permit",
+    "role": "entry supervisor",
+    "handoff_to": "employer",
+    "executor": "human",
+    "executor_reason": "Physical action required to sign the permit."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Post permit",
+    "role": "employer",
+    "handoff_to": "entry supervisor",
+    "executor": "human",
+    "executor_reason": "Physical action required to post the permit."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Duration of permit",
+    "role": "employer",
+    "handoff_to": "entry supervisor",
+    "executor": "human",
+    "executor_reason": "The duration of the permit is a physical action that requires a signature or attestation from the employer."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Terminate entry",
+    "role": "entry supervisor",
+    "handoff_to": "employer",
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to terminate the entry and cancel the entry permit."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Retain canceled permit",
+    "role": "employer",
+    "handoff_to": "entry supervisor",
+    "executor": "human",
+    "executor_reason": "Physical retention of documents is required."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Note problems",
+    "role": "entry supervisor",
+    "handoff_to": "employer",
+    "executor": "human",
+    "executor_reason": "A signature or attestation is required to note problems on the permit."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to document the measures.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 20,
+    "total_tokens": 393,
+    "seconds": 5.07
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to sign the permit.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 20,
+    "total_tokens": 391,
+    "seconds": 1.4
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to post the permit.\"}",
+   "usage": {
+    "prompt_tokens": 401,
+    "completion_tokens": 20,
+    "total_tokens": 421,
+    "seconds": 1.73
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The duration of the permit is a physical action that requires a signature or attestation from the employer.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 32,
+    "total_tokens": 405,
+    "seconds": 2.03
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to terminate the entry and cancel the entry permit.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 29,
+    "total_tokens": 424,
+    "seconds": 2.12
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical retention of documents is required.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 19,
+    "total_tokens": 396,
+    "seconds": 1.43
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A signature or attestation is required to note problems on the permit.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 26,
+    "total_tokens": 403,
+    "seconds": 1.79
+   }
+  }
+ ]
+}

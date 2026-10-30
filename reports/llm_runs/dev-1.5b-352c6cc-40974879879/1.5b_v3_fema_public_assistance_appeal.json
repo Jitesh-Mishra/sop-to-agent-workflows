@@ -1,0 +1,213 @@
+{
+ "sop_id": "fema_public_assistance_appeal",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"An eligible applicant or recipient may appeal any determination previously made related to an application for or the provision of Public Assistance according to the procedures of this section.\", \"role\": \"applicant or recipient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The applicant or recipient must choose and file an appeal.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"The applicant may make a first appeal through the recipient within 60 calendar days from the date of the FEMA determination that is the subject of the appeal.\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose and file an appeal through the recipient.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"The recipient must electronically forward to the Regional Administrator the applicant's first appeal with a recommendation within 120 calendar days from the date of the FEMA determination.\", \"role\": \"recipient\", \"handoff_to\": \"Regional Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Filing an appeal through the recipient is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"If the Regional Administrator denies a first appeal in whole or in part, the applicant may make a second appeal through the recipient within 60 calendar days from the date of the Regional Administrator's first appeal decision.\", \"role\": \"applicant\", \"handoff_to\": \"recipient\", \"executor\": \"human\", \"executor_reason\": \"The applicant must choose and file a second appeal through the recipient.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"The recipient must electronically forward to the Assistant Administrator for the Recovery Directorate the applicant's second appeal with a recommendation within 120 calendar days from the date of the Regional Administrator's first appeal decision.\", \"role\": \"recipient\", \"handoff_to\": \"Assistant Administrator for the Recovery Directorate\", \"executor\": \"agent\", \"executor_reason\": \"Filing an appeal through the recipient is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Within 90 calendar days following receipt of a second appeal, if there is a need for additional information, the Assistant Administrator for the Recovery Directorate will provide electronic notice to the recipient and applicant.\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the appeal facts is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"The Assistant Administrator for the Recovery Directorate will provide electronic notice of the disposition of the appeal to the recipient and applicant within 90 calendar days of receipt of the appeal or following the receipt of additional information.\", \"role\": \"Assistant Administrator for the Recovery Directorate\", \"handoff_to\": \"recipient and applicant\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the appeal facts is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1195,
+    "completion_tokens": 788,
+    "total_tokens": 1983,
+    "seconds": 56.34
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "An eligible applicant or recipient may appeal any determination previously made related to an application for or the provision of Public Assistance according to the procedures of this section.",
+    "role": "applicant or recipient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An eligible applicant or recipient may appeal any determination previously made related to an application for or the provision of Public Assistance according to the procedures of this section."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "The applicant may make a first appeal through the recipient within 60 calendar days from the date of the FEMA determination that is the subject of the appeal.",
+    "role": "applicant",
+    "handoff_to": "recipient",
+    "executor": "human",
+    "executor_reason": "The step requires the applicant to make a first appeal, which involves a conversation and possibly a physical action to submit the appeal."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "The recipient must electronically forward to the Regional Administrator the applicant's first appeal with a recommendation within 120 calendar days from the date of the FEMA determination.",
+    "role": "recipient",
+    "handoff_to": "Regional Administrator",
+    "executor": "human",
+    "executor_reason": "The step requires electronic action and a recommendation, which necessitates human involvement."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "If the Regional Administrator denies a first appeal in whole or in part, the applicant may make a second appeal through the recipient within 60 calendar days from the date of the Regional Administrator's first appeal decision.",
+    "role": "applicant",
+    "handoff_to": "recipient",
+    "executor": "human",
+    "executor_reason": "The step involves a decision-making process that requires a human's judgment and decision."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "The recipient must electronically forward to the Assistant Administrator for the Recovery Directorate the applicant's second appeal with a recommendation within 120 calendar days from the date of the Regional Administrator's first appeal decision.",
+    "role": "recipient",
+    "handoff_to": "Assistant Administrator for the Recovery Directorate",
+    "executor": "human",
+    "executor_reason": "The step requires electronic action and a recommendation from the recipient."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Within 90 calendar days following receipt of a second appeal, if there is a need for additional information, the Assistant Administrator for the Recovery Directorate will provide electronic notice to the recipient and applicant.",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient and applicant",
+    "executor": "agent",
+    "executor_reason": "Sending an electronic notice based on known facts and system access."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "The Assistant Administrator for the Recovery Directorate will provide electronic notice of the disposition of the appeal to the recipient and applicant within 90 calendar days of receipt of the appeal or following the receipt of additional information.",
+    "role": "Assistant Administrator for the Recovery Directorate",
+    "handoff_to": "recipient and applicant",
+    "executor": "human",
+    "executor_reason": "The step requires a human to provide the electronic notice."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"An eligible applicant or recipient may appeal any determination previously made related to an application for or the provision of Public Assistance according to the procedures of this section.\"}",
+   "usage": {
+    "prompt_tokens": 409,
+    "completion_tokens": 42,
+    "total_tokens": 451,
+    "seconds": 6.58
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires the applicant to make a first appeal, which involves a conversation and possibly a physical action to submit the appeal.\"}",
+   "usage": {
+    "prompt_tokens": 409,
+    "completion_tokens": 37,
+    "total_tokens": 446,
+    "seconds": 2.68
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires electronic action and a recommendation, which necessitates human involvement.\"}",
+   "usage": {
+    "prompt_tokens": 411,
+    "completion_tokens": 27,
+    "total_tokens": 438,
+    "seconds": 2.21
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step involves a decision-making process that requires a human's judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 431,
+    "completion_tokens": 28,
+    "total_tokens": 459,
+    "seconds": 2.45
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires electronic action and a recommendation from the recipient.\"}",
+   "usage": {
+    "prompt_tokens": 427,
+    "completion_tokens": 24,
+    "total_tokens": 451,
+    "seconds": 2.24
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Sending an electronic notice based on known facts and system access.\"}",
+   "usage": {
+    "prompt_tokens": 430,
+    "completion_tokens": 24,
+    "total_tokens": 454,
+    "seconds": 2.29
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a human to provide the electronic notice.\"}",
+   "usage": {
+    "prompt_tokens": 434,
+    "completion_tokens": 23,
+    "total_tokens": 457,
+    "seconds": 2.26
+   }
+  }
+ ]
+}

@@ -1,0 +1,213 @@
+{
+ "sop_id": "sup_high_priority_escalation",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Confirm priority and queue\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent must confirm the priority and queue manually.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Queue the ticket\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The agent must queue the ticket manually.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify on-call engineer\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Open incident\", \"role\": \"on-call engineer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Forward to billing team\", \"role\": \"support agent\", \"handoff_to\": \"billing team\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Send acknowledgment\", \"role\": \"support agent\", \"handoff_to\": \"customer\", \"executor\": \"human\", \"executor_reason\": \"Drafting and sending a notice from the ticket facts.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Document fix and close ticket\", \"role\": \"owning team\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The team must document the fix and close the ticket manually.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1071,
+    "completion_tokens": 531,
+    "total_tokens": 1602,
+    "seconds": 39.65
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Confirm priority and queue",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to review and confirm the priority level manually."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Queue the ticket",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine queue management."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify on-call engineer",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires a conversation with an on-call engineer."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Open incident",
+    "role": "on-call engineer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Automated system access to post status update."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Forward to billing team",
+    "role": "support agent",
+    "handoff_to": "billing team",
+    "executor": "agent",
+    "executor_reason": "Forwarding a ticket to the billing team based on the source role and source information."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Send acknowledgment",
+    "role": "support agent",
+    "handoff_to": "customer",
+    "executor": "agent",
+    "executor_reason": "Sending a notice from known facts and compiling the acknowledgment."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Document fix and close ticket",
+    "role": "owning team",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Automated system access to document and close ticket."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human",
+  "s7": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to review and confirm the priority level manually.\"}",
+   "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 22,
+    "total_tokens": 385,
+    "seconds": 5.06
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine queue management.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 16,
+    "total_tokens": 383,
+    "seconds": 1.13
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a conversation with an on-call engineer.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 23,
+    "total_tokens": 396,
+    "seconds": 1.58
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Automated system access to post status update.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 21,
+    "total_tokens": 388,
+    "seconds": 1.38
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Forwarding a ticket to the billing team based on the source role and source information.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 29,
+    "total_tokens": 408,
+    "seconds": 1.96
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Sending a notice from known facts and compiling the acknowledgment.\"}",
+   "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 23,
+    "total_tokens": 387,
+    "seconds": 1.5
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Automated system access to document and close ticket.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 22,
+    "total_tokens": 396,
+    "seconds": 1.55
+   }
+  }
+ ]
+}

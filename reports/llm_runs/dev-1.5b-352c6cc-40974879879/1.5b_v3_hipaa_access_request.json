@@ -1,0 +1,213 @@
+{
+ "sop_id": "hipaa_access_request",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Act on request for access\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must act on a request for access.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend time for action\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the covered entity is unable to take an action within the time required, the covered entity may extend the time for such actions.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide written statement of reasons and date\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The covered entity provides the individual with a written statement of the reasons for the delay and the date by which the covered entity will complete its action on the request.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Deny access\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity may deny an individual access, provided that the individual is given a right to have such denials reviewed.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Review denial\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the individual requests a review of the denial, the covered entity must promptly refer a request for review to the designated reviewing official.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Designated reviewing official determines\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The designated reviewing official must determine, within a reasonable period of time, whether or not to deny the access requested.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide written notice and take action\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The covered entity must promptly provide written notice to the individual of the determination of the designated reviewing official and take other action as required to carry out the designated reviewing official's determination.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1202,
+    "completion_tokens": 638,
+    "total_tokens": 1840,
+    "seconds": 47.76
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Act on request for access",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to process the request."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend time for action",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The decision to extend the time for action is a judgment call that requires a professional, clinical, legal, or accountable judgment or decision."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide written statement of reasons and date",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A signature or attestation is required to provide a written statement."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Deny access",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (deny access)."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Review denial",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision is needed to review the denial."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Designated reviewing official determines",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal, or accountable judgment or decision is needed to determine the review request."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide written notice and take action",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment or decision is required to determine whether to deny access."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to process the request.\"}",
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 20,
+    "total_tokens": 396,
+    "seconds": 5.08
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The decision to extend the time for action is a judgment call that requires a professional, clinical, legal, or accountable judgment or decision.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 39,
+    "total_tokens": 425,
+    "seconds": 2.53
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A signature or attestation is required to provide a written statement.\"}",
+   "usage": {
+    "prompt_tokens": 396,
+    "completion_tokens": 25,
+    "total_tokens": 421,
+    "seconds": 1.97
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (deny access).\"}",
+   "usage": {
+    "prompt_tokens": 370,
+    "completion_tokens": 27,
+    "total_tokens": 397,
+    "seconds": 1.77
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision is needed to review the denial.\"}",
+   "usage": {
+    "prompt_tokens": 403,
+    "completion_tokens": 30,
+    "total_tokens": 433,
+    "seconds": 2.3
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal, or accountable judgment or decision is needed to determine the review request.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 32,
+    "total_tokens": 411,
+    "seconds": 2.13
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment or decision is required to determine whether to deny access.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 26,
+    "total_tokens": 403,
+    "seconds": 1.8
+   }
+  }
+ ]
+}

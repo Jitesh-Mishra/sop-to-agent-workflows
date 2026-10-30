@@ -1,0 +1,190 @@
+{
+ "sop_id": "osha_confined_space_permit",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Document completion of pre-entry measures\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must document the completion of required measures.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Authorize entry\", \"role\": \"entry supervisor\", \"handoff_to\": \"entry supervisor\", \"executor\": \"agent\", \"executor_reason\": \"Signing the permit is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Make permit available\", \"role\": \"employer\", \"handoff_to\": \"authorized entrants\", \"executor\": \"agent\", \"executor_reason\": \"Posting or making the permit available is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Limit permit duration\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must ensure the permit does not exceed the task duration.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Cancel entry and permit\", \"role\": \"entry supervisor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The supervisor must terminate entry when the task is completed or a condition arises.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Retain canceled permits\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must retain canceled permits for review.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [
+    "Step s2 hands off to its own role (entry supervisor); a handoff must go to a different party."
+   ],
+   "usage": {
+    "prompt_tokens": 1158,
+    "completion_tokens": 455,
+    "total_tokens": 1613,
+    "seconds": 96.77
+   },
+   "fixes": [
+    "s2: self-handoff removed"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Document completion of pre-entry measures",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Recording the completion of measures through documentation."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Authorize entry",
+    "role": "entry supervisor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment and signature are required."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Make permit available",
+    "role": "employer",
+    "handoff_to": "authorized entrants",
+    "executor": "agent",
+    "executor_reason": "Compiling and posting the permit or using any other effective means to make it available."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Limit permit duration",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Classifying or routing based on predefined rules."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Cancel entry and permit",
+    "role": "entry supervisor",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Retain canceled permits",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical retention of documents."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Recording the completion of measures through documentation.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 20,
+    "total_tokens": 395,
+    "seconds": 15.97
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and signature are required.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 20,
+    "total_tokens": 391,
+    "seconds": 3.57
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and posting the permit or using any other effective means to make it available.\"}",
+   "usage": {
+    "prompt_tokens": 402,
+    "completion_tokens": 29,
+    "total_tokens": 431,
+    "seconds": 5.67
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Classifying or routing based on predefined rules.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 21,
+    "total_tokens": 394,
+    "seconds": 3.65
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping.\"}",
+   "usage": {
+    "prompt_tokens": 396,
+    "completion_tokens": 16,
+    "total_tokens": 412,
+    "seconds": 4.09
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical retention of documents.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 18,
+    "total_tokens": 395,
+    "seconds": 3.59
+   }
+  }
+ ]
+}

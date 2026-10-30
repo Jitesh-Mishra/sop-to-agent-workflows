@@ -1,0 +1,272 @@
+{
+ "sop_id": "cdc_handwashing",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Use alcohol-based hand sanitizer\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The patient must choose and apply the preferred method for cleaning hands.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Apply alcohol-based hand sanitizer\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying the product to hands is a routine action.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Cover all surfaces\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rubbing hands together until they feel dry is a standard procedure.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Apply soap and water\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Wetting hands with water and applying soap is a standard procedure.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Apply soap and rub hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Applying soap and rubbing hands together is a standard procedure.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Continue rubbing hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rubbing hands for at least 15 seconds is a standard procedure.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Rinse hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Rinsing hands under running water is a standard procedure.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Dry hands\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Drying hands with a paper towel is a standard procedure.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Turn off faucet and open door\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel to turn off the faucet and open the door is a standard procedure.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Use paper towel to turn off faucet and open door\", \"role\": \"patient\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Using a paper towel to turn off the faucet and open the door is a standard procedure.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [
+    "Step s10 cites lines [10] that do not exist (the SOP has lines 1 to 9)."
+   ],
+   "usage": {
+    "prompt_tokens": 1120,
+    "completion_tokens": 795,
+    "total_tokens": 1915,
+    "seconds": 54.67
+   },
+   "fixes": [
+    "s10: dropped out-of-range lines",
+    "dropped edge s9->s10"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Use alcohol-based hand sanitizer",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to use the hand sanitizer."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Apply alcohol-based hand sanitizer",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to apply the hand sanitizer."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Cover all surfaces",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to cover all surfaces."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Apply soap and water",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to apply soap and water."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Apply soap and rub hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to apply soap and rub hands."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Continue rubbing hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to continue rubbing hands."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Rinse hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to wash hands."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Dry hands",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to use a paper towel."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Turn off faucet and open door",
+    "role": "patient",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to turn off the faucet and open the door."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to use the hand sanitizer.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 21,
+    "total_tokens": 393,
+    "seconds": 5.09
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to apply the hand sanitizer.\"}",
+   "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 21,
+    "total_tokens": 389,
+    "seconds": 1.39
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to cover all surfaces.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 20,
+    "total_tokens": 387,
+    "seconds": 1.33
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to apply soap and water.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 21,
+    "total_tokens": 399,
+    "seconds": 1.55
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to apply soap and rub hands.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 22,
+    "total_tokens": 411,
+    "seconds": 1.7
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to continue rubbing hands.\"}",
+   "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 20,
+    "total_tokens": 382,
+    "seconds": 1.32
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to wash hands.\"}",
+   "usage": {
+    "prompt_tokens": 359,
+    "completion_tokens": 19,
+    "total_tokens": 378,
+    "seconds": 1.23
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to use a paper towel.\"}",
+   "usage": {
+    "prompt_tokens": 359,
+    "completion_tokens": 21,
+    "total_tokens": 380,
+    "seconds": 1.35
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to turn off the faucet and open the door.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 25,
+    "total_tokens": 396,
+    "seconds": 1.68
+   }
+  }
+ ]
+}
