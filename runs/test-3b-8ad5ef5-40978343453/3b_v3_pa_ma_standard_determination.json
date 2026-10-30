@@ -1,0 +1,186 @@
+{
+ "sop_id": "pa_ma_standard_determination",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Notify the enrollee\", \"role\": \"MA organization\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend the timeframe\", \"role\": \"MA organization\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Reviewing the extension request is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review by a physician\", \"role\": \"MA organization\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to review the case.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Deny a service or item\", \"role\": \"MA organization\", \"handoff_to\": \"enrollee and physician\", \"executor\": \"agent\", \"executor_reason\": \"Sending a notice is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Provide notice language\", \"role\": \"MA organization\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Appeal the failure\", \"role\": \"MA organization\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Sending a notice is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": \"enrollee requests the extension or the extension is justified and in the enrollee's interest\"}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": \"MA organization fails to provide timely notice of an organization determination\"}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1164,
+    "completion_tokens": 490,
+    "total_tokens": 1654,
+    "seconds": 85.85
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Notify the enrollee",
+    "role": "MA organization",
+    "handoff_to": "enrollee",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend the timeframe",
+    "role": "MA organization",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "AI can determine if the extension is justified and in the enrollee's interest."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review by a physician",
+    "role": "MA organization",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, or accountable judgment is required."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Deny a service or item",
+    "role": "MA organization",
+    "handoff_to": "enrollee and physician",
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and a written notice to the enrollee and the physician or provider involved."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Provide notice language",
+    "role": "MA organization",
+    "handoff_to": "enrollee",
+    "executor": "agent",
+    "executor_reason": "Compiling and drafting a notice from known facts and guidelines."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Appeal the failure",
+    "role": "MA organization",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and decision to appeal."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": "enrollee requests the extension or the extension is justified and in the enrollee's interest"
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": "MA organization fails to provide timely notice of an organization determination"
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 392,
+    "completion_tokens": 22,
+    "total_tokens": 414,
+    "seconds": 15.47
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI can determine if the extension is justified and in the enrollee's interest.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 28,
+    "total_tokens": 414,
+    "seconds": 4.2
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, or accountable judgment is required.\"}",
+   "usage": {
+    "prompt_tokens": 404,
+    "completion_tokens": 23,
+    "total_tokens": 427,
+    "seconds": 4.38
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and a written notice to the enrollee and the physician or provider involved.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 31,
+    "total_tokens": 419,
+    "seconds": 4.53
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and drafting a notice from known facts and guidelines.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 24,
+    "total_tokens": 409,
+    "seconds": 3.8
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and decision to appeal.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 21,
+    "total_tokens": 399,
+    "seconds": 3.37
+   }
+  }
+ ]
+}

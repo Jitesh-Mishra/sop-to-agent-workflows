@@ -1,0 +1,13 @@
+{
+ "split": "test",
+ "model": "Qwen/Qwen2.5-3B-Instruct-GGUF/qwen2.5-3b-instruct-q4_k_m.gguf",
+ "model_key": "3b",
+ "prompts": [
+  "v3"
+ ],
+ "max_repairs": 2,
+ "temperature": 0.0,
+ "machine": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+ "load_seconds": 10.2,
+ "total_seconds": 1771.1
+}

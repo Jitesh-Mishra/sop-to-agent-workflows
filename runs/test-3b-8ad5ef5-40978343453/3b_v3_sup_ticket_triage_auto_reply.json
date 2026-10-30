@@ -1,0 +1,245 @@
+{
+ "sop_id": "sup_ticket_triage_auto_reply",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Classify ticket into support queues and predict priority\", \"role\": \"system\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Automated classification and priority prediction are routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Retrieve similar resolved tickets and knowledge base articles\", \"role\": \"system\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Automated retrieval of relevant information is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Draft a reply\", \"role\": \"system\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Automated drafting of a reply is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Escalate ticket to support engineer\", \"role\": \"system\", \"handoff_to\": \"support engineer\", \"executor\": \"agent\", \"executor_reason\": \"Validation checks failure requires manual intervention.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Send draft to support agent for approval\", \"role\": \"system\", \"handoff_to\": \"support agent\", \"executor\": \"agent\", \"executor_reason\": \"Route confidence below 0.6 or retrieval similarity below 0.5 requires human review.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Support agent approves, edits, or rewrites draft\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Professional judgment and editing are required for a high-quality response.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Send reply to customer automatically\", \"role\": \"system\", \"handoff_to\": \"customer\", \"executor\": \"agent\", \"executor_reason\": \"Automated sending of the reply is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Record gate decision and reasons\", \"role\": \"system\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Automated recording of the gate decision is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"validation check fails\"}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": \"validation check passes\"}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": \"route confidence below 0.6 or retrieval similarity below 0.5\"}, {\"from\": \"s5\", \"to\": \"s7\", \"condition\": \"validation check passes\"}, {\"from\": \"s4\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1107,
+    "completion_tokens": 681,
+    "total_tokens": 1788,
+    "seconds": 101.19
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Classify ticket into support queues and predict priority",
+    "role": "system",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do: searching and correlating information, classifying or routing."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Retrieve similar resolved tickets and knowledge base articles",
+    "role": "system",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Draft a reply",
+    "role": "system",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do: drafting a reply."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Escalate ticket to support engineer",
+    "role": "system",
+    "handoff_to": "support engineer",
+    "executor": "agent",
+    "executor_reason": "Escalation to a support engineer is an information work that an AI agent can do."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Send draft to support agent for approval",
+    "role": "system",
+    "handoff_to": "support agent",
+    "executor": "agent",
+    "executor_reason": "Compiling and forwarding documents for review."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Support agent approves, edits, or rewrites draft",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "AI agent can support agent in drafting and editing tasks."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Send reply to customer automatically",
+    "role": "system",
+    "handoff_to": "customer",
+    "executor": "agent",
+    "executor_reason": "Automated drafting and sending of a reply from known facts."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Record gate decision and reasons",
+    "role": "system",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Classifying or routing the gate decision and reasons."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": "validation check fails"
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": "validation check passes"
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": "route confidence below 0.6 or retrieval similarity below 0.5"
+   },
+   {
+    "from": "s5",
+    "to": "s7",
+    "condition": "validation check passes"
+   },
+   {
+    "from": "s4",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human",
+  "s7": "agent",
+  "s8": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do: searching and correlating information, classifying or routing.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 34,
+    "total_tokens": 409,
+    "seconds": 15.89
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 18,
+    "total_tokens": 384,
+    "seconds": 2.81
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do: drafting a reply.\"}",
+   "usage": {
+    "prompt_tokens": 359,
+    "completion_tokens": 27,
+    "total_tokens": 386,
+    "seconds": 3.18
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Escalation to a support engineer is an information work that an AI agent can do.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 30,
+    "total_tokens": 423,
+    "seconds": 4.67
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and forwarding documents for review.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 20,
+    "total_tokens": 410,
+    "seconds": 3.69
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI agent can support agent in drafting and editing tasks.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 23,
+    "total_tokens": 398,
+    "seconds": 3.4
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Automated drafting and sending of a reply from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 24,
+    "total_tokens": 389,
+    "seconds": 3.2
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Classifying or routing the gate decision and reasons.\"}",
+   "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 22,
+    "total_tokens": 386,
+    "seconds": 2.97
+   }
+  }
+ ]
+}
