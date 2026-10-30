@@ -2,43 +2,42 @@
 
 Source: CDC, About Hand Hygiene for Patients in Healthcare Settings, https://www.cdc.gov/clean-hands/about/hand-hygiene-for-healthcare.html
 
-Generated from the `gold` workflow spec. Rounded boxes are agent steps, square boxes are human steps.
+Generated from the `LLM-compiled` workflow spec. Rounded boxes are agent steps, square boxes are human steps.
 
 ```mermaid
 flowchart TD
-  s0["s0: Choose sanitizer if hands are not visibly dirty, otherwise s"]
-  s1["s1: Put sanitizer on hands and rub together"]
-  s2["s2: Cover all surfaces until dry about 20 s"]
-  s3["s3: Wet hands with warm water and apply soap"]
-  s4["s4: Rub to a lather over all hand surfaces"]
-  s5["s5: Keep rubbing at least 15 s"]
-  s6["s6: Rinse under running water"]
-  s7["s7: Dry with a paper towel"]
-  s8["s8: Use the towel to turn off the faucet and open the door"]
-  s0 -->|hands not visibly dirty| s1
+  s1["s1: Use alcohol-based hand sanitizer"]
+  s2["s2: Apply sanitizer to hands"]
+  s3["s3: Rub hands until dry"]
+  s4["s4: Use soap and water"]
+  s5["s5: Apply soap to hands"]
+  s6["s6: Rub hands to form lather"]
+  s7["s7: Rub all areas of hands"]
+  s8["s8: Rinse hands"]
+  s9["s9: Dry hands"]
   s1 --> s2
-  s0 -->|hands visibly dirty| s3
-  s3 --> s4
+  s2 --> s3
   s4 --> s5
   s5 --> s6
   s6 --> s7
   s7 --> s8
+  s8 --> s9
   classDef agent fill:#e3eefb,stroke:#2a78d6
   classDef human fill:#fde8de,stroke:#eb6834
-  class s0,s1,s2,s3,s4,s5,s6,s7,s8 human
+  class s1,s2,s3,s4,s5,s6,s7,s8,s9 human
 ```
 
 | Step | Action | Owner | Executor | Hands to | Deadline | Source lines |
 |---|---|---|---|---|---|---|
-| s0 | Choose sanitizer if hands are not visibly dirty, otherwise soap and water | person | human |  |  | L1 |
-| s1 | Put sanitizer on hands and rub together | person | human |  |  | L2 |
-| s2 | Cover all surfaces until dry (about 20 s) | person | human |  |  | L3 |
-| s3 | Wet hands with warm water and apply soap | person | human |  |  | L4 |
-| s4 | Rub to a lather over all hand surfaces | person | human |  |  | L5 |
-| s5 | Keep rubbing at least 15 s | person | human |  |  | L6 |
-| s6 | Rinse under running water | person | human |  |  | L7 |
-| s7 | Dry with a paper towel | person | human |  |  | L8 |
-| s8 | Use the towel to turn off the faucet and open the door | person | human |  |  | L9 |
+| s1 | Use alcohol-based hand sanitizer | patients and visitors | human |  |  | L1 |
+| s2 | Apply sanitizer to hands | patients and visitors | human |  |  | L2 |
+| s3 | Rub hands until dry | patients and visitors | human |  |  | L3 |
+| s4 | Use soap and water | patients and visitors | human |  |  | L4 |
+| s5 | Apply soap to hands | patients and visitors | human |  |  | L5 |
+| s6 | Rub hands to form lather | patients and visitors | human |  |  | L6 |
+| s7 | Rub all areas of hands | patients and visitors | human |  |  | L7 |
+| s8 | Rinse hands | patients and visitors | human |  |  | L8 |
+| s9 | Dry hands | patients and visitors | human |  |  | L9 |
 
 ## Handoffs
 

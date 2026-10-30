@@ -1,0 +1,140 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Determine price reasonableness",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "A professional judgment is required to determine price reasonableness."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Use competitive quotations",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking offers or quotations."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Include price reasonableness statement",
+   "role": "contracting officer",
+   "handoff_to": "contract file",
+   "executor": "agent",
+   "executor_reason": "Compiling a statement based on known facts."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Inform requiring activity",
+   "role": "contracting officer",
+   "handoff_to": "requiring activity",
+   "executor": "agent",
+   "executor_reason": "Informing the requiring activity requires compiling and communicating information, which an AI agent can do with system access."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Document final action",
+   "role": "contracting officer",
+   "handoff_to": "file",
+   "executor": "agent",
+   "executor_reason": "Recording the final action in the file."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Keep documentation minimal",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping and documentation management."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Notify unsuccessful suppliers",
+   "role": "contracting officer",
+   "handoff_to": "unsuccessful suppliers",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice based on known facts and requests."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Provide explanation",
+   "role": "contracting officer",
+   "handoff_to": "payment office",
+   "executor": "agent",
+   "executor_reason": "Compiling a brief explanation from known factors."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Annotate oral solicitation",
+   "role": "contracting officer",
+   "handoff_to": "payment office",
+   "executor": "agent",
+   "executor_reason": "Compiling and annotating information from the oral solicitation."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

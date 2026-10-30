@@ -1,0 +1,145 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Treated as discovered",
+   "role": "covered entity",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Determining the discovery date based on known facts."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Delay notification",
+   "role": "covered entity",
+   "handoff_to": "law enforcement official",
+   "executor": "human",
+   "executor_reason": "Requires a professional judgment and decision (approve, deny, determine, accept, adjudicate)."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Notify individuals",
+   "role": "covered entity",
+   "handoff_to": "individuals",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Provide notification without delay",
+   "role": "covered entity",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notification based on known facts and timing requirements."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Written notification by first-class mail",
+   "role": "covered entity",
+   "handoff_to": "individuals",
+   "executor": "human",
+   "executor_reason": "Needs physical action (signature, attestation) and presence to deliver the notice."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Conspicuous posting or media notice",
+   "role": "covered entity",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "A professional judgment and decision to choose between posting and media notice."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Notify prominent media outlets",
+   "role": "covered entity",
+   "handoff_to": "prominent media outlets",
+   "executor": "human",
+   "executor_reason": "A professional judgment and communication with media outlets."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Provide notification to Secretary",
+   "role": "covered entity",
+   "handoff_to": "Secretary",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and attestation."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Maintain log or documentation",
+   "role": "covered entity",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s6",
+   "condition": "less than 500 individuals"
+  },
+  {
+   "from": "s4",
+   "to": "s7",
+   "condition": "more than 500 residents of a State or jurisdiction"
+  },
+  {
+   "from": "s4",
+   "to": "s8",
+   "condition": "500 or more individuals"
+  },
+  {
+   "from": "s4",
+   "to": "s9",
+   "condition": null
+  }
+ ]
+}

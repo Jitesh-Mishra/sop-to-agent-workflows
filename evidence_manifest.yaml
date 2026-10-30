@@ -1,0 +1,46 @@
+project: sop-to-agent-workflows
+state: PROOF RUN
+final_test_runs: 1
+gold_labels: draft by Claude, review by Jitesh pending (data/LABELING.md)
+claims:
+  - id: step_f1
+    text: step F1 0.874 vs 0.554 for a rule baseline on 13 held-out SOPs
+    source: reports/results.csv (split=test, system=llm:3b:v3, stage=final)
+    verified: true
+  - id: edge_f1
+    text: edge F1 0.529 vs 0.218
+    source: reports/results.csv
+    verified: true
+  - id: handoff_f1
+    text: handoff F1 0.701 vs 0.548 (95% CI of difference -0.05 to +0.39)
+    source: reports/results.csv, reports/bootstrap_ci.json
+    verified: true
+  - id: valid_dags
+    text: 13 of 13 compiled test workflows are valid DAGs (dev 9/11 -> 11/11 after autofix + repair)
+    source: reports/results.csv (valid_first_rate, valid_final_rate)
+    verified: true
+  - id: crash_resume
+    text: 432 of 432 hard-killed runs resumed with state identical to an uncrashed run and 0 duplicate side effects, across 38 workflows
+    source: reports/crash_resume_summary.json, reports/crash_resume.csv
+    verified: true
+  - id: async_durability_bug
+    text: LangGraph default async durability failed 57 of 432 crash resumes; sync durability fixed all
+    source: reports/crash_resume_summary.json (ablation_async_checkpoint_durability)
+    verified: true
+  - id: mcp_tools_tested
+    text: every MCP tool exercised through a real MCP client in CI
+    source: tests/test_interfaces.py, .github/workflows/ci.yml
+    verified: true
+  - id: opportunity
+    text: 67 of 115 steps across 18 SOPs agent-executable (gold labels), median 45 hands-on minutes saved per run (SIMULATED)
+    source: reports/opportunity_gold.csv
+    verified: true (numbers); labels pending human review
+  - id: executor_accuracy
+    text: LLM agent vs human accuracy 0.60 on test (rule 0.53); LLM agent flags confirmed by gold 54 of 103
+    source: reports/results.csv, reports/opportunity_llm.csv
+    verified: true
+not_claimed:
+  - Oracle internal SOPs or data
+  - measured (non-simulated) time savings
+  - hosted LLM (Groq) results
+  - live deployment

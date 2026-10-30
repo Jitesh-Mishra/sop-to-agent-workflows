@@ -1,0 +1,245 @@
+{
+ "sop_id": "epcra_release_notification",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Trigger emergency release notification\", \"role\": \"operator\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The operator must determine if an emergency release notification is required.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Do not provide emergency release notification for internal releases\", \"role\": \"operator\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The operator must determine if the release is internal and not require an emergency release notification.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify community emergency coordinator\", \"role\": \"operator\", \"handoff_to\": \"community emergency coordinator\", \"executor\": \"human\", \"executor_reason\": \"The operator must notify the community emergency coordinator of the release.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Notify State SERC\", \"role\": \"operator\", \"handoff_to\": \"State SERC\", \"executor\": \"human\", \"executor_reason\": \"The operator must notify the State SERC of the release.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Provide oral immediate notification\", \"role\": \"operator\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The operator must provide an oral immediate notification to the community emergency coordinator and State SERC.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Update written follow-up notice\", \"role\": \"operator\", \"handoff_to\": \"written follow-up notice\", \"executor\": \"human\", \"executor_reason\": \"The operator must update the written follow-up notice with the required information.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide written follow-up notice\", \"role\": \"operator\", \"handoff_to\": \"written follow-up notice\", \"executor\": \"human\", \"executor_reason\": \"The operator must provide a written follow-up notice to the community emergency coordinator and State SERC.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Update written follow-up notice\", \"role\": \"operator\", \"handoff_to\": \"written follow-up notice\", \"executor\": \"human\", \"executor_reason\": \"The operator must update the written follow-up notice with the required information.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1246,
+    "completion_tokens": 679,
+    "total_tokens": 1925,
+    "seconds": 80.09
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Trigger emergency release notification",
+    "role": "operator",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to trigger the notification."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Do not provide emergency release notification for internal releases",
+    "role": "operator",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step involves a judgment call regarding the release of information, which requires a professional, clinical, legal, or accountable judgment or decision."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify community emergency coordinator",
+    "role": "operator",
+    "handoff_to": "community emergency coordinator",
+    "executor": "human",
+    "executor_reason": "The notification requires immediate action and physical presence to reach the emergency coordinator."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Notify State SERC",
+    "role": "operator",
+    "handoff_to": "State SERC",
+    "executor": "human",
+    "executor_reason": "The step requires a conversation with the 911 operator."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Provide oral immediate notification",
+    "role": "operator",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires a conversation such as an interview or counseling."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Update written follow-up notice",
+    "role": "operator",
+    "handoff_to": "written follow-up notice",
+    "executor": "agent",
+    "executor_reason": "AI agent can draft and send a notice from known facts."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide written follow-up notice",
+    "role": "operator",
+    "handoff_to": "written follow-up notice",
+    "executor": "human",
+    "executor_reason": "Needs physical action to provide a written notice."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Update written follow-up notice",
+    "role": "operator",
+    "handoff_to": "written follow-up notice",
+    "executor": "agent",
+    "executor_reason": "AI can draft and send a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to trigger the notification.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 20,
+    "total_tokens": 406,
+    "seconds": 7.04
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step involves a judgment call regarding the release of information, which requires a professional, clinical, legal, or accountable judgment or decision.\"}",
+   "usage": {
+    "prompt_tokens": 382,
+    "completion_tokens": 39,
+    "total_tokens": 421,
+    "seconds": 4.03
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The notification requires immediate action and physical presence to reach the emergency coordinator.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 26,
+    "total_tokens": 420,
+    "seconds": 3.07
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a conversation with the 911 operator.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 25,
+    "total_tokens": 413,
+    "seconds": 2.86
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a conversation such as an interview or counseling.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 24,
+    "total_tokens": 431,
+    "seconds": 3.14
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI agent can draft and send a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 370,
+    "completion_tokens": 24,
+    "total_tokens": 394,
+    "seconds": 2.59
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to provide a written notice.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 21,
+    "total_tokens": 405,
+    "seconds": 2.48
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI can draft and send a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 47,
+    "total_tokens": 437,
+    "seconds": 4.85
+   }
+  }
+ ]
+}

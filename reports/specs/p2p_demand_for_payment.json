@@ -1,0 +1,124 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Issue the demand for payment",
+   "role": "contracting officer",
+   "handoff_to": "null",
+   "executor": "agent",
+   "executor_reason": "Compiling and drafting a demand for payment from known facts."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Issue the demand for payment",
+   "role": "contracting officer",
+   "handoff_to": "null",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and signature to issue the demand for payment."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Issue the demand for payment",
+   "role": "contracting officer",
+   "handoff_to": "null",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Include a description of the debt",
+   "role": "contracting officer",
+   "handoff_to": "null",
+   "executor": "agent",
+   "executor_reason": "Compiling a description of the debt from known facts."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Issue the demand for payment",
+   "role": "contracting officer",
+   "handoff_to": "null",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a demand for payment based on known facts."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Advise contractor to contact",
+   "role": "contracting officer",
+   "handoff_to": "contractor",
+   "executor": "human",
+   "executor_reason": "Needs a professional judgment and communication."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Furnish a copy of the demand",
+   "role": "contracting officer",
+   "handoff_to": "contractor",
+   "executor": "human",
+   "executor_reason": "Needs physical action such as sending a certified mail."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Forward a copy of the demand",
+   "role": "contracting officer",
+   "handoff_to": "payment office",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding a document."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

@@ -1,0 +1,267 @@
+{
+ "sop_id": "cdc_ppe_donning",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Determine the level of PPE required\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employee must choose the appropriate level of PPE based on the situation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Put on a gown\", \"role\": \"employee\", \"handoff_to\": \"gown\", \"executor\": \"human\", \"executor_reason\": \"The employee must put on the gown to cover the torso and arms.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Fasten the gown\", \"role\": \"employee\", \"handoff_to\": \"gown\", \"executor\": \"human\", \"executor_reason\": \"The employee must fasten the gown to ensure it covers the required area.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Put on a mask or respirator\", \"role\": \"employee\", \"handoff_to\": \"mask or respirator\", \"executor\": \"human\", \"executor_reason\": \"The employee must put on the mask or respirator to cover the nose and mouth.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Secure the mask or respirator\", \"role\": \"employee\", \"handoff_to\": \"mask or respirator\", \"executor\": \"human\", \"executor_reason\": \"The employee must secure the mask or respirator to ensure it fits properly.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Fit the flexible band to the nose bridge\", \"role\": \"employee\", \"handoff_to\": \"mask or respirator\", \"executor\": \"human\", \"executor_reason\": \"The employee must fit the flexible band to the nose bridge to ensure it fits properly.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Fit the goggles or face shield\", \"role\": \"employee\", \"handoff_to\": \"goggles or face shield\", \"executor\": \"human\", \"executor_reason\": \"The employee must fit the goggles or face shield to cover the eyes and adjust it to fit.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Put on gloves\", \"role\": \"employee\", \"handoff_to\": \"gloves\", \"executor\": \"human\", \"executor_reason\": \"The employee must put on the gloves to cover the wrist of the isolation gown.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Use safe work practices\", \"role\": \"employee\", \"handoff_to\": \"safe work practices\", \"executor\": \"human\", \"executor_reason\": \"The employee must follow safe work practices to avoid contamination.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1106,
+    "completion_tokens": 763,
+    "total_tokens": 1869,
+    "seconds": 85.06
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Determine the level of PPE required",
+    "role": "employee",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine decision-making based on predefined criteria."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Put on a gown",
+    "role": "employee",
+    "handoff_to": "gown",
+    "executor": "human",
+    "executor_reason": "Physical action required to put on a gown."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Fasten the gown",
+    "role": "employee",
+    "handoff_to": "gown",
+    "executor": "human",
+    "executor_reason": "Needs physical action to fasten the gown."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Put on a mask or respirator",
+    "role": "employee",
+    "handoff_to": "mask or respirator",
+    "executor": "human",
+    "executor_reason": "Physical action required to secure ties or elastic bands at the middle of the head and neck."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Secure the mask or respirator",
+    "role": "employee",
+    "handoff_to": "mask or respirator",
+    "executor": "human",
+    "executor_reason": "Physical action required to secure the mask or respirator."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Fit the flexible band to the nose bridge",
+    "role": "employee",
+    "handoff_to": "mask or respirator",
+    "executor": "human",
+    "executor_reason": "Physical action required to fit the flexible band to the nose bridge."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Fit the goggles or face shield",
+    "role": "employee",
+    "handoff_to": "goggles or face shield",
+    "executor": "human",
+    "executor_reason": "Physical action required to fit the goggles or face shield."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Put on gloves",
+    "role": "employee",
+    "handoff_to": "gloves",
+    "executor": "human",
+    "executor_reason": "Physical action required to put on gloves."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Use safe work practices",
+    "role": "employee",
+    "handoff_to": "safe work practices",
+    "executor": "human",
+    "executor_reason": "Physical action and presence required to follow safe work practices."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine decision-making based on predefined criteria.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 20,
+    "total_tokens": 404,
+    "seconds": 6.95
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to put on a gown.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 21,
+    "total_tokens": 395,
+    "seconds": 2.35
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to fasten the gown.\"}",
+   "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 21,
+    "total_tokens": 381,
+    "seconds": 2.13
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to secure ties or elastic bands at the middle of the head and neck.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 30,
+    "total_tokens": 401,
+    "seconds": 3.03
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to secure the mask or respirator.\"}",
+   "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 23,
+    "total_tokens": 391,
+    "seconds": 2.47
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to fit the flexible band to the nose bridge.\"}",
+   "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 25,
+    "total_tokens": 385,
+    "seconds": 2.5
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to fit the goggles or face shield.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 23,
+    "total_tokens": 392,
+    "seconds": 2.4
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to put on gloves.\"}",
+   "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 20,
+    "total_tokens": 380,
+    "seconds": 2.07
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action and presence required to follow safe work practices.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 23,
+    "total_tokens": 402,
+    "seconds": 2.6
+   }
+  }
+ ]
+}

@@ -1,0 +1,267 @@
+{
+ "sop_id": "p2p_demand_for_payment",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Issue the demand for payment\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must make a determination and issue a demand.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Issue the demand for payment\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must issue the demand even if the contractor has agreed to repay the debt.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Issue the demand for payment\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must issue the demand as part of the final decision if a final decision is required.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Include a description of the debt\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The demand must include a description of the debt, including the debt amount, a distribution of the principal amount by lines of accounting, and the basis for and amount of any accrued interest or penalty.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Issue the demand for payment\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must issue the demand if the debt affects multiple contracts and the lines of accounting are not readily available.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Advise the contractor\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must advise the contractor to contact the contracting officer if the contractor believes the debt is invalid or the amount is incorrect.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Furnish a copy of the demand for payment\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must furnish a copy of the demand for payment to the contractor by certified mail, return receipt requested, or by any other method that provides evidence of receipt.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Forward a copy of the demand\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must forward a copy of the demand to the payment office.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Submit a request for installment payments or deferment of collection\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor may submit a request for installment payments or deferment of collection if immediate payment is not practicable or if the amount is disputed.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1193,
+    "completion_tokens": 835,
+    "total_tokens": 2028,
+    "seconds": 71.62
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Issue the demand for payment",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An accountable judgment or decision to determine the amount and issue the demand."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Issue the demand for payment",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An accountable judgment or decision to issue a demand for payment."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Issue the demand for payment",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An accountable judgment or decision is required."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Include a description of the debt",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to include detailed information about the debt, which requires human judgment and attention."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Issue the demand for payment",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An accountable judgment or decision (approve, deny, determine, accept, adjudicate) is needed to issue the demand for payment."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Advise the contractor",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The decision to contact the contracting officer is a judgment call that requires a professional, clinical, legal, or accountable judgment or decision."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Furnish a copy of the demand for payment",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to send a certified copy of the demand for payment."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Forward a copy of the demand",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Sending a document from known facts."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Submit a request for installment payments or deferment of collection",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires physical action (submitting a request) and may involve a signature or attestation."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"An accountable judgment or decision to determine the amount and issue the demand.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 26,
+    "total_tokens": 404,
+    "seconds": 7.76
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"An accountable judgment or decision to issue a demand for payment.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 24,
+    "total_tokens": 393,
+    "seconds": 1.62
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"An accountable judgment or decision is required.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 20,
+    "total_tokens": 393,
+    "seconds": 1.48
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to include detailed information about the debt, which requires human judgment and attention.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 28,
+    "total_tokens": 423,
+    "seconds": 2.65
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"An accountable judgment or decision (approve, deny, determine, accept, adjudicate) is needed to issue the demand for payment.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 38,
+    "total_tokens": 431,
+    "seconds": 3.25
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The decision to contact the contracting officer is a judgment call that requires a professional, clinical, legal, or accountable judgment or decision.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 38,
+    "total_tokens": 415,
+    "seconds": 2.94
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to send a certified copy of the demand for payment.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 26,
+    "total_tokens": 417,
+    "seconds": 2.46
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Sending a document from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 19,
+    "total_tokens": 388,
+    "seconds": 1.66
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action (submitting a request) and may involve a signature or attestation.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 32,
+    "total_tokens": 418,
+    "seconds": 2.7
+   }
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "sop_id": "dot_hazmat_incident_reporting",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Notify the National Response Center (NRC) on 800-424-8802\", \"role\": \"person in physical possession of the hazardous material\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The person must provide the required telephone report.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Submit a Hazardous Materials Incident Report on DOT Form F 5800.1 within 30 days of discovery of the incident\", \"role\": \"person in physical possession of a hazardous material\", \"handoff_to\": \"person in physical possession of the hazardous material\", \"executor\": \"human\", \"executor_reason\": \"The person must submit the required report within the specified time frame.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1086,
+    "completion_tokens": 207,
+    "total_tokens": 1293,
+    "seconds": 34.44
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Notify the National Response Center (NRC) on 800-424-8802",
+    "role": "person in physical possession of the hazardous material",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires physical action and a phone call to the NRC."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Submit a Hazardous Materials Incident Report on DOT Form F 5800.1 within 30 days of discovery of the incident",
+    "role": "person in physical possession of a hazardous material",
+    "handoff_to": "person in physical possession of the hazardous material",
+    "executor": "human",
+    "executor_reason": "Physical action required to submit the report."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and a phone call to the NRC.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 26,
+    "total_tokens": 433,
+    "seconds": 7.71
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to submit the report.\"}",
+   "usage": {
+    "prompt_tokens": 440,
+    "completion_tokens": 20,
+    "total_tokens": 460,
+    "seconds": 3.17
+   }
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+{
+ "sop_id": "pa_ma_reconsideration",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Make a written request for reconsideration\", \"role\": \"party\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The party must choose and file a request for reconsideration.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"File request within 60 calendar days\", \"role\": \"party\", \"handoff_to\": \"organization that made the organization determination\", \"executor\": \"human\", \"executor_reason\": \"The party must file the request within the specified time frame.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"File request if 60-day period has expired\", \"role\": \"party\", \"handoff_to\": \"organization that made the organization determination\", \"executor\": \"human\", \"executor_reason\": \"The party must file a request if the 60-day period has expired.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Issue reconsideration determination no later than 30 calendar days\", \"role\": \"MA organization\", \"handoff_to\": \"enrollee\", \"executor\": \"human\", \"executor_reason\": \"The MA organization must issue the reconsideration determination within the specified time frame.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Prepare written explanation and send case file\", \"role\": \"MA organization\", \"handoff_to\": \"independent entity\", \"executor\": \"human\", \"executor_reason\": \"The MA organization must prepare a written explanation and send the case file to the independent entity.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Make reasonable and diligent efforts to assist\", \"role\": \"organization\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The organization must make reasonable and diligent efforts to assist in gathering and forwarding information.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1141,
+    "completion_tokens": 520,
+    "total_tokens": 1661,
+    "seconds": 50.83
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Make a written request for reconsideration",
+    "role": "party",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A written request requires physical action and presence."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "File request within 60 calendar days",
+    "role": "party",
+    "handoff_to": "organization that made the organization determination",
+    "executor": "human",
+    "executor_reason": "A signature or attestation is required to file a request."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "File request if 60-day period has expired",
+    "role": "party",
+    "handoff_to": "organization that made the organization determination",
+    "executor": "human",
+    "executor_reason": "The party needs to take physical action to file a request."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Issue reconsideration determination no later than 30 calendar days",
+    "role": "MA organization",
+    "handoff_to": "enrollee",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision is needed to determine the reconsideration determination."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Prepare written explanation and send case file",
+    "role": "MA organization",
+    "handoff_to": "independent entity",
+    "executor": "human",
+    "executor_reason": "Needs physical action to prepare the written explanation and send the case file."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Make reasonable and diligent efforts to assist",
+    "role": "organization",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "AI can assist in gathering and forwarding information efficiently."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A written request requires physical action and presence.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 21,
+    "total_tokens": 405,
+    "seconds": 7.59
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A signature or attestation is required to file a request.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 24,
+    "total_tokens": 402,
+    "seconds": 2.12
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The party needs to take physical action to file a request.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 24,
+    "total_tokens": 415,
+    "seconds": 2.3
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision is needed to determine the reconsideration determination.\"}",
+   "usage": {
+    "prompt_tokens": 399,
+    "completion_tokens": 32,
+    "total_tokens": 431,
+    "seconds": 2.88
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to prepare the written explanation and send the case file.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 26,
+    "total_tokens": 433,
+    "seconds": 2.77
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI can assist in gathering and forwarding information efficiently.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 22,
+    "total_tokens": 396,
+    "seconds": 1.92
+   }
+  }
+ ]
+}

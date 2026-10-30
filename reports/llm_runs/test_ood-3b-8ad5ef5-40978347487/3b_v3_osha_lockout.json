@@ -1,0 +1,321 @@
+{
+ "sop_id": "osha_lockout",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Establish the minimum requirements\", \"role\": \"system\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"To set the procedure's foundational rules.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Comply with restrictions\", \"role\": \"employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Employees must follow the established rules.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify affected employees\", \"role\": \"authorized employee\", \"handoff_to\": \"affected employees\", \"executor\": \"agent\", \"executor_reason\": \"To inform employees of the upcoming maintenance or servicing.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Identify energy type and magnitude\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"To understand the hazards and control methods.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Shut down the machine\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To physically stop the machine.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"De-activate energy isolating device\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To isolate the machine from energy sources.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Lock out energy isolating device\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To physically secure the machine.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Dissipate or restrain residual energy\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"To ensure safety by addressing any remaining energy sources.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Verify isolation of equipment\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"To confirm the equipment is isolated from energy sources.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Caution: Return operating control\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"To ensure safety by returning controls to a safe position.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Machine or equipment is now locked out\", \"role\": \"authorized employee\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"To mark the completion of the lockout procedure.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 842,
+    "total_tokens": 2168,
+    "seconds": 126.85
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Establish the minimum requirements",
+    "role": "system",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Classifying or routing information."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Comply with restrictions",
+    "role": "employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and adherence to specific restrictions."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify affected employees",
+    "role": "authorized employee",
+    "handoff_to": "affected employees",
+    "executor": "human",
+    "executor_reason": "A conversation such as an interview or counseling is needed to notify affected employees."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Identify energy type and magnitude",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information to identify the type and magnitude of energy."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Shut down the machine",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to shut down the machine."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "De-activate energy isolating device",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to de-activate the device."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Lock out energy isolating device",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to lock out the device."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Dissipate or restrain residual energy",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires physical action and judgment to ensure safety."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Verify isolation of equipment",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Verifying isolation of equipment requires checking and testing, which an AI agent with system access can do."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Caution: Return operating control",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to return operating control."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Machine or equipment is now locked out",
+    "role": "authorized employee",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to lock out the machine or equipment."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "agent",
+  "s10": "agent",
+  "s11": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Classifying or routing information.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 18,
+    "total_tokens": 395,
+    "seconds": 14.62
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and adherence to specific restrictions.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 22,
+    "total_tokens": 394,
+    "seconds": 3.2
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A conversation such as an interview or counseling is needed to notify affected employees.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 27,
+    "total_tokens": 416,
+    "seconds": 4.28
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information to identify the type and magnitude of energy.\"}",
+   "usage": {
+    "prompt_tokens": 399,
+    "completion_tokens": 26,
+    "total_tokens": 425,
+    "seconds": 4.48
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to shut down the machine.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 21,
+    "total_tokens": 406,
+    "seconds": 3.57
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to de-activate the device.\"}",
+   "usage": {
+    "prompt_tokens": 382,
+    "completion_tokens": 24,
+    "total_tokens": 406,
+    "seconds": 3.83
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to lock out the device.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 23,
+    "total_tokens": 395,
+    "seconds": 3.3
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires physical action and judgment to ensure safety.\"}",
+   "usage": {
+    "prompt_tokens": 420,
+    "completion_tokens": 21,
+    "total_tokens": 441,
+    "seconds": 4.82
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Verifying isolation of equipment requires checking and testing, which an AI agent with system access can do.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 32,
+    "total_tokens": 439,
+    "seconds": 5.32
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to return operating control.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 20,
+    "total_tokens": 397,
+    "seconds": 3.26
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to lock out the machine or equipment.\"}",
+   "usage": {
+    "prompt_tokens": 367,
+    "completion_tokens": 23,
+    "total_tokens": 390,
+    "seconds": 3.08
+   }
+  }
+ ]
+}

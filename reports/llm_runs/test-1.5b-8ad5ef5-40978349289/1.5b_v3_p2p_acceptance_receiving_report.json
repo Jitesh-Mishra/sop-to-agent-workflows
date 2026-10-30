@@ -1,0 +1,213 @@
+{
+ "sop_id": "p2p_acceptance_receiving_report",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Acknowledge that supplies or services conform with contract requirements\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must ensure that the supplies or services meet the contract requirements.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Do not accept supplies or services before contract quality assurance actions are completed\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must ensure that the quality assurance actions are completed before accepting the supplies or services.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Accept supplies or services\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer accepts the supplies or services.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Evidence acceptance by execution of an acceptance certificate\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must ensure that the acceptance certificate is executed.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Include contract number, quantities, date, and signature in the receiving report\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must ensure that the receiving report includes the required information.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Forward the receiving report or other Government documentation to the designated payment office\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must ensure that the receiving report is forwarded to the designated payment office.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Forward the receiving report or other Government documentation to the designated payment office by the 5th working day after Government acceptance or approval\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must ensure that the receiving report is forwarded to the designated payment office by the 5th working day.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1133,
+    "completion_tokens": 633,
+    "total_tokens": 1766,
+    "seconds": 57.52
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Acknowledge that supplies or services conform with contract requirements",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Acceptance is a judgment or decision that requires a professional, clinical, legal, or accountable judgment."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Do not accept supplies or services before contract quality assurance actions are completed",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment or decision is required to determine if the supplies or services meet the contract quality standards."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Accept supplies or services",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Acceptance of supplies or services requires a professional judgment and decision."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Evidence acceptance by execution of an acceptance certificate",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A signature or attestation from a professional or accountable party is required."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Include contract number, quantities, date, and signature in the receiving report",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to include signature and other details."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Forward the receiving report or other Government documentation to the designated payment office",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Forwarding documents to the designated payment office requires system access and system processing."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Forward the receiving report or other Government documentation to the designated payment office by the 5th working day after Government acceptance or approval",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Sending documents to the designated payment office."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Acceptance is a judgment or decision that requires a professional, clinical, legal, or accountable judgment.\"}",
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 32,
+    "total_tokens": 408,
+    "seconds": 8.09
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment or decision is required to determine if the supplies or services meet the contract quality standards.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 32,
+    "total_tokens": 410,
+    "seconds": 2.57
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Acceptance of supplies or services requires a professional judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 25,
+    "total_tokens": 391,
+    "seconds": 1.99
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A signature or attestation from a professional or accountable party is required.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 26,
+    "total_tokens": 412,
+    "seconds": 2.35
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to include signature and other details.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 22,
+    "total_tokens": 411,
+    "seconds": 2.23
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Forwarding documents to the designated payment office requires system access and system processing.\"}",
+   "usage": {
+    "prompt_tokens": 403,
+    "completion_tokens": 27,
+    "total_tokens": 430,
+    "seconds": 2.7
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Sending documents to the designated payment office.\"}",
+   "usage": {
+    "prompt_tokens": 411,
+    "completion_tokens": 20,
+    "total_tokens": 431,
+    "seconds": 2.23
+   }
+  }
+ ]
+}

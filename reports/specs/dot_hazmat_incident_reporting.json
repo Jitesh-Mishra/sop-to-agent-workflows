@@ -1,0 +1,49 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Make a telephone report",
+   "role": "any person in physical possession of hazardous material",
+   "handoff_to": "NRC",
+   "executor": "human",
+   "executor_reason": "Needs physical action to make a telephone report."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Provide notice to NRC",
+   "role": "any person in physical possession of hazardous material",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to provide notice."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Submit a Hazardous Materials Incident Report",
+   "role": "any person in physical possession of hazardous material",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs hands-on knowledge of the incident and physical possession of the hazardous material to fill out the report."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  }
+ ]
+}

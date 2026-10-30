@@ -1,0 +1,308 @@
+{
+ "sop_id": "hipaa_breach_notification",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Treat the breach as discovered\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must determine when a breach is known.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Delay notification if law enforcement states it would impede investigation\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must consider the impact on the investigation.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify individuals affected\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must inform individuals about the breach.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Provide notification\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must send the notification.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Provide notification by first-class mail\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must send the notification by mail.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Provide notification by electronic mail\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must send the notification by email.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide notification on the Web site\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must provide the notification on the Web site.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide notification in media\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must provide the notification in media.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Notify prominent media outlets\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must notify prominent media outlets.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Maintain log or documentation\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must keep records of the breach.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Provide notification to Secretary\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must provide the notification to the Secretary.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Provide notification to Secretary contemporaneously\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must provide the notification to the Secretary.\"}, {\"id\": \"s13\", \"lines\": [13], \"action\": \"Provide notification to Secretary in specified manner\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must provide the notification to the Secretary.\"}, {\"id\": \"s14\", \"lines\": [14], \"action\": \"Provide notification to Secretary for breaches discovered during the preceding calendar year\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must provide the notification to the Secretary.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}, {\"from\": \"s12\", \"to\": \"s13\", \"condition\": null}, {\"from\": \"s13\", \"to\": \"s14\", \"condition\": null}]}",
+   "errors": [
+    "Step s11 cites lines [11] that do not exist (the SOP has lines 1 to 10).",
+    "Step s12 cites lines [12] that do not exist (the SOP has lines 1 to 10).",
+    "Step s13 cites lines [13] that do not exist (the SOP has lines 1 to 10).",
+    "Step s14 cites lines [14] that do not exist (the SOP has lines 1 to 10)."
+   ],
+   "usage": {
+    "prompt_tokens": 1405,
+    "completion_tokens": 1135,
+    "total_tokens": 2540,
+    "seconds": 127.4
+   },
+   "fixes": [
+    "s11: dropped out-of-range lines",
+    "s12: dropped out-of-range lines",
+    "s13: dropped out-of-range lines",
+    "s14: dropped out-of-range lines",
+    "dropped edge s10->s11",
+    "dropped edge s11->s12",
+    "dropped edge s12->s13",
+    "dropped edge s13->s14"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Treat the breach as discovered",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A covered entity must take action as soon as a breach is discovered, which typically involves notifying relevant parties and taking steps to mitigate the impact."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Delay notification if law enforcement states it would impede investigation",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment or decision regarding the impact on the investigation."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify individuals affected",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "human",
+    "executor_reason": "Needs to be done by a person to communicate with affected individuals."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Provide notification",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to provide the notification."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Provide notification by first-class mail",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "human",
+    "executor_reason": "Physical action required to send a first-class mail."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Provide notification by electronic mail",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "agent",
+    "executor_reason": "Sending an electronic notification to individuals affected by the breach."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide notification on the Web site",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "human",
+    "executor_reason": "The notification must be provided to prominent media outlets, which typically require physical action or presence."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide notification in media",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "human",
+    "executor_reason": "The notification must be provided to the Secretary, which requires physical action and presence."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Notify prominent media outlets",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "human",
+    "executor_reason": "A prominent media notification is a physical action and requires a signature or attestation."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Maintain log or documentation",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Maintaining log or documentation is a task that requires human attention and action."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human",
+  "s10": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A covered entity must take action as soon as a breach is discovered, which typically involves notifying relevant parties and taking steps to mitigate the impact.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 40,
+    "total_tokens": 435,
+    "seconds": 8.8
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment or decision regarding the impact on the investigation.\"}",
+   "usage": {
+    "prompt_tokens": 416,
+    "completion_tokens": 24,
+    "total_tokens": 440,
+    "seconds": 3.18
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to be done by a person to communicate with affected individuals.\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 25,
+    "total_tokens": 433,
+    "seconds": 3.16
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to provide the notification.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 20,
+    "total_tokens": 397,
+    "seconds": 2.33
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to send a first-class mail.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 22,
+    "total_tokens": 413,
+    "seconds": 2.64
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Sending an electronic notification to individuals affected by the breach.\"}",
+   "usage": {
+    "prompt_tokens": 431,
+    "completion_tokens": 23,
+    "total_tokens": 454,
+    "seconds": 3.32
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The notification must be provided to prominent media outlets, which typically require physical action or presence.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 30,
+    "total_tokens": 421,
+    "seconds": 3.35
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The notification must be provided to the Secretary, which requires physical action and presence.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 28,
+    "total_tokens": 426,
+    "seconds": 3.29
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A prominent media notification is a physical action and requires a signature or attestation.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 28,
+    "total_tokens": 411,
+    "seconds": 3.03
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Maintaining log or documentation is a task that requires human attention and action.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 27,
+    "total_tokens": 413,
+    "seconds": 3.08
+   }
+  }
+ ]
+}

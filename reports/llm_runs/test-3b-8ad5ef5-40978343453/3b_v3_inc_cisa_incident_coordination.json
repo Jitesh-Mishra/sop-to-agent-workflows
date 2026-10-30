@@ -1,0 +1,299 @@
+{
+ "sop_id": "inc_cisa_incident_coordination",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Notify CISA\", \"role\": \"agency\", \"handoff_to\": \"CISA\", \"executor\": \"agent\", \"executor_reason\": \"Filing a notification from known facts is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify Congressional Committees, OIG, and OFCIO\", \"role\": \"agency\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing notifications from known facts is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide tracking number and risk rating\", \"role\": \"CISA\", \"handoff_to\": \"agency\", \"executor\": \"agent\", \"executor_reason\": \"Providing tracking information is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Share log data, cyber threat indicators, and defensive measures\", \"role\": \"agency\", \"handoff_to\": \"CISA and sharing partners\", \"executor\": \"agent\", \"executor_reason\": \"Filing a notice from known facts is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Share cyber intelligence\", \"role\": \"CISA\", \"handoff_to\": \"intelligence community and law enforcement\", \"executor\": \"agent\", \"executor_reason\": \"Filing a notice from known facts is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Report incidents to federal law enforcement\", \"role\": \"agency\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a notice from known facts is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Determine C-UCG escalation\", \"role\": \"CISA or FBI\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a notice from known facts is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide post-incident updates and final report\", \"role\": \"agency\", \"handoff_to\": \"CISA\", \"executor\": \"agent\", \"executor_reason\": \"Filing a notice from known facts is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Provide incident response checklists and report\", \"role\": \"agency\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a notice from known facts is routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Evaluate materials and close ticket\", \"role\": \"CISA\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a notice from known facts is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1205,
+    "completion_tokens": 834,
+    "total_tokens": 2039,
+    "seconds": 119.61
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Notify CISA",
+    "role": "agency",
+    "handoff_to": "CISA",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice based on known facts and directives."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Notify Congressional Committees, OIG, and OFCIO",
+    "role": "agency",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs hands-on communication and potentially legal/official attestation."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide tracking number and risk rating",
+    "role": "CISA",
+    "handoff_to": "agency",
+    "executor": "agent",
+    "executor_reason": "Compiling and providing a tracking number and risk rating based on known facts."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Share log data, cyber threat indicators, and defensive measures",
+    "role": "agency",
+    "handoff_to": "CISA and sharing partners",
+    "executor": "agent",
+    "executor_reason": "Compiling and sharing information."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Share cyber intelligence",
+    "role": "CISA",
+    "handoff_to": "intelligence community and law enforcement",
+    "executor": "agent",
+    "executor_reason": "Compiling and sharing information from known sources."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Report incidents to federal law enforcement",
+    "role": "agency",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and communication with external parties."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Determine C-UCG escalation",
+    "role": "CISA or FBI",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and decision."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide post-incident updates and final report",
+    "role": "agency",
+    "handoff_to": "CISA",
+    "executor": "agent",
+    "executor_reason": "Routine documentation and reporting."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Provide incident response checklists and report",
+    "role": "agency",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Generating and providing checklists and reports is an information work that an AI agent can do with system access."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Evaluate materials and close ticket",
+    "role": "CISA",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Classifying or routing based on evaluation of materials."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent",
+  "s10": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice based on known facts and directives.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 25,
+    "total_tokens": 400,
+    "seconds": 15.16
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs hands-on communication and potentially legal/official attestation.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 24,
+    "total_tokens": 410,
+    "seconds": 3.81
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and providing a tracking number and risk rating based on known facts.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 27,
+    "total_tokens": 416,
+    "seconds": 4.24
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sharing information.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 18,
+    "total_tokens": 406,
+    "seconds": 3.41
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sharing information from known sources.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 21,
+    "total_tokens": 393,
+    "seconds": 3.07
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and communication with external parties.\"}",
+   "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 22,
+    "total_tokens": 386,
+    "seconds": 2.97
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 19,
+    "total_tokens": 406,
+    "seconds": 3.47
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine documentation and reporting.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 17,
+    "total_tokens": 389,
+    "seconds": 2.77
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Generating and providing checklists and reports is an information work that an AI agent can do with system access.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 33,
+    "total_tokens": 407,
+    "seconds": 4.19
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Classifying or routing based on evaluation of materials.\"}",
+   "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 22,
+    "total_tokens": 409,
+    "seconds": 3.72
+   }
+  }
+ ]
+}

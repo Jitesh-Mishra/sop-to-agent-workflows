@@ -1,0 +1,434 @@
+{
+ "sop_id": "eeo_precomplaint",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Consult a Counselor prior to filing a complaint\", \"role\": \"aggrieved person\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The aggrieved person must choose and contact a Counselor.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Initiate contact with a Counselor\", \"role\": \"aggrieved person\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The aggrieved person must choose and contact a Counselor.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Advise individuals in writing of their rights and responsibilities\", \"role\": \"Counselor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Advise aggrieved persons of ADR options\", \"role\": \"Counselor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Determine the pre-complaint processing period\", \"role\": \"Counselor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Determining the length of the pre-complaint processing period is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Conduct the final interview with the aggrieved person\", \"role\": \"Counselor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Conducting the final interview is a physical action.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Agree to extend the counseling period\", \"role\": \"aggrieved person\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Agreeing to extend the counseling period is a decision.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Inform the aggrieved person of the right to file a complaint\", \"role\": \"Counselor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Informing the aggrieved person of the right to file a complaint is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Submit a written report\", \"role\": \"Counselor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Submitting a report is routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Submit a written report\", \"role\": \"Counselor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Submitting a report is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1346,
+    "completion_tokens": 1375,
+    "total_tokens": 2721,
+    "seconds": 150.29
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Consult a Counselor prior to filing a complaint",
+    "role": "aggrieved person",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A conversation such as an interview or counseling is needed to informally resolve the matter."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Initiate contact with a Counselor",
+    "role": "aggrieved person",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires a conversation with a Counselor, which is a human interaction."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Advise individuals in writing of their rights and responsibilities",
+    "role": "Counselor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A conversation such as an interview or counseling."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Advise aggrieved persons of ADR options",
+    "role": "Counselor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A conversation such as an interview or counseling is needed to advise aggrieved persons of ADR options."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Determine the pre-complaint processing period",
+    "role": "Counselor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment or decision is required to determine the pre-complaint processing period based on the aggrieved person's choice."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Conduct the final interview with the aggrieved person",
+    "role": "Counselor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A conversation such as an interview or counseling is needed."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Agree to extend the counseling period",
+    "role": "aggrieved person",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The aggrieved person needs to make a decision on whether to extend the counseling period."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Inform the aggrieved person of the right to file a complaint",
+    "role": "Counselor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to be communicated to the aggrieved person in writing."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Submit a written report",
+    "role": "Counselor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to draft and send a written report."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Submit a written report",
+    "role": "Counselor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The Counselor is not authorized to take any physical action or make a decision regarding the aggrieved person's actions."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human",
+  "s7": "human",
+  "s8": "agent",
+  "s9": "agent",
+  "s10": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A conversation such as an interview or counseling is needed to informally resolve the matter.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 29,
+    "total_tokens": 420,
+    "seconds": 7.78
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a conversation with a Counselor, which is a human interaction.\"}",
+   "usage": {
+    "prompt_tokens": 404,
+    "completion_tokens": 28,
+    "total_tokens": 432,
+    "seconds": 3.36
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A conversation such as an interview or counseling.\"}",
+   "usage": {
+    "prompt_tokens": 377,
+    "completion_tokens": 21,
+    "total_tokens": 398,
+    "seconds": 2.41
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A conversation such as an interview or counseling is needed to advise aggrieved persons of ADR options.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 32,
+    "total_tokens": 427,
+    "seconds": 3.62
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment or decision is required to determine the pre-complaint processing period based on the aggrieved person's choice.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 36,
+    "total_tokens": 419,
+    "seconds": 3.73
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A conversation such as an interview or counseling is needed.\"}",
+   "usage": {
+    "prompt_tokens": 412,
+    "completion_tokens": 23,
+    "total_tokens": 435,
+    "seconds": 3.06
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The aggrieved person needs to make a decision on whether to extend the counseling period.\"}",
+   "usage": {
+    "prompt_tokens": 401,
+    "completion_tokens": 29,
+    "total_tokens": 430,
+    "seconds": 3.43
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to be communicated to the aggrieved person in writing.\"}",
+   "usage": {
+    "prompt_tokens": 411,
+    "completion_tokens": 24,
+    "total_tokens": 435,
+    "seconds": 3.14
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to draft and send a written report.\"}",
+   "usage": {
+    "prompt_tokens": 405,
+    "completion_tokens": 21,
+    "total_tokens": 426,
+    "seconds": 2.78
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The Counselor is not authorized to take any physical action or make a decision regarding the aggrieved person's actions.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 35,
+    "total_tokens": 407,
+    "seconds": 3.33
+   }
+  }
+ ]
+}

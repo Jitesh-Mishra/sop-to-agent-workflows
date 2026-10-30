@@ -1,0 +1,108 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Submit a prior authorization request",
+   "role": "provider",
+   "handoff_to": "CMS or its contractor",
+   "executor": "agent",
+   "executor_reason": "Submitting a request is information work an AI agent can do with system access."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Include all necessary documentation",
+   "role": "provider",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and checking documents."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Submit before service and claim",
+   "role": "provider",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Submitting a claim based on known facts."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Review by CMS or contractor",
+   "role": "CMS or contractor",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to determine compliance with rules."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Affirmation or non-affirmation",
+   "role": "CMS or contractor",
+   "handoff_to": "provider",
+   "executor": "agent",
+   "executor_reason": "Checking and issuing a provisional affirmation or non-affirmation based on known rules and facts."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Expedited review",
+   "role": "CMS or contractor",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine information work such as completing an expedited review."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Resubmit upon non-affirmation",
+   "role": "provider",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Resubmitting a request is an information work that an AI agent can automate."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": "non-affirmation"
+  },
+  {
+   "from": "s5",
+   "to": "s7",
+   "condition": "affirmation"
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

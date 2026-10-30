@@ -1,0 +1,140 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Perform user seal check",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to perform the seal check."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "User seal checks are not substitutes for fit tests",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Classifying or routing information based on known facts."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Positive pressure check",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to remove the exhalation valve cover."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Close off the exhalation valve",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to close the exhalation valve."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Build up slight positive pressure",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "AI can check the facts and build up slight positive pressure using system access."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Carefully replace the exhalation valve cover",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to replace the exhalation valve cover."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Negative pressure check",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action to perform the negative pressure check."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Inhale gently",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action and presence to inhale and hold breath."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Facepiece remains in slightly collapsed condition",
+   "role": "individual who uses a tight-fitting respirator",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Checking and recording the condition of the facepiece."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  }
+ ]
+}

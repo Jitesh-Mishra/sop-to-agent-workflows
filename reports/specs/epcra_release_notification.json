@@ -1,0 +1,145 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Trigger emergency release notification",
+   "role": "facility",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Triggering a notification based on predefined conditions."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Do not notify if exposure is limited to facility",
+   "role": "facility",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine information check and decision."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Notify community emergency coordinator",
+   "role": "facility",
+   "handoff_to": "community emergency coordinator",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Notify 911 operator for transportation releases",
+   "role": "facility",
+   "handoff_to": "911 operator",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Provide immediate notification information",
+   "role": "facility",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a verbal communication and presence to provide the notification."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Do not delay retrieval",
+   "role": "facility",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding the notification urgency information."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Provide written follow-up notice",
+   "role": "facility",
+   "handoff_to": "SERC and LEPC",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a notice from known facts."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Update written follow-up notice",
+   "role": "facility",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and drafting a notice from known facts."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Request specific format",
+   "role": "facility",
+   "handoff_to": "SERC and LEPC",
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information to request a specific format."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "exposure is limited to facility"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "release occurs during transportation"
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  }
+ ]
+}

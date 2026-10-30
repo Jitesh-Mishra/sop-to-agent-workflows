@@ -1,0 +1,267 @@
+{
+ "sop_id": "hipaa_breach_notification",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Treated as discovered\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Determining the breach discovery date is information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Delay notification\", \"role\": \"covered entity\", \"handoff_to\": \"law enforcement official\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice based on the official's request is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Notify individuals\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"agent\", \"executor_reason\": \"Sending notifications is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Provide notification without delay\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Sending notifications within 60 days is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Written notification by first-class mail\", \"role\": \"covered entity\", \"handoff_to\": \"individuals\", \"executor\": \"agent\", \"executor_reason\": \"Sending notifications by mail is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Conspicuous posting or media notice\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Sending notices in media or on a website is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Notify prominent media outlets\", \"role\": \"covered entity\", \"handoff_to\": \"prominent media outlets\", \"executor\": \"agent\", \"executor_reason\": \"Sending notifications to media outlets is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide notification to Secretary\", \"role\": \"covered entity\", \"handoff_to\": \"Secretary\", \"executor\": \"agent\", \"executor_reason\": \"Sending notifications to the Secretary is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Maintain log or documentation\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Maintaining logs is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": \"less than 500 individuals\"}, {\"from\": \"s4\", \"to\": \"s7\", \"condition\": \"more than 500 residents of a State or jurisdiction\"}, {\"from\": \"s4\", \"to\": \"s8\", \"condition\": \"500 or more individuals\"}, {\"from\": \"s4\", \"to\": \"s9\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1405,
+    "completion_tokens": 727,
+    "total_tokens": 2132,
+    "seconds": 118.59
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Treated as discovered",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Determining the discovery date based on known facts."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Delay notification",
+    "role": "covered entity",
+    "handoff_to": "law enforcement official",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and decision (approve, deny, determine, accept, adjudicate)."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Notify individuals",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Provide notification without delay",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notification based on known facts and timing requirements."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Written notification by first-class mail",
+    "role": "covered entity",
+    "handoff_to": "individuals",
+    "executor": "human",
+    "executor_reason": "Needs physical action (signature, attestation) and presence to deliver the notice."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Conspicuous posting or media notice",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment and decision to choose between posting and media notice."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Notify prominent media outlets",
+    "role": "covered entity",
+    "handoff_to": "prominent media outlets",
+    "executor": "human",
+    "executor_reason": "A professional judgment and communication with media outlets."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide notification to Secretary",
+    "role": "covered entity",
+    "handoff_to": "Secretary",
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and attestation."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Maintain log or documentation",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": "less than 500 individuals"
+   },
+   {
+    "from": "s4",
+    "to": "s7",
+    "condition": "more than 500 residents of a State or jurisdiction"
+   },
+   {
+    "from": "s4",
+    "to": "s8",
+    "condition": "500 or more individuals"
+   },
+   {
+    "from": "s4",
+    "to": "s9",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Determining the discovery date based on known facts.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 22,
+    "total_tokens": 416,
+    "seconds": 15.65
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and decision (approve, deny, determine, accept, adjudicate).\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 30,
+    "total_tokens": 437,
+    "seconds": 5.14
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 22,
+    "total_tokens": 429,
+    "seconds": 4.45
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notification based on known facts and timing requirements.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 26,
+    "total_tokens": 405,
+    "seconds": 3.84
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action (signature, attestation) and presence to deliver the notice.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 28,
+    "total_tokens": 419,
+    "seconds": 4.43
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and decision to choose between posting and media notice.\"}",
+   "usage": {
+    "prompt_tokens": 434,
+    "completion_tokens": 25,
+    "total_tokens": 459,
+    "seconds": 5.63
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and communication with media outlets.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 21,
+    "total_tokens": 410,
+    "seconds": 3.75
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and attestation.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 20,
+    "total_tokens": 418,
+    "seconds": 4.01
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 16,
+    "total_tokens": 399,
+    "seconds": 3.03
+   }
+  }
+ ]
+}

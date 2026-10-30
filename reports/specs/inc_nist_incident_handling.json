@@ -1,0 +1,193 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Determine if an incident has occurred",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Information work an AI agent with system access could do: searching and correlating information."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Document the investigation and gather evidence",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Prioritize handling",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and prioritizing based on known factors."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Report incident",
+   "role": "handler",
+   "handoff_to": "internal personnel and external organizations",
+   "executor": "human",
+   "executor_reason": "Needs hands-on communication and coordination with internal and external parties."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Acquire, preserve, secure, and document evidence",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Information work an AI agent with system access could do."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Contain the incident",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs hands-on action to contain the incident."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Eradicate the incident",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Eradicating the incident involves information work such as identifying and mitigating vulnerabilities, which an AI agent with system access can do."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Repeat detection and analysis",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Repeating detection and analysis is an information work that an AI agent with system access could do."
+  },
+  {
+   "id": "s9",
+   "lines": [
+    9
+   ],
+   "action": "Recover from the incident",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Recovering from an incident is typically an automated process for an AI agent with system access."
+  },
+  {
+   "id": "s10",
+   "lines": [
+    10
+   ],
+   "action": "Confirm affected systems are functioning normally",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Checking and confirming system status is an information work an AI agent can do."
+  },
+  {
+   "id": "s11",
+   "lines": [
+    11
+   ],
+   "action": "Create a follow-up report",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine report creation."
+  },
+  {
+   "id": "s12",
+   "lines": [
+    12
+   ],
+   "action": "Hold a lessons learned meeting",
+   "role": "handler",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine meeting recording and documentation."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  },
+  {
+   "from": "s7",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s8",
+   "to": "s9",
+   "condition": null
+  },
+  {
+   "from": "s9",
+   "to": "s10",
+   "condition": null
+  },
+  {
+   "from": "s10",
+   "to": "s11",
+   "condition": null
+  },
+  {
+   "from": "s11",
+   "to": "s12",
+   "condition": null
+  }
+ ]
+}

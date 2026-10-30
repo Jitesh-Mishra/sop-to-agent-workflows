@@ -1,0 +1,262 @@
+{
+ "sop_id": "p2p_simplified_award",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Determine price reasonableness\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contracting officer must make a professional judgment on price reasonableness.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Use competitive quotations\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"AI can compile and compare quotations.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Include price reasonableness statement\", \"role\": \"contracting officer\", \"handoff_to\": \"contract file\", \"executor\": \"agent\", \"executor_reason\": \"AI can document based on market research and prior purchases.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Inform requiring activity\", \"role\": \"contracting officer\", \"handoff_to\": \"requiring activity\", \"executor\": \"agent\", \"executor_reason\": \"AI can send a notification based on facts.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Document final action\", \"role\": \"contracting officer\", \"handoff_to\": \"file\", \"executor\": \"agent\", \"executor_reason\": \"AI can document the final action taken.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Keep documentation minimal\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"AI can manage the documentation process.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Notify unsuccessful suppliers\", \"role\": \"contracting officer\", \"handoff_to\": \"unsuccessful suppliers\", \"executor\": \"agent\", \"executor_reason\": \"AI can send notifications if requested.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide explanation\", \"role\": \"contracting officer\", \"handoff_to\": \"payment office\", \"executor\": \"agent\", \"executor_reason\": \"AI can annotate the award document with relevant information.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Annotate oral solicitation\", \"role\": \"contracting officer\", \"handoff_to\": \"payment office\", \"executor\": \"agent\", \"executor_reason\": \"AI can annotate the award document with relevant information.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1169,
+    "completion_tokens": 676,
+    "total_tokens": 1845,
+    "seconds": 104.18
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Determine price reasonableness",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment is required to determine price reasonableness."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Use competitive quotations",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and checking offers or quotations."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Include price reasonableness statement",
+    "role": "contracting officer",
+    "handoff_to": "contract file",
+    "executor": "agent",
+    "executor_reason": "Compiling a statement based on known facts."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Inform requiring activity",
+    "role": "contracting officer",
+    "handoff_to": "requiring activity",
+    "executor": "agent",
+    "executor_reason": "Informing the requiring activity requires compiling and communicating information, which an AI agent can do with system access."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Document final action",
+    "role": "contracting officer",
+    "handoff_to": "file",
+    "executor": "agent",
+    "executor_reason": "Recording the final action in the file."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Keep documentation minimal",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping and documentation management."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Notify unsuccessful suppliers",
+    "role": "contracting officer",
+    "handoff_to": "unsuccessful suppliers",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice based on known facts and requests."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide explanation",
+    "role": "contracting officer",
+    "handoff_to": "payment office",
+    "executor": "agent",
+    "executor_reason": "Compiling a brief explanation from known factors."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Annotate oral solicitation",
+    "role": "contracting officer",
+    "handoff_to": "payment office",
+    "executor": "agent",
+    "executor_reason": "Compiling and annotating information from the oral solicitation."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment is required to determine price reasonableness.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 24,
+    "total_tokens": 395,
+    "seconds": 14.91
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and checking offers or quotations.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 20,
+    "total_tokens": 385,
+    "seconds": 2.84
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling a statement based on known facts.\"}",
+   "usage": {
+    "prompt_tokens": 392,
+    "completion_tokens": 21,
+    "total_tokens": 413,
+    "seconds": 3.85
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Informing the requiring activity requires compiling and communicating information, which an AI agent can do with system access.\"}",
+   "usage": {
+    "prompt_tokens": 396,
+    "completion_tokens": 33,
+    "total_tokens": 429,
+    "seconds": 5.06
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Recording the final action in the file.\"}",
+   "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 20,
+    "total_tokens": 383,
+    "seconds": 2.75
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping and documentation management.\"}",
+   "usage": {
+    "prompt_tokens": 357,
+    "completion_tokens": 19,
+    "total_tokens": 376,
+    "seconds": 2.42
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice based on known facts and requests.\"}",
+   "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 25,
+    "total_tokens": 389,
+    "seconds": 3.23
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling a brief explanation from known factors.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 21,
+    "total_tokens": 404,
+    "seconds": 3.46
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and annotating information from the oral solicitation.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 24,
+    "total_tokens": 418,
+    "seconds": 4.25
+   }
+  }
+ ]
+}

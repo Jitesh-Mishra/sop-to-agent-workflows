@@ -5,7 +5,8 @@ the riskiest handoff and the context it must carry, and estimated time saved. Ti
 runs: the real LangGraph runtime executes each workflow 200 times with random branch choices, and an ASSUMED time
 model (below) is applied to the executed paths. Nothing here is measured from a real organisation.
 
-python -m sopflow.eval.opportunity --specs reports/specs   ->  reports/opportunity.csv, docs/opportunities/*.md
+python -m sopflow.eval.opportunity --specs reports/specs  ->  reports/opportunity_llm.csv, docs/opportunities/llm/*.md
+python -m sopflow.eval.opportunity                        ->  reports/opportunity_gold.csv, docs/opportunities/gold/*.md
 """
 from __future__ import annotations
 
@@ -98,8 +99,14 @@ def report_one(sop_id: str, spec: WorkflowSpec, source: str) -> tuple[dict, str]
             packets.setdefault(p["step_id"], p)
     ranked = sorted(((handoff_risk(p), p) for p in packets.values()), key=lambda x: -x[0][0])
     risky = ranked[0] if ranked else None
+    from .score import match
+    gold = load_gold(sop_id)
+    gmap = {g.id: g for g in gold.steps}
+    m = match(spec, gold)
+    confirmed = sum(1 for s in agents if s.id in m and gmap[m[s.id]].executor == "agent")
     row = {"sop_id": sop_id, "family": family_of(sop_id), "spec_source": source, "steps": len(spec.steps),
-           "agent_steps": len(agents), "human_steps": len(humans), "handoffs": len(handoffs),
+           "agent_steps": len(agents), "agent_steps_confirmed_by_gold": confirmed, "human_steps": len(humans),
+           "handoffs": len(handoffs),
            "riskiest_handoff": risky[1]["step_id"] if risky else None,
            "sim_runs": len(paths), "sim_manual_cycle_min_median": round(float(np.median(manual)), 1),
            "sim_assisted_cycle_min_median": round(float(np.median(assisted)), 1),
@@ -116,6 +123,9 @@ def report_one(sop_id: str, spec: WorkflowSpec, source: str) -> tuple[dict, str]
     for s in spec.steps:
         lines.append(f"| {s.id} | {s.action} | {s.role} | **{s.executor}** | {s.executor_reason or ''} | {s.handoff_to or ''} |")
     lines += ["", f"- Agent steps: **{len(agents)} of {len(spec.steps)}**; handoffs: **{len(handoffs)}**."]
+    if source != "gold":
+        lines.append(f"- Agent flags that the (draft) gold labels confirm: **{confirmed} of {len(agents)}**. "
+                     "Unconfirmed flags are where the model over-automates; treat them as candidates for review, not decisions.")
     if source != "gold":
         lines.append("- Agreement of these executor calls with the gold labels is scored in `reports/results.csv`.")
     if risky:
@@ -143,7 +153,7 @@ def main():
     ap.add_argument("--specs", default=None, help="directory of compiled specs <sop_id>.json; default gold")
     ap.add_argument("--families-only", action="store_true", default=True)
     a = ap.parse_args()
-    out_dir = ROOT / "docs" / "opportunities"
+    out_dir = ROOT / "docs" / "opportunities" / ("llm" if a.specs else "gold")
     out_dir.mkdir(parents=True, exist_ok=True)
     rows = []
     ids = [i for k, v in families().items() if k != "ood_government_misc" for i in v["sops"]]
@@ -157,7 +167,7 @@ def main():
         rows.append(row)
         (out_dir / f"{sop_id}.md").write_text(md)
     df = pd.DataFrame(rows)
-    df.to_csv(ROOT / "reports" / "opportunity.csv", index=False)
+    df.to_csv(ROOT / "reports" / f"opportunity_{'llm' if a.specs else 'gold'}.csv", index=False)
     print(df.to_string(index=False))
 
 

@@ -1,0 +1,49 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Elect to enroll or not",
+   "role": "employee",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Classifying or routing based on eligibility criteria."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Enrollment takes effect",
+   "role": "employee",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Enroll within 60 days",
+   "role": "employee",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping and notification."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s1",
+   "to": "s3",
+   "condition": null
+  }
+ ]
+}

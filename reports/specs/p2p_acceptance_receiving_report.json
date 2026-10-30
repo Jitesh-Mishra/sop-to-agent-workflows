@@ -1,0 +1,113 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Acknowledge conformity",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "A professional judgment and attestation is required."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Wait for QA",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs presence to wait for QA results and make a decision."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Accept responsibility",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "A professional judgment and attestation."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Assign to office",
+   "role": "contracting officer",
+   "handoff_to": "cognizant contract administration office",
+   "executor": "human",
+   "executor_reason": "A professional judgment and acceptance is required."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Evidence acceptance",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs physical action such as signing or attesting to the certificate."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Include contract info",
+   "role": "contracting officer",
+   "handoff_to": null,
+   "executor": "human",
+   "executor_reason": "Needs a signature, attestation or certification from a designated Government official."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Forward report",
+   "role": "agency receiving official",
+   "handoff_to": "designated payment office",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": null
+  },
+  {
+   "from": "s6",
+   "to": "s7",
+   "condition": null
+  }
+ ]
+}

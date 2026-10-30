@@ -1,0 +1,209 @@
+{
+ "sop_id": "fmcsa_post_accident_testing",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Test for alcohol\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"agent\", \"executor_reason\": \"Administering the test is information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Test for alcohol\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"agent\", \"executor_reason\": \"Administering the test is information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Test for controlled substances\", \"role\": \"employer\", \"handoff_to\": \"driver\", \"executor\": \"agent\", \"executor_reason\": \"Administering the test is information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Prepare record\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Maintaining a record is information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Prepare record\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Maintaining a record is information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Prepare record\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Maintaining a record is information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s1\", \"to\": \"s4\", \"condition\": \"accident involves loss of human life\"}, {\"from\": \"s2\", \"to\": \"s4\", \"condition\": \"accident involves bodily injury with immediate medical treatment away from the scene\"}, {\"from\": \"s2\", \"to\": \"s4\", \"condition\": \"accident involves disabling damage requiring a tow away\"}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"accident involves bodily injury with immediate medical treatment away from the scene\"}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": \"accident involves disabling damage requiring a tow away\"}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": \"alcohol test not administered within 2 hours\"}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": \"alcohol test not administered within 8 hours\"}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": \"controlled substances test not administered within 32 hours\"}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [
+    "Edge s6 -> s7 refers to unknown step s7.",
+    "Some edges are duplicated."
+   ],
+   "usage": {
+    "prompt_tokens": 1228,
+    "completion_tokens": 642,
+    "total_tokens": 1870,
+    "seconds": 103.22
+   },
+   "fixes": [
+    "dropped edge s2->s4",
+    "dropped edge s3->s4",
+    "dropped edge s4->s6",
+    "dropped edge s6->s7"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Test for alcohol",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and physical action to administer the test."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Test for alcohol",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and physical action to administer the test."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Test for controlled substances",
+    "role": "employer",
+    "handoff_to": "driver",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and physical action to test for controlled substances."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Prepare record",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling a record from known facts."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Prepare record",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Prepare record",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s1",
+    "to": "s4",
+    "condition": "accident involves loss of human life"
+   },
+   {
+    "from": "s2",
+    "to": "s4",
+    "condition": "accident involves bodily injury with immediate medical treatment away from the scene"
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": "accident involves bodily injury with immediate medical treatment away from the scene"
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": "alcohol test not administered within 2 hours"
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": "alcohol test not administered within 8 hours"
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and physical action to administer the test.\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 24,
+    "total_tokens": 432,
+    "seconds": 16.29
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and physical action to administer the test.\"}",
+   "usage": {
+    "prompt_tokens": 402,
+    "completion_tokens": 24,
+    "total_tokens": 426,
+    "seconds": 4.12
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and physical action to test for controlled substances.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 25,
+    "total_tokens": 411,
+    "seconds": 3.86
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling a record from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 20,
+    "total_tokens": 407,
+    "seconds": 3.56
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 16,
+    "total_tokens": 402,
+    "seconds": 2.51
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 16,
+    "total_tokens": 414,
+    "seconds": 3.25
+   }
+  }
+ ]
+}

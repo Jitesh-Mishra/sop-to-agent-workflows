@@ -1,0 +1,348 @@
+{
+ "sop_id": "osha_bbp_post_exposure",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Make a confidential medical evaluation and follow-up available\", \"role\": \"employer\", \"handoff_to\": \"exposed employee\", \"executor\": \"human\", \"executor_reason\": \"The employer must provide a medical evaluation and follow-up in a confidential manner.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Document exposure details\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Recording details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Identify source individual\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Identifying the source individual is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Test source individual's blood\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the source individual's blood.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Test source individual's blood for HBV and HIV\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the source individual's blood.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Make source individual's test results available\", \"role\": \"employer\", \"handoff_to\": \"exposed employee\", \"executor\": \"agent\", \"executor_reason\": \"Sending a notice is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Collect exposed employee's blood\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the exposed employee's blood.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Preserve exposed employee's blood sample\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Preserving the sample is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Provide evaluation materials to healthcare professional\", \"role\": \"employer\", \"handoff_to\": \"evaluating healthcare professional\", \"executor\": \"agent\", \"executor_reason\": \"Sending a notice is routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Administer post-exposure prophylaxis\", \"role\": \"employer\", \"handoff_to\": \"exposed employee\", \"executor\": \"agent\", \"executor_reason\": \"Administering prophylaxis is routine information work.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Provide evaluating healthcare professional's opinion\", \"role\": \"employer\", \"handoff_to\": \"exposed employee\", \"executor\": \"agent\", \"executor_reason\": \"Sending a notice is routine information work.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Keep other findings confidential\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Keeping other findings confidential is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1328,
+    "completion_tokens": 951,
+    "total_tokens": 2279,
+    "seconds": 136.91
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Make a confidential medical evaluation and follow-up available",
+    "role": "employer",
+    "handoff_to": "exposed employee",
+    "executor": "agent",
+    "executor_reason": "Compiling and making available a confidential medical evaluation and follow-up from a report."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Document exposure details",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and recording the details of exposure."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Identify source individual",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information to identify the source individual."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Test source individual's blood",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action (blood draw) and consent."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Test source individual's blood for HBV and HIV",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a physical action (testing) and professional judgment (determining if testing is necessary)."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Make source individual's test results available",
+    "role": "employer",
+    "handoff_to": "exposed employee",
+    "executor": "agent",
+    "executor_reason": "Compiling and forwarding documents (test results) to the exposed employee."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Collect exposed employee's blood",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and consent from the employee."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Preserve exposed employee's blood sample",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to preserve the blood sample."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Provide evaluation materials to healthcare professional",
+    "role": "employer",
+    "handoff_to": "evaluating healthcare professional",
+    "executor": "agent",
+    "executor_reason": "Compiling and providing evaluation materials from known facts."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Administer post-exposure prophylaxis",
+    "role": "employer",
+    "handoff_to": "exposed employee",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and physical action (administering medication)."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Provide evaluating healthcare professional's opinion",
+    "role": "employer",
+    "handoff_to": "exposed employee",
+    "executor": "agent",
+    "executor_reason": "Compiling and forwarding documents."
+   },
+   {
+    "id": "s12",
+    "lines": [
+     12
+    ],
+    "action": "Keep other findings confidential",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and decision to determine confidentiality."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   },
+   {
+    "from": "s11",
+    "to": "s12",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "human",
+  "s6": "agent",
+  "s7": "human",
+  "s8": "agent",
+  "s9": "agent",
+  "s10": "agent",
+  "s11": "agent",
+  "s12": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and making available a confidential medical evaluation and follow-up from a report.\"}",
+   "usage": {
+    "prompt_tokens": 382,
+    "completion_tokens": 28,
+    "total_tokens": 410,
+    "seconds": 15.81
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and recording the details of exposure.\"}",
+   "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 21,
+    "total_tokens": 389,
+    "seconds": 2.97
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information to identify the source individual.\"}",
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 23,
+    "total_tokens": 399,
+    "seconds": 3.49
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action (blood draw) and consent.\"}",
+   "usage": {
+    "prompt_tokens": 380,
+    "completion_tokens": 22,
+    "total_tokens": 402,
+    "seconds": 3.55
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a physical action (testing) and professional judgment (determining if testing is necessary).\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 31,
+    "total_tokens": 421,
+    "seconds": 4.47
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and forwarding documents (test results) to the exposed employee.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 26,
+    "total_tokens": 420,
+    "seconds": 4.39
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and consent from the employee.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 21,
+    "total_tokens": 392,
+    "seconds": 3.18
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to preserve the blood sample.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 21,
+    "total_tokens": 411,
+    "seconds": 3.79
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and providing evaluation materials from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 409,
+    "completion_tokens": 22,
+    "total_tokens": 431,
+    "seconds": 4.58
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and physical action (administering medication).\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 25,
+    "total_tokens": 410,
+    "seconds": 3.91
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and forwarding documents.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 18,
+    "total_tokens": 402,
+    "seconds": 3.25
+   }
+  },
+  {
+   "step_id": "s12",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and decision to determine confidentiality.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 22,
+    "total_tokens": 391,
+    "seconds": 3.09
+   }
+  }
+ ]
+}

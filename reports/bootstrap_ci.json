@@ -1,0 +1,39 @@
+{
+ "method": "SOP-level bootstrap, 5000 resamples, 95% interval of (LLM 3B v3 minus rule baseline)",
+ "test": {
+  "step": [
+   0.105,
+   0.572
+  ],
+  "edge": [
+   0.057,
+   0.547
+  ],
+  "handoff": [
+   -0.052,
+   0.389
+  ],
+  "executor_acc": [
+   -0.072,
+   0.201
+  ]
+ },
+ "test_ood": {
+  "step": [
+   0.006,
+   0.186
+  ],
+  "edge": [
+   0.041,
+   0.243
+  ],
+  "handoff": [
+   -0.217,
+   0.34
+  ],
+  "executor_acc": [
+   -0.164,
+   0.127
+  ]
+ }
+}

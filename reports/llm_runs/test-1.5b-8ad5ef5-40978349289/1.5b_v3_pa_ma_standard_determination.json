@@ -1,0 +1,186 @@
+{
+ "sop_id": "pa_ma_standard_determination",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Notify the enrollee of the determination\", \"role\": \"MA organization\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The MA organization must inform the enrollee of the determination.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend the timeframe if requested\", \"role\": \"MA organization\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"If the enrollee requests an extension, the timeframe can be extended.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review the decision\", \"role\": \"MA organization\", \"handoff_to\": \"physician\", \"executor\": \"agent\", \"executor_reason\": \"The decision must be reviewed by a physician or other appropriate health care professional.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Provide a written notice\", \"role\": \"MA organization\", \"handoff_to\": \"enrollee and physician\", \"executor\": \"agent\", \"executor_reason\": \"The enrollee and the physician must receive a written notice.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Inform the enrollee of the right to a reconsideration\", \"role\": \"MA organization\", \"handoff_to\": \"enrollee\", \"executor\": \"agent\", \"executor_reason\": \"The enrollee must be informed of their right to a reconsideration.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"If the MA organization fails to provide timely notice, it is an adverse organization determination\", \"role\": \"MA organization\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the MA organization fails to provide timely notice, it is an adverse organization determination.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1164,
+    "completion_tokens": 509,
+    "total_tokens": 1673,
+    "seconds": 49.95
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Notify the enrollee of the determination",
+    "role": "MA organization",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The enrollee needs to be informed of the determination, which typically requires a conversation or written communication."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend the timeframe if requested",
+    "role": "MA organization",
+    "handoff_to": "enrollee",
+    "executor": "human",
+    "executor_reason": "The timeframe extension requires a human decision based on the enrollee's request and justification."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review the decision",
+    "role": "MA organization",
+    "handoff_to": "physician",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, and accountable judgment or decision is required."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Provide a written notice",
+    "role": "MA organization",
+    "handoff_to": "enrollee and physician",
+    "executor": "human",
+    "executor_reason": "Needs physical action to provide a written notice."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Inform the enrollee of the right to a reconsideration",
+    "role": "MA organization",
+    "handoff_to": "enrollee",
+    "executor": "human",
+    "executor_reason": "The enrollee needs to be informed of their right to a reconsideration."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "If the MA organization fails to provide timely notice, it is an adverse organization determination",
+    "role": "MA organization",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The enrollee needs to be informed of the determination, which typically requires a conversation or written communication.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 32,
+    "total_tokens": 427,
+    "seconds": 8.33
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The timeframe extension requires a human decision based on the enrollee's request and justification.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 29,
+    "total_tokens": 417,
+    "seconds": 2.52
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, and accountable judgment or decision is required.\"}",
+   "usage": {
+    "prompt_tokens": 403,
+    "completion_tokens": 25,
+    "total_tokens": 428,
+    "seconds": 2.54
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to provide a written notice.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 21,
+    "total_tokens": 407,
+    "seconds": 2.04
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The enrollee needs to be informed of their right to a reconsideration.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 27,
+    "total_tokens": 420,
+    "seconds": 2.5
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate).\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 35,
+    "total_tokens": 426,
+    "seconds": 2.92
+   }
+  }
+ ]
+}

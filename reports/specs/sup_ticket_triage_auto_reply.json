@@ -1,0 +1,134 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Classify ticket into support queues and predict priority",
+   "role": "system",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Information work an AI agent with system access could do: searching and correlating information, classifying or routing."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "Retrieve similar resolved tickets and knowledge base articles",
+   "role": "system",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Searching and correlating information."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "Draft a reply",
+   "role": "system",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Information work an AI agent with system access could do: drafting a reply."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Escalate ticket to support engineer",
+   "role": "system",
+   "handoff_to": "support engineer",
+   "executor": "agent",
+   "executor_reason": "Escalation to a support engineer is an information work that an AI agent can do."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Send draft to support agent for approval",
+   "role": "system",
+   "handoff_to": "support agent",
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding documents for review."
+  },
+  {
+   "id": "s6",
+   "lines": [
+    6
+   ],
+   "action": "Support agent approves, edits, or rewrites draft",
+   "role": "support agent",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "AI agent can support agent in drafting and editing tasks."
+  },
+  {
+   "id": "s7",
+   "lines": [
+    7
+   ],
+   "action": "Send reply to customer automatically",
+   "role": "system",
+   "handoff_to": "customer",
+   "executor": "agent",
+   "executor_reason": "Automated drafting and sending of a reply from known facts."
+  },
+  {
+   "id": "s8",
+   "lines": [
+    8
+   ],
+   "action": "Record gate decision and reasons",
+   "role": "system",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Classifying or routing the gate decision and reasons."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": null
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": "validation check fails"
+  },
+  {
+   "from": "s3",
+   "to": "s5",
+   "condition": "validation check passes"
+  },
+  {
+   "from": "s5",
+   "to": "s6",
+   "condition": "route confidence below 0.6 or retrieval similarity below 0.5"
+  },
+  {
+   "from": "s5",
+   "to": "s7",
+   "condition": "validation check passes"
+  },
+  {
+   "from": "s4",
+   "to": "s8",
+   "condition": null
+  },
+  {
+   "from": "s5",
+   "to": "s8",
+   "condition": null
+  }
+ ]
+}

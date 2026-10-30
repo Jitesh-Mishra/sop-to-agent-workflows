@@ -1,0 +1,348 @@
+{
+ "sop_id": "inc_nist_incident_handling",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Determine if an incident has occurred\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Research and document are routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Document the investigation and gather evidence\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Gathering evidence is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Prioritize handling\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Prioritization is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Report incident\", \"role\": \"handler\", \"handoff_to\": \"internal personnel and external organizations\", \"executor\": \"agent\", \"executor_reason\": \"Reporting is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Acquire, preserve, secure, and document evidence\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Physical handling of evidence is required.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Contain the incident\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Containment requires physical action.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Eradicate the incident\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Eradication requires physical action.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Repeat detection and analysis\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Repeating steps is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Recover from the incident\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Recovery is routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Confirm affected systems are functioning normally\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Confirmation is routine information work.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Create a follow-up report\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Reporting is routine information work.\"}, {\"id\": \"s12\", \"lines\": [12], \"action\": \"Hold a lessons learned meeting\", \"role\": \"handler\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Lessons learned is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}, {\"from\": \"s11\", \"to\": \"s12\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1168,
+    "completion_tokens": 894,
+    "total_tokens": 2062,
+    "seconds": 123.64
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Determine if an incident has occurred",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do: searching and correlating information."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Document the investigation and gather evidence",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Prioritize handling",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and prioritizing based on known factors."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Report incident",
+    "role": "handler",
+    "handoff_to": "internal personnel and external organizations",
+    "executor": "human",
+    "executor_reason": "Needs hands-on communication and coordination with internal and external parties."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Acquire, preserve, secure, and document evidence",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Contain the incident",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs hands-on action to contain the incident."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Eradicate the incident",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Eradicating the incident involves information work such as identifying and mitigating vulnerabilities, which an AI agent with system access can do."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Repeat detection and analysis",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Repeating detection and analysis is an information work that an AI agent with system access could do."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Recover from the incident",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Recovering from an incident is typically an automated process for an AI agent with system access."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Confirm affected systems are functioning normally",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Checking and confirming system status is an information work an AI agent can do."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Create a follow-up report",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine report creation."
+   },
+   {
+    "id": "s12",
+    "lines": [
+     12
+    ],
+    "action": "Hold a lessons learned meeting",
+    "role": "handler",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine meeting recording and documentation."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   },
+   {
+    "from": "s11",
+    "to": "s12",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "human",
+  "s7": "human",
+  "s8": "agent",
+  "s9": "agent",
+  "s10": "agent",
+  "s11": "agent",
+  "s12": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do: searching and correlating information.\"}",
+   "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 29,
+    "total_tokens": 415,
+    "seconds": 16.0
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 56,
+    "total_tokens": 428,
+    "seconds": 6.11
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and prioritizing based on known factors.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 22,
+    "total_tokens": 395,
+    "seconds": 3.24
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs hands-on communication and coordination with internal and external parties.\"}",
+   "usage": {
+    "prompt_tokens": 361,
+    "completion_tokens": 24,
+    "total_tokens": 385,
+    "seconds": 3.02
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do.\"}",
+   "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 23,
+    "total_tokens": 391,
+    "seconds": 3.11
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs hands-on action to contain the incident.\"}",
+   "usage": {
+    "prompt_tokens": 356,
+    "completion_tokens": 21,
+    "total_tokens": 377,
+    "seconds": 2.56
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Eradicating the incident involves information work such as identifying and mitigating vulnerabilities, which an AI agent with system access can do.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 39,
+    "total_tokens": 417,
+    "seconds": 4.91
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Repeating detection and analysis is an information work that an AI agent with system access could do.\"}",
+   "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 31,
+    "total_tokens": 418,
+    "seconds": 4.49
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Recovering from an incident is typically an automated process for an AI agent with system access.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 30,
+    "total_tokens": 396,
+    "seconds": 3.75
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Checking and confirming system status is an information work an AI agent can do.\"}",
+   "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 27,
+    "total_tokens": 389,
+    "seconds": 3.33
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine report creation.\"}",
+   "usage": {
+    "prompt_tokens": 358,
+    "completion_tokens": 16,
+    "total_tokens": 374,
+    "seconds": 2.2
+   }
+  },
+  {
+   "step_id": "s12",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine meeting recording and documentation.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 18,
+    "total_tokens": 384,
+    "seconds": 2.72
+   }
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "steps": [
+  {
+   "id": "s1",
+   "lines": [
+    1
+   ],
+   "action": "Make a written request",
+   "role": "party to the organization determination",
+   "handoff_to": "MA organization",
+   "executor": "agent",
+   "executor_reason": "Drafting and sending a written request."
+  },
+  {
+   "id": "s2",
+   "lines": [
+    2
+   ],
+   "action": "File within 60 days",
+   "role": "party to the organization determination",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Routine record keeping and tracking of the filing within the specified time frame."
+  },
+  {
+   "id": "s3",
+   "lines": [
+    3
+   ],
+   "action": "File a late request if necessary",
+   "role": "party to the organization determination",
+   "handoff_to": "MA organization",
+   "executor": "agent",
+   "executor_reason": "Compiling and drafting a written request for reconsideration."
+  },
+  {
+   "id": "s4",
+   "lines": [
+    4
+   ],
+   "action": "Receive a favorable reconsidered determination",
+   "role": "MA organization",
+   "handoff_to": null,
+   "executor": "agent",
+   "executor_reason": "Compiling and forwarding the determination to the appropriate parties."
+  },
+  {
+   "id": "s5",
+   "lines": [
+    5
+   ],
+   "action": "Receive a reaffirming determination",
+   "role": "MA organization",
+   "handoff_to": "CMS contracted entity",
+   "executor": "agent",
+   "executor_reason": "Compiling and sending a written explanation and case file."
+  }
+ ],
+ "edges": [
+  {
+   "from": "s1",
+   "to": "s2",
+   "condition": null
+  },
+  {
+   "from": "s2",
+   "to": "s4",
+   "condition": "60 days have not passed"
+  },
+  {
+   "from": "s2",
+   "to": "s3",
+   "condition": "60 days have passed"
+  },
+  {
+   "from": "s3",
+   "to": "s4",
+   "condition": null
+  },
+  {
+   "from": "s4",
+   "to": "s5",
+   "condition": null
+  }
+ ]
+}
