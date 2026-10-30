@@ -1,0 +1,22 @@
+{
+ "protocol": "test and test_ood are run once with the configuration chosen on dev, declared here before the run",
+ "primary": {
+  "model": "Qwen2.5-3B-Instruct Q4_K_M",
+  "pipeline": "v3 (prompt v2 + autofix + LLM repair + per-step executor pass)",
+  "why": "best handoff F1 on dev (0.692 vs 0.444 for 1.5B v3), 11/11 valid after repair"
+ },
+ "secondary_reported_not_selected": {
+  "model": "Qwen2.5-1.5B-Instruct Q4_K_M",
+  "pipeline": "v3"
+ },
+ "runs": [
+  {
+   "declared_at": "2026-10-30T00:13:37Z",
+   "commit": "see llm-runs branch",
+   "splits": [
+    "test",
+    "test_ood"
+   ]
+  }
+ ]
+}

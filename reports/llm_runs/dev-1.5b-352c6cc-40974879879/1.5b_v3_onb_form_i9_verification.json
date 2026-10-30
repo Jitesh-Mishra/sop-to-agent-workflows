@@ -1,0 +1,213 @@
+{
+ "sop_id": "onb_form_i9_verification",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Ensure individual completes Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must ensure the individual completes the Form I-9.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Assist individual if unable to complete Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"If the individual is unable to complete the Form I-9, someone may assist them.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Examine and verify documents\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must physically examine the documents and ensure they appear to be genuine and relate to the individual.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Complete Employer Review and Verification\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must complete section 2 of the Form I-9 and sign the attestation.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Retain Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must retain the Form I-9 for three years after the date of hire or one year after the date the individual's employment is terminated.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Reverify if employment authorization expires\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"If the individual's employment authorization expires, the employer must reverify on the Form I-9 not later than the date work authorization expires.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide notice of inspection\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must provide at least three business days notice prior to an inspection of Forms I-9 by officers of an authorized agency of the United States.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1189,
+    "completion_tokens": 624,
+    "total_tokens": 1813,
+    "seconds": 46.67
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Ensure individual completes Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Completing and signing the Form I-9 requires physical action and presence."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Assist individual if unable to complete Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to assist the individual."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Examine and verify documents",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical examination and verification of documents requires a human's presence and judgment."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Complete Employer Review and Verification",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Completing the Employer Review and Verification section and signing the attestation requires physical action and presence."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Retain Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical retention of the document is required."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Reverify if employment authorization expires",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires a physical action and presence to reverify the employment authorization."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide notice of inspection",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to provide notice."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "human",
+  "s7": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Completing and signing the Form I-9 requires physical action and presence.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 27,
+    "total_tokens": 422,
+    "seconds": 5.68
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to assist the individual.\"}",
+   "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 20,
+    "total_tokens": 401,
+    "seconds": 1.56
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical examination and verification of documents requires a human's presence and judgment.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 26,
+    "total_tokens": 419,
+    "seconds": 1.96
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Completing the Employer Review and Verification section and signing the attestation requires physical action and presence.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 31,
+    "total_tokens": 416,
+    "seconds": 2.11
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical retention of the document is required.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 20,
+    "total_tokens": 408,
+    "seconds": 1.61
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a physical action and presence to reverify the employment authorization.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 27,
+    "total_tokens": 418,
+    "seconds": 2.0
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to provide notice.\"}",
+   "usage": {
+    "prompt_tokens": 383,
+    "completion_tokens": 23,
+    "total_tokens": 406,
+    "seconds": 1.66
+   }
+  }
+ ]
+}

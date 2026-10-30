@@ -1,0 +1,294 @@
+{
+ "sop_id": "far_contract_claim_decision",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Submit a claim in writing\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor must submit a written claim to the contracting officer.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Provide certification for claims exceeding $100,000\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The contractor must provide a certification for claims exceeding $100,000.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review facts pertinent to the claim\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must review the facts pertinent to the claim.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Secure assistance from legal and other advisors\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must coordinate with legal and other advisors.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Coordinate with the contract administration officer or contracting office\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must coordinate with the contract administration officer or contracting office.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Prepare a written decision\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must prepare a written decision.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Notify the contractor of the decision\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must notify the contractor of the decision.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide a copy of the decision to the contractor\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must provide a copy of the decision to the contractor.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"If the decision is appealed, notify the contractor within 90 days\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must notify the contractor within 90 days if the decision is appealed.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"If the decision is not appealed, provide the decision to the contractor\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The contracting officer must provide the decision to the contractor.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1280,
+    "completion_tokens": 845,
+    "total_tokens": 2125,
+    "seconds": 60.34
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Submit a claim in writing",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to submit a claim in writing."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Provide certification for claims exceeding $100,000",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate) is needed."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review facts pertinent to the claim",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision is needed to review the facts pertinent to the claim."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Secure assistance from legal and other advisors",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs professional, clinical, legal, and accountable judgment or decision."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Coordinate with the contract administration officer or contracting office",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "This step requires coordination with an external party, likely a contract administration officer or contracting office, which necessitates human involvement."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Prepare a written decision",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A human executor is needed to draft and sign the written decision."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Notify the contractor of the decision",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to communicate with the contractor and provide the decision timeline."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide a copy of the decision to the contractor",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to provide a copy via certified mail or another method ensuring evidence of receipt."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "If the decision is appealed, notify the contractor within 90 days",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to be done by a human to fulfill the appeal process."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "If the decision is not appealed, provide the decision to the contractor",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The decision needs to be communicated to the contractor directly."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent",
+  "s10": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to submit a claim in writing.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 24,
+    "total_tokens": 414,
+    "seconds": 5.45
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate) is needed.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 38,
+    "total_tokens": 417,
+    "seconds": 2.43
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision is needed to review the facts pertinent to the claim.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 34,
+    "total_tokens": 425,
+    "seconds": 2.33
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs professional, clinical, legal, and accountable judgment or decision.\"}",
+   "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 25,
+    "total_tokens": 388,
+    "seconds": 1.56
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"This step requires coordination with an external party, likely a contract administration officer or contracting office, which necessitates human involvement.\"}",
+   "usage": {
+    "prompt_tokens": 370,
+    "completion_tokens": 36,
+    "total_tokens": 406,
+    "seconds": 2.19
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A human executor is needed to draft and sign the written decision.\"}",
+   "usage": {
+    "prompt_tokens": 400,
+    "completion_tokens": 25,
+    "total_tokens": 425,
+    "seconds": 1.96
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to communicate with the contractor and provide the decision timeline.\"}",
+   "usage": {
+    "prompt_tokens": 402,
+    "completion_tokens": 24,
+    "total_tokens": 426,
+    "seconds": 1.94
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to provide a copy via certified mail or another method ensuring evidence of receipt.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 30,
+    "total_tokens": 419,
+    "seconds": 2.11
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to be done by a human to fulfill the appeal process.\"}",
+   "usage": {
+    "prompt_tokens": 404,
+    "completion_tokens": 25,
+    "total_tokens": 429,
+    "seconds": 2.01
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The decision needs to be communicated to the contractor directly.\"}",
+   "usage": {
+    "prompt_tokens": 399,
+    "completion_tokens": 23,
+    "total_tokens": 422,
+    "seconds": 1.83
+   }
+  }
+ ]
+}

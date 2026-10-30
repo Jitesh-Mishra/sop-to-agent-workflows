@@ -1,0 +1,240 @@
+{
+ "sop_id": "hipaa_access_request",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Act on request within 30 days\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must choose and act on the request within the required timeframe.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Extend time by no more than 30 days\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The covered entity must draft and send a written statement explaining the delay and the new action date.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide written statement of reasons for delay\", \"role\": \"covered entity\", \"handoff_to\": \"individual\", \"executor\": \"agent\", \"executor_reason\": \"The covered entity must document the reasons for the delay and the new action date.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Limit to one extension\", \"role\": \"covered entity\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The covered entity must ensure there is only one extension of time for action on a request for access.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Deny access if reasonably likely to endanger life or safety\", \"role\": \"covered entity\", \"handoff_to\": \"individual\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must determine if the access request is reasonably likely to endanger life or safety and provide the individual with a right to review the denial.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Refer request for review to designated official\", \"role\": \"covered entity\", \"handoff_to\": \"designated reviewing official\", \"executor\": \"agent\", \"executor_reason\": \"The covered entity must promptly refer the request for review to the designated official.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Determine access request\", \"role\": \"designated reviewing official\", \"handoff_to\": \"covered entity\", \"executor\": \"agent\", \"executor_reason\": \"The designated reviewing official must make a determination regarding the access request.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Provide written notice of determination\", \"role\": \"covered entity\", \"handoff_to\": \"individual\", \"executor\": \"human\", \"executor_reason\": \"The covered entity must promptly provide written notice of the designated reviewing official's determination and take other required actions.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1202,
+    "completion_tokens": 707,
+    "total_tokens": 1909,
+    "seconds": 124.22
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Act on request within 30 days",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and action on a request."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Extend time by no more than 30 days",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment to determine and approve the extension."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide written statement of reasons for delay",
+    "role": "covered entity",
+    "handoff_to": "individual",
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and written communication."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Limit to one extension",
+    "role": "covered entity",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information to determine the limit on extensions."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Deny access if reasonably likely to endanger life or safety",
+    "role": "covered entity",
+    "handoff_to": "individual",
+    "executor": "agent",
+    "executor_reason": "AI agent can check facts and make a determination based on the source."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Refer request for review to designated official",
+    "role": "covered entity",
+    "handoff_to": "designated reviewing official",
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information to identify the designated reviewing official."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Determine access request",
+    "role": "designated reviewing official",
+    "handoff_to": "covered entity",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and decision."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Provide written notice of determination",
+    "role": "covered entity",
+    "handoff_to": "individual",
+    "executor": "human",
+    "executor_reason": "A professional judgment and communication."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "human",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and action on a request.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 22,
+    "total_tokens": 401,
+    "seconds": 16.35
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment to determine and approve the extension.\"}",
+   "usage": {
+    "prompt_tokens": 392,
+    "completion_tokens": 23,
+    "total_tokens": 415,
+    "seconds": 4.55
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and written communication.\"}",
+   "usage": {
+    "prompt_tokens": 396,
+    "completion_tokens": 20,
+    "total_tokens": 416,
+    "seconds": 4.4
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information to determine the limit on extensions.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 24,
+    "total_tokens": 395,
+    "seconds": 3.75
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI agent can check facts and make a determination based on the source.\"}",
+   "usage": {
+    "prompt_tokens": 412,
+    "completion_tokens": 26,
+    "total_tokens": 438,
+    "seconds": 5.71
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information to identify the designated reviewing official.\"}",
+   "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 24,
+    "total_tokens": 405,
+    "seconds": 4.29
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 19,
+    "total_tokens": 394,
+    "seconds": 3.51
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and communication.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 18,
+    "total_tokens": 406,
+    "seconds": 3.84
+   }
+  }
+ ]
+}

@@ -1,0 +1,294 @@
+{
+ "sop_id": "far_contract_claim_decision",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Submit a claim\", \"role\": \"contractor\", \"handoff_to\": \"contracting officer\", \"executor\": \"agent\", \"executor_reason\": \"Filing a claim from known facts is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Provide certification\", \"role\": \"contractor\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Certification is a physical action requiring a signature.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Review facts\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Gathering and reviewing facts is information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Secure legal assistance\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Seeking legal advice is information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Coordinate with contract administration\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Coordinating with other departments is information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Prepare decision\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a decision is information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Notify contractor of decision time\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"Informing the contractor of the decision time is information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Furnish decision copy\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"Sending a copy of the decision is information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Notify contractor of appeal\", \"role\": \"contracting officer\", \"handoff_to\": \"contractor\", \"executor\": \"agent\", \"executor_reason\": \"Informing the contractor of the appeal process is information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Furnish notice to court\", \"role\": \"contracting officer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Sending a notice to the court is information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1280,
+    "completion_tokens": 779,
+    "total_tokens": 2059,
+    "seconds": 137.56
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Submit a claim",
+    "role": "contractor",
+    "handoff_to": "contracting officer",
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a notice from known facts."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Provide certification",
+    "role": "contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional certification is required and cannot be automated."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Review facts",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling, checking or forwarding documents."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Secure legal assistance",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and action from a legal advisor."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Coordinate with contract administration",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Searching and correlating information to determine the appropriate party to coordinate with."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Prepare decision",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "agent",
+    "executor_reason": "Drafting and sending a decision based on known facts."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Notify contractor of decision time",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice based on known facts and time constraints."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Furnish decision copy",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "human",
+    "executor_reason": "Needs physical action to send a certified mail or other evidence of receipt."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Notify contractor of appeal",
+    "role": "contracting officer",
+    "handoff_to": "contractor",
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and communication with an outside party (contractor)."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Furnish notice to court",
+    "role": "contracting officer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and potential court action."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent",
+  "s10": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 22,
+    "total_tokens": 410,
+    "seconds": 16.86
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional certification is required and cannot be automated.\"}",
+   "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 22,
+    "total_tokens": 390,
+    "seconds": 3.71
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling, checking or forwarding documents.\"}",
+   "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 20,
+    "total_tokens": 407,
+    "seconds": 4.12
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and action from a legal advisor.\"}",
+   "usage": {
+    "prompt_tokens": 359,
+    "completion_tokens": 23,
+    "total_tokens": 382,
+    "seconds": 3.51
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Searching and correlating information to determine the appropriate party to coordinate with.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 26,
+    "total_tokens": 391,
+    "seconds": 4.04
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Drafting and sending a decision based on known facts.\"}",
+   "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 23,
+    "total_tokens": 421,
+    "seconds": 5.04
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice based on known facts and time constraints.\"}",
+   "usage": {
+    "prompt_tokens": 401,
+    "completion_tokens": 26,
+    "total_tokens": 427,
+    "seconds": 5.33
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to send a certified mail or other evidence of receipt.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 26,
+    "total_tokens": 410,
+    "seconds": 4.61
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and communication with an outside party (contractor).\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 26,
+    "total_tokens": 420,
+    "seconds": 5.32
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and potential court action.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 21,
+    "total_tokens": 412,
+    "seconds": 4.48
+   }
+  }
+ ]
+}

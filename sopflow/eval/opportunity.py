@@ -104,6 +104,9 @@ def report_one(sop_id: str, spec: WorkflowSpec, source: str) -> tuple[dict, str]
            "sim_runs": len(paths), "sim_manual_cycle_min_median": round(float(np.median(manual)), 1),
            "sim_assisted_cycle_min_median": round(float(np.median(assisted)), 1),
            "sim_hands_on_minutes_saved_median": round(float(np.median(saved)), 1),
+           "sim_completion_rate": round(sum(1 for d, _ in paths if d) / len(paths), 3),
+           "sim_handoff_packets_per_run": round(float(np.mean([len(p) for _, p in paths])), 2),
+           "sim_human_pauses_per_run": round(float(np.mean([sum(1 for x in p if x["kind"] == "human_step") for _, p in paths])), 2),
            "sim_cycle_minutes_saved_median": round(float(np.median(manual - assisted)), 1)}
     fam = families()[row["family"]]
     lines = [f"# Automation opportunity: {load_sop(sop_id).title}", "",
