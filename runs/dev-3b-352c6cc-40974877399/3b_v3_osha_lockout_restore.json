@@ -1,0 +1,186 @@
+{
+ "sop_id": "osha_lockout_restore",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Check the machine or equipment and the immediate area\", \"role\": \"servicing personnel\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Routine information work to ensure safety and operational integrity.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Check the work area\", \"role\": \"servicing personnel\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Routine information work to ensure employee safety.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Verify controls are in neutral\", \"role\": \"servicing personnel\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Routine information work to ensure safety.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Remove lockout devices\", \"role\": \"servicing personnel\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Physical action required to remove lockout devices.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Reenergize the machine or equipment\", \"role\": \"servicing personnel\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Physical action required to reenergize the machine or equipment.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Notify affected employees\", \"role\": \"servicing personnel\", \"handoff_to\": \"affected employees\", \"executor\": \"agent\", \"executor_reason\": \"Routine information work to inform employees about the completion of servicing or maintenance and readiness for use.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1109,
+    "completion_tokens": 472,
+    "total_tokens": 1581,
+    "seconds": 92.98
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Check the machine or equipment and the immediate area",
+    "role": "servicing personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical inspection and presence."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Check the work area",
+    "role": "servicing personnel",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information work an AI agent can do."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Verify controls are in neutral",
+    "role": "servicing personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical presence and hands-on action to verify controls are in neutral."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Remove lockout devices",
+    "role": "servicing personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to remove lockout devices."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Reenergize the machine or equipment",
+    "role": "servicing personnel",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to remove lockout devices and reenergize the machine or equipment."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Notify affected employees",
+    "role": "servicing personnel",
+    "handoff_to": "affected employees",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice to affected employees from known facts."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "human",
+  "s6": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical inspection and presence.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 18,
+    "total_tokens": 403,
+    "seconds": 15.83
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine information work an AI agent can do.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 21,
+    "total_tokens": 411,
+    "seconds": 4.21
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical presence and hands-on action to verify controls are in neutral.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 26,
+    "total_tokens": 401,
+    "seconds": 4.26
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to remove lockout devices.\"}",
+   "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 21,
+    "total_tokens": 384,
+    "seconds": 3.39
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to remove lockout devices and reenergize the machine or equipment.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 32,
+    "total_tokens": 406,
+    "seconds": 4.77
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice to affected employees from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 25,
+    "total_tokens": 398,
+    "seconds": 3.98
+   }
+  }
+ ]
+}

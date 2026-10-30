@@ -1,0 +1,203 @@
+{
+ "sop_id": "onb_form_i9_verification",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Ensure the individual properly completes section 1 of Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The employer must physically verify the individual's information and sign the attestation.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Assist the individual if needed\", \"role\": \"someone\", \"handoff_to\": \"employer\", \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Physically examine the documentation\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the documents.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Complete section 2 of Form I-9\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Retain the Form I-9 for three years\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Retaining the document is a physical action.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Reverify if employment authorization expires\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the individual's information.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Provide notice prior to inspection\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1189,
+    "completion_tokens": 517,
+    "total_tokens": 1706,
+    "seconds": 101.17
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Ensure the individual properly completes section 1 of Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate)."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Assist the individual if needed",
+    "role": "someone",
+    "handoff_to": "employer",
+    "executor": "human",
+    "executor_reason": "Needs physical interaction and understanding of the situation."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Physically examine the documentation",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical access to the documentation."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Complete section 2 of Form I-9",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and signature."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Retain the Form I-9 for three years",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping and retention."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Reverify if employment authorization expires",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and checking information to determine if employment authorization has expired and re-verifying accordingly."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Provide notice prior to inspection",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "human",
+  "s7": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional, clinical, legal or accountable judgment or decision (approve, deny, determine, accept, adjudicate).\"}",
+   "usage": {
+    "prompt_tokens": 401,
+    "completion_tokens": 36,
+    "total_tokens": 437,
+    "seconds": 18.26
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical interaction and understanding of the situation.\"}",
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 21,
+    "total_tokens": 397,
+    "seconds": 3.79
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical access to the documentation.\"}",
+   "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 19,
+    "total_tokens": 412,
+    "seconds": 4.04
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and signature.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 19,
+    "total_tokens": 408,
+    "seconds": 3.92
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping and retention.\"}",
+   "usage": {
+    "prompt_tokens": 392,
+    "completion_tokens": 18,
+    "total_tokens": 410,
+    "seconds": 4.02
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information to determine if employment authorization has expired and re-verifying accordingly.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 30,
+    "total_tokens": 421,
+    "seconds": 5.17
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 22,
+    "total_tokens": 406,
+    "seconds": 4.11
+   }
+  }
+ ]
+}
