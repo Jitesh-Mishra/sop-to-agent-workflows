@@ -1,0 +1,255 @@
+{
+ "sop_id": "sup_ticket_triage_auto_reply",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Classify the customer ticket\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The customer must choose and classify the ticket.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Retrieve resolved tickets and knowledge base articles\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a ticket from known details is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Draft a reply grounded in the retrieved answers\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Drafting a reply from known facts is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Validate the draft\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Validation checks are human-driven.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Escalate the ticket if validation fails\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Escalation is human-driven.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Send the draft to a support agent for approval\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Approval is human-driven.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Support agent approves, edits, or rewrites the draft\", \"role\": \"support agent\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Approval is agent-driven.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Send the reply to the customer automatically\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Reply is human-driven.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Record the gate decision and reasons\", \"role\": \"customer\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Decision recording is human-driven.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": \"validation fails\"}, {\"from\": \"s4\", \"to\": \"s6\", \"condition\": \"route confidence is below 0.6\"}, {\"from\": \"s4\", \"to\": \"s7\", \"condition\": \"route confidence is below 0.6\"}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": \"route confidence is below 0.6\"}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": \"route confidence is below 0.6\"}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": \"all checks pass\"}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": \"all checks pass\"}]}",
+   "errors": [
+    "Step s9 cites lines [9] that do not exist (the SOP has lines 1 to 8)."
+   ],
+   "usage": {
+    "prompt_tokens": 1107,
+    "completion_tokens": 756,
+    "total_tokens": 1863,
+    "seconds": 64.53
+   },
+   "fixes": [
+    "s9: dropped out-of-range lines",
+    "dropped edge s8->s9"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Classify the customer ticket",
+    "role": "customer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "AI can analyze the ticket content and classify it based on predefined criteria."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Retrieve resolved tickets and knowledge base articles",
+    "role": "customer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information retrieval from the system."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Draft a reply grounded in the retrieved answers",
+    "role": "customer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "AI can generate a reply based on the retrieved information."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Validate the draft",
+    "role": "customer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Validation check results require human judgment and decision."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Escalate the ticket if validation fails",
+    "role": "customer",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Validation failure requires a human decision to escalate the ticket."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Send the draft to a support agent for approval",
+    "role": "customer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "The support agent needs to review and make necessary changes to the draft before it is sent."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Support agent approves, edits, or rewrites the draft",
+    "role": "support agent",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Support agent can approve, edit, or rewrite the draft based on the checks."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Send the reply to the customer automatically",
+    "role": "customer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Automatically sending a reply based on predefined rules and facts."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": "validation fails"
+   },
+   {
+    "from": "s4",
+    "to": "s6",
+    "condition": "route confidence is below 0.6"
+   },
+   {
+    "from": "s4",
+    "to": "s7",
+    "condition": "route confidence is below 0.6"
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": "route confidence is below 0.6"
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": "route confidence is below 0.6"
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": "all checks pass"
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "human",
+  "s5": "human",
+  "s6": "human",
+  "s7": "agent",
+  "s8": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI can analyze the ticket content and classify it based on predefined criteria.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 26,
+    "total_tokens": 397,
+    "seconds": 7.58
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine information retrieval from the system.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 19,
+    "total_tokens": 384,
+    "seconds": 1.59
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI can generate a reply based on the retrieved information.\"}",
+   "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 23,
+    "total_tokens": 387,
+    "seconds": 1.8
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Validation check results require human judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 21,
+    "total_tokens": 410,
+    "seconds": 2.07
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Validation failure requires a human decision to escalate the ticket.\"}",
+   "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 23,
+    "total_tokens": 414,
+    "seconds": 2.23
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"The support agent needs to review and make necessary changes to the draft before it is sent.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 30,
+    "total_tokens": 403,
+    "seconds": 2.32
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Support agent can approve, edit, or rewrite the draft based on the checks.\"}",
+   "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 28,
+    "total_tokens": 400,
+    "seconds": 2.17
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Automatically sending a reply based on predefined rules and facts.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 24,
+    "total_tokens": 390,
+    "seconds": 1.89
+   }
+  }
+ ]
+}

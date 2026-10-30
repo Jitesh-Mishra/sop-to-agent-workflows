@@ -1,0 +1,294 @@
+{
+ "sop_id": "inc_cisa_incident_coordination",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Notify CISA\", \"role\": \"agency\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Notify CISA within 1 hour of incident determination.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Notify Congressional Committees\", \"role\": \"agency\", \"handoff_to\": \"Congressional Committees\", \"executor\": \"human\", \"executor_reason\": \"Notify Congressional Committees.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Provide tracking number and risk rating\", \"role\": \"CISA\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Provide tracking number and risk rating.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Share relevant log data, cyber threat indicators, and defensive measures\", \"role\": \"affected agency\", \"handoff_to\": \"CISA and sharing partners\", \"executor\": \"agent\", \"executor_reason\": \"Share relevant log data, cyber threat indicators, and defensive measures.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Share cyber intelligence\", \"role\": \"CISA and intelligence community\", \"handoff_to\": \"law enforcement\", \"executor\": \"agent\", \"executor_reason\": \"Share cyber intelligence.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Report incidents to federal law enforcement\", \"role\": \"agency\", \"handoff_to\": \"federal law enforcement\", \"executor\": \"human\", \"executor_reason\": \"Report incidents to federal law enforcement.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Determine if incident warrants C-UCG escalation\", \"role\": \"CISA or FBI\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Determine if incident warrants C-UCG escalation.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Recommend establishment of C-UCG\", \"role\": \"CISA or FBI\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Recommend establishment of C-UCG.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Provide post-incident updates and final incident report\", \"role\": \"agency\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Provide post-incident updates and final incident report.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"Close the ticket\", \"role\": \"agency\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Close the ticket.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": null}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1205,
+    "completion_tokens": 778,
+    "total_tokens": 1983,
+    "seconds": 67.44
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Notify CISA",
+    "role": "agency",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs to communicate with an external regulatory body."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Notify Congressional Committees",
+    "role": "agency",
+    "handoff_to": "Congressional Committees",
+    "executor": "human",
+    "executor_reason": "The step requires physical action and presence to notify Congressional Committees, as well as potentially requiring a conversation with the appropriate officials."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Provide tracking number and risk rating",
+    "role": "CISA",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information work an AI agent with system access could do."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Share relevant log data, cyber threat indicators, and defensive measures",
+    "role": "affected agency",
+    "handoff_to": "CISA and sharing partners",
+    "executor": "agent",
+    "executor_reason": "Information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Share cyber intelligence",
+    "role": "CISA and intelligence community",
+    "handoff_to": "law enforcement",
+    "executor": "agent",
+    "executor_reason": "Sharing information from system access and coordination with other entities."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Report incidents to federal law enforcement",
+    "role": "agency",
+    "handoff_to": "federal law enforcement",
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (report to law enforcement)."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Determine if incident warrants C-UCG escalation",
+    "role": "CISA or FBI",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision (determine)"
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Recommend establishment of C-UCG",
+    "role": "CISA or FBI",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, legal or accountable judgment or decision is needed to recommend the establishment of C-UCG."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Provide post-incident updates and final incident report",
+    "role": "agency",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "The step requires a professional, clinical, legal, or accountable judgment or decision to provide post-incident updates and finalize the incident report."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "Close the ticket",
+    "role": "agency",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "CISA can evaluate materials and make a decision based on the available information."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": null
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "human",
+  "s7": "human",
+  "s8": "human",
+  "s9": "human",
+  "s10": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs to communicate with an external regulatory body.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 21,
+    "total_tokens": 396,
+    "seconds": 7.33
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires physical action and presence to notify Congressional Committees, as well as potentially requiring a conversation with the appropriate officials.\"}",
+   "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 36,
+    "total_tokens": 414,
+    "seconds": 2.73
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine information work an AI agent with system access could do.\"}",
+   "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 24,
+    "total_tokens": 413,
+    "seconds": 2.29
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work an AI agent with system access could do: drafting and sending a notice from known facts, compiling, checking or forwarding documents, recording, logging or tracking, searching and correlating information, classifying or routing.\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 56,
+    "total_tokens": 446,
+    "seconds": 4.16
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Sharing information from system access and coordination with other entities.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 23,
+    "total_tokens": 398,
+    "seconds": 1.94
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (report to law enforcement).\"}",
+   "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 29,
+    "total_tokens": 393,
+    "seconds": 2.15
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision (determine)\"}",
+   "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 27,
+    "total_tokens": 417,
+    "seconds": 2.44
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, legal or accountable judgment or decision is needed to recommend the establishment of C-UCG.\"}",
+   "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 35,
+    "total_tokens": 409,
+    "seconds": 2.65
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"The step requires a professional, clinical, legal, or accountable judgment or decision to provide post-incident updates and finalize the incident report.\"}",
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 39,
+    "total_tokens": 415,
+    "seconds": 2.88
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"CISA can evaluate materials and make a decision based on the available information.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 27,
+    "total_tokens": 411,
+    "seconds": 2.31
+   }
+  }
+ ]
+}

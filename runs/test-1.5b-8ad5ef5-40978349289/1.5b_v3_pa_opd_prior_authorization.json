@@ -1,0 +1,213 @@
+{
+ "sop_id": "pa_opd_prior_authorization",
+ "prompt": "v3",
+ "model": "1.5b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Submit a prior authorization request\", \"role\": \"provider\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The provider must submit the request to CMS or its contractor.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Include all necessary documentation\", \"role\": \"provider\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The provider must ensure all required documentation is included.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Submit before service\", \"role\": \"provider\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The provider must submit the request before the service is provided.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Review the request\", \"role\": \"CMS or its contractor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"CMS or its contractor must review the request.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Issue a provisional affirmation or non-affirmation\", \"role\": \"CMS or its contractor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"CMS or its contractor must issue a decision.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Issue a decision for expedited review\", \"role\": \"CMS or its contractor\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"CMS or its contractor must complete an expedited review.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Resubmit the request\", \"role\": \"provider\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The provider may resubmit the request if a non-affirmation is received.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1156,
+    "completion_tokens": 547,
+    "total_tokens": 1703,
+    "seconds": 52.65
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Submit a prior authorization request",
+    "role": "provider",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional, clinical, and accountable judgment or decision is required to submit a prior authorization request."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Include all necessary documentation",
+    "role": "provider",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to include all necessary documentation."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Submit before service",
+    "role": "provider",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Physical action required to submit the request."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Review the request",
+    "role": "CMS or its contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Reviewing the request involves professional judgment and interpretation of complex medical and billing regulations."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Issue a provisional affirmation or non-affirmation",
+    "role": "CMS or its contractor",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "CMS or its contractor can draft and send a notice from known facts and compile necessary documents."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Issue a decision for expedited review",
+    "role": "CMS or its contractor",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "An accountable judgment or decision (approve, deny, determine, accept, adjudicate)."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Resubmit the request",
+    "role": "provider",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A human needs to make the decision to resubmit the request."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional, clinical, and accountable judgment or decision is required to submit a prior authorization request.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 31,
+    "total_tokens": 410,
+    "seconds": 8.06
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to include all necessary documentation.\"}",
+   "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 21,
+    "total_tokens": 397,
+    "seconds": 1.9
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Physical action required to submit the request.\"}",
+   "usage": {
+    "prompt_tokens": 370,
+    "completion_tokens": 20,
+    "total_tokens": 390,
+    "seconds": 1.79
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Reviewing the request involves professional judgment and interpretation of complex medical and billing regulations.\"}",
+   "usage": {
+    "prompt_tokens": 382,
+    "completion_tokens": 28,
+    "total_tokens": 410,
+    "seconds": 2.45
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"CMS or its contractor can draft and send a notice from known facts and compile necessary documents.\"}",
+   "usage": {
+    "prompt_tokens": 400,
+    "completion_tokens": 30,
+    "total_tokens": 430,
+    "seconds": 2.8
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"An accountable judgment or decision (approve, deny, determine, accept, adjudicate).\"}",
+   "usage": {
+    "prompt_tokens": 408,
+    "completion_tokens": 29,
+    "total_tokens": 437,
+    "seconds": 2.94
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A human needs to make the decision to resubmit the request.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 26,
+    "total_tokens": 397,
+    "seconds": 2.19
+   }
+  }
+ ]
+}
