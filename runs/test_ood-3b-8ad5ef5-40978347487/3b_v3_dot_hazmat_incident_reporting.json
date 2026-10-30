@@ -1,0 +1,105 @@
+{
+ "sop_id": "dot_hazmat_incident_reporting",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Make a telephone report\", \"role\": \"any person in physical possession of hazardous material\", \"handoff_to\": \"NRC\", \"executor\": \"human\", \"executor_reason\": \"A telephone report is required for any incident during transportation in commerce.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Provide notice to NRC\", \"role\": \"any person in physical possession of hazardous material\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Submitting a report is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Submit a Hazardous Materials Incident Report\", \"role\": \"any person in physical possession of hazardous material\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Needs hands-on access to the incident details.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1086,
+    "completion_tokens": 243,
+    "total_tokens": 1329,
+    "seconds": 60.94
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Make a telephone report",
+    "role": "any person in physical possession of hazardous material",
+    "handoff_to": "NRC",
+    "executor": "human",
+    "executor_reason": "Needs physical action to make a telephone report."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Provide notice to NRC",
+    "role": "any person in physical possession of hazardous material",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to provide notice."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Submit a Hazardous Materials Incident Report",
+    "role": "any person in physical possession of hazardous material",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs hands-on knowledge of the incident and physical possession of the hazardous material to fill out the report."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "agent",
+  "s3": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to make a telephone report.\"}",
+   "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 21,
+    "total_tokens": 409,
+    "seconds": 15.32
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to provide notice.\"}",
+   "usage": {
+    "prompt_tokens": 417,
+    "completion_tokens": 19,
+    "total_tokens": 436,
+    "seconds": 4.53
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs hands-on knowledge of the incident and physical possession of the hazardous material to fill out the report.\"}",
+   "usage": {
+    "prompt_tokens": 427,
+    "completion_tokens": 32,
+    "total_tokens": 459,
+    "seconds": 6.09
+   }
+  }
+ ]
+}

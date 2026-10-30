@@ -1,0 +1,321 @@
+{
+ "sop_id": "fema_disaster_declaration_request",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Request a major disaster declaration\", \"role\": \"Governor of a State\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must formally request the declaration.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Provide a finding of severity\", \"role\": \"Governor of a State\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must justify the need for federal assistance.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Confirm State action\", \"role\": \"Governor of a State\", \"handoff_to\": \"State\", \"executor\": \"agent\", \"executor_reason\": \"Filing a confirmation from known facts is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Include damage and resources\", \"role\": \"Governor of a State\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Compiling and checking information is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Submit request within 30 days\", \"role\": \"Governor of a State\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"The Governor must meet the deadline.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Request extension if needed\", \"role\": \"Governor of a State\", \"handoff_to\": \"Assistant Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Submitting a request for an extension is routine information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Submit request to President\", \"role\": \"Governor of a State\", \"handoff_to\": \"President\", \"executor\": \"agent\", \"executor_reason\": \"Sending a request to the President is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Send abbreviated request if necessary\", \"role\": \"Governor of a State\", \"handoff_to\": \"Regional Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Sending an abbreviated request is routine information work.\"}, {\"id\": \"s9\", \"lines\": [9], \"action\": \"Address request to FEMA Administrator\", \"role\": \"Governor of a State\", \"handoff_to\": \"FEMA Administrator\", \"executor\": \"agent\", \"executor_reason\": \"Sending a request to the FEMA Administrator is routine information work.\"}, {\"id\": \"s10\", \"lines\": [10], \"action\": \"FEMA expedite processing\", \"role\": \"FEMA\", \"handoff_to\": \"President\", \"executor\": \"agent\", \"executor_reason\": \"FEMA must expedite the processing of reports and recommendations.\"}, {\"id\": \"s11\", \"lines\": [11], \"action\": \"Ensure documentation\", \"role\": \"Assistant Administrator for Disaster Assistance Directorate\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Assembling documentation is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": \"request not submitted within 30 days\"}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": \"abbreviated request not sent\"}, {\"from\": \"s8\", \"to\": \"s9\", \"condition\": \"FEMA not addressed\"}, {\"from\": \"s9\", \"to\": \"s10\", \"condition\": null}, {\"from\": \"s10\", \"to\": \"s11\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1281,
+    "completion_tokens": 905,
+    "total_tokens": 2186,
+    "seconds": 130.63
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Request a major disaster declaration",
+    "role": "Governor of a State",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "A professional judgment and decision to request a major disaster declaration."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Provide a finding of severity",
+    "role": "Governor of a State",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and decision."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Confirm State action",
+    "role": "Governor of a State",
+    "handoff_to": "State",
+    "executor": "human",
+    "executor_reason": "A professional judgment and attestation is required."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Include damage and resources",
+    "role": "Governor of a State",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and certification."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Submit request within 30 days",
+    "role": "Governor of a State",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine information work such as logging the deadline."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Request extension if needed",
+    "role": "Governor of a State",
+    "handoff_to": "Assistant Administrator",
+    "executor": "agent",
+    "executor_reason": "AI agent can draft and send a written request for an extension."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Submit request to President",
+    "role": "Governor of a State",
+    "handoff_to": "President",
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to submit the request."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Send abbreviated request if necessary",
+    "role": "Governor of a State",
+    "handoff_to": "Regional Administrator",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice from known facts."
+   },
+   {
+    "id": "s9",
+    "lines": [
+     9
+    ],
+    "action": "Address request to FEMA Administrator",
+    "role": "Governor of a State",
+    "handoff_to": "FEMA Administrator",
+    "executor": "agent",
+    "executor_reason": "Compiling and sending a notice to the Administrator from known facts."
+   },
+   {
+    "id": "s10",
+    "lines": [
+     10
+    ],
+    "action": "FEMA expedite processing",
+    "role": "FEMA",
+    "handoff_to": "President",
+    "executor": "agent",
+    "executor_reason": "Routine information processing and communication."
+   },
+   {
+    "id": "s11",
+    "lines": [
+     11
+    ],
+    "action": "Ensure documentation",
+    "role": "Assistant Administrator for Disaster Assistance Directorate",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and attestation."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": "request not submitted within 30 days"
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": "abbreviated request not sent"
+   },
+   {
+    "from": "s8",
+    "to": "s9",
+    "condition": "FEMA not addressed"
+   },
+   {
+    "from": "s9",
+    "to": "s10",
+    "condition": null
+   },
+   {
+    "from": "s10",
+    "to": "s11",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "human",
+  "s2": "human",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent",
+  "s9": "agent",
+  "s10": "agent",
+  "s11": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and decision to request a major disaster declaration.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 24,
+    "total_tokens": 409,
+    "seconds": 15.57
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 19,
+    "total_tokens": 414,
+    "seconds": 3.82
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"A professional judgment and attestation is required.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 21,
+    "total_tokens": 400,
+    "seconds": 3.41
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and certification.\"}",
+   "usage": {
+    "prompt_tokens": 400,
+    "completion_tokens": 19,
+    "total_tokens": 419,
+    "seconds": 3.91
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine information work such as logging the deadline.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 21,
+    "total_tokens": 400,
+    "seconds": 3.42
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"AI agent can draft and send a written request for an extension.\"}",
+   "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 25,
+    "total_tokens": 419,
+    "seconds": 4.31
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to submit the request.\"}",
+   "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 22,
+    "total_tokens": 397,
+    "seconds": 3.35
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 22,
+    "total_tokens": 407,
+    "seconds": 3.68
+   }
+  },
+  {
+   "step_id": "s9",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending a notice to the Administrator from known facts.\"}",
+   "usage": {
+    "prompt_tokens": 380,
+    "completion_tokens": 25,
+    "total_tokens": 405,
+    "seconds": 3.83
+   }
+  },
+  {
+   "step_id": "s10",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine information processing and communication.\"}",
+   "usage": {
+    "prompt_tokens": 371,
+    "completion_tokens": 18,
+    "total_tokens": 389,
+    "seconds": 2.83
+   }
+  },
+  {
+   "step_id": "s11",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and attestation.\"}",
+   "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 20,
+    "total_tokens": 399,
+    "seconds": 3.34
+   }
+  }
+ ]
+}

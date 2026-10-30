@@ -1,0 +1,240 @@
+{
+ "sop_id": "cdc_ppe_donning",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Choose appropriate PPE based on precautions\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Selecting the correct type of PPE is a routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Put on gown\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Gown needs physical action and presence.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Fasten gown in back\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Gown fastening requires hands-on action.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Secure mask or respirator\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Fitting a mask or respirator is information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Fit respirator\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Respirator fitting requires hands-on action.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Fit-check respirator\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Respirator fitting verification is information work.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Put on goggles or face shield\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Goggles or face shield fitting is information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Extend gloves to wrist\", \"role\": \"user\", \"handoff_to\": null, \"executor\": \"human\", \"executor_reason\": \"Glove extension requires physical action.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s2\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s3\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s4\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s5\", \"to\": \"s6\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s7\", \"condition\": null}, {\"from\": \"s7\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [],
+   "usage": {
+    "prompt_tokens": 1106,
+    "completion_tokens": 598,
+    "total_tokens": 1704,
+    "seconds": 94.43
+   },
+   "fixes": [],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Choose appropriate PPE based on precautions",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and selecting appropriate PPE based on precautions."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Put on gown",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to put on the gown."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Fasten gown in back",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to fasten the gown."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Secure mask or respirator",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to secure the mask or respirator."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Fit respirator",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to fit the respirator."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Fit-check respirator",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to fit-check the respirator."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Put on goggles or face shield",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action and presence to put on the goggles or face shield."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Extend gloves to wrist",
+    "role": "user",
+    "handoff_to": null,
+    "executor": "human",
+    "executor_reason": "Needs physical action to extend the gloves."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s2",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s3",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s4",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s5",
+    "to": "s6",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s7",
+    "condition": null
+   },
+   {
+    "from": "s7",
+    "to": "s8",
+    "condition": null
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "human",
+  "s3": "human",
+  "s4": "agent",
+  "s5": "human",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "human"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and selecting appropriate PPE based on precautions.\"}",
+   "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 23,
+    "total_tokens": 407,
+    "seconds": 15.53
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to put on the gown.\"}",
+   "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 23,
+    "total_tokens": 396,
+    "seconds": 3.34
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to fasten the gown.\"}",
+   "usage": {
+    "prompt_tokens": 361,
+    "completion_tokens": 21,
+    "total_tokens": 382,
+    "seconds": 2.77
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to secure the mask or respirator.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 23,
+    "total_tokens": 392,
+    "seconds": 3.18
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to fit the respirator.\"}",
+   "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 23,
+    "total_tokens": 388,
+    "seconds": 3.12
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to fit-check the respirator.\"}",
+   "usage": {
+    "prompt_tokens": 356,
+    "completion_tokens": 24,
+    "total_tokens": 380,
+    "seconds": 2.78
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action and presence to put on the goggles or face shield.\"}",
+   "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 26,
+    "total_tokens": 395,
+    "seconds": 3.43
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs physical action to extend the gloves.\"}",
+   "usage": {
+    "prompt_tokens": 361,
+    "completion_tokens": 20,
+    "total_tokens": 381,
+    "seconds": 2.69
+   }
+  }
+ ]
+}

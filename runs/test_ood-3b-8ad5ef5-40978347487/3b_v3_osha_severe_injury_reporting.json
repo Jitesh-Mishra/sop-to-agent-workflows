@@ -1,0 +1,234 @@
+{
+ "sop_id": "osha_severe_injury_reporting",
+ "prompt": "v3",
+ "model": "3b",
+ "attempts": [
+  {
+   "raw": "{\"steps\": [{\"id\": \"s1\", \"lines\": [1], \"action\": \"Report fatality\", \"role\": \"employer\", \"handoff_to\": \"OSHA\", \"executor\": \"agent\", \"executor_reason\": \"Filing a report from known facts is routine information work.\"}, {\"id\": \"s2\", \"lines\": [2], \"action\": \"Report in-patient hospitalization, amputation, or loss of an eye\", \"role\": \"employer\", \"handoff_to\": \"OSHA\", \"executor\": \"agent\", \"executor_reason\": \"Filing a report from known facts is routine information work.\"}, {\"id\": \"s3\", \"lines\": [3], \"action\": \"Report using one of the following methods\", \"role\": \"employer\", \"handoff_to\": \"OSHA\", \"executor\": \"agent\", \"executor_reason\": \"Filing a report from known facts is routine information work.\"}, {\"id\": \"s4\", \"lines\": [4], \"action\": \"Report using 800 number or reporting application\", \"role\": \"employer\", \"handoff_to\": \"OSHA\", \"executor\": \"agent\", \"executor_reason\": \"Filing a report from known facts is routine information work.\"}, {\"id\": \"s5\", \"lines\": [5], \"action\": \"Give OSHA information\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a report from known facts is routine information work.\"}, {\"id\": \"s6\", \"lines\": [6], \"action\": \"Do not report if motor vehicle accident on public street\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"The employer must choose whether to report or not.\"}, {\"id\": \"s7\", \"lines\": [7], \"action\": \"Record on OSHA injury and illness records\", \"role\": \"employer\", \"handoff_to\": null, \"executor\": \"agent\", \"executor_reason\": \"Filing a report from known facts is routine information work.\"}, {\"id\": \"s8\", \"lines\": [8], \"action\": \"Decide to investigate\", \"role\": \"OSHA\", \"handoff_to\": \"local Area Office director\", \"executor\": \"agent\", \"executor_reason\": \"Filing a report from known facts is routine information work.\"}], \"edges\": [{\"from\": \"s1\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s2\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s3\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s4\", \"to\": \"s5\", \"condition\": null}, {\"from\": \"s6\", \"to\": \"s8\", \"condition\": \"motor vehicle accident on public street\"}, {\"from\": \"s8\", \"to\": \"s8\", \"condition\": null}]}",
+   "errors": [
+    "Edge s8 -> s8 is a self-loop."
+   ],
+   "usage": {
+    "prompt_tokens": 1418,
+    "completion_tokens": 639,
+    "total_tokens": 2057,
+    "seconds": 111.06
+   },
+   "fixes": [
+    "dropped edge s8->s8"
+   ],
+   "remaining": []
+  }
+ ],
+ "final_spec": {
+  "steps": [
+   {
+    "id": "s1",
+    "lines": [
+     1
+    ],
+    "action": "Report fatality",
+    "role": "employer",
+    "handoff_to": "OSHA",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and communication with external authorities."
+   },
+   {
+    "id": "s2",
+    "lines": [
+     2
+    ],
+    "action": "Report in-patient hospitalization, amputation, or loss of an eye",
+    "role": "employer",
+    "handoff_to": "OSHA",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and communication with OSHA."
+   },
+   {
+    "id": "s3",
+    "lines": [
+     3
+    ],
+    "action": "Report using one of the following methods",
+    "role": "employer",
+    "handoff_to": "OSHA",
+    "executor": "human",
+    "executor_reason": "Requires a professional judgment and physical action to choose and execute the reporting method."
+   },
+   {
+    "id": "s4",
+    "lines": [
+     4
+    ],
+    "action": "Report using 800 number or reporting application",
+    "role": "employer",
+    "handoff_to": "OSHA",
+    "executor": "human",
+    "executor_reason": "Needs a human to call the 800 number or use the reporting application."
+   },
+   {
+    "id": "s5",
+    "lines": [
+     5
+    ],
+    "action": "Give OSHA information",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Compiling and sending the required information to OSHA."
+   },
+   {
+    "id": "s6",
+    "lines": [
+     6
+    ],
+    "action": "Do not report if motor vehicle accident on public street",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Information work such as checking conditions and making a determination."
+   },
+   {
+    "id": "s7",
+    "lines": [
+     7
+    ],
+    "action": "Record on OSHA injury and illness records",
+    "role": "employer",
+    "handoff_to": null,
+    "executor": "agent",
+    "executor_reason": "Routine record keeping."
+   },
+   {
+    "id": "s8",
+    "lines": [
+     8
+    ],
+    "action": "Decide to investigate",
+    "role": "OSHA",
+    "handoff_to": "local Area Office director",
+    "executor": "human",
+    "executor_reason": "Needs a professional judgment and decision."
+   }
+  ],
+  "edges": [
+   {
+    "from": "s1",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s2",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s3",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s4",
+    "to": "s5",
+    "condition": null
+   },
+   {
+    "from": "s6",
+    "to": "s8",
+    "condition": "motor vehicle accident on public street"
+   }
+  ]
+ },
+ "inline_executor": {
+  "s1": "agent",
+  "s2": "agent",
+  "s3": "agent",
+  "s4": "agent",
+  "s5": "agent",
+  "s6": "agent",
+  "s7": "agent",
+  "s8": "agent"
+ },
+ "executor_calls": [
+  {
+   "step_id": "s1",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and communication with external authorities.\"}",
+   "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 22,
+    "total_tokens": 417,
+    "seconds": 15.73
+   }
+  },
+  {
+   "step_id": "s2",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and communication with OSHA.\"}",
+   "usage": {
+    "prompt_tokens": 428,
+    "completion_tokens": 22,
+    "total_tokens": 450,
+    "seconds": 5.25
+   }
+  },
+  {
+   "step_id": "s3",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Requires a professional judgment and physical action to choose and execute the reporting method.\"}",
+   "usage": {
+    "prompt_tokens": 460,
+    "completion_tokens": 27,
+    "total_tokens": 487,
+    "seconds": 6.78
+   }
+  },
+  {
+   "step_id": "s4",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a human to call the 800 number or use the reporting application.\"}",
+   "usage": {
+    "prompt_tokens": 406,
+    "completion_tokens": 29,
+    "total_tokens": 435,
+    "seconds": 5.03
+   }
+  },
+  {
+   "step_id": "s5",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Compiling and sending the required information to OSHA.\"}",
+   "usage": {
+    "prompt_tokens": 441,
+    "completion_tokens": 23,
+    "total_tokens": 464,
+    "seconds": 5.77
+   }
+  },
+  {
+   "step_id": "s6",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Information work such as checking conditions and making a determination.\"}",
+   "usage": {
+    "prompt_tokens": 405,
+    "completion_tokens": 23,
+    "total_tokens": 428,
+    "seconds": 4.46
+   }
+  },
+  {
+   "step_id": "s7",
+   "raw": "{\"executor\": \"agent\", \"executor_reason\": \"Routine record keeping.\"}",
+   "usage": {
+    "prompt_tokens": 396,
+    "completion_tokens": 16,
+    "total_tokens": 412,
+    "seconds": 3.56
+   }
+  },
+  {
+   "step_id": "s8",
+   "raw": "{\"executor\": \"human\", \"executor_reason\": \"Needs a professional judgment and decision.\"}",
+   "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 19,
+    "total_tokens": 385,
+    "seconds": 2.8
+   }
+  }
+ ]
+}
